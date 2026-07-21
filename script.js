@@ -2,9 +2,9 @@
    EDIT THESE THREE VALUES
    ============================== */
 const CONFIG = {
-  whatsappNumber: "", // Example: "919876543210" (country code + number, no + or spaces)
-  venueName: "Wedding venue to be added",
-  mapUrl: "", // Paste a Google Maps share link
+  whatsappNumber: "918897985959", // Country code + number, no + or spaces
+  venueName: "Parinaya Function Hall, NH-16, Rajahmundry Road, Jaggampeta",
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=Parinaya%20Function%20Hall%2C%20NH-16%2C%20Rajahmundry%20Road%2C%20Jaggampeta",
   timeZone: "Asia/Kolkata"
 };
 
