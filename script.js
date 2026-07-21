@@ -4,7 +4,7 @@
 const CONFIG = {
   whatsappNumber: "918897985959", // Country code + number, no + or spaces
   venueName: "Parinaya Function Hall, NH-16, Rajahmundry Road, Jaggampeta",
-  mapUrl: "https://www.google.com/maps/search/?api=1&query=Parinaya%20Function%20Hall%2C%20NH-16%2C%20Rajahmundry%20Road%2C%20Jaggampeta",
+  mapUrl: "https://share.google/9AuGOwYz8Ej5mDlQk",
   timeZone: "Asia/Kolkata"
 };
 
