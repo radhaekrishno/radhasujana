@@ -25,3 +25,7 @@ Do not delete `CNAME`; it keeps the custom domain connected.
 ## Version 5 changes
 - Parent details are subtle and positioned beneath each name.
 - Wedding ceremony timing is presented in a clean Dinner/Muhurtham grid.
+
+
+## Version 6 gallery fix
+The engagement gallery images are embedded directly inside `index.html`, so no `assets` folder is required. Upload the five root files only.
