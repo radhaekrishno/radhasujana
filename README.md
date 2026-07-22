@@ -1,50 +1,22 @@
 # Sujana & Radha Krishna Wedding Website
 
-A responsive single-page wedding invitation inspired by the interaction pattern of the reference site, rebuilt with original HTML, CSS, and JavaScript.
-
 ## Included
-- Tap-to-open envelope invitation
-- Four event cards
-- Bride/groom team selector
-- Live muhurtham countdown
-- WhatsApp RSVP form
-- Downloadable calendar event
-- Google Maps directions button
-- Mobile navigation and responsive layout
-- No build tools required
+- English / Telugu language switch
+- Unambiguous wedding-night schedule: guests arrive Thursday evening; Muhurtham follows after midnight at 2:58 AM Friday
+- Google Maps preview and venue directions
+- WhatsApp RSVP to +91 88979 85959
+- Engagement gallery with 13 photos and lightbox view
+- Calendar download
+- Responsive mobile and desktop layouts
+- Custom domain file for `radhasujana.com`
 
-## Edit before publishing
-Open `script.js` and set:
+## Publish the update on GitHub Pages
+1. Extract the ZIP.
+2. Open the existing GitHub repository.
+3. Choose **Add file → Upload files**.
+4. Drag everything inside this folder, including the `assets` folder.
+5. Commit directly to `main`.
+6. Keep GitHub Pages set to **main / (root)**.
+7. Wait a few minutes, then refresh the website with **Ctrl + F5**.
 
-```js
-const CONFIG = {
-  whatsappNumber: "919876543210",
-  venueName: "Your venue name",
-  mapUrl: "https://maps.app.goo.gl/your-link",
-  timeZone: "Asia/Kolkata"
-};
-```
-
-Text and dates are in `index.html`.
-
-## Publish on Netlify
-1. Sign in to Netlify.
-2. Open **Add new site → Deploy manually**.
-3. Drag the unzipped website folder into the upload area.
-4. In Netlify domain settings, connect `radhasujana.com`.
-
-## Publish on GitHub Pages
-Upload these files to a GitHub repository and enable GitHub Pages from the repository settings.
-
-
-## Personalised details
-
-- Bride: Sujana, d/o Aruna and Ganapati Rao
-- Groom: Radha Krishna, s/o Sujatha and Swamy Varma
-- Venue: Parinaya Function Hall, NH-16, Rajahmundry Road, Jaggampeta
-- RSVP WhatsApp: +91 88979 85959
-- Reception: Date and time to be announced
-
-## GitHub Pages custom domain
-
-The included `CNAME` file points GitHub Pages to `radhasujana.com`. Keep it in the repository root.
+Do not delete `CNAME`; it keeps the custom domain connected.

@@ -8,7 +8,7 @@
   <title>Sujana & Radha Krishna | Wedding Invitation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Italiana&family=Montserrat:wght@400;500;600&family=Noto+Sans+Telugu:wght@400;500;600&family=Noto+Serif+Telugu:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="locked">
@@ -21,51 +21,90 @@
     <button id="openInvitation" class="envelope" type="button" aria-label="Open invitation">
       <span class="envelope__back"></span>
       <span class="envelope__paper">
-        <span class="tiny-label">Together with their families</span>
-        <strong>Sujana</strong>
-        <span class="cover-parentage">d/o Aruna & Ganapati Rao</span>
+        <span class="tiny-label" data-i18n="coverTogether">Together with their families</span>
+        <strong data-i18n="nameSujana">Sujana</strong>
+        <span class="cover-parentage" data-i18n="sujanaParentage">d/o Aruna and Ganapati Rao</span>
         <span class="ampersand">&</span>
-        <strong>Radha Krishna</strong>
-        <span class="cover-parentage">s/o Sujatha & Swamy Varma</span>
-        <span class="date">September 2026</span>
+        <strong data-i18n="nameRadha">Radha Krishna</strong>
+        <span class="cover-parentage" data-i18n="radhaParentage">s/o Sujatha and Swamy Varma</span>
+        <span class="date" data-i18n="september2026">September 2026</span>
       </span>
       <span class="envelope__front"></span>
       <span class="envelope__flap"></span>
       <span class="wax-seal" aria-hidden="true">S<span>&</span>R</span>
     </button>
 
-    <p class="tap-copy">Tap to open</p>
+    <p class="tap-copy" data-i18n="tapToOpen">Tap to open</p>
   </section>
 
   <main id="mainContent" class="site-shell" aria-hidden="true">
     <header class="hero section-pad">
       <nav class="topbar" aria-label="Primary navigation">
         <a class="monogram" href="#home" aria-label="Sujana and Radha Krishna home">S<span>&</span>R</a>
-        <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileMenu">
-          <span></span><span></span><span></span>
-          <span class="sr-only">Menu</span>
-        </button>
-        <div id="mobileMenu" class="nav-links">
-          <a href="#festivities">Festivities</a>
-          <a href="#countdown">Countdown</a>
-          <a href="#rsvp">RSVP</a>
+
+        <div class="topbar__actions">
+          <div id="mobileMenu" class="nav-links">
+            <a href="#festivities" data-i18n="navFestivities">Festivities</a>
+            <a id="galleryNavLink" href="#gallery" data-i18n="navGallery">Gallery</a>
+            <a href="#countdown" data-i18n="navCountdown">Countdown</a>
+            <a href="#rsvp" data-i18n="navRsvp">RSVP</a>
+          </div>
+
+          <button id="languageToggle" class="language-toggle" type="button" aria-label="Switch language">తెలుగు</button>
+
+          <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
+            <span class="sr-only" data-i18n="menu">Menu</span>
+          </button>
         </div>
       </nav>
 
       <div id="home" class="hero__content reveal">
-        <p class="eyebrow">You are warmly invited</p>
-        <h1><span>Sujana</span><em>&</em><span>Radha Krishna</span></h1>
-        <div class="family-lines" aria-label="Parents of the bride and groom">
-          <p><strong>Sujana</strong> · d/o Aruna and Ganapati Rao</p>
-          <p><strong>Radha Krishna</strong> · s/o Sujatha and Swamy Varma</p>
-        </div>
-        <p class="hero__verse">Two hearts, two families, one sacred beginning.</p>
-        <div class="hero__date-card">
-          <div><span>Celebrations</span><strong>01–04</strong><small>September</small></div>
+        <p class="eyebrow" data-i18n="warmlyInvited">You are warmly invited</p>
+
+        <h1 class="couple-names">
+          <span class="name-block">
+            <span class="main-name" data-i18n="nameSujana">Sujana</span>
+            <small class="parentage" data-i18n="sujanaParentage">d/o Aruna and Ganapati Rao</small>
+          </span>
+          <em>&</em>
+          <span class="name-block">
+            <span class="main-name" data-i18n="nameRadha">Radha Krishna</span>
+            <small class="parentage" data-i18n="radhaParentage">s/o Sujatha and Swamy Varma</small>
+          </span>
+        </h1>
+
+        <p class="hero__verse" data-i18n="heroVerse">Two hearts, two families, one sacred beginning.</p>
+
+        <div class="hero__date-card" aria-label="Wedding celebration dates">
+          <div>
+            <span data-i18n="celebrationsLabel">Celebrations</span>
+            <strong>01–04</strong>
+            <small data-i18n="september">September</small>
+          </div>
           <i aria-hidden="true"></i>
-          <div><span>Muhurtham</span><strong>04</strong><small>September 2026</small></div>
+          <div>
+            <span data-i18n="weddingCeremony">Wedding Ceremony</span>
+            <strong>03</strong>
+            <small data-i18n="september2026">September 2026</small>
+          </div>
         </div>
-        <a class="scroll-cue" href="#festivities">See all celebrations <span>↓</span></a>
+
+        <div class="wedding-night-summary" aria-label="Wedding night schedule">
+          <article>
+            <p class="schedule-label" data-i18n="dinner">Dinner</p>
+            <strong data-i18n="dinnerDate">Thursday, 3 September 2026</strong>
+            <span data-i18n="dinnerTime">From 7:00 PM onwards at the wedding venue.</span>
+          </article>
+          <article>
+            <p class="schedule-label" data-i18n="muhurtham">Muhurtham</p>
+            <strong data-i18n="muhurthamDate">After Thursday night · 2:58 AM on Friday, 4 September 2026</strong>
+            <span class="arrival-note" data-i18n="muhurthamClarity">Please arrive on Thursday evening, 3 September. The Muhurtham follows after midnight at 2:58 AM in the early hours of Friday, 4 September — not on Friday night.</span>
+            <small data-i18n="muhurthamAstro">At the auspicious time of Rohini Nakshatra and Karka Ascendant.</small>
+          </article>
+        </div>
+
+        <a class="scroll-cue" href="#festivities"><span data-i18n="seeCelebrations">See all celebrations</span> <b>↓</b></a>
       </div>
 
       <div class="hero__arch" aria-hidden="true">
@@ -75,83 +114,88 @@
     </header>
 
     <section class="blessing-strip" aria-label="Wedding blessing">
-      <p>With the blessings of our elders and the warmth of your presence</p>
+      <p data-i18n="blessing">With the blessings of gods, our ancestors, elders and the warmth of your presence</p>
       <span>ॐ</span>
     </section>
 
     <section id="festivities" class="festivities section-pad">
       <div class="section-heading reveal">
-        <p class="eyebrow">Five beautiful celebrations</p>
-        <h2>The Festivities</h2>
-        <p>Come for the rituals. Stay for the laughter, food, dancing, and family chaos—the good kind.</p>
+        <p class="eyebrow" data-i18n="fiveCelebrations">Five beautiful celebrations</p>
+        <h2 data-i18n="festivitiesTitle">The Festivities</h2>
+        <p data-i18n="festivitiesIntro">Come for the rituals. Stay for the laughter, food, dancing, and family chaos—the good kind.</p>
       </div>
 
       <div class="event-grid">
-        <article class="event-card reveal" data-event="Mehendi">
+        <article class="event-card reveal" data-event-id="mehendi">
           <div class="event-card__number">01</div>
-          <p class="event-card__day">Tuesday</p>
-          <h3>Mehendi</h3>
-          <p class="event-card__date">01 September 2026</p>
-          <p class="event-card__description">Henna, music, colour, and an evening that begins the celebration.</p>
-          <button class="event-select" type="button">Add to RSVP</button>
+          <p class="event-card__day" data-i18n="tuesday">Tuesday</p>
+          <h3 data-i18n="mehendi">Mehendi</h3>
+          <p class="event-card__date" data-i18n="mehendiDate">01 September 2026</p>
+          <p class="event-card__description" data-i18n="mehendiDescription">Henna, music, colour, and an evening that begins the celebration.</p>
+          <button class="event-select" type="button" data-i18n="addRsvp">Add to RSVP</button>
         </article>
 
-        <article class="event-card event-card--accent reveal" data-event="Pelli-Koduku & Pelli-Kuthuru">
+        <article class="event-card event-card--accent reveal" data-event-id="pellirituals">
           <div class="event-card__number">02</div>
-          <p class="event-card__day">Wednesday</p>
-          <h3>Pelli-Koduku<br>& Pelli-Kuthuru</h3>
-          <p class="event-card__date">02 September 2026</p>
-          <p class="event-card__description">A joyful Telugu tradition as both families bless the bride and groom.</p>
-          <button class="event-select" type="button">Add to RSVP</button>
+          <p class="event-card__day" data-i18n="wednesday">Wednesday</p>
+          <h3 data-i18n-html="pelliRituals">Pelli-Koduku<br>& Pelli-Kuthuru</h3>
+          <p class="event-card__date" data-i18n="pelliRitualsDate">02 September 2026</p>
+          <p class="event-card__description" data-i18n="pelliRitualsDescription">A joyful Telugu tradition as both families bless the bride and groom.</p>
+          <button class="event-select" type="button" data-i18n="addRsvp">Add to RSVP</button>
         </article>
 
-        <article class="event-card reveal" data-event="Haldi">
+        <article class="event-card reveal" data-event-id="haldi">
           <div class="event-card__number">03</div>
-          <p class="event-card__day">Thursday · 09:00 AM</p>
-          <h3>Haldi</h3>
-          <p class="event-card__date">03 September 2026</p>
-          <p class="event-card__description">Sunshine, turmeric, teasing cousins, and a little harmless yellow warfare.</p>
-          <button class="event-select" type="button">Add to RSVP</button>
+          <p class="event-card__day" data-i18n="haldiDay">Thursday · 09:00 AM</p>
+          <h3 data-i18n="haldi">Haldi</h3>
+          <p class="event-card__date" data-i18n="haldiDate">03 September 2026</p>
+          <p class="event-card__description" data-i18n="haldiDescription">Sunshine, turmeric, teasing cousins, and a little harmless yellow warfare.</p>
+          <button class="event-select" type="button" data-i18n="addRsvp">Add to RSVP</button>
         </article>
 
-        <article class="event-card event-card--dark reveal" data-event="Pelli">
-          <div class="event-card__number">04</div>
-          <p class="event-card__day">Friday · 02:00 AM</p>
-          <h3>Pelli</h3>
-          <p class="event-card__date">04 September 2026</p>
-          <p class="event-card__description">The sacred muhurtham—where our forever officially begins.</p>
-          <button class="event-select" type="button">Add to RSVP</button>
+        <article class="event-card event-card--dark reveal wedding-card" data-event-id="wedding">
+          <div class="event-card__number">03→04</div>
+          <p class="event-card__day" data-i18n="weddingDay">Thursday evening → after midnight</p>
+          <h3 data-i18n="weddingCeremony">Wedding Ceremony</h3>
+          <p class="event-card__date" data-i18n="weddingDateCard">03 September 2026</p>
+          <div class="event-card__schedule">
+            <p><strong data-i18n="dinner">Dinner</strong><span data-i18n="dinnerCard">Thursday, 3 September · From 7:00 PM onwards</span></p>
+            <p><strong data-i18n="muhurtham">Muhurtham</strong><span data-i18n="muhurthamCard">After Thursday night · 2:58 AM on Friday, 4 September</span></p>
+          </div>
+          <p class="event-card__clarity" data-i18n="arrivalNote">Please come on Thursday evening, 3 September. The Muhurtham is after midnight — not on Friday night.</p>
+          <p class="event-card__astro" data-i18n="muhurthamAstro">At the auspicious time of Rohini Nakshatra and Karka Ascendant.</p>
+          <button class="event-select" type="button" data-i18n="addRsvp">Add to RSVP</button>
         </article>
 
-        <article class="event-card event-card--reception reveal" data-event="Reception">
+        <article class="event-card event-card--reception reveal" data-event-id="reception">
           <div class="event-card__number">05</div>
-          <p class="event-card__day">Date to be announced</p>
-          <h3>Reception</h3>
-          <p class="event-card__date">Date & time coming soon</p>
-          <p class="event-card__description">One more evening to celebrate, meet, laugh, and make the dance floor answer for our choices.</p>
-          <button class="event-select" type="button">Add to RSVP</button>
+          <p class="event-card__day" data-i18n="dateTba">Date to be announced</p>
+          <h3 data-i18n="reception">Reception</h3>
+          <p class="event-card__date" data-i18n="dateTimeSoon">Date & time coming soon</p>
+          <p class="event-card__description" data-i18n="receptionDescription">One more evening to celebrate, meet, laugh, and make the dance floor answer for our choices.</p>
+          <button class="event-select" type="button" data-i18n="addRsvp">Add to RSVP</button>
         </article>
       </div>
     </section>
 
     <section class="side-picker section-pad">
       <div class="section-heading reveal">
-        <p class="eyebrow">A little friendly rivalry</p>
-        <h2>Pick your side</h2>
-        <p>Your choice travels with your RSVP. No pressure—but choose wisely.</p>
+        <p class="eyebrow" data-i18n="friendlyRivalry">A little friendly rivalry</p>
+        <h2 data-i18n="pickSide">Pick your side</h2>
+        <p data-i18n="pickSideIntro">Your choice travels with your RSVP. No pressure—but choose wisely.</p>
       </div>
 
       <div class="teams reveal" role="group" aria-label="Choose bride or groom side">
-        <button class="team-card" type="button" data-team="Team Bride — Sujana">
+        <button class="team-card" type="button" data-team-id="bride">
           <span class="team-card__icon">☾</span>
-          <small>Team Bride</small>
-          <strong>Sujana</strong>
+          <small data-i18n="teamBride">Team Bride</small>
+          <strong data-i18n="nameSujana">Sujana</strong>
         </button>
-        <span class="versus">vs</span>
-        <button class="team-card" type="button" data-team="Team Groom — Radha Krishna">
+        <span class="versus" data-i18n="versus">vs</span>
+        <button class="team-card" type="button" data-team-id="groom">
           <span class="team-card__icon">☀</span>
-          <small>Team Groom</small>
-          <strong>Radha Krishna</strong>
+          <small data-i18n="teamGroom">Team Groom</small>
+          <strong data-i18n="nameRadha">Radha Krishna</strong>
         </button>
       </div>
     </section>
@@ -159,92 +203,151 @@
     <section id="countdown" class="countdown-section section-pad">
       <div class="countdown-decoration" aria-hidden="true"></div>
       <div class="section-heading section-heading--light reveal">
-        <p class="eyebrow">Counting down to the muhurtham</p>
-        <h2>04 September 2026 · 02:00 AM</h2>
+        <p class="eyebrow" data-i18n="countdownEyebrow">Counting down to the muhurtham</p>
+        <h2 data-i18n="countdownDate">04 September 2026 · 02:58 AM</h2>
       </div>
 
       <div class="countdown reveal" aria-live="polite">
-        <div><strong id="days">--</strong><span>Days</span></div>
-        <div><strong id="hours">--</strong><span>Hours</span></div>
-        <div><strong id="minutes">--</strong><span>Mins</span></div>
-        <div><strong id="seconds">--</strong><span>Secs</span></div>
+        <div><strong id="days">--</strong><span data-i18n="days">Days</span></div>
+        <div><strong id="hours">--</strong><span data-i18n="hours">Hours</span></div>
+        <div><strong id="minutes">--</strong><span data-i18n="minutes">Mins</span></div>
+        <div><strong id="seconds">--</strong><span data-i18n="seconds">Secs</span></div>
       </div>
     </section>
 
     <section id="rsvp" class="rsvp section-pad">
       <div class="rsvp__intro reveal">
-        <p class="eyebrow">Will you join us?</p>
-        <h2>Your presence would mean the world.</h2>
-        <p>Complete the form and your response will open directly in WhatsApp.</p>
+        <p class="eyebrow" data-i18n="willJoin">Will you join us?</p>
+        <h2 data-i18n="presenceWorld">Your presence would mean the world.</h2>
+        <p data-i18n="rsvpIntro">Complete the form and your response will open directly in WhatsApp.</p>
 
         <address class="venue-card">
-          <span>Marriage Venue</span>
-          <strong>Parinaya Function Hall</strong>
-          <p>NH-16, Rajahmundry Road,<br />Jaggampeta.</p>
+          <span data-i18n="marriageVenue">Marriage Venue</span>
+          <strong data-i18n="venueName">Parinaya Function Hall</strong>
+          <p data-i18n-html="venueAddress">NH-16, Rajahmundry Road,<br />Jaggampeta.</p>
+          <a id="whatsappDirect" class="venue-whatsapp" href="https://wa.me/918897985959" target="_blank" rel="noopener noreferrer">
+            <span aria-hidden="true">◉</span> <span data-i18n="whatsappUs">WhatsApp us</span>: +91 88979 85959
+          </a>
         </address>
 
+        <div class="mini-map">
+          <iframe
+            title="Parinaya Function Hall map"
+            data-i18n-title="mapTitle"
+            src="https://www.google.com/maps?q=Parinaya%20Function%20Hall%2C%20Jaggampeta&output=embed"
+            width="100%"
+            height="220"
+            style="border:0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+
         <div class="quick-actions">
-          <button id="calendarButton" class="text-button" type="button">＋ Add wedding to calendar</button>
-          <button id="directionsButton" class="text-button" type="button">↗ Directions</button>
+          <button id="calendarButton" class="text-button" type="button" data-i18n="addCalendar">＋ Add wedding to calendar</button>
+          <button id="directionsButton" class="text-button" type="button" data-i18n="directions">↗ Directions</button>
         </div>
       </div>
 
       <form id="rsvpForm" class="rsvp-form reveal">
         <label>
-          <span>Your name</span>
-          <input id="guestName" name="guestName" type="text" placeholder="Enter your name" required />
+          <span data-i18n="yourName">Your name</span>
+          <input id="guestName" name="guestName" type="text" placeholder="Enter your name" data-i18n-placeholder="namePlaceholder" required />
         </label>
 
         <fieldset>
-          <legend>Will you attend?</legend>
+          <legend data-i18n="willAttend">Will you attend?</legend>
           <div class="choice-row">
-            <label class="choice-chip"><input type="radio" name="attendance" value="Joyfully yes" required /><span>Joyfully yes</span></label>
-            <label class="choice-chip"><input type="radio" name="attendance" value="Regretfully no" required /><span>Regretfully no</span></label>
+            <label class="choice-chip"><input type="radio" name="attendance" value="yes" required /><span data-i18n="joyfullyYes">Joyfully yes</span></label>
+            <label class="choice-chip"><input type="radio" name="attendance" value="no" required /><span data-i18n="regretfullyNo">Regretfully no</span></label>
           </div>
         </fieldset>
 
         <fieldset>
-          <legend>Which celebrations?</legend>
+          <legend data-i18n="whichCelebrations">Which celebrations?</legend>
           <div class="event-options">
-            <label><input type="checkbox" name="events" value="Mehendi — 01 Sep" /><span>Mehendi</span></label>
-            <label><input type="checkbox" name="events" value="Pelli-Koduku & Pelli-Kuthuru — 02 Sep" /><span>Pelli-Koduku & Pelli-Kuthuru</span></label>
-            <label><input type="checkbox" name="events" value="Haldi — 03 Sep, 09:00 AM" /><span>Haldi</span></label>
-            <label><input type="checkbox" name="events" value="Pelli — 04 Sep, 02:00 AM" /><span>Pelli</span></label>
-            <label><input type="checkbox" name="events" value="Reception — Date to be announced" /><span>Reception · Date TBA</span></label>
+            <label><input type="checkbox" name="events" value="mehendi" data-event-id="mehendi" /><span data-i18n="mehendi">Mehendi</span></label>
+            <label><input type="checkbox" name="events" value="pellirituals" data-event-id="pellirituals" /><span data-i18n="pelliRitualsPlain">Pelli-Koduku & Pelli-Kuthuru</span></label>
+            <label><input type="checkbox" name="events" value="haldi" data-event-id="haldi" /><span data-i18n="haldi">Haldi</span></label>
+            <label><input type="checkbox" name="events" value="wedding" data-event-id="wedding" /><span data-i18n="weddingRsvp">Wedding Ceremony · 03 Sep night</span></label>
+            <label><input type="checkbox" name="events" value="reception" data-event-id="reception" /><span data-i18n="receptionRsvp">Reception · Date TBA</span></label>
           </div>
         </fieldset>
 
         <label>
-          <span>Number of guests</span>
+          <span data-i18n="guestCount">Number of guests</span>
           <select id="guestCount" name="guestCount">
-            <option value="1">1 guest</option>
-            <option value="2">2 guests</option>
-            <option value="3">3 guests</option>
-            <option value="4">4 guests</option>
-            <option value="5+">5+ guests</option>
+            <option value="1" data-i18n="oneGuest">1 guest</option>
+            <option value="2" data-i18n="twoGuests">2 guests</option>
+            <option value="3" data-i18n="threeGuests">3 guests</option>
+            <option value="4" data-i18n="fourGuests">4 guests</option>
+            <option value="5+" data-i18n="fiveGuests">5+ guests</option>
           </select>
         </label>
 
         <label>
-          <span>A note for us <small>(optional)</small></span>
-          <textarea id="guestNote" name="guestNote" rows="3" placeholder="Write a blessing or message"></textarea>
+          <span><span data-i18n="noteForUs">A note for us</span> <small data-i18n="optional">(optional)</small></span>
+          <textarea id="guestNote" name="guestNote" rows="3" placeholder="Write a blessing or message" data-i18n-placeholder="notePlaceholder"></textarea>
         </label>
 
         <input id="selectedTeam" name="selectedTeam" type="hidden" />
-        <button class="primary-button" type="submit">Send RSVP on WhatsApp</button>
-        <p class="form-note" id="formNote">Your RSVP will be sent to our family on WhatsApp.</p>
+        <button class="primary-button" type="submit" data-i18n="sendWhatsapp">Send RSVP on WhatsApp</button>
+        <p class="form-note" id="formNote" data-i18n="rsvpNote">Your RSVP will be sent to our family on WhatsApp.</p>
       </form>
+    </section>
+
+    <section id="gallery" class="gallery-section section-pad">
+      <details id="galleryDetails" class="gallery-details">
+        <summary>
+          <span>
+            <small data-i18n="galleryEyebrow">Our engagement</small>
+            <strong data-i18n="gallerySummary">Check out our engagement photos</strong>
+          </span>
+          <i aria-hidden="true">＋</i>
+        </summary>
+
+        <div class="gallery-content">
+          <p data-i18n="galleryIntro">A few frames from the day our forever received its first official stamp.</p>
+          <div class="gallery-grid">
+            <button class="gallery-item" type="button" data-gallery-index="0"><img src="assets/gallery/01.webp" alt="Sujana and Radha Krishna engagement photograph 1" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-gallery-index="1"><img src="assets/gallery/02.webp" alt="Sujana and Radha Krishna engagement photograph 2" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-gallery-index="2"><img src="assets/gallery/03.webp" alt="Sujana and Radha Krishna engagement photograph 3" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-gallery-index="3"><img src="assets/gallery/04.webp" alt="Sujana and Radha Krishna engagement photograph 4" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-gallery-index="4"><img src="assets/gallery/05.webp" alt="Sujana and Radha Krishna engagement photograph 5" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-gallery-index="5"><img src="assets/gallery/06.webp" alt="Sujana and Radha Krishna engagement photograph 6" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-gallery-index="6"><img src="assets/gallery/07.webp" alt="Sujana and Radha Krishna engagement photograph 7" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-gallery-index="7"><img src="assets/gallery/08.webp" alt="Sujana and Radha Krishna engagement photograph 8" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-gallery-index="8"><img src="assets/gallery/09.webp" alt="Sujana and Radha Krishna engagement photograph 9" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-gallery-index="9"><img src="assets/gallery/10.webp" alt="Sujana and Radha Krishna engagement photograph 10" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-gallery-index="10"><img src="assets/gallery/11.webp" alt="Sujana and Radha Krishna engagement photograph 11" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-gallery-index="11"><img src="assets/gallery/12.webp" alt="Sujana and Radha Krishna engagement photograph 12" loading="lazy" /></button>
+            <button class="gallery-item" type="button" data-gallery-index="12"><img src="assets/gallery/13.webp" alt="Sujana and Radha Krishna engagement photograph 13" loading="lazy" /></button>
+          </div>
+        </div>
+      </details>
     </section>
 
     <footer class="footer section-pad">
       <div class="footer__om">ॐ</div>
-      <p>With the blessings of Aruna, Ganapati Rao,<br />Sujatha and Swamy Varma.</p>
-      <h2>Sujana <span>&</span> Radha Krishna</h2>
-      <small>Made with love · September 2026</small>
+      <p data-i18n="footerBlessing">With the blessings of gods, our ancestors, elders and the warmth of your presence</p>
+      <h2><span data-i18n="nameSujana">Sujana</span> <i>&</i> <span data-i18n="nameRadha">Radha Krishna</span></h2>
+      <small data-i18n="madeWithLove">Made with love · September 2026</small>
     </footer>
   </main>
 
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Engagement photo gallery">
+    <button id="lightboxClose" class="lightbox__close" type="button" aria-label="Close gallery">×</button>
+    <button id="lightboxPrev" class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous photo">‹</button>
+    <figure>
+      <img id="lightboxImage" src="" alt="" />
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button id="lightboxNext" class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next photo">›</button>
+  </div>
+
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <noscript>This invitation needs JavaScript enabled for the opening animation, language switch, gallery and RSVP.</noscript>
   <script src="script.js"></script>
 </body>
 </html>

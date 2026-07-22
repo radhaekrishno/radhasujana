@@ -1,18 +1,290 @@
-/* ==============================
-   EDIT THESE THREE VALUES
-   ============================== */
 const CONFIG = {
   whatsappNumber: "918897985959", // Country code + number, no + or spaces
   venueName: "Parinaya Function Hall, NH-16, Rajahmundry Road, Jaggampeta",
-  mapUrl: "https://share.google/9AuGOwYz8Ej5mDlQk",
+  mapUrl: "https://share.google/V6fa2gTCiHchlqL7H",
   timeZone: "Asia/Kolkata"
 };
 
-const weddingDate = new Date("2026-09-04T02:00:00+05:30");
+const translations = {
+  en: {
+    coverTogether: "Together with their families",
+    nameSujana: "Sujana",
+    sujanaParentage: "d/o Aruna and Ganapati Rao",
+    nameRadha: "Radha Krishna",
+    radhaParentage: "s/o Sujatha and Swamy Varma",
+    september2026: "September 2026",
+    tapToOpen: "Tap to open",
+    navFestivities: "Festivities",
+    navGallery: "Gallery",
+    navCountdown: "Countdown",
+    navRsvp: "RSVP",
+    menu: "Menu",
+    warmlyInvited: "You are warmly invited",
+    heroVerse: "Two hearts, two families, one sacred beginning.",
+    celebrationsLabel: "Celebrations",
+    september: "September",
+    weddingCeremony: "Wedding Ceremony",
+    dinner: "Dinner",
+    dinnerDate: "Thursday, 3 September 2026",
+    dinnerTime: "From 7:00 PM onwards at the wedding venue.",
+    muhurtham: "Muhurtham",
+    muhurthamDate: "After Thursday night · 2:58 AM on Friday, 4 September 2026",
+    muhurthamClarity: "Please arrive on Thursday evening, 3 September. The Muhurtham follows after midnight at 2:58 AM in the early hours of Friday, 4 September — not on Friday night.",
+    muhurthamAstro: "At the auspicious time of Rohini Nakshatra and Karka Ascendant.",
+    seeCelebrations: "See all celebrations",
+    blessing: "With the blessings of gods, our ancestors, elders and the warmth of your presence",
+    fiveCelebrations: "Five beautiful celebrations",
+    festivitiesTitle: "The Festivities",
+    festivitiesIntro: "Come for the rituals. Stay for the laughter, food, dancing, and family chaos—the good kind.",
+    tuesday: "Tuesday",
+    mehendi: "Mehendi",
+    mehendiDate: "01 September 2026",
+    mehendiDescription: "Henna, music, colour, and an evening that begins the celebration.",
+    wednesday: "Wednesday",
+    pelliRituals: "Pelli-Koduku<br>& Pelli-Kuthuru",
+    pelliRitualsPlain: "Pelli-Koduku & Pelli-Kuthuru",
+    pelliRitualsDate: "02 September 2026",
+    pelliRitualsDescription: "A joyful Telugu tradition as both families bless the bride and groom.",
+    haldiDay: "Thursday · 09:00 AM",
+    haldi: "Haldi",
+    haldiDate: "03 September 2026",
+    haldiDescription: "Sunshine, turmeric, teasing cousins, and a little harmless yellow warfare.",
+    weddingDay: "Thursday evening → after midnight",
+    weddingDateCard: "03 September 2026",
+    dinnerCard: "Thursday, 3 September · From 7:00 PM onwards",
+    muhurthamCard: "After Thursday night · 2:58 AM on Friday, 4 September",
+    arrivalNote: "Please come on Thursday evening, 3 September. The Muhurtham is after midnight — not on Friday night.",
+    dateTba: "Date to be announced",
+    reception: "Reception",
+    dateTimeSoon: "Date & time coming soon",
+    receptionDescription: "One more evening to celebrate, meet, laugh, and make the dance floor answer for our choices.",
+    addRsvp: "Add to RSVP",
+    addedRsvp: "Added ✓",
+    friendlyRivalry: "A little friendly rivalry",
+    pickSide: "Pick your side",
+    pickSideIntro: "Your choice travels with your RSVP. No pressure—but choose wisely.",
+    teamBride: "Team Bride",
+    teamGroom: "Team Groom",
+    versus: "vs",
+    countdownEyebrow: "Counting down to the muhurtham",
+    countdownDate: "04 September 2026 · 02:58 AM",
+    days: "Days",
+    hours: "Hours",
+    minutes: "Mins",
+    seconds: "Secs",
+    willJoin: "Will you join us?",
+    presenceWorld: "Your presence would mean the world.",
+    rsvpIntro: "Complete the form and your response will open directly in WhatsApp.",
+    marriageVenue: "Marriage Venue",
+    venueName: "Parinaya Function Hall",
+    venueAddress: "NH-16, Rajahmundry Road,<br />Jaggampeta.",
+    whatsappUs: "WhatsApp us",
+    mapTitle: "Parinaya Function Hall map",
+    addCalendar: "＋ Add wedding to calendar",
+    directions: "↗ Directions",
+    yourName: "Your name",
+    namePlaceholder: "Enter your name",
+    willAttend: "Will you attend?",
+    joyfullyYes: "Joyfully yes",
+    regretfullyNo: "Regretfully no",
+    whichCelebrations: "Which celebrations?",
+    weddingRsvp: "Wedding Ceremony · Thursday, 03 Sep evening into Friday early hours",
+    receptionRsvp: "Reception · Date TBA",
+    guestCount: "Number of guests",
+    oneGuest: "1 guest",
+    twoGuests: "2 guests",
+    threeGuests: "3 guests",
+    fourGuests: "4 guests",
+    fiveGuests: "5+ guests",
+    noteForUs: "A note for us",
+    optional: "(optional)",
+    notePlaceholder: "Write a blessing or message",
+    sendWhatsapp: "Send RSVP on WhatsApp",
+    rsvpNote: "Your RSVP will be sent to our family on WhatsApp.",
+    galleryEyebrow: "Our engagement",
+    gallerySummary: "Check out our engagement photos",
+    galleryIntro: "A few frames from the day our forever received its first official stamp.",
+    footerBlessing: "With the blessings of gods, our ancestors, elders and the warmth of your presence",
+    madeWithLove: "Made with love · September 2026",
+    eventAdded: "added to your RSVP",
+    eventRemoved: "removed from your RSVP",
+    teamSelected: "selected",
+    noSide: "No side selected",
+    notSpecified: "Not specified",
+    attendanceYes: "Joyfully yes",
+    attendanceNo: "Regretfully no",
+    rsvpHeading: "Wedding RSVP — Sujana & Radha Krishna",
+    labelName: "Name",
+    labelAttendance: "Attendance",
+    labelCelebrations: "Celebrations",
+    labelGuests: "Guests",
+    labelSide: "Side",
+    labelMessage: "Message",
+    calendarReady: "Wedding calendar downloaded",
+    photo: "Photo",
+    of: "of"
+  },
+  te: {
+    coverTogether: "తమ కుటుంబాలతో కలిసి",
+    nameSujana: "సుజన",
+    sujanaParentage: "అరుణ మరియు గణపతి రావు గారి కుమార్తె",
+    nameRadha: "రాధా కృష్ణ",
+    radhaParentage: "సుజాత మరియు స్వామి వర్మ గారి కుమారుడు",
+    september2026: "సెప్టెంబర్ 2026",
+    tapToOpen: "తెరవడానికి తాకండి",
+    navFestivities: "వేడుకలు",
+    navGallery: "గ్యాలరీ",
+    navCountdown: "కౌంట్‌డౌన్",
+    navRsvp: "హాజరు నిర్ధారణ",
+    menu: "మెను",
+    warmlyInvited: "మీకు మా హృదయపూర్వక ఆహ్వానం",
+    heroVerse: "రెండు హృదయాలు, రెండు కుటుంబాలు, ఒక పవిత్ర ఆరంభం.",
+    celebrationsLabel: "వేడుకలు",
+    september: "సెప్టెంబర్",
+    weddingCeremony: "వివాహ వేడుక",
+    dinner: "విందు",
+    dinnerDate: "గురువారం, 3 సెప్టెంబర్ 2026",
+    dinnerTime: "వివాహ వేదికలో సాయంత్రం 7:00 గంటల నుండి.",
+    muhurtham: "ముహూర్తం",
+    muhurthamDate: "గురువారం రాత్రి అనంతరం · శుక్రవారం, 4 సెప్టెంబర్ 2026 తెల్లవారుజామున 2:58 గంటలకు",
+    muhurthamClarity: "దయచేసి గురువారం, 3 సెప్టెంబర్ సాయంత్రానికే విచ్చేయండి. అదే రాత్రి అర్ధరాత్రి దాటిన తరువాత, శుక్రవారం 4 సెప్టెంబర్ తెల్లవారుజామున 2:58 గంటలకు ముహూర్తం జరుగుతుంది — శుక్రవారం రాత్రి కాదు.",
+    muhurthamAstro: "రోహిణి నక్షత్రయుక్త కర్కాటక లగ్నమందు.",
+    seeCelebrations: "అన్ని వేడుకలను చూడండి",
+    blessing: "దైవాల, మా పూర్వీకుల, పెద్దల ఆశీస్సులతో మరియు మీ ఆత్మీయ సమక్షంతో",
+    fiveCelebrations: "ఐదు అందమైన వేడుకలు",
+    festivitiesTitle: "వేడుకలు",
+    festivitiesIntro: "ఆచారాల కోసం రండి. నవ్వులు, విందు, నృత్యం, కుటుంబ సందడి కోసం ఉండండి—అదే అసలు మజా.",
+    tuesday: "మంగళవారం",
+    mehendi: "మెహందీ",
+    mehendiDate: "01 సెప్టెంబర్ 2026",
+    mehendiDescription: "మెహందీ, సంగీతం, రంగులు—వేడుకలకు అందమైన ఆరంభం.",
+    wednesday: "బుధవారం",
+    pelliRituals: "పెళ్లికొడుకు<br>& పెళ్లికూతురు",
+    pelliRitualsPlain: "పెళ్లికొడుకు & పెళ్లికూతురు",
+    pelliRitualsDate: "02 సెప్టెంబర్ 2026",
+    pelliRitualsDescription: "వధూవరులను రెండు కుటుంబాలు ఆశీర్వదించే ఆనందకరమైన తెలుగు సంప్రదాయం.",
+    haldiDay: "గురువారం · ఉదయం 09:00 గంటలకు",
+    haldi: "హల్దీ",
+    haldiDate: "03 సెప్టెంబర్ 2026",
+    haldiDescription: "పసుపు, నవ్వులు, ఆటపాటలు—కొంచెం పసుపు యుద్ధం కూడా తప్పదు.",
+    weddingDay: "గురువారం సాయంత్రం → అర్ధరాత్రి తరువాత",
+    weddingDateCard: "03 సెప్టెంబర్ 2026",
+    dinnerCard: "గురువారం, 3 సెప్టెంబర్ · సాయంత్రం 7:00 గంటల నుండి",
+    muhurthamCard: "గురువారం రాత్రి అనంతరం · శుక్రవారం, 4 సెప్టెంబర్ తెల్లవారుజామున 2:58 గంటలకు",
+    arrivalNote: "దయచేసి గురువారం, 3 సెప్టెంబర్ సాయంత్రానికే రండి. ముహూర్తం అదే రాత్రి అర్ధరాత్రి తరువాత — శుక్రవారం రాత్రి కాదు.",
+    dateTba: "తేదీ త్వరలో ప్రకటించబడుతుంది",
+    reception: "రిసెప్షన్",
+    dateTimeSoon: "తేదీ & సమయం త్వరలో",
+    receptionDescription: "మరో అందమైన సాయంత్రం—కలుసుకోవడానికి, నవ్వుకోవడానికి, కలిసి సంబరపడడానికి.",
+    addRsvp: "హాజరుకు జోడించండి",
+    addedRsvp: "జోడించబడింది ✓",
+    friendlyRivalry: "చిన్న సరదా పోటీ",
+    pickSide: "మీ వైపు ఎంచుకోండి",
+    pickSideIntro: "మీ ఎంపిక మీ హాజరు సందేశంతో వెళ్తుంది. ఒత్తిడి లేదు—కానీ జాగ్రత్తగా ఎంచుకోండి.",
+    teamBride: "వధువు వైపు",
+    teamGroom: "వరుడు వైపు",
+    versus: "వర్సెస్",
+    countdownEyebrow: "ముహూర్తానికి కౌంట్‌డౌన్",
+    countdownDate: "04 సెప్టెంబర్ 2026 · తెల్లవారుజామున 02:58",
+    days: "రోజులు",
+    hours: "గంటలు",
+    minutes: "నిమిషాలు",
+    seconds: "సెకన్లు",
+    willJoin: "మీరు వస్తున్నారా?",
+    presenceWorld: "మీ సమక్షం మాకు ఎంతో విలువైనది.",
+    rsvpIntro: "ఫారమ్ పూర్తి చేస్తే మీ సమాధానం నేరుగా వాట్సాప్‌లో తెరుచుకుంటుంది.",
+    marriageVenue: "వివాహ వేదిక",
+    venueName: "పరిణయ ఫంక్షన్ హాల్",
+    venueAddress: "NH-16, రాజమండ్రి రోడ్,<br />జగ్గంపేట.",
+    whatsappUs: "వాట్సాప్ చేయండి",
+    mapTitle: "పరిణయ ఫంక్షన్ హాల్ మ్యాప్",
+    addCalendar: "＋ క్యాలెండర్‌కు జోడించండి",
+    directions: "↗ దారి చూపండి",
+    yourName: "మీ పేరు",
+    namePlaceholder: "మీ పేరు నమోదు చేయండి",
+    willAttend: "మీరు హాజరవుతారా?",
+    joyfullyYes: "ఆనందంగా వస్తాను",
+    regretfullyNo: "రాలేకపోతున్నాను",
+    whichCelebrations: "ఏ వేడుకలకు వస్తారు?",
+    weddingRsvp: "వివాహ వేడుక · గురువారం 03 సెప్టెంబర్ సాయంత్రం నుంచి శుక్రవారం తెల్లవారుజాము వరకు",
+    receptionRsvp: "రిసెప్షన్ · తేదీ త్వరలో",
+    guestCount: "అతిథుల సంఖ్య",
+    oneGuest: "1 అతిథి",
+    twoGuests: "2 అతిథులు",
+    threeGuests: "3 అతిథులు",
+    fourGuests: "4 అతిథులు",
+    fiveGuests: "5+ అతిథులు",
+    noteForUs: "మాకు ఒక సందేశం",
+    optional: "(ఐచ్ఛికం)",
+    notePlaceholder: "ఆశీర్వాదం లేదా సందేశం రాయండి",
+    sendWhatsapp: "వాట్సాప్‌లో హాజరు పంపండి",
+    rsvpNote: "మీ హాజరు సమాచారం వాట్సాప్ ద్వారా మా కుటుంబానికి పంపబడుతుంది.",
+    galleryEyebrow: "మా నిశ్చితార్థం",
+    gallerySummary: "మా నిశ్చితార్థ ఫోటోలు చూడండి",
+    galleryIntro: "మా జీవిత ప్రయాణానికి అధికారికంగా మొదటి ముద్ర పడిన రోజు నుంచి కొన్ని అందమైన క్షణాలు.",
+    footerBlessing: "దైవాల, మా పూర్వీకుల, పెద్దల ఆశీస్సులతో మరియు మీ ఆత్మీయ సమక్షంతో",
+    madeWithLove: "ప్రేమతో రూపొందించబడింది · సెప్టెంబర్ 2026",
+    eventAdded: "హాజరు జాబితాకు జోడించబడింది",
+    eventRemoved: "హాజరు జాబితా నుంచి తొలగించబడింది",
+    teamSelected: "ఎంచుకున్నారు",
+    noSide: "ఏ వైపు ఎంచుకోలేదు",
+    notSpecified: "పేర్కొనలేదు",
+    attendanceYes: "ఆనందంగా వస్తాను",
+    attendanceNo: "రాలేకపోతున్నాను",
+    rsvpHeading: "వివాహ హాజరు నిర్ధారణ — సుజన & రాధా కృష్ణ",
+    labelName: "పేరు",
+    labelAttendance: "హాజరు",
+    labelCelebrations: "వేడుకలు",
+    labelGuests: "అతిథులు",
+    labelSide: "వైపు",
+    labelMessage: "సందేశం",
+    calendarReady: "వివాహ క్యాలెండర్ డౌన్‌లోడ్ అయింది",
+    photo: "ఫోటో",
+    of: "లో"
+  }
+};
+
+const eventLabels = {
+  en: {
+    mehendi: "Mehendi — 01 Sep",
+    pellirituals: "Pelli-Koduku & Pelli-Kuthuru — 02 Sep",
+    haldi: "Haldi — 03 Sep, 09:00 AM",
+    wedding: "Wedding Ceremony — Please arrive Thursday 03 Sep evening; Dinner from 7:00 PM; Muhurtham after midnight at 02:58 AM on Friday 04 Sep (not Friday night)",
+    reception: "Reception — Date to be announced"
+  },
+  te: {
+    mehendi: "మెహందీ — 01 సెప్టెంబర్",
+    pellirituals: "పెళ్లికొడుకు & పెళ్లికూతురు — 02 సెప్టెంబర్",
+    haldi: "హల్దీ — 03 సెప్టెంబర్, ఉదయం 09:00",
+    wedding: "వివాహ వేడుక — గురువారం 03 సెప్టెంబర్ సాయంత్రం రండి; 7:00 నుంచి విందు; అదే రాత్రి అర్ధరాత్రి తరువాత శుక్రవారం 04 సెప్టెంబర్ తెల్లవారుజామున 02:58 ముహూర్తం",
+    reception: "రిసెప్షన్ — తేదీ త్వరలో"
+  }
+};
+
+const teamLabels = {
+  en: { bride: "Team Bride — Sujana", groom: "Team Groom — Radha Krishna" },
+  te: { bride: "వధువు వైపు — సుజన", groom: "వరుడు వైపు — రాధా కృష్ణ" }
+};
+
+let currentLanguage = "en";
+try {
+  const savedLanguage = localStorage.getItem("weddingLanguage");
+  if (savedLanguage === "te" || savedLanguage === "en") currentLanguage = savedLanguage;
+} catch (_) {
+  // The invitation still works if storage is blocked.
+}
+
 const cover = document.getElementById("invitationCover");
 const mainContent = document.getElementById("mainContent");
 const openButton = document.getElementById("openInvitation");
 const toast = document.getElementById("toast");
+const languageToggle = document.getElementById("languageToggle");
+const selectedEvents = new Set();
+let selectedTeamId = "";
+
+function t(key) {
+  return translations[currentLanguage][key] ?? translations.en[key] ?? key;
+}
 
 function showToast(message) {
   toast.textContent = message;
@@ -20,6 +292,53 @@ function showToast(message) {
   clearTimeout(showToast.timer);
   showToast.timer = setTimeout(() => toast.classList.remove("show"), 2800);
 }
+
+function updateEventButtons() {
+  document.querySelectorAll(".event-card").forEach(card => {
+    const eventId = card.dataset.eventId;
+    const button = card.querySelector(".event-select");
+    button.textContent = selectedEvents.has(eventId) ? t("addedRsvp") : t("addRsvp");
+  });
+}
+
+function applyLanguage(language) {
+  currentLanguage = language;
+  document.documentElement.lang = language === "te" ? "te" : "en";
+  document.body.classList.toggle("lang-te", language === "te");
+  document.title = language === "te"
+    ? "సుజన & రాధా కృష్ణ | వివాహ ఆహ్వానం"
+    : "Sujana & Radha Krishna | Wedding Invitation";
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    element.textContent = t(element.dataset.i18n);
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(element => {
+    element.innerHTML = t(element.dataset.i18nHtml);
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
+    element.placeholder = t(element.dataset.i18nPlaceholder);
+  });
+  document.querySelectorAll("[data-i18n-title]").forEach(element => {
+    element.title = t(element.dataset.i18nTitle);
+  });
+
+  languageToggle.textContent = language === "en" ? "తెలుగు" : "English";
+  languageToggle.setAttribute("aria-label", language === "en" ? "Switch to Telugu" : "Switch to English");
+  updateEventButtons();
+
+  const directMessage = language === "te"
+    ? "నమస్కారం, సుజన & రాధా కృష్ణ వివాహం గురించి మాట్లాడాలి."
+    : "Hello, I have a question about Sujana & Radha Krishna's wedding.";
+  document.getElementById("whatsappDirect").href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(directMessage)}`;
+
+  try { localStorage.setItem("weddingLanguage", language); } catch (_) {}
+}
+
+applyLanguage(currentLanguage);
+
+languageToggle.addEventListener("click", () => {
+  applyLanguage(currentLanguage === "en" ? "te" : "en");
+});
 
 openButton.addEventListener("click", () => {
   cover.classList.add("is-opening");
@@ -34,23 +353,23 @@ openButton.addEventListener("click", () => {
 const menuButton = document.getElementById("menuButton");
 const mobileMenu = document.getElementById("mobileMenu");
 menuButton.addEventListener("click", () => {
-  const open = mobileMenu.classList.toggle("open");
-  menuButton.setAttribute("aria-expanded", String(open));
+  const isOpen = mobileMenu.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(isOpen));
 });
 mobileMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
   mobileMenu.classList.remove("open");
   menuButton.setAttribute("aria-expanded", "false");
 }));
 
+const weddingDate = new Date("2026-09-04T02:58:00+05:30");
 function updateCountdown() {
   const now = new Date();
   let delta = weddingDate.getTime() - now.getTime();
 
   if (delta <= 0) {
-    document.getElementById("days").textContent = "00";
-    document.getElementById("hours").textContent = "00";
-    document.getElementById("minutes").textContent = "00";
-    document.getElementById("seconds").textContent = "00";
+    ["days", "hours", "minutes", "seconds"].forEach(id => {
+      document.getElementById(id).textContent = "00";
+    });
     return;
   }
 
@@ -69,36 +388,53 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("in-view");
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+} else {
+  document.querySelectorAll(".reveal").forEach(element => element.classList.add("in-view"));
+}
 
-const selectedEvents = new Set();
 document.querySelectorAll(".event-card").forEach(card => {
   const button = card.querySelector(".event-select");
   button.addEventListener("click", () => {
-    const eventName = card.dataset.event;
-    const checkbox = [...document.querySelectorAll('input[name="events"]')]
-      .find(input => input.value.startsWith(eventName));
+    const eventId = card.dataset.eventId;
+    const checkbox = document.querySelector(`input[name="events"][data-event-id="${eventId}"]`);
 
-    if (selectedEvents.has(eventName)) {
-      selectedEvents.delete(eventName);
+    if (selectedEvents.has(eventId)) {
+      selectedEvents.delete(eventId);
       card.classList.remove("selected");
-      button.textContent = "Add to RSVP";
       if (checkbox) checkbox.checked = false;
+      showToast(`${eventLabels[currentLanguage][eventId]} ${t("eventRemoved")}`);
     } else {
-      selectedEvents.add(eventName);
+      selectedEvents.add(eventId);
       card.classList.add("selected");
-      button.textContent = "Added ✓";
       if (checkbox) checkbox.checked = true;
+      showToast(`${eventLabels[currentLanguage][eventId]} ${t("eventAdded")}`);
     }
-    showToast(`${eventName} ${selectedEvents.has(eventName) ? "added" : "removed"}`);
+    updateEventButtons();
+  });
+});
+
+document.querySelectorAll('input[name="events"]').forEach(checkbox => {
+  checkbox.addEventListener("change", () => {
+    const eventId = checkbox.dataset.eventId;
+    const card = document.querySelector(`.event-card[data-event-id="${eventId}"]`);
+    if (checkbox.checked) {
+      selectedEvents.add(eventId);
+      card?.classList.add("selected");
+    } else {
+      selectedEvents.delete(eventId);
+      card?.classList.remove("selected");
+    }
+    updateEventButtons();
   });
 });
 
@@ -106,8 +442,9 @@ document.querySelectorAll(".team-card").forEach(button => {
   button.addEventListener("click", () => {
     document.querySelectorAll(".team-card").forEach(item => item.classList.remove("active"));
     button.classList.add("active");
-    document.getElementById("selectedTeam").value = button.dataset.team;
-    showToast(`${button.dataset.team} selected`);
+    selectedTeamId = button.dataset.teamId;
+    document.getElementById("selectedTeam").value = selectedTeamId;
+    showToast(`${teamLabels[currentLanguage][selectedTeamId]} ${t("teamSelected")}`);
   });
 });
 
@@ -118,54 +455,82 @@ rsvpForm.addEventListener("submit", event => {
   const formData = new FormData(rsvpForm);
   const attendance = formData.get("attendance");
   const events = formData.getAll("events");
-  const name = formData.get("guestName").trim();
+  const name = String(formData.get("guestName") || "").trim();
   const count = formData.get("guestCount");
-  const team = formData.get("selectedTeam") || "No side selected";
-  const note = formData.get("guestNote").trim() || "—";
+  const note = String(formData.get("guestNote") || "").trim() || "—";
 
   const message = [
-    "*Wedding RSVP — Sujana & Radha Krishna*",
+    `*${t("rsvpHeading")}*`,
     "",
-    `Name: ${name}`,
-    `Attendance: ${attendance}`,
-    `Celebrations: ${events.length ? events.join(", ") : "Not specified"}`,
-    `Guests: ${count}`,
-    `Side: ${team}`,
-    `Message: ${note}`
+    `${t("labelName")}: ${name}`,
+    `${t("labelAttendance")}: ${attendance === "yes" ? t("attendanceYes") : t("attendanceNo")}`,
+    `${t("labelCelebrations")}: ${events.length ? events.map(id => eventLabels[currentLanguage][id]).join(", ") : t("notSpecified")}`,
+    `${t("labelGuests")}: ${count}`,
+    `${t("labelSide")}: ${selectedTeamId ? teamLabels[currentLanguage][selectedTeamId] : t("noSide")}`,
+    `${t("labelMessage")}: ${note}`
   ].join("\n");
 
-  if (!CONFIG.whatsappNumber) {
-    navigator.clipboard?.writeText(message);
-    showToast("RSVP copied. Add your WhatsApp number in script.js.");
-    document.getElementById("formNote").textContent = "RSVP copied to clipboard because the WhatsApp number is not set yet.";
-    return;
-  }
-
   const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank", "noopener,noreferrer");
+  // Same-tab navigation is intentional: it avoids browser pop-up blockers and reliably opens WhatsApp/Web WhatsApp.
+  window.location.href = url;
 });
 
 function toICSDate(date) {
   return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
 }
 
+function createCalendarEvent({ uid, start, end, summary, description }) {
+  return [
+    "BEGIN:VEVENT",
+    `UID:${uid}`,
+    `DTSTAMP:${toICSDate(new Date())}`,
+    `DTSTART:${toICSDate(start)}`,
+    `DTEND:${toICSDate(end)}`,
+    `SUMMARY:${summary}`,
+    `LOCATION:${CONFIG.venueName.replace(/,/g, "\\,")}`,
+    `DESCRIPTION:${description.replace(/\n/g, "\\n").replace(/,/g, "\\,")}`,
+    "END:VEVENT"
+  ];
+}
+
 document.getElementById("calendarButton").addEventListener("click", () => {
-  const start = new Date("2026-09-01T09:00:00+05:30");
-  const end = new Date("2026-09-04T06:00:00+05:30");
+  const events = [
+    ...createCalendarEvent({
+      uid: "mehendi-2026@sujana-radha",
+      start: new Date("2026-09-01T09:00:00+05:30"),
+      end: new Date("2026-09-01T13:00:00+05:30"),
+      summary: "Sujana & Radha Krishna — Mehendi",
+      description: "Mehendi celebration. Exact time may be confirmed by the family."
+    }),
+    ...createCalendarEvent({
+      uid: "pelli-rituals-2026@sujana-radha",
+      start: new Date("2026-09-02T09:00:00+05:30"),
+      end: new Date("2026-09-02T13:00:00+05:30"),
+      summary: "Sujana & Radha Krishna — Pelli-Koduku & Pelli-Kuthuru",
+      description: "Pelli-Koduku and Pelli-Kuthuru. Exact time may be confirmed by the family."
+    }),
+    ...createCalendarEvent({
+      uid: "haldi-2026@sujana-radha",
+      start: new Date("2026-09-03T09:00:00+05:30"),
+      end: new Date("2026-09-03T11:30:00+05:30"),
+      summary: "Sujana & Radha Krishna — Haldi",
+      description: "Haldi ceremony at 9:00 AM."
+    }),
+    ...createCalendarEvent({
+      uid: "wedding-2026@sujana-radha",
+      start: new Date("2026-09-03T19:00:00+05:30"),
+      end: new Date("2026-09-04T05:30:00+05:30"),
+      summary: "Sujana & Radha Krishna — Wedding Ceremony",
+      description: "Please arrive on Thursday evening, 3 September 2026. Dinner is from 7:00 PM onwards. The sacred Muhurtham follows after midnight at 2:58 AM in the early hours of Friday, 4 September 2026 — not on Friday night — at Rohini Nakshatra and Karka Ascendant."
+    })
+  ];
+
   const ics = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
     "PRODID:-//Sujana Radha Krishna Wedding//EN",
     "CALSCALE:GREGORIAN",
-    "BEGIN:VEVENT",
-    `UID:sujana-radha-krishna-2026@wedding`,
-    `DTSTAMP:${toICSDate(new Date())}`,
-    `DTSTART:${toICSDate(start)}`,
-    `DTEND:${toICSDate(end)}`,
-    "SUMMARY:Sujana & Radha Krishna Wedding Celebrations",
-    `LOCATION:${CONFIG.venueName.replace(/,/g, "\\,")}`,
-    "DESCRIPTION:Mehendi: 01 Sep 2026\\nPelli-Koduku & Pelli-Kuthuru: 02 Sep 2026\\nHaldi: 03 Sep 2026 at 09:00 AM\\nPelli: 04 Sep 2026 at 02:00 AM",
-    "END:VEVENT",
+    ...events,
     "END:VCALENDAR"
   ].join("\r\n");
 
@@ -176,13 +541,61 @@ document.getElementById("calendarButton").addEventListener("click", () => {
   document.body.appendChild(link);
   link.click();
   link.remove();
-  URL.revokeObjectURL(link.href);
+  setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+  showToast(t("calendarReady"));
 });
 
 document.getElementById("directionsButton").addEventListener("click", () => {
-  if (!CONFIG.mapUrl) {
-    showToast("Add the Google Maps link in script.js.");
-    return;
-  }
   window.open(CONFIG.mapUrl, "_blank", "noopener,noreferrer");
+});
+
+const galleryDetails = document.getElementById("galleryDetails");
+document.getElementById("galleryNavLink").addEventListener("click", event => {
+  event.preventDefault();
+  galleryDetails.open = true;
+  document.getElementById("gallery").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+const galleryImages = [...document.querySelectorAll(".gallery-item img")];
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCaption = document.getElementById("lightboxCaption");
+let currentPhotoIndex = 0;
+
+function showPhoto(index) {
+  currentPhotoIndex = (index + galleryImages.length) % galleryImages.length;
+  const source = galleryImages[currentPhotoIndex];
+  lightboxImage.src = source.src;
+  lightboxImage.alt = source.alt;
+  lightboxCaption.textContent = `${t("photo")} ${currentPhotoIndex + 1} ${t("of")} ${galleryImages.length}`;
+}
+
+function openLightbox(index) {
+  showPhoto(index);
+  lightbox.classList.add("open");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.classList.add("locked");
+  document.getElementById("lightboxClose").focus();
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("open");
+  lightbox.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("locked");
+}
+
+document.querySelectorAll(".gallery-item").forEach(button => {
+  button.addEventListener("click", () => openLightbox(Number(button.dataset.galleryIndex)));
+});
+document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+document.getElementById("lightboxPrev").addEventListener("click", () => showPhoto(currentPhotoIndex - 1));
+document.getElementById("lightboxNext").addEventListener("click", () => showPhoto(currentPhotoIndex + 1));
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) closeLightbox();
+});
+document.addEventListener("keydown", event => {
+  if (!lightbox.classList.contains("open")) return;
+  if (event.key === "Escape") closeLightbox();
+  if (event.key === "ArrowLeft") showPhoto(currentPhotoIndex - 1);
+  if (event.key === "ArrowRight") showPhoto(currentPhotoIndex + 1);
 });
