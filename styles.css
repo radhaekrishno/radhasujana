@@ -142,20 +142,27 @@ img { max-width: 100%; }
   z-index: 5;
   left: 50%;
   top: 47%;
-  width: 66px;
+  width: 70px;
   aspect-ratio: 1;
   display: grid;
   place-items: center;
+  padding: 8px;
   transform: translate(-50%,-50%);
   border-radius: 50%;
-  color: #f8e7c9;
-  background: radial-gradient(circle at 35% 30%, #a8344e, var(--wine-deep));
-  box-shadow: inset 0 0 0 4px rgba(255,255,255,.08), 0 8px 14px rgba(48,0,10,.35);
-  font: 500 1.15rem "Cormorant Garamond", serif;
-  transition: transform .45s ease, opacity .35s ease;
+  background: radial-gradient(circle at 35% 28%, rgba(255,252,245,.98), rgba(244,230,197,.9) 68%, rgba(220,191,135,.95));
+  border: 1px solid rgba(161, 115, 34, .2);
+  box-shadow: inset 0 0 0 3px rgba(255,255,255,.45), 0 8px 18px rgba(48,0,10,.16);
+  transition: transform .45s ease, opacity .35s ease, box-shadow .35s ease;
 }
-.wax-seal span { margin: 0 1px; color: var(--gold); font-style: italic; }
-.envelope:hover .wax-seal { transform: translate(-50%,-50%) scale(1.06) rotate(-3deg); }
+.seal-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: .98;
+  filter: drop-shadow(0 1px 1px rgba(120, 78, 8, .1));
+}
+.envelope:hover .wax-seal { box-shadow: inset 0 0 0 3px rgba(255,255,255,.55), 0 12px 22px rgba(48,0,10,.18); }
+.envelope:hover .wax-seal { transform: translate(-50%,-50%) scale(1.04) rotate(-2deg); }
 .invitation-cover.is-opening .envelope__flap { z-index: 1; transform: rotateX(180deg); }
 .invitation-cover.is-opening .wax-seal { opacity: 0; transform: translate(-50%,-50%) scale(.2); }
 .invitation-cover.is-opening .envelope__paper { transform: translateY(-58%) scale(1.04); }
@@ -201,8 +208,27 @@ img { max-width: 100%; }
   max-width: 1280px;
   margin: 0 auto;
 }
-.monogram { color: var(--wine); font: 600 1.45rem "Cormorant Garamond", serif; letter-spacing: .12em; }
-.monogram span { color: var(--gold); font-style: italic; }
+.monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  padding: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, rgba(255,255,255,.94), rgba(255,248,236,.82));
+  border: 1px solid rgba(200,155,81,.24);
+  box-shadow: 0 8px 20px rgba(65,24,31,.06);
+  backdrop-filter: blur(2px);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.monogram__logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: .96;
+}
+.monogram:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(65,24,31,.1); border-color: rgba(200,155,81,.34); }
 .topbar__actions { display: flex; align-items: center; gap: 22px; }
 .nav-links { display: flex; gap: 28px; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
 .nav-links a { position: relative; }
@@ -502,6 +528,8 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
 }
 
 @media (max-width: 420px) {
+  .monogram { width: 54px; height: 54px; padding: 5px; }
+  .wax-seal { width: 62px; padding: 7px; }
   .envelope { width: 90vw; }
   .envelope__paper { padding: 14px; }
   .cover-parentage { font-size: .42rem; }
