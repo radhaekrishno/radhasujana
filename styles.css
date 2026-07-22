@@ -234,12 +234,18 @@ img { max-width: 100%; }
 .couple-names { margin: 0; color: var(--wine); font-family: "Italiana", "Noto Serif Telugu", "Times New Roman", serif; font-weight: 400; line-height: .9; }
 .name-block { display: block; }
 .main-name { display: block; font-size: clamp(3.6rem, 9vw, 8rem); }
-.parentage {
+.couple-names .parentage {
   display: block;
-  margin: 13px 0 1px;
-  color: var(--muted);
-  font: 500 clamp(.82rem, 1.4vw, 1.05rem)/1.5 "Cormorant Garamond", "Noto Serif Telugu", serif;
-  letter-spacing: .025em;
+  max-width: min(540px, 92vw);
+  margin: 10px auto 2px;
+  color: rgba(67,26,30,.68);
+  font-family: "Montserrat", "Noto Sans Telugu", sans-serif !important;
+  font-size: clamp(.68rem, 1vw, .88rem) !important;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: .055em;
+  text-transform: none;
 }
 .couple-names em { display: block; margin: 11px 0 8px; color: var(--gold); font: italic 400 clamp(2.3rem, 5vw, 3.8rem) "Cormorant Garamond", serif; }
 .hero__verse { max-width: 560px; margin: 30px auto 34px; color: var(--muted); font: 500 clamp(1.1rem, 2.4vw, 1.5rem) "Cormorant Garamond", "Noto Serif Telugu", serif; }
@@ -251,21 +257,33 @@ img { max-width: 100%; }
 .hero__date-card i { width: 1px; background: var(--line); }
 
 .wedding-night-summary {
-  display: grid;
-  grid-template-columns: .78fr 1.22fr;
   max-width: 800px;
-  margin: 25px auto 0;
+  margin: 22px auto 0;
   border: 1px solid var(--line);
   background: rgba(255,250,241,.62);
   text-align: left;
   box-shadow: 0 14px 42px rgba(67,26,30,.06);
 }
-.wedding-night-summary article { padding: 20px 22px; }
+.wedding-night-summary__heading {
+  margin: 0;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .55rem;
+  font-weight: 600;
+  letter-spacing: .19em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.wedding-night-summary__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.wedding-night-summary article { padding: 18px 22px 20px; }
 .wedding-night-summary article + article { border-left: 1px solid var(--line); }
 .schedule-label { margin: 0 0 7px; color: var(--gold); font-size: .58rem; font-weight: 600; letter-spacing: .19em; text-transform: uppercase; }
-.wedding-night-summary strong { display: block; color: var(--wine); font: 600 1.2rem "Cormorant Garamond", "Noto Serif Telugu", serif; line-height: 1.3; }
-.wedding-night-summary span { display: block; margin-top: 7px; color: var(--muted); font-size: .72rem; line-height: 1.65; }
-.wedding-night-summary small { display: block; margin-top: 8px; color: var(--wine); font: 500 .82rem/1.5 "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.wedding-night-summary strong { display: block; color: var(--wine); font: 600 1.12rem "Cormorant Garamond", "Noto Serif Telugu", serif; line-height: 1.38; }
+.wedding-night-summary small { display: block; margin-top: 7px; color: var(--muted); font: 500 .76rem/1.45 "Cormorant Garamond", "Noto Serif Telugu", serif; }
 .scroll-cue { display: block; margin-top: 42px; color: var(--wine); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; }
 .scroll-cue b { display: block; margin-top: 10px; font-size: 1rem; font-weight: 400; animation: down 1.6s ease-in-out infinite; }
 @keyframes down { 50% { transform: translateY(7px); } }
@@ -429,7 +447,7 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
 .lang-te .gallery-details summary strong,
 .lang-te .footer h2 { line-height: 1.3; }
 .lang-te .main-name { font-size: clamp(3rem,7vw,6.7rem); }
-.lang-te .parentage { margin-top: 5px; font-family: "Noto Serif Telugu", serif; }
+.lang-te .couple-names .parentage { margin-top: 6px; font-family: "Noto Sans Telugu", sans-serif !important; letter-spacing: 0; }
 .lang-te .wedding-night-summary strong,
 .lang-te .event-card h3,
 .lang-te .team-card strong { line-height: 1.45; }
@@ -455,12 +473,12 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
   .nav-links.open { display: flex; }
   .hero__content { margin-top: 82px; }
   .main-name { font-size: clamp(3rem,15vw,5.2rem); }
-  .parentage { margin-top: 7px; padding: 0 10px; font-size: .85rem; }
+  .couple-names .parentage { margin-top: 7px; padding: 0 10px; font-size: .72rem !important; }
   .hero__date-card { width: 100%; justify-content: center; gap: 13px; padding: 14px 10px; }
   .hero__date-card div { grid-template-columns: auto; text-align: center; }
   .hero__date-card span, .hero__date-card strong, .hero__date-card small { grid-column: 1; max-width: none; padding: 0; }
   .hero__date-card strong { font-size: 1.65rem; }
-  .wedding-night-summary { grid-template-columns: 1fr; }
+  .wedding-night-summary__grid { grid-template-columns: 1fr; }
   .wedding-night-summary article + article { border-top: 1px solid var(--line); border-left: 0; }
   .event-grid { grid-template-columns: 1fr; }
   .event-card { min-height: 390px; }

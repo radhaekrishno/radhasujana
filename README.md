@@ -2,7 +2,7 @@
 
 ## Included
 - English / Telugu language switch
-- Unambiguous wedding-night schedule: guests arrive Thursday evening; Muhurtham follows after midnight at 2:58 AM Friday
+- Clean wedding ceremony schedule with separate Dinner and Muhurtham details
 - Google Maps preview and venue directions
 - WhatsApp RSVP to +91 88979 85959
 - Engagement gallery with 13 photos and lightbox view
@@ -20,3 +20,8 @@
 7. Wait a few minutes, then refresh the website with **Ctrl + F5**.
 
 Do not delete `CNAME`; it keeps the custom domain connected.
+
+
+## Version 5 changes
+- Parent details are subtle and positioned beneath each name.
+- Wedding ceremony timing is presented in a clean Dinner/Muhurtham grid.

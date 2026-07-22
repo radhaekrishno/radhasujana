@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Italiana&family=Montserrat:wght@400;500;600&family=Noto+Sans+Telugu:wght@400;500;600&family=Noto+Serif+Telugu:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body class="locked">
   <div class="grain" aria-hidden="true"></div>
@@ -90,19 +90,20 @@
           </div>
         </div>
 
-        <div class="wedding-night-summary" aria-label="Wedding night schedule">
-          <article>
-            <p class="schedule-label" data-i18n="dinner">Dinner</p>
-            <strong data-i18n="dinnerDate">Thursday, 3 September 2026</strong>
-            <span data-i18n="dinnerTime">From 7:00 PM onwards at the wedding venue.</span>
-          </article>
-          <article>
-            <p class="schedule-label" data-i18n="muhurtham">Muhurtham</p>
-            <strong data-i18n="muhurthamDate">After Thursday night · 2:58 AM on Friday, 4 September 2026</strong>
-            <span class="arrival-note" data-i18n="muhurthamClarity">Please arrive on Thursday evening, 3 September. The Muhurtham follows after midnight at 2:58 AM in the early hours of Friday, 4 September — not on Friday night.</span>
-            <small data-i18n="muhurthamAstro">At the auspicious time of Rohini Nakshatra and Karka Ascendant.</small>
-          </article>
-        </div>
+        <section class="wedding-night-summary" aria-label="Wedding ceremony schedule">
+          <p class="wedding-night-summary__heading" data-i18n="weddingSchedule">Wedding Ceremony Schedule</p>
+          <div class="wedding-night-summary__grid">
+            <article>
+              <p class="schedule-label" data-i18n="dinner">Dinner</p>
+              <strong data-i18n="dinnerSummary">Thursday, 3rd September, from 7:00 PM onwards</strong>
+            </article>
+            <article>
+              <p class="schedule-label" data-i18n="muhurtham">Muhurtham</p>
+              <strong data-i18n="muhurthamSummary">Early hours of Friday at 2:58 AM</strong>
+              <small data-i18n="muhurthamAstro">At the auspicious time of Rohini Nakshatra and Karka Ascendant.</small>
+            </article>
+          </div>
+        </section>
 
         <a class="scroll-cue" href="#festivities"><span data-i18n="seeCelebrations">See all celebrations</span> <b>↓</b></a>
       </div>
@@ -159,10 +160,9 @@
           <h3 data-i18n="weddingCeremony">Wedding Ceremony</h3>
           <p class="event-card__date" data-i18n="weddingDateCard">03 September 2026</p>
           <div class="event-card__schedule">
-            <p><strong data-i18n="dinner">Dinner</strong><span data-i18n="dinnerCard">Thursday, 3 September · From 7:00 PM onwards</span></p>
-            <p><strong data-i18n="muhurtham">Muhurtham</strong><span data-i18n="muhurthamCard">After Thursday night · 2:58 AM on Friday, 4 September</span></p>
+            <p><strong data-i18n="dinner">Dinner</strong><span data-i18n="dinnerSummary">Thursday, 3rd September, from 7:00 PM onwards</span></p>
+            <p><strong data-i18n="muhurtham">Muhurtham</strong><span data-i18n="muhurthamSummary">Early hours of Friday at 2:58 AM</span></p>
           </div>
-          <p class="event-card__clarity" data-i18n="arrivalNote">Please come on Thursday evening, 3 September. The Muhurtham is after midnight — not on Friday night.</p>
           <p class="event-card__astro" data-i18n="muhurthamAstro">At the auspicious time of Rohini Nakshatra and Karka Ascendant.</p>
           <button class="event-select" type="button" data-i18n="addRsvp">Add to RSVP</button>
         </article>
@@ -348,6 +348,6 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <noscript>This invitation needs JavaScript enabled for the opening animation, language switch, gallery and RSVP.</noscript>
-  <script src="script.js"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
