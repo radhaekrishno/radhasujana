@@ -557,7 +557,6 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
   letter-spacing: .12em;
   text-transform: uppercase;
 }
-.visitor-counter[hidden] { display: none !important; }
 .visitor-counter i { color: var(--gold); font-style: normal; }
 .visitor-counter strong {
   color: var(--wine);
@@ -565,3 +564,10 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
   font-weight: 600;
   letter-spacing: .08em;
 }
+
+.goat-counter-mount { display: inline-flex; align-items: center; min-height: 1em; }
+.goat-counter-mount > div { display: inline-flex !important; align-items: center !important; }
+.counter-pending { text-transform: none; letter-spacing: .04em; opacity: .72; }
+.counter-pending i { display: none; }
+.counter-pending [data-i18n="invitationViews"] { display: none; }
+.counter-pending #visitorCountNumber { color: rgba(67,26,30,.62); font-size: .56rem; font-weight: 500; }

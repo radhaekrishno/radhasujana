@@ -36,3 +36,7 @@ The engagement gallery images are embedded directly inside `index.html`, so no `
 GoatCounter tracking is enabled for `radhasujana.goatcounter.com`. The public total at the footer appears only after enabling “Allow adding visitor counts on your website” in GoatCounter site settings.
 
 - Reception — tentatively 06 September 2026
+
+
+## Visible visitor counter
+In GoatCounter, open **Settings → Site settings** and enable **Allow adding visitor counts on your website**. The analytics tracking works independently, but GoatCounter blocks the public footer number until this option is enabled. Public counts may be cached for up to four hours.

@@ -597,23 +597,38 @@ document.addEventListener("keydown", event => {
 });
 
 
-// Elegant public total counter. It stays hidden until GoatCounter returns a count.
+// Public total counter using GoatCounter's official visitor-count helper.
+// GoatCounter must have “Allow adding visitor counts on your website” enabled.
 (function loadPublicVisitorCount() {
-  const wrapper = document.getElementById("visitorCounter");
-  const number = document.getElementById("visitorCountNumber");
-  if (!wrapper || !number) return;
+  const mount = document.getElementById("goatCounterMount");
+  const fallbackNumber = document.getElementById("visitorCountNumber");
+  if (!mount || !fallbackNumber) return;
 
-  fetch("https://radhasujana.goatcounter.com/counter/TOTAL.json", { cache: "no-store" })
-    .then((response) => {
-      if (!response.ok) throw new Error("Visitor counter is not enabled yet");
-      return response.json();
-    })
-    .then((data) => {
-      if (!data || !data.count) return;
-      number.textContent = data.count;
-      wrapper.hidden = false;
-    })
-    .catch(() => {
-      // Keep the footer clean if public counters are disabled or blocked.
-    });
+  let attempts = 0;
+  const timer = window.setInterval(() => {
+    attempts += 1;
+
+    if (window.goatcounter && typeof window.goatcounter.visit_count === "function") {
+      window.clearInterval(timer);
+      mount.innerHTML = "";
+      window.goatcounter.visit_count({
+        append: "#goatCounterMount",
+        path: "TOTAL",
+        no_branding: true,
+        attr: { "aria-label": "Total invitation views" },
+        style: `
+          div { border: 0 !important; background: transparent !important; padding: 0 !important; margin: 0 !important; min-width: 0 !important; width: auto !important; height: auto !important; color: inherit !important; font: inherit !important; }
+          #gcvc-for, #gcvc-by { display: none !important; }
+          #gcvc-views { color: #6f1025 !important; font: 600 .68rem Montserrat, sans-serif !important; letter-spacing: .08em !important; }
+        `
+      });
+      return;
+    }
+
+    if (attempts >= 80) {
+      window.clearInterval(timer);
+      fallbackNumber.textContent = "Enable in GoatCounter settings";
+      document.getElementById("visitorCounter")?.classList.add("counter-pending");
+    }
+  }, 100);
 })();
