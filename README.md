@@ -44,3 +44,8 @@ In GoatCounter, open **Settings → Site settings** and enable **Allow adding vi
 
 ## Visitor counter
 The footer retrieves only the total count from GoatCounter's JSON counter endpoint, avoiding the default embedded HTML card. Public visitor counts must remain enabled in GoatCounter settings.
+
+
+## Version 13 footer update
+- Visitor counter moved below the footer credit line.
+- Radha Krishna and Sujana names link to their Instagram profiles.

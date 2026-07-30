@@ -450,6 +450,24 @@ img { max-width: 100%; }
 .footer h2 { margin: 28px 0 18px; font: 400 clamp(2.2rem,5vw,4rem) "Italiana", "Noto Serif Telugu", serif; }
 .footer h2 i { color: var(--gold); font: italic 400 1em "Cormorant Garamond", serif; }
 .footer small { color: rgba(255,255,255,.5); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; }
+.footer-credit {
+  display: block;
+  width: fit-content;
+  max-width: min(92vw, 780px);
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.footer-credit a {
+  color: rgba(248,233,212,.88);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200,155,81,.42);
+  transition: color .25s ease, border-color .25s ease;
+}
+.footer-credit a:hover,
+.footer-credit a:focus-visible {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
 
 .toast { position: fixed; z-index: 4000; left: 50%; bottom: 24px; padding: 12px 18px; border: 1px solid rgba(255,255,255,.18); color: #fff; background: rgba(65,8,23,.94); box-shadow: var(--shadow); font-size: .75rem; transform: translate(-50%,120px); transition: .35s; }
 .toast.show { transform: translate(-50%,0); }
@@ -542,11 +560,12 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
 }
 
 .visitor-counter {
-  display: inline-flex;
+  width: fit-content;
+  display: flex;
   align-items: baseline;
   justify-content: center;
   gap: 7px;
-  margin-top: 13px;
+  margin: 12px auto 0;
   color: rgba(255,245,231,.52);
   font: 500 .54rem "Montserrat", "Noto Sans Telugu", sans-serif;
   letter-spacing: .14em;
