@@ -681,7 +681,7 @@ const teamLabels = {
   }
 };
 
-const LANGUAGE_ORDER = ["en", "te", "hi", "ta", "zh"];
+const LANGUAGE_ORDER = ["en", "te"];
 const LANGUAGE_META = {
   en: { htmlLang: "en", nextLabel: "తెలుగు", nextName: "Telugu", title: "Sujana & Radha Krishna | Wedding Invitation" },
   te: { htmlLang: "te", nextLabel: "हिन्दी", nextName: "Hindi", title: "సుజన & రాధా కృష్ణ | వివాహ ఆహ్వానం" },
