@@ -681,22 +681,29 @@ const teamLabels = {
   }
 };
 
-const LANGUAGE_ORDER = ["en", "te"];
+const SUPPORTED_LANGUAGES = ["en", "te", "hi", "ta", "zh"];
 const LANGUAGE_META = {
-  en: { htmlLang: "en", nextLabel: "తెలుగు", nextName: "Telugu", title: "Sujana & Radha Krishna | Wedding Invitation" },
-  te: { htmlLang: "te", nextLabel: "हिन्दी", nextName: "Hindi", title: "సుజన & రాధా కృష్ణ | వివాహ ఆహ్వానం" },
-  hi: { htmlLang: "hi", nextLabel: "தமிழ்", nextName: "Tamil", title: "सुजना & राधा कृष्ण | विवाह निमंत्रण" },
-  ta: { htmlLang: "ta", nextLabel: "中文", nextName: "Chinese", title: "சுஜனா & ராதா கிருஷ்ணா | திருமண அழைப்பிதழ்" },
-  zh: { htmlLang: "zh-Hans", nextLabel: "English", nextName: "English", title: "Sujana & Radha Krishna | 婚礼邀请函" }
+  en: { htmlLang: "en", title: "Sujana & Radha Krishna | Wedding Invitation" },
+  te: { htmlLang: "te", title: "సుజన & రాధా కృష్ణ | వివాహ ఆహ్వానం" },
+  hi: { htmlLang: "hi", title: "सुजना & राधा कृष्ण | विवाह निमंत्रण" },
+  ta: { htmlLang: "ta", title: "சுஜனா & ராதா கிருஷ்ணா | திருமண அழைப்பிதழ்" },
+  zh: { htmlLang: "zh-Hans", title: "Sujana & Radha Krishna | 婚礼邀请函" }
+};
+const TOGGLE_META = {
+  en: { label: "English", name: "English" },
+  te: { label: "తెలుగు", name: "Telugu" }
 };
 
-let currentLanguage = "en";
-try {
-  const savedLanguage = localStorage.getItem("weddingLanguage");
-  if (LANGUAGE_ORDER.includes(savedLanguage)) currentLanguage = savedLanguage;
-} catch (_) {
-  // The invitation still works if storage is blocked.
+function languageFromPath() {
+  const firstSegment = window.location.pathname.split("/").filter(Boolean)[0]?.toLowerCase();
+  return SUPPORTED_LANGUAGES.includes(firstSegment) ? firstSegment : "en";
 }
+
+function languagePath(language) {
+  return `/${language}/`;
+}
+
+let currentLanguage = languageFromPath();
 
 const cover = document.getElementById("invitationCover");
 const mainContent = document.getElementById("mainContent");
@@ -726,7 +733,7 @@ function updateEventButtons() {
 }
 
 function applyLanguage(language) {
-  currentLanguage = LANGUAGE_ORDER.includes(language) ? language : "en";
+  currentLanguage = SUPPORTED_LANGUAGES.includes(language) ? language : "en";
   const meta = LANGUAGE_META[currentLanguage];
   document.documentElement.lang = meta.htmlLang;
   document.body.classList.remove("lang-te", "lang-hi", "lang-ta", "lang-zh");
@@ -746,22 +753,31 @@ function applyLanguage(language) {
     element.title = t(element.dataset.i18nTitle);
   });
 
-  languageToggle.textContent = meta.nextLabel;
-  languageToggle.setAttribute("aria-label", `Switch to ${meta.nextName}`);
-  languageToggle.title = `Next language: ${meta.nextName}`;
+  // The visible toggle intentionally offers only English and Telugu.
+  // Hindi, Tamil and Chinese remain available through their dedicated URLs.
+  const toggleTarget = currentLanguage === "en" ? "te" : "en";
+  const toggleMeta = TOGGLE_META[toggleTarget];
+  languageToggle.textContent = toggleMeta.label;
+  languageToggle.dataset.targetLanguage = toggleTarget;
+  languageToggle.setAttribute("aria-label", `Switch to ${toggleMeta.name}`);
+  languageToggle.title = `Switch to ${toggleMeta.name}`;
   updateEventButtons();
 
   document.getElementById("whatsappDirect").href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(t("directMessage"))}`;
 
-  try { localStorage.setItem("weddingLanguage", currentLanguage); } catch (_) {}
 }
 
 applyLanguage(currentLanguage);
 
 languageToggle.addEventListener("click", () => {
-  const currentIndex = LANGUAGE_ORDER.indexOf(currentLanguage);
-  const nextLanguage = LANGUAGE_ORDER[(currentIndex + 1) % LANGUAGE_ORDER.length];
-  applyLanguage(nextLanguage);
+  const targetLanguage = languageToggle.dataset.targetLanguage || (currentLanguage === "en" ? "te" : "en");
+  const nextUrl = `${languagePath(targetLanguage)}${window.location.hash}`;
+  window.history.pushState({ language: targetLanguage }, "", nextUrl);
+  applyLanguage(targetLanguage);
+});
+
+window.addEventListener("popstate", () => {
+  applyLanguage(languageFromPath());
 });
 
 openButton.addEventListener("click", () => {
