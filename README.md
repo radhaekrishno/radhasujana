@@ -35,7 +35,7 @@ The engagement gallery images are embedded directly inside `index.html`, so no `
 
 GoatCounter tracking is enabled for `radhasujana.goatcounter.com`. The public total at the footer appears only after enabling “Allow adding visitor counts on your website” in GoatCounter site settings.
 
-- Reception — tentatively 06 September 2026
+- Reception — tentatively 06 July 2026
 
 
 ## Visible visitor counter
@@ -49,3 +49,8 @@ The footer retrieves only the total count from GoatCounter's JSON counter endpoi
 ## Version 13 footer update
 - Visitor counter moved below the footer credit line.
 - Radha Krishna and Sujana names link to their Instagram profiles.
+
+
+## Browser icon
+
+Upload `favicon.png` and `favicon.ico` to the repository root along with the other website files.

@@ -449,6 +449,15 @@ img { max-width: 100%; }
 .footer p { max-width: 720px; margin: 18px auto; font: 500 1.25rem/1.5 "Cormorant Garamond", "Noto Serif Telugu", serif; }
 .footer h2 { margin: 28px 0 18px; font: 400 clamp(2.2rem,5vw,4rem) "Italiana", "Noto Serif Telugu", serif; }
 .footer h2 i { color: var(--gold); font: italic 400 1em "Cormorant Garamond", serif; }
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 4px;
+}
 .footer small { color: rgba(255,255,255,.5); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; }
 .footer-credit {
   display: block;
@@ -561,11 +570,12 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
 
 .visitor-counter {
   width: fit-content;
-  display: flex;
+  display: inline-flex;
+  flex: 0 0 auto;
   align-items: baseline;
   justify-content: center;
   gap: 7px;
-  margin: 12px auto 0;
+  margin: 0 auto;
   color: rgba(255,245,231,.52);
   font: 500 .54rem "Montserrat", "Noto Sans Telugu", sans-serif;
   letter-spacing: .14em;
