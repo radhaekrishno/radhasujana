@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#6f1025" />
   <meta name="description" content="Wedding celebrations of Sujana and Radha Krishna — September 2026." />
+  <link rel="canonical" href="https://radhasujana.com/" />
   <title>Sujana & Radha Krishna | Wedding Invitation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Italiana&family=Montserrat:wght@400;500;600&family=Noto+Sans+Telugu:wght@400;500;600&family=Noto+Serif+Telugu:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=10" />
 </head>
 <body class="locked">
   <div class="grain" aria-hidden="true"></div>
@@ -168,11 +169,11 @@
         </article>
 
         <article class="event-card event-card--reception reveal" data-event-id="reception">
-          <div class="event-card__number">05</div>
-          <p class="event-card__day" data-i18n="dateTba">Date to be announced</p>
+          <div class="event-card__number">06</div>
+          <p class="event-card__day" data-i18n="dateTba">Sunday · Tentatively</p>
           <h3 data-i18n="reception">Reception</h3>
-          <p class="event-card__date" data-i18n="dateTimeSoon">Date & time coming soon</p>
-          <p class="event-card__description" data-i18n="receptionDescription">One more evening to celebrate, meet, laugh, and make the dance floor answer for our choices.</p>
+          <p class="event-card__date" data-i18n="dateTimeSoon">06 September 2026</p>
+          <p class="event-card__description" data-i18n="receptionDescription">Save the date in pencil—the families are still giving the calendar its final blessings.</p>
           <button class="event-select" type="button" data-i18n="addRsvp">Add to RSVP</button>
         </article>
       </div>
@@ -271,7 +272,7 @@
             <label><input type="checkbox" name="events" value="pellirituals" data-event-id="pellirituals" /><span data-i18n="pelliRitualsPlain">Pelli-Koduku & Pelli-Kuthuru</span></label>
             <label><input type="checkbox" name="events" value="haldi" data-event-id="haldi" /><span data-i18n="haldi">Haldi</span></label>
             <label><input type="checkbox" name="events" value="wedding" data-event-id="wedding" /><span data-i18n="weddingRsvp">Wedding Ceremony · 03 Sep night</span></label>
-            <label><input type="checkbox" name="events" value="reception" data-event-id="reception" /><span data-i18n="receptionRsvp">Reception · Date TBA</span></label>
+            <label><input type="checkbox" name="events" value="reception" data-event-id="reception" /><span data-i18n="receptionRsvp">Reception · Tentatively 06 Sep</span></label>
           </div>
         </fieldset>
 
@@ -333,6 +334,11 @@
       <p data-i18n="footerBlessing">With the blessings of gods, our ancestors, elders and the warmth of your presence</p>
       <h2><span data-i18n="nameSujana">Sujana</span> <i>&</i> <span data-i18n="nameRadha">Radha Krishna</span></h2>
       <small data-i18n="madeWithLove">Made with love · September 2026</small>
+      <div id="visitorCounter" class="visitor-counter" hidden aria-live="polite">
+        <span data-i18n="invitationViews">Invitation views</span>
+        <i aria-hidden="true">·</i>
+        <strong id="visitorCountNumber">—</strong>
+      </div>
     </footer>
   </main>
 
@@ -348,6 +354,7 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <noscript>This invitation needs JavaScript enabled for the opening animation, language switch, gallery and RSVP.</noscript>
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=10"></script>
+  <script data-goatcounter="https://radhasujana.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

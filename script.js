@@ -51,10 +51,10 @@ const translations = {
     weddingDay: "Thursday evening → after midnight",
     weddingDateCard: "03 September 2026",
 
-    dateTba: "Date to be announced",
+    dateTba: "Sunday · Tentatively",
     reception: "Reception",
-    dateTimeSoon: "Date & time coming soon",
-    receptionDescription: "One more evening to celebrate, meet, laugh, and make the dance floor answer for our choices.",
+    dateTimeSoon: "06 September 2026",
+    receptionDescription: "Save the date in pencil—the families are still giving the calendar its final blessings.",
     addRsvp: "Add to RSVP",
     addedRsvp: "Added ✓",
     friendlyRivalry: "A little friendly rivalry",
@@ -86,7 +86,7 @@ const translations = {
     regretfullyNo: "Regretfully no",
     whichCelebrations: "Which celebrations?",
     weddingRsvp: "Wedding Ceremony · Thursday, 03 Sep evening into Friday early hours",
-    receptionRsvp: "Reception · Date TBA",
+    receptionRsvp: "Reception · Tentatively 06 Sep",
     guestCount: "Number of guests",
     oneGuest: "1 guest",
     twoGuests: "2 guests",
@@ -103,6 +103,7 @@ const translations = {
     galleryIntro: "A few frames from the day our forever received its first official stamp.",
     footerBlessing: "With the blessings of gods, our ancestors, elders and the warmth of your presence",
     madeWithLove: "Made with love · September 2026",
+    invitationViews: "Invitation views",
     eventAdded: "added to your RSVP",
     eventRemoved: "removed from your RSVP",
     teamSelected: "selected",
@@ -166,10 +167,10 @@ const translations = {
     weddingDay: "గురువారం సాయంత్రం → అర్ధరాత్రి తరువాత",
     weddingDateCard: "03 సెప్టెంబర్ 2026",
 
-    dateTba: "తేదీ త్వరలో ప్రకటించబడుతుంది",
+    dateTba: "ఆదివారం · తాత్కాలికంగా",
     reception: "రిసెప్షన్",
-    dateTimeSoon: "తేదీ & సమయం త్వరలో",
-    receptionDescription: "మరో అందమైన సాయంత్రం—కలుసుకోవడానికి, నవ్వుకోవడానికి, కలిసి సంబరపడడానికి.",
+    dateTimeSoon: "06 సెప్టెంబర్ 2026",
+    receptionDescription: "తేదీని ఇప్పటికి పెన్సిల్‌తో గుర్తు పెట్టుకోండి—క్యాలెండర్‌కు కుటుంబాల తుది ఆశీర్వాదం ఇంకా రావాల్సి ఉంది!",
     addRsvp: "హాజరుకు జోడించండి",
     addedRsvp: "జోడించబడింది ✓",
     friendlyRivalry: "చిన్న సరదా పోటీ",
@@ -201,7 +202,7 @@ const translations = {
     regretfullyNo: "రాలేకపోతున్నాను",
     whichCelebrations: "ఏ వేడుకలకు వస్తారు?",
     weddingRsvp: "వివాహ వేడుక · గురువారం 03 సెప్టెంబర్ సాయంత్రం నుంచి శుక్రవారం తెల్లవారుజాము వరకు",
-    receptionRsvp: "రిసెప్షన్ · తేదీ త్వరలో",
+    receptionRsvp: "రిసెప్షన్ · తాత్కాలికంగా 06 సెప్టెంబర్",
     guestCount: "అతిథుల సంఖ్య",
     oneGuest: "1 అతిథి",
     twoGuests: "2 అతిథులు",
@@ -218,6 +219,7 @@ const translations = {
     galleryIntro: "మా జీవిత ప్రయాణానికి అధికారికంగా మొదటి ముద్ర పడిన రోజు నుంచి కొన్ని అందమైన క్షణాలు.",
     footerBlessing: "దైవాల, మా పూర్వీకుల, పెద్దల ఆశీస్సులతో మరియు మీ ఆత్మీయ సమక్షంతో",
     madeWithLove: "ప్రేమతో రూపొందించబడింది · సెప్టెంబర్ 2026",
+    invitationViews: "ఆహ్వాన పత్రిక వీక్షణలు",
     eventAdded: "హాజరు జాబితాకు జోడించబడింది",
     eventRemoved: "హాజరు జాబితా నుంచి తొలగించబడింది",
     teamSelected: "ఎంచుకున్నారు",
@@ -244,14 +246,14 @@ const eventLabels = {
     pellirituals: "Pelli-Koduku & Pelli-Kuthuru — 02 Sep",
     haldi: "Haldi — 03 Sep, 09:00 AM",
     wedding: "Wedding Ceremony — Dinner: Thursday, 3rd September from 7:00 PM onwards; Muhurtham: early hours of Friday at 2:58 AM",
-    reception: "Reception — Date to be announced"
+    reception: "Reception — Tentatively 06 September 2026"
   },
   te: {
     mehendi: "మెహందీ — 01 సెప్టెంబర్",
     pellirituals: "పెళ్లికొడుకు & పెళ్లికూతురు — 02 సెప్టెంబర్",
     haldi: "హల్దీ — 03 సెప్టెంబర్, ఉదయం 09:00",
     wedding: "వివాహ వేడుక — విందు: గురువారం, 3 సెప్టెంబర్ సాయంత్రం 7:00 గంటల నుండి; ముహూర్తం: శుక్రవారం తెల్లవారుజామున 2:58 గంటలకు",
-    reception: "రిసెప్షన్ — తేదీ త్వరలో"
+    reception: "రిసెప్షన్ — తాత్కాలికంగా 06 సెప్టెంబర్ 2026"
   }
 };
 
@@ -593,3 +595,25 @@ document.addEventListener("keydown", event => {
   if (event.key === "ArrowLeft") showPhoto(currentPhotoIndex - 1);
   if (event.key === "ArrowRight") showPhoto(currentPhotoIndex + 1);
 });
+
+
+// Elegant public total counter. It stays hidden until GoatCounter returns a count.
+(function loadPublicVisitorCount() {
+  const wrapper = document.getElementById("visitorCounter");
+  const number = document.getElementById("visitorCountNumber");
+  if (!wrapper || !number) return;
+
+  fetch("https://radhasujana.goatcounter.com/counter/TOTAL.json", { cache: "no-store" })
+    .then((response) => {
+      if (!response.ok) throw new Error("Visitor counter is not enabled yet");
+      return response.json();
+    })
+    .then((data) => {
+      if (!data || !data.count) return;
+      number.textContent = data.count;
+      wrapper.hidden = false;
+    })
+    .catch(() => {
+      // Keep the footer clean if public counters are disabled or blocked.
+    });
+})();

@@ -29,3 +29,10 @@ Do not delete `CNAME`; it keeps the custom domain connected.
 
 ## Version 6 gallery fix
 The engagement gallery images are embedded directly inside `index.html`, so no `assets` folder is required. Upload the five root files only.
+
+
+## Analytics
+
+GoatCounter tracking is enabled for `radhasujana.goatcounter.com`. The public total at the footer appears only after enabling “Allow adding visitor counts on your website” in GoatCounter site settings.
+
+- Reception — tentatively 06 September 2026
