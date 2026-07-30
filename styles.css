@@ -22,6 +22,9 @@ body {
 }
 body.locked { overflow: hidden; }
 body.lang-te { font-family: "Noto Sans Telugu", "Montserrat", system-ui, sans-serif; }
+body.lang-hi { font-family: "Noto Sans Devanagari", "Montserrat", system-ui, sans-serif; }
+body.lang-ta { font-family: "Noto Sans Tamil", "Montserrat", system-ui, sans-serif; }
+body.lang-zh { font-family: "Noto Sans SC", "Montserrat", system-ui, sans-serif; }
 button, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
 a { color: inherit; text-decoration: none; }
@@ -337,7 +340,7 @@ img { max-width: 100%; }
 .section-heading { max-width: 680px; margin: 0 auto 50px; text-align: center; }
 .section-heading h2 { margin: 0 0 16px; color: var(--wine); font: 400 clamp(2.8rem, 6vw, 5rem) "Italiana", "Noto Serif Telugu", "Times New Roman", serif; }
 .section-heading > p:last-child { margin: 0; color: var(--muted); line-height: 1.8; }
-.event-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 16px; max-width: 1380px; margin: 0 auto; }
+.event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; max-width: 1380px; margin: 0 auto; }
 .event-card { position: relative; min-height: 480px; display: flex; flex-direction: column; padding: 29px; overflow: hidden; border: 1px solid rgba(111,16,37,.15); background: rgba(255,250,241,.8); transition: transform .35s ease, box-shadow .35s ease; }
 .event-card::before { content: ""; position: absolute; right: -48px; bottom: -54px; width: 170px; aspect-ratio: 1; border: 1px solid rgba(111,16,37,.12); border-radius: 50%; box-shadow: 0 0 0 20px rgba(111,16,37,.025),0 0 0 40px rgba(111,16,37,.02); }
 .event-card:hover { transform: translateY(-8px); box-shadow: var(--shadow); }
@@ -354,6 +357,7 @@ img { max-width: 100%; }
 .event-card__astro { margin: 0; color: rgba(255,247,235,.72); font: 500 .77rem/1.5 "Cormorant Garamond", "Noto Serif Telugu", serif; }
 .event-select { position: relative; z-index: 1; align-self: flex-start; margin-top: auto; padding: 12px 0 5px; border: 0; border-bottom: 1px solid rgba(111,16,37,.3); color: var(--wine); background: transparent; font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; }
 .event-card--accent { background: #ead6ba; }
+.event-card--vratham { background: linear-gradient(145deg,#fffaf1,#f0dfbd); }
 .event-card--reception { background: linear-gradient(145deg,#fffaf1,#ead6ba); }
 .event-card--dark { color: #fff7eb; background: var(--wine); border-color: var(--wine); }
 .event-card--dark::before { border-color: rgba(255,255,255,.14); box-shadow: 0 0 0 20px rgba(255,255,255,.025),0 0 0 40px rgba(255,255,255,.02); }
@@ -504,6 +508,32 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
 .lang-te .wedding-night-summary strong,
 .lang-te .event-card h3,
 .lang-te .team-card strong { line-height: 1.45; }
+
+
+/* Script-aware typography for the one-tap language cycle. */
+:is(.lang-hi,.lang-ta,.lang-zh) .eyebrow,
+:is(.lang-hi,.lang-ta,.lang-zh) .nav-links,
+:is(.lang-hi,.lang-ta,.lang-zh) .event-card__day,
+:is(.lang-hi,.lang-ta,.lang-zh) .event-card__date,
+:is(.lang-hi,.lang-ta,.lang-zh) .event-select,
+:is(.lang-hi,.lang-ta,.lang-zh) .countdown span,
+:is(.lang-hi,.lang-ta,.lang-zh) .text-button,
+:is(.lang-hi,.lang-ta,.lang-zh) .primary-button,
+:is(.lang-hi,.lang-ta,.lang-zh) .gallery-details summary small,
+:is(.lang-hi,.lang-ta,.lang-zh) .footer small { letter-spacing: .02em; text-transform: none; }
+:is(.lang-hi,.lang-ta,.lang-zh) .couple-names,
+:is(.lang-hi,.lang-ta,.lang-zh) .section-heading h2,
+:is(.lang-hi,.lang-ta,.lang-zh) .rsvp__intro h2,
+:is(.lang-hi,.lang-ta,.lang-zh) .gallery-details summary strong,
+:is(.lang-hi,.lang-ta,.lang-zh) .footer h2 { line-height: 1.32; }
+:is(.lang-hi,.lang-ta,.lang-zh) .main-name { font-size: clamp(2.8rem,6.5vw,6.2rem); }
+.lang-hi .main-name, .lang-hi .couple-names, .lang-hi .section-heading h2, .lang-hi .event-card h3, .lang-hi .team-card strong, .lang-hi .footer h2 { font-family: "Noto Serif Devanagari", serif; }
+.lang-ta .main-name, .lang-ta .couple-names, .lang-ta .section-heading h2, .lang-ta .event-card h3, .lang-ta .team-card strong, .lang-ta .footer h2 { font-family: "Noto Serif Tamil", serif; }
+.lang-zh .main-name, .lang-zh .couple-names, .lang-zh .section-heading h2, .lang-zh .event-card h3, .lang-zh .team-card strong, .lang-zh .footer h2 { font-family: "Noto Serif SC", serif; }
+:is(.lang-hi,.lang-ta,.lang-zh) .couple-names .parentage { margin-top: 6px; letter-spacing: 0; }
+:is(.lang-hi,.lang-ta,.lang-zh) .wedding-night-summary strong,
+:is(.lang-hi,.lang-ta,.lang-zh) .event-card h3,
+:is(.lang-hi,.lang-ta,.lang-zh) .team-card strong { line-height: 1.42; }
 
 @media (max-width: 1180px) {
   .event-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }

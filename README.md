@@ -54,3 +54,12 @@ The footer retrieves only the total count from GoatCounter's JSON counter endpoi
 ## Browser icon
 
 Upload `favicon.png` and `favicon.ico` to the repository root along with the other website files.
+
+
+## Version 15 updates
+
+- Added Sathyanarayana Swamy Vratham on the morning of 5 September 2026.
+- Added Vratham to RSVP and calendar download.
+- Updated celebration range to 1–6 September.
+- Language button now cycles: English → Telugu → Hindi → Tamil → Chinese → English.
+- Added script-specific fonts and complete translated interface text.
