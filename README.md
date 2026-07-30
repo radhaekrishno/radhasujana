@@ -40,3 +40,7 @@ GoatCounter tracking is enabled for `radhasujana.goatcounter.com`. The public to
 
 ## Visible visitor counter
 In GoatCounter, open **Settings → Site settings** and enable **Allow adding visitor counts on your website**. The analytics tracking works independently, but GoatCounter blocks the public footer number until this option is enabled. Public counts may be cached for up to four hours.
+
+
+## Visitor counter
+The footer retrieves only the total count from GoatCounter's JSON counter endpoint, avoiding the default embedded HTML card. Public visitor counts must remain enabled in GoatCounter settings.

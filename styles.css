@@ -541,33 +541,31 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
   *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition-duration: .01ms !important; }
 }
 
-
 .visitor-counter {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
-  gap: 8px;
-  margin-top: 18px;
-  padding: 7px 13px;
-  border: 1px solid rgba(200,155,81,.28);
-  border-radius: 999px;
-  color: rgba(67,26,30,.66);
-  background: rgba(255,250,241,.48);
-  font: 500 .58rem "Montserrat", "Noto Sans Telugu", sans-serif;
-  letter-spacing: .12em;
+  gap: 7px;
+  margin-top: 13px;
+  color: rgba(255,245,231,.52);
+  font: 500 .54rem "Montserrat", "Noto Sans Telugu", sans-serif;
+  letter-spacing: .14em;
   text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity .35s ease, transform .35s ease;
 }
-.visitor-counter i { color: var(--gold); font-style: normal; }
+.visitor-counter.is-ready {
+  opacity: 1;
+  transform: translateY(0);
+}
+.visitor-counter i {
+  color: rgba(200,155,81,.72);
+  font-style: normal;
+}
 .visitor-counter strong {
-  color: var(--wine);
-  font-size: .68rem;
+  color: var(--gold);
+  font-size: .66rem;
   font-weight: 600;
   letter-spacing: .08em;
 }
-
-.goat-counter-mount { display: inline-flex; align-items: center; min-height: 1em; }
-.goat-counter-mount > div { display: inline-flex !important; align-items: center !important; }
-.counter-pending { text-transform: none; letter-spacing: .04em; opacity: .72; }
-.counter-pending i { display: none; }
-.counter-pending [data-i18n="invitationViews"] { display: none; }
-.counter-pending #visitorCountNumber { color: rgba(67,26,30,.62); font-size: .56rem; font-weight: 500; }

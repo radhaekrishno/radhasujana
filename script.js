@@ -596,39 +596,34 @@ document.addEventListener("keydown", event => {
   if (event.key === "ArrowRight") showPhoto(currentPhotoIndex + 1);
 });
 
-
-// Public total counter using GoatCounter's official visitor-count helper.
-// GoatCounter must have “Allow adding visitor counts on your website” enabled.
+// Public total counter: request only the JSON number so GoatCounter's
+// default 200×60 HTML card is never inserted into the footer.
 (function loadPublicVisitorCount() {
-  const mount = document.getElementById("goatCounterMount");
-  const fallbackNumber = document.getElementById("visitorCountNumber");
-  if (!mount || !fallbackNumber) return;
+  const number = document.getElementById("visitorCountNumber");
+  const counter = document.getElementById("visitorCounter");
+  if (!number || !counter) return;
 
-  let attempts = 0;
-  const timer = window.setInterval(() => {
-    attempts += 1;
+  const request = new XMLHttpRequest();
+  request.open("GET", "https://radhasujana.goatcounter.com/counter/TOTAL.json", true);
+  request.timeout = 10000;
 
-    if (window.goatcounter && typeof window.goatcounter.visit_count === "function") {
-      window.clearInterval(timer);
-      mount.innerHTML = "";
-      window.goatcounter.visit_count({
-        append: "#goatCounterMount",
-        path: "TOTAL",
-        no_branding: true,
-        attr: { "aria-label": "Total invitation views" },
-        style: `
-          div { border: 0 !important; background: transparent !important; padding: 0 !important; margin: 0 !important; min-width: 0 !important; width: auto !important; height: auto !important; color: inherit !important; font: inherit !important; }
-          #gcvc-for, #gcvc-by { display: none !important; }
-          #gcvc-views { color: #6f1025 !important; font: 600 .68rem Montserrat, sans-serif !important; letter-spacing: .08em !important; }
-        `
-      });
+  request.addEventListener("load", function () {
+    if (request.status < 200 || request.status >= 300) {
+      counter.hidden = true;
       return;
     }
 
-    if (attempts >= 80) {
-      window.clearInterval(timer);
-      fallbackNumber.textContent = "Enable in GoatCounter settings";
-      document.getElementById("visitorCounter")?.classList.add("counter-pending");
+    try {
+      const data = JSON.parse(request.responseText);
+      if (!data.count) throw new Error("Missing count");
+      number.textContent = data.count;
+      counter.classList.add("is-ready");
+    } catch (error) {
+      counter.hidden = true;
     }
-  }, 100);
+  });
+
+  request.addEventListener("error", () => { counter.hidden = true; });
+  request.addEventListener("timeout", () => { counter.hidden = true; });
+  request.send();
 })();
