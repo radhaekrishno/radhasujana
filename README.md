@@ -25,3 +25,8 @@ Upload every file and folder in this directory to the root of the existing GitHu
 
 
 Version 19 adds the Reception venue card, embedded map, and separate directions button below the marriage venue in the RSVP section.
+
+
+## Version 20 changes
+- Replaced the engagement gallery with the new 15 uploaded photographs, kept in the provided order.
+- Added a subtle drop shadow and rounded corners to lift gallery images from the background.
