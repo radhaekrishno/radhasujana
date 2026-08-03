@@ -30,3 +30,11 @@ Version 19 adds the Reception venue card, embedded map, and separate directions 
 ## Version 20 changes
 - Replaced the engagement gallery with the new 15 uploaded photographs, kept in the provided order.
 - Added a subtle drop shadow and rounded corners to lift gallery images from the background.
+
+
+## Version 21 changes
+- Gallery changed to a one-photo-per-row scrolling layout with complete, uncropped images; the click-to-open carousel remains available.
+- Removed the Reception confirmation joke.
+- Made weekday labels and dates more prominent on event cards.
+- Matched the Pelli-Koduku/Pelli-Kuthuru and Reception cards to the Wedding Ceremony wine palette.
+- Replaced transliterations of the Telugu preparation rituals with natural descriptions in English, Hindi, Tamil, Chinese and Nepali.

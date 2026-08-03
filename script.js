@@ -840,6 +840,57 @@ translations.ne = {
   directMessage: "नमस्कार, म सुजना र राधा कृष्णको विवाहबारे जानकारी चाहन्छु।"
 };
 
+
+// Natural-language names for the Telugu pre-wedding preparation and blessing rituals.
+Object.assign(translations.en, {
+  pelliRituals: "Groom’s Pre-Wedding Blessing<br>& Bride’s Pre-Wedding Blessing",
+  pelliRitualsPlain: "Groom’s Pre-Wedding Blessing & Bride’s Pre-Wedding Blessing",
+  pelliRitualsDescription: "Traditional ceremonies in which the groom and bride are prepared and blessed at their respective homes.",
+  pelliKodukuLabel: "Groom’s Ceremony",
+  pelliKuthuruLabel: "Bride’s Ceremony",
+  receptionDescription: ""
+});
+Object.assign(translations.te, {
+  pelliRituals: "పెళ్లికొడుకు వేడుక<br>& పెళ్లికూతురు వేడుక",
+  pelliRitualsPlain: "పెళ్లికొడుకు వేడుక & పెళ్లికూతురు వేడుక",
+  pelliRitualsDescription: "వరుడు, వధువును వారి వారి ఇళ్లలో వివాహానికి సిద్ధం చేసి ఆశీర్వదించే సంప్రదాయ వేడుకలు.",
+  pelliKodukuLabel: "పెళ్లికొడుకు వేడుక",
+  pelliKuthuruLabel: "పెళ్లికూతురు వేడుక",
+  receptionDescription: ""
+});
+Object.assign(translations.hi, {
+  pelliRituals: "वर का विवाहपूर्व आशीर्वाद समारोह<br>& वधू का विवाहपूर्व आशीर्वाद समारोह",
+  pelliRitualsPlain: "वर का विवाहपूर्व आशीर्वाद समारोह & वधू का विवाहपूर्व आशीर्वाद समारोह",
+  pelliRitualsDescription: "वर और वधू को उनके अपने-अपने घरों में विवाह के लिए पारंपरिक रूप से तैयार कर आशीर्वाद देने की रस्में।",
+  pelliKodukuLabel: "वर का आशीर्वाद समारोह",
+  pelliKuthuruLabel: "वधू का आशीर्वाद समारोह",
+  receptionDescription: ""
+});
+Object.assign(translations.ta, {
+  pelliRituals: "மணமகன் திருமணமுன் ஆசீர்வாதச் சடங்கு<br>& மணமகள் திருமணமுன் ஆசீர்வாதச் சடங்கு",
+  pelliRitualsPlain: "மணமகன் திருமணமுன் ஆசீர்வாதச் சடங்கு & மணமகள் திருமணமுன் ஆசீர்வாதச் சடங்கு",
+  pelliRitualsDescription: "மணமகனும் மணமகளும் தங்களது இல்லங்களில் திருமணத்திற்காக மரபுப்படி தயாராக்கப்பட்டு ஆசீர்வதிக்கப்படும் சடங்குகள்.",
+  pelliKodukuLabel: "மணமகன் ஆசீர்வாதச் சடங்கு",
+  pelliKuthuruLabel: "மணமகள் ஆசீர்வாதச் சடங்கு",
+  receptionDescription: ""
+});
+Object.assign(translations.zh, {
+  pelliRituals: "新郎婚前祈福仪式<br>& 新娘婚前祈福仪式",
+  pelliRitualsPlain: "新郎婚前祈福仪式 & 新娘婚前祈福仪式",
+  pelliRitualsDescription: "双方家庭分别在家中为新郎和新娘举行婚前准备与祝福仪式。",
+  pelliKodukuLabel: "新郎婚前祈福仪式",
+  pelliKuthuruLabel: "新娘婚前祈福仪式",
+  receptionDescription: ""
+});
+Object.assign(translations.ne, {
+  pelliRituals: "दुलाहाको विवाहपूर्व आशीर्वाद समारोह<br>& दुलहीको विवाहपूर्व आशीर्वाद समारोह",
+  pelliRitualsPlain: "दुलाहाको विवाहपूर्व आशीर्वाद समारोह & दुलहीको विवाहपूर्व आशीर्वाद समारोह",
+  pelliRitualsDescription: "दुलाहा र दुलहीलाई आफ्ना-आफ्ना घरमा परम्परागत रूपमा विवाहका लागि तयार गरी आशीर्वाद दिइने रस्महरू।",
+  pelliKodukuLabel: "दुलाहाको आशीर्वाद समारोह",
+  pelliKuthuruLabel: "दुलहीको आशीर्वाद समारोह",
+  receptionDescription: ""
+});
+
 const eventLabels = {
   "en": {
     "mehendi": "Mehendi — 01 Sep",
@@ -916,6 +967,26 @@ eventLabels.ne = {
   vratham: "सत्यनारायण स्वामी व्रतम — 05 सेप्टेम्बर बिहान · स्थान पछि",
   reception: "रिसेप्सन — 06 सेप्टेम्बर 2026 · साँझ 6:30 बजेदेखि · RAMCOSA Guest House"
 };
+
+
+Object.assign(eventLabels.en, {
+  pellirituals: "Groom’s Pre-Wedding Blessing at the Groom’s house & Bride’s Pre-Wedding Blessing at the Bride’s house — 02 Sep"
+});
+Object.assign(eventLabels.te, {
+  pellirituals: "పెళ్లికొడుకు వేడుక వరుడి ఇంటి వద్ద & పెళ్లికూతురు వేడుక వధువు ఇంటి వద్ద — 02 సెప్టెంబర్"
+});
+Object.assign(eventLabels.hi, {
+  pellirituals: "वर का विवाहपूर्व आशीर्वाद समारोह दूल्हे के घर & वधू का विवाहपूर्व आशीर्वाद समारोह दुल्हन के घर — 02 सितंबर"
+});
+Object.assign(eventLabels.ta, {
+  pellirituals: "மணமகன் திருமணமுன் ஆசீர்வாதச் சடங்கு மணமகன் இல்லத்தில் & மணமகள் திருமணமுன் ஆசீர்வாதச் சடங்கு மணமகள் இல்லத்தில் — 02 செப்டம்பர்"
+});
+Object.assign(eventLabels.zh, {
+  pellirituals: "新郎婚前祈福仪式（新郎家）& 新娘婚前祈福仪式（新娘家）— 9月2日"
+});
+Object.assign(eventLabels.ne, {
+  pellirituals: "दुलाहाको विवाहपूर्व आशीर्वाद समारोह दुलाहाको घरमा & दुलहीको विवाहपूर्व आशीर्वाद समारोह दुलहीको घरमा — 02 सेप्टेम्बर"
+});
 
 const teamLabels = {
   "en": {
