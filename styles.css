@@ -407,6 +407,9 @@ img { max-width: 100%; }
 .venue-card > span { display: block; margin-bottom: 8px; color: var(--gold); font-size: .62rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
 .venue-card strong { display: block; color: var(--wine); font: 600 1.55rem "Cormorant Garamond", "Noto Serif Telugu", serif; }
 .venue-card p { margin: 7px 0 13px; color: var(--muted); line-height: 1.65; }
+.venue-card--reception { margin-top: 34px; background: linear-gradient(145deg, rgba(255,250,241,.95), rgba(234,214,186,.48)); }
+.venue-card .venue-time { margin-bottom: 0; color: var(--wine); font-size: .72rem; font-weight: 600; letter-spacing: .035em; }
+.mini-map--reception { margin-top: 18px; }
 .venue-whatsapp { display: inline-flex; align-items: center; gap: 5px; padding-bottom: 4px; border-bottom: 1px solid rgba(111,16,37,.25); color: var(--wine); font-size: .72rem; font-weight: 600; }
 .venue-whatsapp > span:first-child { color: #1f9d55; }
 .mini-map { margin-top: 18px; overflow: hidden; border: 1px solid var(--line); background: #eee4d5; box-shadow: 0 10px 25px rgba(67,26,30,.08); }

@@ -627,9 +627,13 @@ Object.assign(translations.en, {
   vrathamVenuePending: "Venue will be updated.",
   venueLabel: "Venue",
   dateTimeSoon: "06 September 2026 · 6:30 PM onwards",
+  receptionVenueLabel: "Reception Venue",
   receptionVenueName: "RAMCOSA Guest House",
   receptionVenueAddress: "Madhav Nagar, Dwaraka Nagar, Ramanayyapeta, Andhra Pradesh 533003, India",
-  receptionDirections: "↗ View on Google Maps",
+  receptionVenueTime: "Sunday, 6 September 2026 · 6:30 PM onwards",
+  receptionMapTitle: "RAMCOSA Guest House map",
+  marriageDirections: "↗ Marriage venue directions",
+  receptionDirections: "↗ Reception venue directions",
   receptionRsvp: "Reception · 06 Sep · 6:30 PM onwards"
 });
 Object.assign(translations.te, {
@@ -640,9 +644,13 @@ Object.assign(translations.te, {
   vrathamVenuePending: "వ్రతం వేదిక త్వరలో తెలియజేయబడుతుంది.",
   venueLabel: "వేదిక",
   dateTimeSoon: "06 సెప్టెంబర్ 2026 · సాయంత్రం 6:30 గంటల నుండి",
+  receptionVenueLabel: "రిసెప్షన్ వేదిక",
   receptionVenueName: "రామ్‌కోసా గెస్ట్ హౌస్",
   receptionVenueAddress: "మాధవ్ నగర్, ద్వారకా నగర్, రమణయ్యపేట, ఆంధ్రప్రదేశ్ 533003, ఇండియా",
-  receptionDirections: "↗ గూగుల్ మ్యాప్స్‌లో చూడండి",
+  receptionVenueTime: "ఆదివారం, 6 సెప్టెంబర్ 2026 · సాయంత్రం 6:30 నుంచి",
+  receptionMapTitle: "రామ్‌కోసా గెస్ట్ హౌస్ మ్యాప్",
+  marriageDirections: "↗ వివాహ వేదిక దారి",
+  receptionDirections: "↗ రిసెప్షన్ వేదిక దారి",
   receptionRsvp: "రిసెప్షన్ · 06 సెప్టెంబర్ · సాయంత్రం 6:30 నుండి"
 });
 Object.assign(translations.hi, {
@@ -653,9 +661,13 @@ Object.assign(translations.hi, {
   vrathamVenuePending: "व्रतम का स्थान बाद में बताया जाएगा।",
   venueLabel: "स्थान",
   dateTimeSoon: "06 सितंबर 2026 · शाम 6:30 बजे से",
+  receptionVenueLabel: "रिसेप्शन स्थल",
   receptionVenueName: "RAMCOSA Guest House",
   receptionVenueAddress: "माधव नगर, द्वारका नगर, रामनय्यापेटा, आंध्र प्रदेश 533003, भारत",
-  receptionDirections: "↗ Google Maps पर देखें",
+  receptionVenueTime: "रविवार, 6 सितंबर 2026 · शाम 6:30 बजे से",
+  receptionMapTitle: "RAMCOSA Guest House का नक्शा",
+  marriageDirections: "↗ विवाह स्थल की दिशा",
+  receptionDirections: "↗ रिसेप्शन स्थल की दिशा",
   receptionRsvp: "रिसेप्शन · 06 सितंबर · शाम 6:30 बजे से"
 });
 Object.assign(translations.ta, {
@@ -666,9 +678,13 @@ Object.assign(translations.ta, {
   vrathamVenuePending: "விரதத்தின் இடம் பின்னர் அறிவிக்கப்படும்.",
   venueLabel: "இடம்",
   dateTimeSoon: "06 செப்டம்பர் 2026 · மாலை 6:30 மணி முதல்",
+  receptionVenueLabel: "வரவேற்பு நிகழ்ச்சி இடம்",
   receptionVenueName: "RAMCOSA Guest House",
   receptionVenueAddress: "மாதவ் நகர், துவாரகா நகர், ராமனய்யாபேட்டா, ஆந்திரப் பிரதேசம் 533003, இந்தியா",
-  receptionDirections: "↗ Google Maps-ல் காண்க",
+  receptionVenueTime: "ஞாயிறு, 6 செப்டம்பர் 2026 · மாலை 6:30 மணி முதல்",
+  receptionMapTitle: "RAMCOSA Guest House வரைபடம்",
+  marriageDirections: "↗ திருமண இடத்திற்கான வழி",
+  receptionDirections: "↗ வரவேற்பு இடத்திற்கான வழி",
   receptionRsvp: "வரவேற்பு · 06 செப்டம்பர் · மாலை 6:30 மணி முதல்"
 });
 Object.assign(translations.zh, {
@@ -679,9 +695,13 @@ Object.assign(translations.zh, {
   vrathamVenuePending: "祈福仪式地点稍后更新。",
   venueLabel: "地点",
   dateTimeSoon: "2026年9月6日 · 晚上6:30起",
+  receptionVenueLabel: "婚宴地点",
   receptionVenueName: "RAMCOSA Guest House",
   receptionVenueAddress: "Madhav Nagar, Dwaraka Nagar, Ramanayyapeta, Andhra Pradesh 533003, India",
-  receptionDirections: "↗ 在 Google Maps 查看",
+  receptionVenueTime: "2026年9月6日，星期日 · 晚上6:30起",
+  receptionMapTitle: "RAMCOSA Guest House 地图",
+  marriageDirections: "↗ 婚礼会场路线",
+  receptionDirections: "↗ 婚宴会场路线",
   receptionRsvp: "婚礼招待会 · 9月6日 · 晚上6:30起"
 });
 
@@ -743,9 +763,13 @@ translations.ne = {
   dateTimeSoon: "06 सेप्टेम्बर 2026 · साँझ 6:30 बजेदेखि",
   receptionDescription: "मिति पक्का भयो—अब पेन्सिल होइन, मसीले लेख्नुस्।",
   venueLabel: "स्थान",
+  receptionVenueLabel: "रिसेप्सन स्थल",
   receptionVenueName: "RAMCOSA Guest House",
   receptionVenueAddress: "माधव नगर, द्वारका नगर, रामनय्यापेटा, आन्ध्र प्रदेश 533003, भारत",
-  receptionDirections: "↗ Google Maps मा हेर्नुहोस्",
+  receptionVenueTime: "आइतबार, 6 सेप्टेम्बर 2026 · साँझ 6:30 बजेदेखि",
+  receptionMapTitle: "RAMCOSA Guest House को नक्सा",
+  marriageDirections: "↗ विवाह स्थलको दिशा",
+  receptionDirections: "↗ रिसेप्सन स्थलको दिशा",
   addRsvp: "उपस्थिति सूचीमा थप्नुहोस्",
   addedRsvp: "थपियो ✓",
   friendlyRivalry: "अलिकति रमाइलो प्रतिस्पर्धा",
@@ -1248,6 +1272,10 @@ document.getElementById("calendarButton").addEventListener("click", () => {
 
 document.getElementById("directionsButton").addEventListener("click", () => {
   window.open(CONFIG.mapUrl, "_blank", "noopener,noreferrer");
+});
+
+document.getElementById("receptionDirectionsButton").addEventListener("click", () => {
+  window.open(CONFIG.receptionMapUrl, "_blank", "noopener,noreferrer");
 });
 
 const galleryDetails = document.getElementById("galleryDetails");

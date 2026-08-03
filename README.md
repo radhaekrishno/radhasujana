@@ -22,3 +22,6 @@ The visible top toggle intentionally switches only between English and Telugu. T
 The calendar file uses 10:00 PM as the Reception end time for scheduling, while the visible invitation says “6:30 PM onwards.”
 
 Upload every file and folder in this directory to the root of the existing GitHub Pages repository.
+
+
+Version 19 adds the Reception venue card, embedded map, and separate directions button below the marriage venue in the RSVP section.
