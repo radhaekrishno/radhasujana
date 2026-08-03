@@ -2,6 +2,9 @@ const CONFIG = {
   whatsappNumber: "918897985959", // Country code + number, no + or spaces
   venueName: "Parinaya Function Hall, NH-16, Rajahmundry Road, Jaggampeta",
   mapUrl: "https://share.google/V6fa2gTCiHchlqL7H",
+  receptionVenueName: "RAMCOSA Guest House",
+  receptionVenueAddress: "Madhav Nagar, Dwaraka Nagar, Ramanayyapeta, Andhra Pradesh 533003, India",
+  receptionMapUrl: "https://share.google/Bx2va6zVbhM6UoSrD",
   timeZone: "Asia/Kolkata"
 };
 
@@ -55,10 +58,10 @@ const translations = {
     vrathamDate: "05 September 2026",
     vrathamDescription: "A serene morning of prayer, prasadam, and gratitude as the celebrations settle into blessings.",
 
-    dateTba: "Sunday · Tentatively",
+    dateTba: "Sunday",
     reception: "Reception",
     dateTimeSoon: "06 September 2026",
-    receptionDescription: "Save the date in pencil—the families are still giving the calendar its final blessings.",
+    receptionDescription: "The date is confirmed—this one may safely be written in ink.",
     addRsvp: "Add to RSVP",
     addedRsvp: "Added ✓",
     friendlyRivalry: "A little friendly rivalry",
@@ -91,7 +94,7 @@ const translations = {
     whichCelebrations: "Which celebrations?",
     weddingRsvp: "Wedding Ceremony · Thursday, 03 Sep evening into Friday early hours",
     vrathamRsvp: "Sathyanarayana Swamy Vratham · 05 Sep morning",
-    receptionRsvp: "Reception · Tentatively 06 Sep",
+    receptionRsvp: "Reception · 06 Sep · 6:30 PM onwards",
     guestCount: "Number of guests",
     oneGuest: "1 guest",
     twoGuests: "2 guests",
@@ -177,10 +180,10 @@ const translations = {
     vrathamDate: "05 సెప్టెంబర్ 2026",
     vrathamDescription: "పూజ, ప్రసాదం, కృతజ్ఞతలతో వేడుకలు ఆశీర్వాదాలుగా మారే ప్రశాంతమైన ఉదయం.",
 
-    dateTba: "ఆదివారం · తాత్కాలికంగా",
+    dateTba: "ఆదివారం",
     reception: "రిసెప్షన్",
     dateTimeSoon: "06 సెప్టెంబర్ 2026",
-    receptionDescription: "తేదీని ఇప్పటికి పెన్సిల్‌తో గుర్తు పెట్టుకోండి—క్యాలెండర్‌కు కుటుంబాల తుది ఆశీర్వాదం ఇంకా రావాల్సి ఉంది!",
+    receptionDescription: "తేదీ ఖరారైంది—ఇప్పుడు పెన్సిల్ కాదు, ఇంకుతో రాయండి.",
     addRsvp: "హాజరుకు జోడించండి",
     addedRsvp: "జోడించబడింది ✓",
     friendlyRivalry: "చిన్న సరదా పోటీ",
@@ -213,7 +216,7 @@ const translations = {
     whichCelebrations: "ఏ వేడుకలకు వస్తారు?",
     weddingRsvp: "వివాహ వేడుక · గురువారం 03 సెప్టెంబర్ సాయంత్రం నుంచి శుక్రవారం తెల్లవారుజాము వరకు",
     vrathamRsvp: "సత్యనారాయణ స్వామి వ్రతం · 05 సెప్టెంబర్ ఉదయం",
-    receptionRsvp: "రిసెప్షన్ · తాత్కాలికంగా 06 సెప్టెంబర్",
+    receptionRsvp: "రిసెప్షన్ · 06 సెప్టెంబర్ · సాయంత్రం 6:30 నుండి",
     guestCount: "అతిథుల సంఖ్య",
     oneGuest: "1 అతిథి",
     twoGuests: "2 అతిథులు",
@@ -298,10 +301,10 @@ const translations = {
     "vratham": "सत्यनारायण स्वामी व्रतम",
     "vrathamDate": "05 सितंबर 2026",
     "vrathamDescription": "पूजा, प्रसाद और कृतज्ञता से भरी शांत सुबह—जहाँ उत्सव आशीर्वाद में बदलते हैं।",
-    "dateTba": "रविवार · संभावित",
+    "dateTba": "रविवार",
     "reception": "रिसेप्शन",
     "dateTimeSoon": "06 सितंबर 2026",
-    "receptionDescription": "तारीख अभी पेंसिल से लिखें—परिवार कैलेंडर को अंतिम आशीर्वाद दे रहे हैं।",
+    "receptionDescription": "तारीख तय है—अब इसे पेंसिल नहीं, स्याही से लिखिए।",
     "addRsvp": "आरएसवीपी में जोड़ें",
     "addedRsvp": "जोड़ दिया ✓",
     "friendlyRivalry": "थोड़ी-सी दोस्ताना टक्कर",
@@ -334,7 +337,7 @@ const translations = {
     "whichCelebrations": "किन समारोहों में आएँगे?",
     "weddingRsvp": "विवाह समारोह · 03 सितंबर शाम से 04 सितंबर की भोर तक",
     "vrathamRsvp": "सत्यनारायण स्वामी व्रतम · 05 सितंबर सुबह",
-    "receptionRsvp": "रिसेप्शन · संभावित 06 सितंबर",
+    "receptionRsvp": "रिसेप्शन · 06 सितंबर · शाम 6:30 बजे से",
     "guestCount": "अतिथियों की संख्या",
     "oneGuest": "1 अतिथि",
     "twoGuests": "2 अतिथि",
@@ -419,10 +422,10 @@ const translations = {
     "vratham": "சத்யநாராயண சுவாமி விரதம்",
     "vrathamDate": "05 செப்டம்பர் 2026",
     "vrathamDescription": "பூஜை, பிரசாதம், நன்றியால் நிறைந்த அமைதியான காலை—விழாக்கள் ஆசிகளாக மலரும் தருணம்.",
-    "dateTba": "ஞாயிறு · தற்காலிகமாக",
+    "dateTba": "ஞாயிறு",
     "reception": "வரவேற்பு",
     "dateTimeSoon": "06 செப்டம்பர் 2026",
-    "receptionDescription": "தேதியை இப்போது பென்சிலில் குறியுங்கள்—குடும்பங்கள் காலண்டருக்கு இறுதி ஆசி தருகின்றன.",
+    "receptionDescription": "தேதி உறுதி—இப்போது பென்சில் வேண்டாம், மையால் எழுதலாம்.",
     "addRsvp": "வருகை உறுதிக்கு சேர்க்கவும்",
     "addedRsvp": "சேர்க்கப்பட்டது ✓",
     "friendlyRivalry": "ஒரு சிறிய நட்பு போட்டி",
@@ -455,7 +458,7 @@ const translations = {
     "whichCelebrations": "எந்த விழாக்களுக்கு வருவீர்கள்?",
     "weddingRsvp": "திருமண விழா · செப்டம்பர் 03 மாலை முதல் 04 அதிகாலை வரை",
     "vrathamRsvp": "சத்யநாராயண சுவாமி விரதம் · செப்டம்பர் 05 காலை",
-    "receptionRsvp": "வரவேற்பு · தற்காலிகமாக செப்டம்பர் 06",
+    "receptionRsvp": "வரவேற்பு · 06 செப்டம்பர் · மாலை 6:30 மணி முதல்",
     "guestCount": "விருந்தினர்களின் எண்ணிக்கை",
     "oneGuest": "1 விருந்தினர்",
     "twoGuests": "2 விருந்தினர்கள்",
@@ -540,10 +543,10 @@ const translations = {
     "vratham": "Sathyanarayana Swamy 祈福仪式",
     "vrathamDate": "2026年9月5日",
     "vrathamDescription": "在祈祷、圣食与感恩中度过宁静的早晨，让庆典沉淀为祝福。",
-    "dateTba": "星期日 · 暂定",
+    "dateTba": "星期日",
     "reception": "婚礼招待会",
     "dateTimeSoon": "2026年9月6日",
-    "receptionDescription": "请先用铅笔记下日期——双方家人还在为日历送上最后的祝福。",
+    "receptionDescription": "日期已确定——这次可以用墨水写进日历了。",
     "addRsvp": "加入出席回复",
     "addedRsvp": "已加入 ✓",
     "friendlyRivalry": "一点友好的较量",
@@ -576,7 +579,7 @@ const translations = {
     "whichCelebrations": "您将参加哪些庆典？",
     "weddingRsvp": "婚礼仪式 · 9月3日晚至9月4日凌晨",
     "vrathamRsvp": "Sathyanarayana Swamy 祈福仪式 · 9月5日上午",
-    "receptionRsvp": "婚礼招待会 · 暂定9月6日",
+    "receptionRsvp": "婚礼招待会 · 9月6日 · 晚上6:30起",
     "guestCount": "出席人数",
     "oneGuest": "1位",
     "twoGuests": "2位",
@@ -615,6 +618,204 @@ const translations = {
 }
 };
 
+// Venue-specific copy added after the original translations so every existing language remains intact.
+Object.assign(translations.en, {
+  pelliKodukuLabel: "Pelli-Koduku",
+  pelliKuthuruLabel: "Pelli-Kuthuru",
+  groomsHouse: "Groom's house",
+  bridesHouse: "Bride's house",
+  vrathamVenuePending: "Venue will be updated.",
+  venueLabel: "Venue",
+  dateTimeSoon: "06 September 2026 · 6:30 PM onwards",
+  receptionVenueName: "RAMCOSA Guest House",
+  receptionVenueAddress: "Madhav Nagar, Dwaraka Nagar, Ramanayyapeta, Andhra Pradesh 533003, India",
+  receptionDirections: "↗ View on Google Maps",
+  receptionRsvp: "Reception · 06 Sep · 6:30 PM onwards"
+});
+Object.assign(translations.te, {
+  pelliKodukuLabel: "పెళ్లికొడుకు",
+  pelliKuthuruLabel: "పెళ్లికూతురు",
+  groomsHouse: "వరుడి ఇంటి వద్ద",
+  bridesHouse: "వధువు ఇంటి వద్ద",
+  vrathamVenuePending: "వ్రతం వేదిక త్వరలో తెలియజేయబడుతుంది.",
+  venueLabel: "వేదిక",
+  dateTimeSoon: "06 సెప్టెంబర్ 2026 · సాయంత్రం 6:30 గంటల నుండి",
+  receptionVenueName: "రామ్‌కోసా గెస్ట్ హౌస్",
+  receptionVenueAddress: "మాధవ్ నగర్, ద్వారకా నగర్, రమణయ్యపేట, ఆంధ్రప్రదేశ్ 533003, ఇండియా",
+  receptionDirections: "↗ గూగుల్ మ్యాప్స్‌లో చూడండి",
+  receptionRsvp: "రిసెప్షన్ · 06 సెప్టెంబర్ · సాయంత్రం 6:30 నుండి"
+});
+Object.assign(translations.hi, {
+  pelliKodukuLabel: "पेल्ली-कोडुकु",
+  pelliKuthuruLabel: "पेल्ली-कुथुरु",
+  groomsHouse: "दूल्हे के घर",
+  bridesHouse: "दुल्हन के घर",
+  vrathamVenuePending: "व्रतम का स्थान बाद में बताया जाएगा।",
+  venueLabel: "स्थान",
+  dateTimeSoon: "06 सितंबर 2026 · शाम 6:30 बजे से",
+  receptionVenueName: "RAMCOSA Guest House",
+  receptionVenueAddress: "माधव नगर, द्वारका नगर, रामनय्यापेटा, आंध्र प्रदेश 533003, भारत",
+  receptionDirections: "↗ Google Maps पर देखें",
+  receptionRsvp: "रिसेप्शन · 06 सितंबर · शाम 6:30 बजे से"
+});
+Object.assign(translations.ta, {
+  pelliKodukuLabel: "பெல்லி-கொடுகு",
+  pelliKuthuruLabel: "பெல்லி-குத்துரு",
+  groomsHouse: "மணமகன் இல்லத்தில்",
+  bridesHouse: "மணமகள் இல்லத்தில்",
+  vrathamVenuePending: "விரதத்தின் இடம் பின்னர் அறிவிக்கப்படும்.",
+  venueLabel: "இடம்",
+  dateTimeSoon: "06 செப்டம்பர் 2026 · மாலை 6:30 மணி முதல்",
+  receptionVenueName: "RAMCOSA Guest House",
+  receptionVenueAddress: "மாதவ் நகர், துவாரகா நகர், ராமனய்யாபேட்டா, ஆந்திரப் பிரதேசம் 533003, இந்தியா",
+  receptionDirections: "↗ Google Maps-ல் காண்க",
+  receptionRsvp: "வரவேற்பு · 06 செப்டம்பர் · மாலை 6:30 மணி முதல்"
+});
+Object.assign(translations.zh, {
+  pelliKodukuLabel: "Pelli-Koduku",
+  pelliKuthuruLabel: "Pelli-Kuthuru",
+  groomsHouse: "新郎家中",
+  bridesHouse: "新娘家中",
+  vrathamVenuePending: "祈福仪式地点稍后更新。",
+  venueLabel: "地点",
+  dateTimeSoon: "2026年9月6日 · 晚上6:30起",
+  receptionVenueName: "RAMCOSA Guest House",
+  receptionVenueAddress: "Madhav Nagar, Dwaraka Nagar, Ramanayyapeta, Andhra Pradesh 533003, India",
+  receptionDirections: "↗ 在 Google Maps 查看",
+  receptionRsvp: "婚礼招待会 · 9月6日 · 晚上6:30起"
+});
+
+translations.ne = {
+  coverTogether: "आफ्ना परिवारहरूसँगै",
+  nameSujana: "सुजना",
+  sujanaParentage: "अरुणा र गणपति रावकी सुपुत्री",
+  nameRadha: "राधा कृष्ण",
+  radhaParentage: "सुजाता र स्वामी वर्माका सुपुत्र",
+  september2026: "सेप्टेम्बर 2026",
+  tapToOpen: "खोल्न छुनुहोस्",
+  navFestivities: "उत्सवहरू",
+  navGallery: "तस्बिरहरू",
+  navCountdown: "काउन्टडाउन",
+  navRsvp: "उपस्थिति पुष्टि",
+  menu: "मेनु",
+  warmlyInvited: "तपाईंलाई हार्दिक निमन्त्रणा",
+  heroVerse: "दुई हृदय, दुई परिवार, एउटा पवित्र सुरुवात।",
+  celebrationsLabel: "उत्सवहरू",
+  september: "सेप्टेम्बर",
+  weddingCeremony: "विवाह समारोह",
+  weddingSchedule: "विवाह समारोहको समयतालिका",
+  dinner: "रात्रिभोज",
+  dinnerSummary: "बिहीबार, 3 सेप्टेम्बर, साँझ 7:00 बजेदेखि",
+  muhurtham: "मुहूर्त",
+  muhurthamSummary: "शुक्रबार बिहान 2:58 बजे",
+  muhurthamAstro: "रोहिणी नक्षत्र र कर्क लग्नको शुभ समयमा।",
+  seeCelebrations: "सबै उत्सवहरू हेर्नुहोस्",
+  blessing: "देवता, हाम्रा पूर्वज र अग्रजहरूको आशीर्वाद तथा तपाईंको आत्मीय उपस्थितिसहित",
+  sixCelebrations: "छवटा सुन्दर उत्सवहरू",
+  festivitiesTitle: "उत्सवहरू",
+  festivitiesIntro: "विधिका लागि आउनुहोस्। हाँसो, खाना, नाचगान र परिवारको रमाइलो हलचलका लागि बसिरहनुहोस्।",
+  tuesday: "मङ्गलबार",
+  mehendi: "मेहन्दी",
+  mehendiDate: "01 सेप्टेम्बर 2026",
+  mehendiDescription: "मेहन्दी, सङ्गीत, रङ र उत्सव सुरु गर्ने सुन्दर साँझ।",
+  wednesday: "बुधबार",
+  pelliRituals: "पेल्ली-कोडुकु<br>& पेल्ली-कुथुरु",
+  pelliRitualsPlain: "पेल्ली-कोडुकु & पेल्ली-कुथुरु",
+  pelliRitualsDate: "02 सेप्टेम्बर 2026",
+  pelliRitualsDescription: "दुवै परिवारले वर-वधूलाई आशीर्वाद दिने रमाइलो तेलुगु परम्परा।",
+  pelliKodukuLabel: "पेल्ली-कोडुकु",
+  pelliKuthuruLabel: "पेल्ली-कुथुरु",
+  groomsHouse: "दुलाहाको घरमा",
+  bridesHouse: "दुलहीको घरमा",
+  haldiDay: "बिहीबार · बिहान 09:00",
+  haldi: "हल्दी",
+  haldiDate: "03 सेप्टेम्बर 2026",
+  haldiDescription: "घाम, बेसार, जिस्क्याउने आफन्त र अलिकति निर्दोष पहेँलो युद्ध।",
+  weddingDay: "बिहीबार साँझ → मध्यरातपछि",
+  weddingDateCard: "03 सेप्टेम्बर 2026",
+  vrathamDay: "शनिबार · बिहान",
+  vratham: "सत्यनारायण स्वामी व्रतम",
+  vrathamDate: "05 सेप्टेम्बर 2026",
+  vrathamDescription: "पूजा, प्रसाद र कृतज्ञताले भरिएको शान्त बिहान।",
+  vrathamVenuePending: "व्रतमको स्थान पछि जानकारी गराइनेछ।",
+  dateTba: "आइतबार",
+  reception: "रिसेप्सन",
+  dateTimeSoon: "06 सेप्टेम्बर 2026 · साँझ 6:30 बजेदेखि",
+  receptionDescription: "मिति पक्का भयो—अब पेन्सिल होइन, मसीले लेख्नुस्।",
+  venueLabel: "स्थान",
+  receptionVenueName: "RAMCOSA Guest House",
+  receptionVenueAddress: "माधव नगर, द्वारका नगर, रामनय्यापेटा, आन्ध्र प्रदेश 533003, भारत",
+  receptionDirections: "↗ Google Maps मा हेर्नुहोस्",
+  addRsvp: "उपस्थिति सूचीमा थप्नुहोस्",
+  addedRsvp: "थपियो ✓",
+  friendlyRivalry: "अलिकति रमाइलो प्रतिस्पर्धा",
+  pickSide: "आफ्नो पक्ष छान्नुहोस्",
+  pickSideIntro: "तपाईंको छनोट RSVP सँगै जान्छ। दबाब छैन—तर सोचेर छान्नुहोस्।",
+  teamBride: "दुलही पक्ष",
+  teamGroom: "दुलाहा पक्ष",
+  versus: "विरुद्ध",
+  countdownEyebrow: "मुहूर्तसम्मको काउन्टडाउन",
+  countdownDate: "04 सेप्टेम्बर 2026 · बिहान 02:58",
+  days: "दिन",
+  hours: "घण्टा",
+  minutes: "मिनेट",
+  seconds: "सेकेन्ड",
+  willJoin: "के तपाईं हामीसँग सहभागी हुनुहुन्छ?",
+  presenceWorld: "तपाईंको उपस्थिति हाम्रा लागि अत्यन्त महत्त्वपूर्ण हुनेछ।",
+  rsvpIntro: "फारम भर्नुहोस्; तपाईंको जवाफ सिधै WhatsApp मा खुल्नेछ।",
+  marriageVenue: "विवाह स्थल",
+  venueName: "Parinaya Function Hall",
+  venueAddress: "NH-16, Rajahmundry Road,<br />Jaggampeta.",
+  whatsappUs: "WhatsApp गर्नुहोस्",
+  mapTitle: "Parinaya Function Hall को नक्सा",
+  addCalendar: "＋ विवाह क्यालेन्डरमा थप्नुहोस्",
+  directions: "↗ दिशा",
+  yourName: "तपाईंको नाम",
+  namePlaceholder: "नाम लेख्नुहोस्",
+  willAttend: "के तपाईं उपस्थित हुनुहुनेछ?",
+  joyfullyYes: "खुसीसाथ उपस्थित हुन्छु",
+  regretfullyNo: "दुःखका साथ उपस्थित हुन सक्दिनँ",
+  whichCelebrations: "कुन-कुन उत्सवमा?",
+  weddingRsvp: "विवाह समारोह · बिहीबार 03 सेप्टेम्बर साँझदेखि शुक्रबार बिहानसम्म",
+  vrathamRsvp: "सत्यनारायण स्वामी व्रतम · 05 सेप्टेम्बर बिहान",
+  receptionRsvp: "रिसेप्सन · 06 सेप्टेम्बर · साँझ 6:30 बजेदेखि",
+  guestCount: "अतिथिको सङ्ख्या",
+  oneGuest: "1 अतिथि",
+  twoGuests: "2 अतिथि",
+  threeGuests: "3 अतिथि",
+  fourGuests: "4 अतिथि",
+  fiveGuests: "5+ अतिथि",
+  noteForUs: "हाम्रा लागि सन्देश",
+  optional: "(ऐच्छिक)",
+  notePlaceholder: "आशीर्वाद वा सन्देश लेख्नुहोस्",
+  sendWhatsapp: "WhatsApp मार्फत RSVP पठाउनुहोस्",
+  rsvpNote: "तपाईंको RSVP हाम्रो परिवारलाई WhatsApp मा पठाइनेछ।",
+  galleryEyebrow: "हाम्रो इन्गेजमेन्ट",
+  gallerySummary: "हाम्रा इन्गेजमेन्टका तस्बिरहरू हेर्नुहोस्",
+  galleryIntro: "हाम्रो सधैंको यात्राले पहिलो आधिकारिक छाप पाएको दिनका केही झलकहरू।",
+  footerBlessing: "देवता, हाम्रा पूर्वज र अग्रजहरूको आशीर्वाद तथा तपाईंको आत्मीय उपस्थितिसहित",
+  madeWithLove: `मायाले बनाइएको — <a href="https://www.instagram.com/radhaekrishno/" target="_blank" rel="noopener noreferrer">राधा कृष्ण</a> र <a href="https://www.instagram.com/dr.sujana_bhumadi/" target="_blank" rel="noopener noreferrer">सुजना</a> · जुलाई 2026`,
+  invitationViews: "निमन्त्रणा हेराइ",
+  eventAdded: "तपाईंको RSVP मा थपियो",
+  eventRemoved: "तपाईंको RSVP बाट हटाइयो",
+  teamSelected: "छानियो",
+  noSide: "कुनै पक्ष छानिएको छैन",
+  notSpecified: "उल्लेख गरिएको छैन",
+  attendanceYes: "खुसीसाथ उपस्थित हुन्छु",
+  attendanceNo: "दुःखका साथ उपस्थित हुन सक्दिनँ",
+  rsvpHeading: "विवाह RSVP — सुजना & राधा कृष्ण",
+  labelName: "नाम",
+  labelAttendance: "उपस्थिति",
+  labelCelebrations: "उत्सवहरू",
+  labelGuests: "अतिथि",
+  labelSide: "पक्ष",
+  labelMessage: "सन्देश",
+  calendarReady: "विवाह क्यालेन्डर डाउनलोड भयो",
+  photo: "तस्बिर",
+  of: "मध्ये",
+  directMessage: "नमस्कार, म सुजना र राधा कृष्णको विवाहबारे जानकारी चाहन्छु।"
+};
+
 const eventLabels = {
   "en": {
     "mehendi": "Mehendi — 01 Sep",
@@ -622,7 +823,7 @@ const eventLabels = {
     "haldi": "Haldi — 03 Sep, 09:00 AM",
     "wedding": "Wedding Ceremony — Dinner: Thursday, 3rd September from 7:00 PM onwards; Muhurtham: early hours of Friday at 2:58 AM",
     "vratham": "Sathyanarayana Swamy Vratham — 05 September morning",
-    "reception": "Reception — Tentatively 06 September 2026"
+    "reception": "Reception — 06 September 2026"
   },
   "te": {
     "mehendi": "మెహందీ — 01 సెప్టెంబర్",
@@ -630,7 +831,7 @@ const eventLabels = {
     "haldi": "హల్దీ — 03 సెప్టెంబర్, ఉదయం 09:00",
     "wedding": "వివాహ వేడుక — విందు: గురువారం, 3 సెప్టెంబర్ సాయంత్రం 7:00 గంటల నుండి; ముహూర్తం: శుక్రవారం తెల్లవారుజామున 2:58 గంటలకు",
     "vratham": "సత్యనారాయణ స్వామి వ్రతం — 05 సెప్టెంబర్ ఉదయం",
-    "reception": "రిసెప్షన్ — తాత్కాలికంగా 06 సెప్టెంబర్ 2026"
+    "reception": "రిసెప్షన్ — 06 సెప్టెంబర్ 2026"
   },
   "hi": {
     "mehendi": "मेहंदी — 01 सितंबर",
@@ -638,7 +839,7 @@ const eventLabels = {
     "haldi": "हल्दी — 03 सितंबर, सुबह 09:00",
     "wedding": "विवाह समारोह — रात्रिभोज: 3 सितंबर शाम 7:00 बजे से; मुहूर्त: 4 सितंबर की भोर में 2:58 बजे",
     "vratham": "सत्यनारायण स्वामी व्रतम — 05 सितंबर सुबह",
-    "reception": "रिसेप्शन — संभावित 06 सितंबर 2026"
+    "reception": "रिसेप्शन — 06 सितंबर 2026"
   },
   "ta": {
     "mehendi": "மெஹந்தி — 01 செப்டம்பர்",
@@ -646,7 +847,7 @@ const eventLabels = {
     "haldi": "ஹல்தி — 03 செப்டம்பர், காலை 09:00",
     "wedding": "திருமண விழா — விருந்து: செப்டம்பர் 3 மாலை 7:00 மணி முதல்; முகூர்த்தம்: செப்டம்பர் 4 அதிகாலை 2:58",
     "vratham": "சத்யநாராயண சுவாமி விரதம் — 05 செப்டம்பர் காலை",
-    "reception": "வரவேற்பு — தற்காலிகமாக 06 செப்டம்பர் 2026"
+    "reception": "வரவேற்பு — 06 செப்டம்பர் 2026"
   },
   "zh": {
     "mehendi": "曼海蒂 — 9月1日",
@@ -654,8 +855,42 @@ const eventLabels = {
     "haldi": "姜黄仪式 — 9月3日上午09:00",
     "wedding": "婚礼仪式 — 晚宴：9月3日晚7:00起；吉时：9月4日凌晨2:58",
     "vratham": "Sathyanarayana Swamy 祈福仪式 — 9月5日上午",
-    "reception": "婚礼招待会 — 暂定2026年9月6日"
+    "reception": "婚礼招待会 — 2026年9月6日"
   }
+};
+
+Object.assign(eventLabels.en, {
+  pellirituals: "Pelli-Koduku at the Groom's house & Pelli-Kuthuru at the Bride's house — 02 Sep",
+  vratham: "Sathyanarayana Swamy Vratham — 05 September morning · Venue to be updated",
+  reception: "Reception — 06 September 2026 · 6:30 PM onwards · RAMCOSA Guest House"
+});
+Object.assign(eventLabels.te, {
+  pellirituals: "పెళ్లికొడుకు వరుడి ఇంటి వద్ద & పెళ్లికూతురు వధువు ఇంటి వద్ద — 02 సెప్టెంబర్",
+  vratham: "సత్యనారాయణ స్వామి వ్రతం — 05 సెప్టెంబర్ ఉదయం · వేదిక త్వరలో",
+  reception: "రిసెప్షన్ — 06 సెప్టెంబర్ 2026 · సాయంత్రం 6:30 నుండి · రామ్‌కోసా గెస్ట్ హౌస్"
+});
+Object.assign(eventLabels.hi, {
+  pellirituals: "पेल्ली-कोडुकु दूल्हे के घर & पेल्ली-कुथुरु दुल्हन के घर — 02 सितंबर",
+  vratham: "सत्यनारायण स्वामी व्रतम — 05 सितंबर सुबह · स्थान बाद में",
+  reception: "रिसेप्शन — 06 सितंबर 2026 · शाम 6:30 बजे से · RAMCOSA Guest House"
+});
+Object.assign(eventLabels.ta, {
+  pellirituals: "பெல்லி-கொடுகு மணமகன் இல்லத்தில் & பெல்லி-குத்துரு மணமகள் இல்லத்தில் — 02 செப்டம்பர்",
+  vratham: "சத்யநாராயண சுவாமி விரதம் — 05 செப்டம்பர் காலை · இடம் பின்னர்",
+  reception: "வரவேற்பு — 06 செப்டம்பர் 2026 · மாலை 6:30 மணி முதல் · RAMCOSA Guest House"
+});
+Object.assign(eventLabels.zh, {
+  pellirituals: "Pelli-Koduku 在新郎家中 & Pelli-Kuthuru 在新娘家中 — 9月2日",
+  vratham: "Sathyanarayana Swamy 祈福仪式 — 9月5日上午 · 地点稍后更新",
+  reception: "婚礼招待会 — 2026年9月6日 · 晚上6:30起 · RAMCOSA Guest House"
+});
+eventLabels.ne = {
+  mehendi: "मेहन्दी — 01 सेप्टेम्बर",
+  pellirituals: "पेल्ली-कोडुकु दुलाहाको घरमा & पेल्ली-कुथुरु दुलहीको घरमा — 02 सेप्टेम्बर",
+  haldi: "हल्दी — 03 सेप्टेम्बर, बिहान 09:00",
+  wedding: "विवाह समारोह — रात्रिभोज: 3 सेप्टेम्बर साँझ 7:00 बजेदेखि; मुहूर्त: 4 सेप्टेम्बर बिहान 2:58 बजे",
+  vratham: "सत्यनारायण स्वामी व्रतम — 05 सेप्टेम्बर बिहान · स्थान पछि",
+  reception: "रिसेप्सन — 06 सेप्टेम्बर 2026 · साँझ 6:30 बजेदेखि · RAMCOSA Guest House"
 };
 
 const teamLabels = {
@@ -681,13 +916,19 @@ const teamLabels = {
   }
 };
 
-const SUPPORTED_LANGUAGES = ["en", "te", "hi", "ta", "zh"];
+teamLabels.ne = {
+  bride: "दुलही पक्ष — सुजना",
+  groom: "दुलाहा पक्ष — राधा कृष्ण"
+};
+
+const SUPPORTED_LANGUAGES = ["en", "te", "hi", "ta", "zh", "ne"];
 const LANGUAGE_META = {
   en: { htmlLang: "en", title: "Sujana & Radha Krishna | Wedding Invitation" },
   te: { htmlLang: "te", title: "సుజన & రాధా కృష్ణ | వివాహ ఆహ్వానం" },
   hi: { htmlLang: "hi", title: "सुजना & राधा कृष्ण | विवाह निमंत्रण" },
   ta: { htmlLang: "ta", title: "சுஜனா & ராதா கிருஷ்ணா | திருமண அழைப்பிதழ்" },
-  zh: { htmlLang: "zh-Hans", title: "Sujana & Radha Krishna | 婚礼邀请函" }
+  zh: { htmlLang: "zh-Hans", title: "Sujana & Radha Krishna | 婚礼邀请函" },
+  ne: { htmlLang: "ne", title: "सुजना & राधा कृष्ण | विवाह निमन्त्रणा" }
 };
 const TOGGLE_META = {
   en: { label: "English", name: "English" },
@@ -736,7 +977,7 @@ function applyLanguage(language) {
   currentLanguage = SUPPORTED_LANGUAGES.includes(language) ? language : "en";
   const meta = LANGUAGE_META[currentLanguage];
   document.documentElement.lang = meta.htmlLang;
-  document.body.classList.remove("lang-te", "lang-hi", "lang-ta", "lang-zh");
+  document.body.classList.remove("lang-te", "lang-hi", "lang-ta", "lang-zh", "lang-ne");
   if (currentLanguage !== "en") document.body.classList.add(`lang-${currentLanguage}`);
   document.title = meta.title;
 
@@ -754,7 +995,7 @@ function applyLanguage(language) {
   });
 
   // The visible toggle intentionally offers only English and Telugu.
-  // Hindi, Tamil and Chinese remain available through their dedicated URLs.
+  // Hindi, Tamil, Chinese and Nepali remain available through their dedicated URLs.
   const toggleTarget = currentLanguage === "en" ? "te" : "en";
   const toggleMeta = TOGGLE_META[toggleTarget];
   languageToggle.textContent = toggleMeta.label;
@@ -919,7 +1160,7 @@ function toICSDate(date) {
   return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
 }
 
-function createCalendarEvent({ uid, start, end, summary, description }) {
+function createCalendarEvent({ uid, start, end, summary, description, location = CONFIG.venueName }) {
   return [
     "BEGIN:VEVENT",
     `UID:${uid}`,
@@ -947,7 +1188,8 @@ document.getElementById("calendarButton").addEventListener("click", () => {
       start: new Date("2026-09-02T09:00:00+05:30"),
       end: new Date("2026-09-02T13:00:00+05:30"),
       summary: "Sujana & Radha Krishna — Pelli-Koduku & Pelli-Kuthuru",
-      description: "Pelli-Koduku and Pelli-Kuthuru. Exact time may be confirmed by the family."
+      description: "Pelli-Koduku will be held at the Groom's house and Pelli-Kuthuru at the Bride's house. Exact time may be confirmed by the family.",
+      location: "Groom's house / Bride's house"
     }),
     ...createCalendarEvent({
       uid: "haldi-2026@sujana-radha",
@@ -973,6 +1215,14 @@ document.getElementById("calendarButton").addEventListener("click", () => {
       end: new Date("2026-09-04T05:30:00+05:30"),
       summary: "Sujana & Radha Krishna — Wedding Ceremony",
       description: "Please arrive on Thursday evening, 3 September 2026. Dinner is from 7:00 PM onwards. The sacred Muhurtham follows after midnight at 2:58 AM in the early hours of Friday, 4 September 2026 — not on Friday night — at Rohini Nakshatra and Karka Ascendant."
+    }),
+    ...createCalendarEvent({
+      uid: "reception-2026@sujana-radha",
+      start: new Date("2026-09-06T18:30:00+05:30"),
+      end: new Date("2026-09-06T22:00:00+05:30"),
+      summary: "Sujana & Radha Krishna — Reception",
+      description: "Reception begins at 6:30 PM. The public invitation says 6:30 PM onwards.",
+      location: `${CONFIG.receptionVenueName}, ${CONFIG.receptionVenueAddress}`
     })
   ];
 

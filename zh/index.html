@@ -11,15 +11,16 @@
   <link rel="alternate" hreflang="hi" href="https://radhasujana.com/hi/" />
   <link rel="alternate" hreflang="ta" href="https://radhasujana.com/ta/" />
   <link rel="alternate" hreflang="zh-Hans" href="https://radhasujana.com/zh/" />
+  <link rel="alternate" hreflang="ne" href="https://radhasujana.com/ne/" />
   <link rel="alternate" hreflang="x-default" href="https://radhasujana.com/en/" />
   <title>Sujana & Radha Krishna | 婚礼邀请函</title>
-  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=16" />
-  <link rel="shortcut icon" href="/favicon.ico?v=16" />
-  <link rel="apple-touch-icon" href="/favicon.png?v=16" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=17" />
+  <link rel="shortcut icon" href="/favicon.ico?v=17" />
+  <link rel="apple-touch-icon" href="/favicon.png?v=17" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Italiana&family=Montserrat:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&family=Noto+Sans+Tamil:wght@400;500;600&family=Noto+Sans+Telugu:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Serif+Tamil:wght@400;500;600&family=Noto+Serif+Telugu:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=16" />
+  <link rel="stylesheet" href="/styles.css?v=18" />
 </head>
 <body class="locked">
   <div class="grain" aria-hidden="true"></div>
@@ -152,6 +153,10 @@
           <h3 data-i18n-html="pelliRituals">Pelli-Koduku<br>& Pelli-Kuthuru</h3>
           <p class="event-card__date" data-i18n="pelliRitualsDate">02 September 2026</p>
           <p class="event-card__description" data-i18n="pelliRitualsDescription">A joyful Telugu tradition as both families bless the bride and groom.</p>
+          <div class="event-card__locations" aria-label="Pelli-Koduku and Pelli-Kuthuru locations">
+            <p><strong data-i18n="pelliKodukuLabel">Pelli-Koduku</strong><span data-i18n="groomsHouse">Groom's house</span></p>
+            <p><strong data-i18n="pelliKuthuruLabel">Pelli-Kuthuru</strong><span data-i18n="bridesHouse">Bride's house</span></p>
+          </div>
           <button class="event-select" type="button" data-i18n="addRsvp">Add to RSVP</button>
         </article>
 
@@ -184,15 +189,22 @@
           <h3 data-i18n="vratham">Sathyanarayana Swamy Vratham</h3>
           <p class="event-card__date" data-i18n="vrathamDate">05 September 2026</p>
           <p class="event-card__description" data-i18n="vrathamDescription">A serene morning of prayer, prasadam, and gratitude as the celebrations settle into blessings.</p>
+          <p class="event-card__venue-note" data-i18n="vrathamVenuePending">Venue will be updated.</p>
           <button class="event-select" type="button" data-i18n="addRsvp">Add to RSVP</button>
         </article>
 
         <article class="event-card event-card--reception reveal" data-event-id="reception">
           <div class="event-card__number">06</div>
-          <p class="event-card__day" data-i18n="dateTba">Sunday · Tentatively</p>
+          <p class="event-card__day" data-i18n="dateTba">Sunday</p>
           <h3 data-i18n="reception">Reception</h3>
-          <p class="event-card__date" data-i18n="dateTimeSoon">06 September 2026</p>
+          <p class="event-card__date" data-i18n="dateTimeSoon">06 September 2026 · 6:30 PM onwards</p>
           <p class="event-card__description" data-i18n="receptionDescription">Save the date in pencil—the families are still giving the calendar its final blessings.</p>
+          <div class="event-card__venue">
+            <strong data-i18n="venueLabel">Venue</strong>
+            <span data-i18n="receptionVenueName">RAMCOSA Guest House</span>
+            <small data-i18n="receptionVenueAddress">Madhav Nagar, Dwaraka Nagar, Ramanayyapeta, Andhra Pradesh 533003, India</small>
+            <a href="https://share.google/Bx2va6zVbhM6UoSrD" target="_blank" rel="noopener noreferrer" data-i18n="receptionDirections">↗ View on Google Maps</a>
+          </div>
           <button class="event-select" type="button" data-i18n="addRsvp">Add to RSVP</button>
         </article>
       </div>
@@ -292,7 +304,7 @@
             <label><input type="checkbox" name="events" value="haldi" data-event-id="haldi" /><span data-i18n="haldi">Haldi</span></label>
             <label><input type="checkbox" name="events" value="wedding" data-event-id="wedding" /><span data-i18n="weddingRsvp">Wedding Ceremony · 03 Sep night</span></label>
             <label><input type="checkbox" name="events" value="vratham" data-event-id="vratham" /><span data-i18n="vrathamRsvp">Sathyanarayana Swamy Vratham · 05 Sep morning</span></label>
-            <label><input type="checkbox" name="events" value="reception" data-event-id="reception" /><span data-i18n="receptionRsvp">Reception · Tentatively 06 Sep</span></label>
+            <label><input type="checkbox" name="events" value="reception" data-event-id="reception" /><span data-i18n="receptionRsvp">Reception · 06 Sep · 6:30 PM onwards</span></label>
           </div>
         </fieldset>
 
@@ -376,7 +388,7 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <noscript>This invitation needs JavaScript enabled for the opening animation, language switch, gallery and RSVP.</noscript>
-  <script src="/script.js?v=16"></script>
+  <script src="/script.js?v=18"></script>
   <script data-goatcounter="https://radhasujana.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

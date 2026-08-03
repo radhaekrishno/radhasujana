@@ -1,17 +1,24 @@
-# Radha–Sujana Wedding Website — Version 16
+# Radha & Sujana Wedding Website — Version 18
 
-## Language URLs
+## Language routes
 
-- English: `https://radhasujana.com/en/`
-- Telugu: `https://radhasujana.com/te/`
-- Hindi: `https://radhasujana.com/hi/`
-- Tamil: `https://radhasujana.com/ta/`
-- Chinese: `https://radhasujana.com/zh/`
+- `/en/` — English
+- `/te/` — Telugu
+- `/hi/` — Hindi
+- `/ta/` — Tamil
+- `/zh/` — Chinese
+- `/ne/` — Nepali
 
-The visible language button switches only between English and Telugu. Hindi, Tamil and Chinese remain available through their direct URLs.
+The visible top toggle intentionally switches only between English and Telugu. The other languages remain available through their direct URLs.
 
-The root domain `https://radhasujana.com/` continues to open the English version.
+## Event updates
 
-## GitHub upload
+- Pelli-Koduku: Groom's house
+- Pelli-Kuthuru: Bride's house
+- Sathyanarayana Swamy Vratham: morning of 5 September 2026; venue to be updated
+- Reception: 6 September 2026, 6:30 PM onwards
+- Reception venue: RAMCOSA Guest House, Madhav Nagar, Dwaraka Nagar, Ramanayyapeta, Andhra Pradesh 533003, India
 
-Upload every file and all five language folders to the repository root. Keep the folder names exactly as `en`, `te`, `hi`, `ta`, and `zh`.
+The calendar file uses 10:00 PM as the Reception end time for scheduling, while the visible invitation says “6:30 PM onwards.”
+
+Upload every file and folder in this directory to the root of the existing GitHub Pages repository.
