@@ -52,3 +52,10 @@ Version 19 adds the Reception venue card, embedded map, and separate directions 
 - Every language route now toggles between English and that route's local language.
 - The paired local language is retained while switching to `/en/` in the same browser tab.
 - Clicking the wedding logo now scrolls to the true top and removes stale section hashes, fixing mobile scroll trapping.
+
+
+## Version 24 changes
+- Wedding logo now opens the shared wedding Instagram account.
+- Added an “Our Instagram” top navigation link.
+- Added a themed Instagram follow section in the footer for updates and photos.
+- Added translated Instagram labels across all language routes.

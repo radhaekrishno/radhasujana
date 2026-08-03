@@ -21,6 +21,8 @@ const translations = {
     navGallery: "Gallery",
     navCountdown: "Countdown",
     navRsvp: "RSVP",
+    navInstagram: "Our Instagram",
+    logoInstagramHint: "Psst… our Instagram is here",
     menu: "Menu",
     warmlyInvited: "You are warmly invited",
     heroVerse: "Two hearts, two families, one sacred beginning.",
@@ -110,6 +112,9 @@ const translations = {
     gallerySummary: "Check out our engagement photos",
     galleryIntro: "A few frames from the day our forever received its first official stamp.",
     footerBlessing: "With the blessings of gods, our ancestors, elders and the warmth of your presence",
+    instagramFooterLead: "Do follow us on Instagram",
+    instagramButton: "Follow @radhasujana26",
+    instagramFooterText: "For live updates, new photos, behind-the-scenes moments, and everything leading up to the big day.",
     madeWithLove: `Made with love by <a href="https://www.instagram.com/radhaekrishno/" target="_blank" rel="noopener noreferrer">Radha Krishna</a> and <a href="https://www.instagram.com/dr.sujana_bhumadi/" target="_blank" rel="noopener noreferrer">Sujana</a> · July 2026`,
     invitationViews: "Invitation views",
     eventAdded: "added to your RSVP",
@@ -143,6 +148,8 @@ const translations = {
     navGallery: "గ్యాలరీ",
     navCountdown: "కౌంట్‌డౌన్",
     navRsvp: "హాజరు నిర్ధారణ",
+    navInstagram: "మా ఇన్‌స్టాగ్రామ్",
+    logoInstagramHint: "ఇక్కడ మా ఇన్‌స్టాగ్రామ్ ఉంది",
     menu: "మెను",
     warmlyInvited: "మీకు మా హృదయపూర్వక ఆహ్వానం",
     heroVerse: "రెండు హృదయాలు, రెండు కుటుంబాలు, ఒక పవిత్ర ఆరంభం.",
@@ -232,6 +239,9 @@ const translations = {
     gallerySummary: "మా నిశ్చితార్థ ఫోటోలు చూడండి",
     galleryIntro: "మా జీవిత ప్రయాణానికి అధికారికంగా మొదటి ముద్ర పడిన రోజు నుంచి కొన్ని అందమైన క్షణాలు.",
     footerBlessing: "దైవాల, మా పూర్వీకుల, పెద్దల ఆశీస్సులతో మరియు మీ ఆత్మీయ సమక్షంతో",
+    instagramFooterLead: "మమ్మల్ని ఇన్‌స్టాగ్రామ్‌లో ఫాలో అవ్వండి",
+    instagramButton: "@radhasujana26 ను ఫాలో అవ్వండి",
+    instagramFooterText: "లైవ్ అప్‌డేట్స్, కొత్త ఫోటోలు, తెరవెనుక క్షణాలు మరియు పెళ్లి రోజు వరకు జరిగే ప్రతి ప్రత్యేక విషయానికి.",
     madeWithLove: `ప్రేమతో రూపొందించిన వారు <a href="https://www.instagram.com/radhaekrishno/" target="_blank" rel="noopener noreferrer">రాధా కృష్ణ</a> మరియు <a href="https://www.instagram.com/dr.sujana_bhumadi/" target="_blank" rel="noopener noreferrer">సుజన</a> · జూలై 2026`,
     invitationViews: "ఆహ్వాన పత్రిక వీక్షణలు",
     eventAdded: "హాజరు జాబితాకు జోడించబడింది",
@@ -265,6 +275,8 @@ const translations = {
     "navGallery": "गैलरी",
     "navCountdown": "उलटी गिनती",
     "navRsvp": "आरएसवीपी",
+    "navInstagram": "हमारा इंस्टाग्राम",
+    "logoInstagramHint": "यहाँ हमारा इंस्टाग्राम है",
     "menu": "मेनू",
     "warmlyInvited": "आप सादर आमंत्रित हैं",
     "heroVerse": "दो दिल, दो परिवार, एक पवित्र शुरुआत।",
@@ -353,6 +365,9 @@ const translations = {
     "gallerySummary": "हमारी सगाई की तस्वीरें देखें",
     "galleryIntro": "उस दिन की कुछ झलकियाँ जब हमारे हमेशा के सफर पर पहली आधिकारिक मुहर लगी।",
     "footerBlessing": "ईश्वर, हमारे पूर्वजों और बड़ों के आशीर्वाद तथा आपकी स्नेहमयी उपस्थिति के साथ",
+    "instagramFooterLead": "हमें इंस्टाग्राम पर ज़रूर फ़ॉलो करें",
+    "instagramButton": "@radhasujana26 को फ़ॉलो करें",
+    "instagramFooterText": "लाइव अपडेट, नई तस्वीरें, पर्दे के पीछे के पल और बड़े दिन तक की हर खास झलक के लिए।",
     "madeWithLove": "प्रेम से बनाया <a href=\"https://www.instagram.com/radhaekrishno/\" target=\"_blank\" rel=\"noopener noreferrer\">राधा कृष्ण</a> और <a href=\"https://www.instagram.com/dr.sujana_bhumadi/\" target=\"_blank\" rel=\"noopener noreferrer\">सुजना</a> ने · जुलाई 2026",
     "invitationViews": "आमंत्रण दृश्य",
     "eventAdded": "आपके आरएसवीपी में जोड़ा गया",
@@ -386,6 +401,8 @@ const translations = {
     "navGallery": "படத்தொகுப்பு",
     "navCountdown": "கவுண்ட்டவுன்",
     "navRsvp": "வருகை உறுதி",
+    "navInstagram": "எங்கள் Instagram",
+    "logoInstagramHint": "எங்கள் Instagram இங்கே",
     "menu": "மெனு",
     "warmlyInvited": "உங்களை அன்புடன் அழைக்கிறோம்",
     "heroVerse": "இரு இதயங்கள், இரு குடும்பங்கள், ஒரு புனித தொடக்கம்.",
@@ -474,6 +491,9 @@ const translations = {
     "gallerySummary": "எங்கள் நிச்சயதார்த்தப் படங்களைப் பாருங்கள்",
     "galleryIntro": "எங்கள் என்றும் தொடரும் பயணத்திற்கு முதல் அதிகாரப்பூர்வ முத்திரை பதிந்த நாளின் சில அழகிய தருணங்கள்.",
     "footerBlessing": "இறைவன், எங்கள் முன்னோர்கள், பெரியோரின் ஆசிகளுடனும் உங்கள் அன்பான வருகையுடனும்",
+    "instagramFooterLead": "Instagram-ல் எங்களைப் பின்தொடருங்கள்",
+    "instagramButton": "@radhasujana26-ஐ பின்தொடருங்கள்",
+    "instagramFooterText": "நேரடி அறிவிப்புகள், புதிய புகைப்படங்கள், பின்னணிக் காட்சிகள் மற்றும் திருமண நாள் வரை ஒவ்வொரு சிறப்பு தருணத்திற்கும்.",
     "madeWithLove": "அன்புடன் உருவாக்கியது <a href=\"https://www.instagram.com/radhaekrishno/\" target=\"_blank\" rel=\"noopener noreferrer\">ராதா கிருஷ்ணா</a> மற்றும் <a href=\"https://www.instagram.com/dr.sujana_bhumadi/\" target=\"_blank\" rel=\"noopener noreferrer\">சுஜனா</a> · ஜூலை 2026",
     "invitationViews": "அழைப்பிதழ் பார்வைகள்",
     "eventAdded": "உங்கள் வருகை உறுதியில் சேர்க்கப்பட்டது",
@@ -507,6 +527,8 @@ const translations = {
     "navGallery": "相册",
     "navCountdown": "倒计时",
     "navRsvp": "出席回复",
+    "navInstagram": "我们的 Instagram",
+    "logoInstagramHint": "我们的 Instagram 在这里",
     "menu": "菜单",
     "warmlyInvited": "诚挚邀请您的到来",
     "heroVerse": "两颗心，两个家庭，一个神圣的新开始。",
@@ -595,6 +617,9 @@ const translations = {
     "gallerySummary": "查看我们的订婚照片",
     "galleryIntro": "记录那个为我们的永恒之旅盖下第一枚正式印章的日子。",
     "footerBlessing": "承蒙神明、祖先与长辈的祝福，并期待您温暖的到来",
+    "instagramFooterLead": "欢迎在 Instagram 关注我们",
+    "instagramButton": "关注 @radhasujana26",
+    "instagramFooterText": "获取实时动态、新照片、幕后瞬间，以及婚礼前的每一份精彩。",
     "madeWithLove": "由 <a href=\"https://www.instagram.com/radhaekrishno/\" target=\"_blank\" rel=\"noopener noreferrer\">Radha Krishna</a> 与 <a href=\"https://www.instagram.com/dr.sujana_bhumadi/\" target=\"_blank\" rel=\"noopener noreferrer\">Sujana</a> 用爱制作 · 2026年7月",
     "invitationViews": "邀请函浏览量",
     "eventAdded": "已加入您的出席回复",
@@ -717,6 +742,8 @@ translations.ne = {
   navGallery: "तस्बिरहरू",
   navCountdown: "काउन्टडाउन",
   navRsvp: "उपस्थिति पुष्टि",
+  navInstagram: "हाम्रो Instagram",
+  logoInstagramHint: "हाम्रो Instagram यहाँ छ",
   menu: "मेनु",
   warmlyInvited: "तपाईंलाई हार्दिक निमन्त्रणा",
   heroVerse: "दुई हृदय, दुई परिवार, एउटा पवित्र सुरुवात।",
@@ -818,6 +845,9 @@ translations.ne = {
   gallerySummary: "हाम्रा इन्गेजमेन्टका तस्बिरहरू हेर्नुहोस्",
   galleryIntro: "हाम्रो सधैंको यात्राले पहिलो आधिकारिक छाप पाएको दिनका केही झलकहरू।",
   footerBlessing: "देवता, हाम्रा पूर्वज र अग्रजहरूको आशीर्वाद तथा तपाईंको आत्मीय उपस्थितिसहित",
+  instagramFooterLead: "हामीलाई Instagram मा फलो गर्नुहोस्",
+  instagramButton: "@radhasujana26 लाई फलो गर्नुहोस्",
+  instagramFooterText: "लाइभ अपडेट, नयाँ तस्बिर, पर्दा पछाडिका क्षण र विवाहको दिनसम्मका सबै विशेष खबरका लागि।",
   madeWithLove: `मायाले बनाइएको — <a href="https://www.instagram.com/radhaekrishno/" target="_blank" rel="noopener noreferrer">राधा कृष्ण</a> र <a href="https://www.instagram.com/dr.sujana_bhumadi/" target="_blank" rel="noopener noreferrer">सुजना</a> · जुलाई 2026`,
   invitationViews: "निमन्त्रणा हेराइ",
   eventAdded: "तपाईंको RSVP मा थपियो",
@@ -1176,18 +1206,6 @@ mobileMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", 
   menuButton.setAttribute("aria-expanded", "false");
 }));
 
-const topLogo = document.querySelector("[data-scroll-top]");
-topLogo?.addEventListener("click", event => {
-  event.preventDefault();
-  mobileMenu.classList.remove("open");
-  menuButton.setAttribute("aria-expanded", "false");
-
-  // Remove an old section hash and return to the actual top of the document.
-  const cleanUrl = `${window.location.pathname}${window.location.search}`;
-  window.history.replaceState(window.history.state, "", cleanUrl);
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  window.scrollTo({ top: 0, left: 0, behavior: reduceMotion ? "auto" : "smooth" });
-});
 
 const weddingDate = new Date("2026-09-04T02:58:00+05:30");
 function updateCountdown() {
