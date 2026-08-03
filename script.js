@@ -843,11 +843,11 @@ translations.ne = {
 
 // Natural-language names for the Telugu pre-wedding preparation and blessing rituals.
 Object.assign(translations.en, {
-  pelliRituals: "Groom’s Pre-Wedding Blessing<br>& Bride’s Pre-Wedding Blessing",
-  pelliRitualsPlain: "Groom’s Pre-Wedding Blessing & Bride’s Pre-Wedding Blessing",
+  pelliRituals: "Groom’s Pre-Wedding Blessing <span class=\"ritual-native\">(Pelli-Koduku)</span><br>& Bride’s Pre-Wedding Blessing <span class=\"ritual-native\">(Pelli-Kuthuru)</span>",
+  pelliRitualsPlain: "Groom’s Pre-Wedding Blessing (Pelli-Koduku) & Bride’s Pre-Wedding Blessing (Pelli-Kuthuru)",
   pelliRitualsDescription: "Traditional ceremonies in which the groom and bride are prepared and blessed at their respective homes.",
-  pelliKodukuLabel: "Groom’s Ceremony",
-  pelliKuthuruLabel: "Bride’s Ceremony",
+  pelliKodukuLabel: "Groom’s Ceremony (Pelli-Koduku)",
+  pelliKuthuruLabel: "Bride’s Ceremony (Pelli-Kuthuru)",
   receptionDescription: ""
 });
 Object.assign(translations.te, {
@@ -970,7 +970,7 @@ eventLabels.ne = {
 
 
 Object.assign(eventLabels.en, {
-  pellirituals: "Groom’s Pre-Wedding Blessing at the Groom’s house & Bride’s Pre-Wedding Blessing at the Bride’s house — 02 Sep"
+  pellirituals: "Groom’s Pre-Wedding Blessing (Pelli-Koduku) at the Groom’s house & Bride’s Pre-Wedding Blessing (Pelli-Kuthuru) at the Bride’s house — 02 Sep"
 });
 Object.assign(eventLabels.te, {
   pellirituals: "పెళ్లికొడుకు వేడుక వరుడి ఇంటి వద్ద & పెళ్లికూతురు వేడుక వధువు ఇంటి వద్ద — 02 సెప్టెంబర్"
@@ -1214,13 +1214,26 @@ document.querySelectorAll('input[name="events"]').forEach(checkbox => {
   });
 });
 
-document.querySelectorAll(".team-card").forEach(button => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll(".team-card").forEach(item => item.classList.remove("active"));
-    button.classList.add("active");
-    selectedTeamId = button.dataset.teamId;
-    document.getElementById("selectedTeam").value = selectedTeamId;
-    showToast(`${teamLabels[currentLanguage][selectedTeamId]} ${t("teamSelected")}`);
+const teamCards = [...document.querySelectorAll(".team-card")];
+const rsvpTeamInputs = [...document.querySelectorAll('input[name="rsvpTeam"]')];
+
+function selectTeam(teamId, announce = false) {
+  if (!teamId || !teamLabels[currentLanguage]?.[teamId]) return;
+  selectedTeamId = teamId;
+  const hiddenTeam = document.getElementById("selectedTeam");
+  if (hiddenTeam) hiddenTeam.value = teamId;
+  teamCards.forEach(card => card.classList.toggle("active", card.dataset.teamId === teamId));
+  rsvpTeamInputs.forEach(input => { input.checked = input.value === teamId; });
+  if (announce) showToast(`${teamLabels[currentLanguage][teamId]} ${t("teamSelected")}`);
+}
+
+teamCards.forEach(button => {
+  button.addEventListener("click", () => selectTeam(button.dataset.teamId, true));
+});
+
+rsvpTeamInputs.forEach(input => {
+  input.addEventListener("change", () => {
+    if (input.checked) selectTeam(input.value, true);
   });
 });
 
@@ -1234,6 +1247,8 @@ rsvpForm.addEventListener("submit", event => {
   const name = String(formData.get("guestName") || "").trim();
   const count = formData.get("guestCount");
   const note = String(formData.get("guestNote") || "").trim() || "—";
+  const formTeam = String(formData.get("rsvpTeam") || "");
+  if (formTeam) selectTeam(formTeam, false);
 
   const message = [
     `*${t("rsvpHeading")}*`,

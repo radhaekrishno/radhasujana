@@ -38,3 +38,11 @@ Version 19 adds the Reception venue card, embedded map, and separate directions 
 - Made weekday labels and dates more prominent on event cards.
 - Matched the Pelli-Koduku/Pelli-Kuthuru and Reception cards to the Wedding Ceremony wine palette.
 - Replaced transliterations of the Telugu preparation rituals with natural descriptions in English, Hindi, Tamil, Chinese and Nepali.
+
+
+## Version 22 changes
+- Added Reception to the top celebration summary.
+- Improved number and date contrast on deep-wine event cards.
+- Restored a quieter weekday treatment and aligned card styling.
+- Added Pelli-Koduku and Pelli-Kuthuru parenthetical labels in English.
+- Added a second Pick your side selector inside the RSVP form and synchronized it with the earlier selector.

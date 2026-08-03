@@ -279,7 +279,7 @@ img { max-width: 100%; }
 .couple-names em { display: block; margin: 11px 0 8px; color: var(--gold); font: italic 400 clamp(2.3rem, 5vw, 3.8rem) "Cormorant Garamond", serif; }
 .hero__verse { max-width: 560px; margin: 30px auto 34px; color: var(--muted); font: 500 clamp(1.1rem, 2.4vw, 1.5rem) "Cormorant Garamond", "Noto Serif Telugu", serif; }
 .hero__date-card { display: inline-flex; align-items: stretch; gap: 25px; padding: 17px 26px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.hero__date-card div { display: grid; grid-template-columns: auto auto; column-gap: 8px; align-items: end; text-align: left; }
+.hero__date-card div { min-width: 112px; display: grid; grid-template-columns: auto auto; column-gap: 8px; align-items: end; text-align: left; }
 .hero__date-card span { grid-column: 1/-1; color: var(--muted); font-size: .55rem; letter-spacing: .18em; text-transform: uppercase; }
 .hero__date-card strong { color: var(--wine); font: 600 2rem "Cormorant Garamond", serif; }
 .hero__date-card small { max-width: 98px; padding-bottom: 5px; color: var(--muted); font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; line-height: 1.3; }
@@ -341,12 +341,16 @@ img { max-width: 100%; }
 .section-heading h2 { margin: 0 0 16px; color: var(--wine); font: 400 clamp(2.8rem, 6vw, 5rem) "Italiana", "Noto Serif Telugu", "Times New Roman", serif; }
 .section-heading > p:last-child { margin: 0; color: var(--muted); line-height: 1.8; }
 .event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; max-width: 1380px; margin: 0 auto; }
-.event-card { position: relative; min-height: 480px; display: flex; flex-direction: column; padding: 29px; overflow: hidden; border: 1px solid rgba(111,16,37,.15); background: rgba(255,250,241,.8); transition: transform .35s ease, box-shadow .35s ease; }
+.event-card { position: relative; min-height: 520px; display: flex; flex-direction: column; padding: 30px; overflow: hidden; border: 1px solid rgba(111,16,37,.15); background: rgba(255,250,241,.8); transition: transform .35s ease, box-shadow .35s ease; }
 .event-card::before { content: ""; position: absolute; right: -48px; bottom: -54px; width: 170px; aspect-ratio: 1; border: 1px solid rgba(111,16,37,.12); border-radius: 50%; box-shadow: 0 0 0 20px rgba(111,16,37,.025),0 0 0 40px rgba(111,16,37,.02); }
 .event-card:hover { transform: translateY(-8px); box-shadow: var(--shadow); }
-.event-card__number { color: rgba(111,16,37,.2); font: 400 3.6rem "Italiana", serif; line-height: 1; }
-.event-card__day { display: inline-flex; align-self: flex-start; margin: 22px 0 14px; padding: 7px 11px 6px; color: var(--wine); background: rgba(200,155,81,.17); border: 1px solid rgba(200,155,81,.34); border-left: 3px solid var(--gold); border-radius: 999px; font-size: .69rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; line-height: 1.35; }
+.event-card__number { color: rgba(111,16,37,.28); font: 400 3.15rem "Italiana", serif; line-height: 1; }
+.event-card__day { display: inline-flex; align-self: flex-start; margin: 18px 0 14px; padding: 0 0 4px; color: #9b6d26; background: transparent; border: 0; border-bottom: 1px solid rgba(155,109,38,.38); border-radius: 0; font-size: .62rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; line-height: 1.35; }
 .event-card h3 { margin: 0; color: var(--wine); font: 500 clamp(1.75rem, 2.7vw, 2.55rem)/.98 "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.event-card h3 { text-wrap: balance; }
+.event-card[data-event-id="pellirituals"] h3 { font-size: clamp(1.62rem, 2.35vw, 2.2rem); line-height: 1.02; }
+.ritual-native { display: inline; color: var(--gold); font: 600 .38em/1.2 "Montserrat", sans-serif; letter-spacing: .01em; white-space: nowrap; }
+.event-card--dark .ritual-native { color: #f7d99d; }
 .event-card__date { margin: 18px 0; color: var(--ink); font-size: .69rem; letter-spacing: .07em; text-transform: uppercase; line-height: 1.5; }
 .event-card__description { margin: 0; color: var(--muted); font-size: .81rem; line-height: 1.7; }
 .event-card__schedule { display: grid; gap: 11px; margin: 4px 0 10px; }
@@ -372,13 +376,13 @@ img { max-width: 100%; }
 .event-card--reception:not(.event-card--dark) { background: linear-gradient(145deg,#fffaf1,#ead6ba); }
 .event-card--dark { color: #fff7eb; background: var(--wine); border-color: var(--wine); }
 .event-card--dark::before { border-color: rgba(255,255,255,.14); box-shadow: 0 0 0 20px rgba(255,255,255,.025),0 0 0 40px rgba(255,255,255,.02); }
-.event-card--dark .event-card__number { color: rgba(255,255,255,.18); font-size: 2.8rem; }
+.event-card--dark .event-card__number { color: rgba(245,202,116,.88); font-size: 3.15rem; }
 .event-card--dark h3,
 .event-card--dark .event-card__date,
 .event-card--dark .event-select { color: #fff7eb; }
 .event-card--dark .event-select { border-bottom-color: rgba(255,255,255,.4); }
-.event-card--dark .event-card__day { color: #fff8eb; background: rgba(255,255,255,.09); border-color: rgba(242,207,134,.34); border-left-color: #e7b95f; }
-.event-card--dark .event-card__date { color: #f3cf88; font-size: .78rem; font-weight: 700; letter-spacing: .09em; }
+.event-card--dark .event-card__day { color: rgba(249,218,157,.9); background: transparent; border: 0; border-bottom: 1px solid rgba(249,218,157,.38); }
+.event-card--dark .event-card__date { color: #ffe2a8; font-size: .78rem; font-weight: 700; letter-spacing: .09em; text-shadow: 0 1px 0 rgba(0,0,0,.12); }
 .event-card--dark .event-card__description { color: rgba(255,247,235,.78); }
 .event-card--dark .event-card__locations,
 .event-card--dark .event-card__venue { border-top-color: rgba(255,255,255,.18); }
@@ -434,6 +438,9 @@ img { max-width: 100%; }
 .rsvp-form input[type="text"]:focus, .rsvp-form select:focus, .rsvp-form textarea:focus { border-color: var(--wine); }
 .rsvp-form fieldset { margin: 0; padding: 0; border: 0; }
 .choice-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.side-choice-row .choice-chip span { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.side-choice-row b { color: inherit; font-size: .69rem; letter-spacing: .08em; text-transform: uppercase; }
+.side-choice-row small { color: inherit; opacity: .78; font-size: .75rem; }
 .choice-chip input, .event-options input { position: absolute; opacity: 0; pointer-events: none; }
 .choice-chip span, .event-options span { display: block; padding: 13px 14px; border: 1px solid var(--line); color: var(--muted); background: rgba(255,255,255,.4); transition: .25s; }
 .choice-chip input:checked + span, .event-options input:checked + span { color: #fff; border-color: var(--wine); background: var(--wine); }
@@ -583,8 +590,8 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
   .hero__content { margin-top: 82px; }
   .main-name { font-size: clamp(3rem,15vw,5.2rem); }
   .couple-names .parentage { margin-top: 7px; padding: 0 10px; font-size: .72rem !important; }
-  .hero__date-card { width: 100%; justify-content: center; gap: 13px; padding: 14px 10px; }
-  .hero__date-card div { grid-template-columns: auto; text-align: center; }
+  .hero__date-card { width: 100%; justify-content: center; gap: 7px; padding: 14px 5px; }
+  .hero__date-card div { min-width: 0; grid-template-columns: auto; text-align: center; }
   .hero__date-card span, .hero__date-card strong, .hero__date-card small { grid-column: 1; max-width: none; padding: 0; }
   .hero__date-card strong { font-size: 1.65rem; }
   .wedding-night-summary__grid { grid-template-columns: 1fr; }
