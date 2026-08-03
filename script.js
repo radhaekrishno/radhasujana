@@ -1026,9 +1026,32 @@ const LANGUAGE_META = {
   ne: { htmlLang: "ne", title: "सुजना & राधा कृष्ण | विवाह निमन्त्रणा" }
 };
 const TOGGLE_META = {
-  en: { label: "English", name: "English" },
-  te: { label: "తెలుగు", name: "Telugu" }
+  en: { label: "EN", name: "English" },
+  te: { label: "తెలుగు", name: "Telugu" },
+  hi: { label: "हिन्दी", name: "Hindi" },
+  ta: { label: "தமிழ்", name: "Tamil" },
+  zh: { label: "中文", name: "Chinese" },
+  ne: { label: "नेपाली", name: "Nepali" }
 };
+const LANGUAGE_PAIR_STORAGE_KEY = "radhasujanaLanguagePair";
+
+function storedLanguagePair() {
+  try {
+    const stored = sessionStorage.getItem(LANGUAGE_PAIR_STORAGE_KEY);
+    return stored && stored !== "en" && SUPPORTED_LANGUAGES.includes(stored) ? stored : "te";
+  } catch (error) {
+    return "te";
+  }
+}
+
+function rememberLanguagePair(language) {
+  if (!language || language === "en" || !SUPPORTED_LANGUAGES.includes(language)) return;
+  try {
+    sessionStorage.setItem(LANGUAGE_PAIR_STORAGE_KEY, language);
+  } catch (error) {
+    // The website still works when storage is unavailable.
+  }
+}
 
 function languageFromPath() {
   const firstSegment = window.location.pathname.split("/").filter(Boolean)[0]?.toLowerCase();
@@ -1040,6 +1063,8 @@ function languagePath(language) {
 }
 
 let currentLanguage = languageFromPath();
+let pairedLanguage = currentLanguage === "en" ? storedLanguagePair() : currentLanguage;
+rememberLanguagePair(pairedLanguage);
 
 const cover = document.getElementById("invitationCover");
 const mainContent = document.getElementById("mainContent");
@@ -1089,14 +1114,23 @@ function applyLanguage(language) {
     element.title = t(element.dataset.i18nTitle);
   });
 
-  // The visible toggle intentionally offers only English and Telugu.
-  // Hindi, Tamil, Chinese and Nepali remain available through their dedicated URLs.
-  const toggleTarget = currentLanguage === "en" ? "te" : "en";
-  const toggleMeta = TOGGLE_META[toggleTarget];
-  languageToggle.textContent = toggleMeta.label;
+  // Every local-language page is paired with English.
+  // Opening /hi/, /ta/, /zh/, /ne/ or /te/ sets that page's English-language pair.
+  if (currentLanguage !== "en") {
+    pairedLanguage = currentLanguage;
+    rememberLanguagePair(pairedLanguage);
+  }
+  const pairMeta = TOGGLE_META[pairedLanguage] || TOGGLE_META.te;
+  const toggleTarget = currentLanguage === "en" ? pairedLanguage : "en";
+  languageToggle.innerHTML = `
+    <span class="language-toggle__option ${currentLanguage === "en" ? "is-active" : ""}">EN</span>
+    <span class="language-toggle__divider" aria-hidden="true">/</span>
+    <span class="language-toggle__option ${currentLanguage === pairedLanguage ? "is-active" : ""}">${pairMeta.label}</span>
+  `;
   languageToggle.dataset.targetLanguage = toggleTarget;
-  languageToggle.setAttribute("aria-label", `Switch to ${toggleMeta.name}`);
-  languageToggle.title = `Switch to ${toggleMeta.name}`;
+  languageToggle.dataset.languagePair = pairedLanguage;
+  languageToggle.setAttribute("aria-label", `Switch between English and ${pairMeta.name}. Currently showing ${LANGUAGE_META[currentLanguage].htmlLang === "en" ? "English" : pairMeta.name}.`);
+  languageToggle.title = `English ↔ ${pairMeta.name}`;
   updateEventButtons();
 
   document.getElementById("whatsappDirect").href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(t("directMessage"))}`;
@@ -1106,14 +1140,19 @@ function applyLanguage(language) {
 applyLanguage(currentLanguage);
 
 languageToggle.addEventListener("click", () => {
-  const targetLanguage = languageToggle.dataset.targetLanguage || (currentLanguage === "en" ? "te" : "en");
+  const targetLanguage = languageToggle.dataset.targetLanguage || (currentLanguage === "en" ? pairedLanguage : "en");
   const nextUrl = `${languagePath(targetLanguage)}${window.location.hash}`;
-  window.history.pushState({ language: targetLanguage }, "", nextUrl);
+  window.history.pushState({ language: targetLanguage, pair: pairedLanguage }, "", nextUrl);
   applyLanguage(targetLanguage);
 });
 
 window.addEventListener("popstate", () => {
-  applyLanguage(languageFromPath());
+  const routeLanguage = languageFromPath();
+  if (routeLanguage !== "en") {
+    pairedLanguage = routeLanguage;
+    rememberLanguagePair(pairedLanguage);
+  }
+  applyLanguage(routeLanguage);
 });
 
 openButton.addEventListener("click", () => {
@@ -1136,6 +1175,19 @@ mobileMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", 
   mobileMenu.classList.remove("open");
   menuButton.setAttribute("aria-expanded", "false");
 }));
+
+const topLogo = document.querySelector("[data-scroll-top]");
+topLogo?.addEventListener("click", event => {
+  event.preventDefault();
+  mobileMenu.classList.remove("open");
+  menuButton.setAttribute("aria-expanded", "false");
+
+  // Remove an old section hash and return to the actual top of the document.
+  const cleanUrl = `${window.location.pathname}${window.location.search}`;
+  window.history.replaceState(window.history.state, "", cleanUrl);
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: 0, left: 0, behavior: reduceMotion ? "auto" : "smooth" });
+});
 
 const weddingDate = new Date("2026-09-04T02:58:00+05:30");
 function updateCountdown() {

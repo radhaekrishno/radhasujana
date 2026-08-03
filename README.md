@@ -46,3 +46,9 @@ Version 19 adds the Reception venue card, embedded map, and separate directions 
 - Restored a quieter weekday treatment and aligned card styling.
 - Added Pelli-Koduku and Pelli-Kuthuru parenthetical labels in English.
 - Added a second Pick your side selector inside the RSVP form and synchronized it with the earlier selector.
+
+
+## Version 23 changes
+- Every language route now toggles between English and that route's local language.
+- The paired local language is retained while switching to `/en/` in the same browser tab.
+- Clicking the wedding logo now scrolls to the true top and removes stale section hashes, fixing mobile scroll trapping.

@@ -662,3 +662,41 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
   font-weight: 600;
   letter-spacing: .08em;
 }
+
+
+/* Version 23: paired language switch and true-top logo */
+.monogram {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: max-content;
+  white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.language-toggle__option {
+  opacity: .55;
+  font-weight: 500;
+  transition: opacity .2s ease, color .2s ease;
+}
+.language-toggle__option.is-active {
+  opacity: 1;
+  color: var(--wine);
+  font-weight: 700;
+}
+.language-toggle__divider {
+  color: var(--gold);
+  opacity: .9;
+}
+@media (max-width: 760px) {
+  .language-toggle {
+    gap: 4px;
+    padding: 7px 8px;
+    font-size: .6rem;
+  }
+}
