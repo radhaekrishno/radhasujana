@@ -59,3 +59,9 @@ Version 19 adds the Reception venue card, embedded map, and separate directions 
 - Added an “Our Instagram” top navigation link.
 - Added a themed Instagram follow section in the footer for updates and photos.
 - Added translated Instagram labels across all language routes.
+
+
+## Version 25 changes
+- Made the Instagram logo cue clearer on desktop.
+- Kept it visible beneath the logo on portrait phones.
+- Repositioned it below the logo on landscape phones and tablets to prevent navigation overlap.

@@ -798,3 +798,88 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
     font-size: .6rem;
   }
 }
+
+
+/* Version 25: responsive Instagram logo cue */
+.instagram-logo-hint {
+  left: 80px;
+  top: 50%;
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  max-width: 240px;
+  padding: 7px 12px 7px 10px;
+  color: rgba(111, 16, 37, .86);
+  background: rgba(255, 250, 241, .88);
+  border: 1px solid rgba(200, 155, 81, .34);
+  border-radius: 999px;
+  box-shadow: 0 7px 18px rgba(65, 24, 31, .07);
+  font-size: .79rem;
+  font-weight: 600;
+  letter-spacing: .018em;
+  line-height: 1.15;
+  transform: translateY(-50%) rotate(-1deg);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.instagram-logo-hint::before {
+  content: "←";
+  flex: 0 0 auto;
+  margin-right: 8px;
+  color: var(--gold);
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1;
+  transform: translateY(-1px) rotate(5deg);
+}
+@keyframes instagramHintFloat {
+  0%, 100% { transform: translateY(-50%) rotate(-1deg); opacity: .9; }
+  50% { transform: translateY(calc(-50% - 2px)) rotate(-1deg); opacity: 1; }
+}
+
+/* Tablets and landscape phones: keep the cue under the logo, away from navigation. */
+@media (max-width: 1100px), (max-height: 540px) {
+  .brand-instagram { align-self: flex-start; }
+  .instagram-logo-hint {
+    left: 50%;
+    top: calc(100% + 7px);
+    display: inline-flex !important;
+    max-width: 185px;
+    padding: 5px 9px;
+    font-size: .69rem;
+    line-height: 1.1;
+    white-space: nowrap;
+    transform: translateX(-50%) rotate(-1deg);
+  }
+  .instagram-logo-hint::before {
+    content: "↑";
+    margin-right: 6px;
+    font-size: .92rem;
+    transform: none;
+  }
+  @keyframes instagramHintFloat {
+    0%, 100% { transform: translateX(-50%) rotate(-1deg); opacity: .9; }
+    50% { transform: translateX(-50%) translateY(-2px) rotate(-1deg); opacity: 1; }
+  }
+}
+
+/* Portrait phones: show the cue clearly beneath the logo without crowding controls. */
+@media (max-width: 760px) {
+  .instagram-logo-hint {
+    display: inline-flex !important;
+    top: calc(100% + 6px);
+    max-width: 170px;
+    padding: 5px 8px;
+    font-size: .66rem;
+    box-shadow: 0 6px 15px rgba(65, 24, 31, .06);
+  }
+}
+
+@media (max-width: 420px) {
+  .instagram-logo-hint {
+    max-width: 152px;
+    padding: 4px 7px;
+    font-size: .61rem;
+    letter-spacing: 0;
+  }
+}
