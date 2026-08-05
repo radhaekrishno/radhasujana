@@ -65,3 +65,9 @@ Version 19 adds the Reception venue card, embedded map, and separate directions 
 - Made the Instagram logo cue clearer on desktop.
 - Kept it visible beneath the logo on portrait phones.
 - Repositioned it below the logo on landscape phones and tablets to prevent navigation overlap.
+
+
+## Version 26 changes
+- Added a themed embedded YouTube engagement-film section below the photo gallery.
+- Added Watch on YouTube and Subscribe to @RadhaSujana26 links.
+- Added YouTube to the top navigation in every language version.
