@@ -77,3 +77,9 @@ Version 19 adds the Reception venue card, embedded map, and separate directions 
 - Updated the engagement film to YouTube video `2CMnmL-LB4U`.
 - Added Bride's House and its Google Maps directions link directly to the Mehendi card.
 - Updated the downloadable calendar location for the Mehendi event.
+
+
+## Version 28 changes
+- Added Groom's House directions to Pelli-Koduku.
+- Added Bride's House directions to Pelli-Kuthuru.
+- Updated Sathyanarayana Swamy Vratham venue to Bride's Apartment, 2nd floor, with directions.

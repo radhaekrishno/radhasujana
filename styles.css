@@ -401,9 +401,11 @@ img { max-width: 100%; }
 .event-card__astro { margin: 0; color: rgba(255,247,235,.72); font: 500 .77rem/1.5 "Cormorant Garamond", "Noto Serif Telugu", serif; }
 
 .event-card__locations { display: grid; gap: 8px; margin: 16px 0 18px; padding-top: 13px; border-top: 1px solid rgba(111,16,37,.15); }
-.event-card__locations p { display: grid; grid-template-columns: minmax(105px,.8fr) 1fr; gap: 12px; margin: 0; align-items: baseline; }
+.event-card__locations p { display: grid; grid-template-columns: minmax(105px,.8fr) minmax(0,1fr) auto; gap: 12px; margin: 0; align-items: baseline; }
 .event-card__locations strong, .event-card__venue > strong { color: var(--gold); font-size: .56rem; letter-spacing: .13em; text-transform: uppercase; }
 .event-card__locations span { color: var(--ink); font-size: .75rem; line-height: 1.45; }
+.event-card__locations a { justify-self: end; color: var(--wine); border-bottom: 1px solid rgba(111,16,37,.28); font-size: .58rem; letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; }
+.event-card__locations a:hover { color: var(--gold); border-bottom-color: var(--gold); }
 .event-card__venue-note { margin: 16px 0 0; padding: 10px 12px; border-left: 2px solid var(--gold); color: var(--muted); background: rgba(255,255,255,.38); font-size: .7rem; line-height: 1.5; }
 .event-card__venue { display: grid; gap: 5px; margin: 16px 0 18px; padding-top: 13px; border-top: 1px solid rgba(111,16,37,.15); position: relative; z-index: 1; }
 .event-card__venue > span { color: var(--wine); font: 600 .92rem/1.35 "Cormorant Garamond", "Noto Serif Devanagari", "Noto Serif Telugu", serif; }
@@ -430,7 +432,9 @@ img { max-width: 100%; }
 .event-card--dark .event-card__venue small { color: rgba(255,247,235,.82); }
 .event-card--dark .event-card__venue > span { color: #fff7eb; }
 .event-card--dark .event-card__venue a { color: #f3cf88; border-bottom-color: rgba(243,207,136,.45); }
+.event-card--dark .event-card__locations a { color: #f3cf88; border-bottom-color: rgba(243,207,136,.45); }
 .event-card--dark .event-card__venue a:hover { color: #fff7eb; border-bottom-color: #fff7eb; }
+.event-card--dark .event-card__locations a:hover { color: #fff7eb; border-bottom-color: #fff7eb; }
 .event-card.selected { outline: 2px solid var(--gold); outline-offset: -7px; }
 
 .side-picker { background: var(--ivory); }
@@ -691,7 +695,8 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
   .wedding-night-summary article + article { border-top: 1px solid var(--line); border-left: 0; }
   .event-grid { grid-template-columns: 1fr; }
   .event-card { min-height: 390px; }
-  .event-card__locations p { grid-template-columns: 1fr; gap: 2px; }
+  .event-card__locations p { grid-template-columns: 1fr; gap: 3px; }
+  .event-card__locations a { justify-self: start; margin-top: 2px; }
   .wedding-card { min-height: 470px; }
   .teams { grid-template-columns: 1fr; }
   .versus { text-align: center; }
