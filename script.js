@@ -8,6 +8,8 @@ const CONFIG = {
   pelliKuthuruMapUrl: "https://maps.app.goo.gl/95HYKcyv1cFkcujb9",
   pelliKodukuVenueName: "Groom's House",
   pelliKodukuMapUrl: "https://maps.app.goo.gl/TPiLFo3Geq5v96W66",
+  haldiVenueName: "Parinaya Function Hall, Front Lawn",
+  haldiMapUrl: "https://share.google/Nb8oauGBBMUAH0cGv",
   vrathamVenueName: "Bride's Apartment, 2nd floor",
   vrathamMapUrl: "https://maps.app.goo.gl/74idPKEkske2SgAH9",
   receptionVenueName: "RAMCOSA Guest House",
@@ -693,6 +695,7 @@ const translations = {
 
 // Venue-specific copy added after the original translations so every existing language remains intact.
 Object.assign(translations.en, {
+  haldiVenueName: "Parinaya Function Hall · Front Lawn",
   pelliKodukuLabel: "Pelli-Koduku",
   pelliKuthuruLabel: "Pelli-Kuthuru",
   groomsHouse: "Groom's house",
@@ -711,6 +714,7 @@ Object.assign(translations.en, {
   receptionRsvp: "Reception · 06 Sep · 6:30 PM onwards"
 });
 Object.assign(translations.te, {
+  haldiVenueName: "పరిణయ ఫంక్షన్ హాల్ · ముందు లాన్",
   pelliKodukuLabel: "పెళ్లికొడుకు",
   pelliKuthuruLabel: "పెళ్లికూతురు",
   groomsHouse: "వరుడి ఇంటి వద్ద",
@@ -729,6 +733,7 @@ Object.assign(translations.te, {
   receptionRsvp: "రిసెప్షన్ · 06 సెప్టెంబర్ · సాయంత్రం 6:30 నుండి"
 });
 Object.assign(translations.hi, {
+  haldiVenueName: "परिणय फंक्शन हॉल · फ्रंट लॉन",
   pelliKodukuLabel: "पेल्ली-कोडुकु",
   pelliKuthuruLabel: "पेल्ली-कुथुरु",
   groomsHouse: "दूल्हे के घर",
@@ -747,6 +752,7 @@ Object.assign(translations.hi, {
   receptionRsvp: "रिसेप्शन · 06 सितंबर · शाम 6:30 बजे से"
 });
 Object.assign(translations.ta, {
+  haldiVenueName: "பரிணயா ஃபங்க்ஷன் ஹால் · முன்புற புல்வெளி",
   pelliKodukuLabel: "பெல்லி-கொடுகு",
   pelliKuthuruLabel: "பெல்லி-குத்துரு",
   groomsHouse: "மணமகன் இல்லத்தில்",
@@ -765,6 +771,7 @@ Object.assign(translations.ta, {
   receptionRsvp: "வரவேற்பு · 06 செப்டம்பர் · மாலை 6:30 மணி முதல்"
 });
 Object.assign(translations.zh, {
+  haldiVenueName: "Parinaya Function Hall · 前草坪",
   pelliKodukuLabel: "Pelli-Koduku",
   pelliKuthuruLabel: "Pelli-Kuthuru",
   groomsHouse: "新郎家中",
@@ -832,6 +839,7 @@ translations.ne = {
   haldi: "हल्दी",
   haldiDate: "03 सेप्टेम्बर 2026",
   haldiDescription: "घाम, बेसार, जिस्क्याउने आफन्त र अलिकति निर्दोष पहेँलो युद्ध।",
+  haldiVenueName: "Parinaya Function Hall · अगाडिको लन",
   weddingDay: "बिहीबार साँझ → मध्यरातपछि",
   weddingDateCard: "03 सेप्टेम्बर 2026",
   vrathamDay: "शनिबार · बिहान",
@@ -938,8 +946,8 @@ Object.assign(translations.en, {
   pelliRituals: "Groom’s Pre-Wedding Blessing <span class=\"ritual-native\">(Pelli-Koduku)</span><br>& Bride’s Pre-Wedding Blessing <span class=\"ritual-native\">(Pelli-Kuthuru)</span>",
   pelliRitualsPlain: "Groom’s Pre-Wedding Blessing (Pelli-Koduku) & Bride’s Pre-Wedding Blessing (Pelli-Kuthuru)",
   pelliRitualsDescription: "Traditional ceremonies in which the groom and bride are prepared and blessed at their respective homes.",
-  pelliKodukuLabel: "Groom’s Ceremony (Pelli-Koduku)",
-  pelliKuthuruLabel: "Bride’s Ceremony (Pelli-Kuthuru)",
+  pelliKodukuLabel: "Groom’s Ceremony",
+  pelliKuthuruLabel: "Bride’s Ceremony",
   receptionDescription: ""
 });
 Object.assign(translations.te, {
@@ -1439,7 +1447,8 @@ document.getElementById("calendarButton").addEventListener("click", () => {
       start: new Date("2026-09-03T09:00:00+05:30"),
       end: new Date("2026-09-03T11:30:00+05:30"),
       summary: "Sujana & Radha Krishna — Haldi",
-      description: "Haldi ceremony at 9:00 AM."
+      description: `Haldi ceremony at 9:00 AM at the Front Lawn of Parinaya Function Hall. Directions: ${CONFIG.haldiMapUrl}`,
+      location: CONFIG.haldiVenueName
     }),
     ...[
       "BEGIN:VEVENT",

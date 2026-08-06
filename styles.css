@@ -382,7 +382,7 @@ img { max-width: 100%; }
 .section-heading > p:last-child { margin: 0; color: var(--muted); line-height: 1.8; }
 .event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; max-width: 1380px; margin: 0 auto; }
 .event-card { position: relative; min-height: 520px; display: flex; flex-direction: column; padding: 30px; overflow: hidden; border: 1px solid rgba(111,16,37,.15); background: rgba(255,250,241,.8); transition: transform .35s ease, box-shadow .35s ease; }
-.event-card::before { content: ""; position: absolute; right: -48px; bottom: -54px; width: 170px; aspect-ratio: 1; border: 1px solid rgba(111,16,37,.12); border-radius: 50%; box-shadow: 0 0 0 20px rgba(111,16,37,.025),0 0 0 40px rgba(111,16,37,.02); }
+.event-card::before { content: ""; position: absolute; right: -48px; bottom: -54px; width: 170px; aspect-ratio: 1; border: 1px solid rgba(111,16,37,.12); border-radius: 50%; box-shadow: 0 0 0 20px rgba(111,16,37,.025),0 0 0 40px rgba(111,16,37,.02); pointer-events: none; }
 .event-card:hover { transform: translateY(-8px); box-shadow: var(--shadow); }
 .event-card__number { color: rgba(111,16,37,.28); font: 400 3.15rem "Italiana", serif; line-height: 1; }
 .event-card__day { display: inline-flex; align-self: flex-start; margin: 18px 0 14px; padding: 0 0 4px; color: #9b6d26; background: transparent; border: 0; border-bottom: 1px solid rgba(155,109,38,.38); border-radius: 0; font-size: .62rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; line-height: 1.35; }
@@ -400,11 +400,11 @@ img { max-width: 100%; }
 .event-card__clarity { margin: 2px 0 10px; padding: 9px 10px; border: 1px solid rgba(255,255,255,.18); color: #fff7eb; background: rgba(255,255,255,.07); font-size: .72rem; font-weight: 600; line-height: 1.5; }
 .event-card__astro { margin: 0; color: rgba(255,247,235,.72); font: 500 .77rem/1.5 "Cormorant Garamond", "Noto Serif Telugu", serif; }
 
-.event-card__locations { display: grid; gap: 8px; margin: 16px 0 18px; padding-top: 13px; border-top: 1px solid rgba(111,16,37,.15); }
+.event-card__locations { position: relative; z-index: 1; display: grid; gap: 8px; margin: 16px 0 18px; padding-top: 13px; border-top: 1px solid rgba(111,16,37,.15); }
 .event-card__locations p { display: grid; grid-template-columns: minmax(105px,.8fr) minmax(0,1fr) auto; gap: 12px; margin: 0; align-items: baseline; }
 .event-card__locations strong, .event-card__venue > strong { color: var(--gold); font-size: .56rem; letter-spacing: .13em; text-transform: uppercase; }
 .event-card__locations span { color: var(--ink); font-size: .75rem; line-height: 1.45; }
-.event-card__locations a { justify-self: end; color: var(--wine); border-bottom: 1px solid rgba(111,16,37,.28); font-size: .58rem; letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; }
+.event-card__locations a { position: relative; z-index: 2; display: inline-flex; align-items: center; justify-content: center; justify-self: end; min-height: 32px; margin: -7px -8px; padding: 7px 8px; color: var(--wine); border-bottom: 1px solid rgba(111,16,37,.28); font-size: .58rem; letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 .event-card__locations a:hover { color: var(--gold); border-bottom-color: var(--gold); }
 .event-card__venue-note { margin: 16px 0 0; padding: 10px 12px; border-left: 2px solid var(--gold); color: var(--muted); background: rgba(255,255,255,.38); font-size: .7rem; line-height: 1.5; }
 .event-card__venue { display: grid; gap: 5px; margin: 16px 0 18px; padding-top: 13px; border-top: 1px solid rgba(111,16,37,.15); position: relative; z-index: 1; }
@@ -696,7 +696,7 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
   .event-grid { grid-template-columns: 1fr; }
   .event-card { min-height: 390px; }
   .event-card__locations p { grid-template-columns: 1fr; gap: 3px; }
-  .event-card__locations a { justify-self: start; margin-top: 2px; }
+  .event-card__locations a { justify-self: start; margin: -3px -8px 0; }
   .wedding-card { min-height: 470px; }
   .teams { grid-template-columns: 1fr; }
   .versus { text-align: center; }

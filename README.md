@@ -83,3 +83,18 @@ Version 19 adds the Reception venue card, embedded map, and separate directions 
 - Added Groom's House directions to Pelli-Koduku.
 - Added Bride's House directions to Pelli-Kuthuru.
 - Updated Sathyanarayana Swamy Vratham venue to Bride's Apartment, 2nd floor, with directions.
+
+
+## Version 29 update
+- Added Haldi venue: Parinaya Function Hall — Front Lawn.
+- Added the Haldi directions link inside the event card and calendar export.
+
+
+## Version 30 update
+- Simplified the two location headings inside the pre-wedding ceremonies card to “Groom’s Ceremony” and “Bride’s Ceremony”.
+- Kept “Pelli-Koduku” and “Pelli-Kuthuru” in the main event title, while removing them from the repeated venue labels.
+
+
+## Version 31 update
+- Removed the repeated “Pelli-Koduku” and “Pelli-Kuthuru” wording from the two location headings, leaving “Groom’s Ceremony” and “Bride’s Ceremony”.
+- Fixed the Bride’s Ceremony directions control by placing the location block above decorative card artwork and enlarging the link’s touch target.
