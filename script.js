@@ -2,6 +2,8 @@ const CONFIG = {
   whatsappNumber: "918897985959", // Country code + number, no + or spaces
   venueName: "Parinaya Function Hall, NH-16, Rajahmundry Road, Jaggampeta",
   mapUrl: "https://share.google/V6fa2gTCiHchlqL7H",
+  mehendiVenueName: "Bride's House",
+  mehendiMapUrl: "https://maps.app.goo.gl/95HYKcyv1cFkcujb9",
   receptionVenueName: "RAMCOSA Guest House",
   receptionVenueAddress: "Madhav Nagar, Dwaraka Nagar, Ramanayyapeta, Andhra Pradesh 533003, India",
   receptionMapUrl: "https://share.google/Bx2va6zVbhM6UoSrD",
@@ -1396,7 +1398,7 @@ function createCalendarEvent({ uid, start, end, summary, description, location =
     `DTSTART:${toICSDate(start)}`,
     `DTEND:${toICSDate(end)}`,
     `SUMMARY:${summary}`,
-    `LOCATION:${CONFIG.venueName.replace(/,/g, "\\,")}`,
+    `LOCATION:${location.replace(/,/g, "\\,")}`,
     `DESCRIPTION:${description.replace(/\n/g, "\\n").replace(/,/g, "\\,")}`,
     "END:VEVENT"
   ];
@@ -1409,7 +1411,8 @@ document.getElementById("calendarButton").addEventListener("click", () => {
       start: new Date("2026-09-01T09:00:00+05:30"),
       end: new Date("2026-09-01T13:00:00+05:30"),
       summary: "Sujana & Radha Krishna — Mehendi",
-      description: "Mehendi celebration. Exact time may be confirmed by the family."
+      description: "Mehendi celebration at the Bride's House. Exact time may be confirmed by the family.",
+      location: CONFIG.mehendiVenueName
     }),
     ...createCalendarEvent({
       uid: "pelli-rituals-2026@sujana-radha",
@@ -1433,7 +1436,7 @@ document.getElementById("calendarButton").addEventListener("click", () => {
       "DTSTART;VALUE=DATE:20260905",
       "DTEND;VALUE=DATE:20260906",
       "SUMMARY:Sujana & Radha Krishna — Sathyanarayana Swamy Vratham (Morning)",
-      `LOCATION:${CONFIG.venueName.replace(/,/g, "\\,")}`,
+      `LOCATION:${location.replace(/,/g, "\\,")}`,
       "DESCRIPTION:Sathyanarayana Swamy Vratham will be held in the morning. The exact time will be confirmed by the family.",
       "END:VEVENT"
     ],

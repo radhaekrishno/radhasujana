@@ -71,3 +71,9 @@ Version 19 adds the Reception venue card, embedded map, and separate directions 
 - Added a themed embedded YouTube engagement-film section below the photo gallery.
 - Added Watch on YouTube and Subscribe to @RadhaSujana26 links.
 - Added YouTube to the top navigation in every language version.
+
+
+## Version 27 changes
+- Updated the engagement film to YouTube video `2CMnmL-LB4U`.
+- Added Bride's House and its Google Maps directions link directly to the Mehendi card.
+- Updated the downloadable calendar location for the Mehendi event.
