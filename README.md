@@ -98,3 +98,7 @@ Version 19 adds the Reception venue card, embedded map, and separate directions 
 ## Version 31 update
 - Removed the repeated “Pelli-Koduku” and “Pelli-Kuthuru” wording from the two location headings, leaving “Groom’s Ceremony” and “Bride’s Ceremony”.
 - Fixed the Bride’s Ceremony directions control by placing the location block above decorative card artwork and enlarging the link’s touch target.
+
+
+## v33
+All locale routes are server/static pre-rendered in their own language before JavaScript runs, preventing the brief English-language flash on first load.

@@ -1040,3 +1040,165 @@ noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px
   .youtube-actions { flex-direction: column; align-items: stretch; }
   .youtube-button { width: 100%; }
 }
+
+/* v32 — Chinese editorial refresh */
+body.lang-zh {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  letter-spacing: .01em;
+}
+.lang-zh :is(
+  .envelope__paper strong,
+  .main-name,
+  .couple-names,
+  .section-heading h2,
+  .event-card h3,
+  .team-card strong,
+  .rsvp__intro h2,
+  .gallery-details summary strong,
+  .film-heading h2,
+  .footer h2,
+  .footer-instagram__lead
+) {
+  font-family: "ZCOOL XiaoWei", "Noto Serif SC", "Songti SC", serif;
+  font-weight: 400;
+}
+.lang-zh :is(
+  .hero__verse,
+  .wedding-night-summary strong,
+  .wedding-night-summary small,
+  .blessing-strip p,
+  .event-card__description,
+  .event-card__astro,
+  .event-card__venue > span,
+  .event-card__locations span,
+  .gallery-content > p,
+  .film-heading p,
+  .youtube-note,
+  .footer > p,
+  .footer-instagram__note
+) {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+}
+.lang-zh .main-name {
+  font-size: clamp(2.55rem, 6vw, 5.7rem);
+  line-height: 1.12;
+  letter-spacing: .015em;
+}
+.lang-zh .couple-names .parentage {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif !important;
+  font-size: clamp(.67rem, 1.35vw, .82rem);
+  line-height: 1.6;
+}
+.lang-zh .hero__verse,
+.lang-zh .blessing-strip p,
+.lang-zh .section-heading > p:not(.eyebrow) {
+  line-height: 1.9;
+}
+.lang-zh .hero__date-card {
+  gap: 14px;
+  padding-inline: 18px;
+}
+.lang-zh .hero__date-card div {
+  min-width: 170px;
+  grid-template-columns: 1fr;
+  text-align: center;
+  align-items: center;
+}
+.lang-zh .hero__date-card span {
+  grid-column: 1;
+  font-size: .62rem;
+  letter-spacing: .1em;
+  text-transform: none;
+}
+.lang-zh .hero__date-card strong {
+  grid-column: 1;
+  max-width: 190px;
+  color: var(--wine);
+  font: 500 clamp(.78rem, 1.45vw, 1rem)/1.55 "Noto Serif SC", "Songti SC", serif;
+}
+.lang-zh .wedding-night-summary strong {
+  line-height: 1.7;
+}
+.lang-zh .event-card h3 {
+  line-height: 1.3;
+  letter-spacing: .01em;
+}
+.lang-zh .event-card__description {
+  line-height: 1.85;
+}
+.lang-zh .event-card__venue > strong,
+.lang-zh .event-card__locations strong,
+.lang-zh .event-card__day,
+.lang-zh .event-card__date,
+.lang-zh .event-select {
+  text-transform: none;
+  letter-spacing: .06em;
+}
+.lang-zh .venue-english {
+  display: block;
+  margin-top: 4px;
+  font-family: "Montserrat", "Noto Sans SC", sans-serif;
+  font-size: .68em;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: .02em;
+  opacity: .72;
+}
+.lang-zh .event-card--dark .venue-english {
+  color: rgba(255,247,235,.78);
+  opacity: 1;
+}
+.lang-zh .team-card strong {
+  max-width: 250px;
+  font-size: clamp(1.22rem, 2.3vw, 1.7rem);
+  line-height: 1.5;
+}
+.lang-zh .side-choice-chip b {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  line-height: 1.45;
+}
+.lang-zh .venue-card strong {
+  font-family: "ZCOOL XiaoWei", "Noto Serif SC", serif;
+  line-height: 1.55;
+}
+.lang-zh .footer-credit {
+  line-height: 1.8;
+}
+
+@media (max-width: 760px) {
+  .lang-zh .hero__date-card {
+    gap: 5px;
+    padding-inline: 3px;
+  }
+  .lang-zh .hero__date-card div {
+    min-width: 0;
+  }
+  .lang-zh .hero__date-card strong {
+    max-width: 112px;
+    font-size: .67rem;
+    line-height: 1.45;
+  }
+  .lang-zh .hero__date-card span {
+    font-size: .5rem;
+    letter-spacing: .04em;
+  }
+  .lang-zh .main-name {
+    font-size: clamp(2.35rem, 12vw, 4.25rem);
+  }
+  .lang-zh .event-card h3 {
+    font-size: clamp(1.72rem, 8vw, 2.3rem);
+  }
+}
+.lang-zh .venue-map-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--wine);
+  border-bottom: 1px solid rgba(111,16,37,.28);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+.lang-zh .venue-map-link:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
