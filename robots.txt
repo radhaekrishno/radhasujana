@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /assets/engagement/
+
+# The invitation pages also carry noindex/noimageindex meta directives.

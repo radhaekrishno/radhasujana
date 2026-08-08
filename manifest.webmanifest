@@ -1,0 +1,23 @@
+{
+  "name": "Sujana & Radha Krishna Wedding",
+  "short_name": "RadhaSujana",
+  "description": "Wedding companion for Sujana and Radha Krishna · September 2026",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fffaf1",
+  "theme_color": "#6f1025",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

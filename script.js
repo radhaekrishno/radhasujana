@@ -1020,6 +1020,15 @@ Object.assign(translations.ne, {
   receptionDescription: ""
 });
 
+
+// Version 34 interface copy
+Object.assign(translations.en, {"weddingHeroRange": "03 Sep night → 04 Sep early hours", "latestUpdateLabel": "Latest update", "weddingWeekEyebrow": "Wedding Week · Live", "todayLabel": "Today", "tonightLabel": "Tonight", "nextLabel": "Next", "nowLabel": "Now", "shareInvitation": "Share our invitation ♡", "shareCopied": "Invitation link copied", "shareText": "Sujana & Radha Krishna are getting married · 1–6 September 2026", "quickSchedule": "Schedule", "quickDirections": "Directions", "quickRsvp": "RSVP", "travelSummary": "Travelling to the wedding?", "travelIntro": "A quick guide for guests coming from out of town.", "travelWedding": "Wedding celebrations · Jaggampeta", "travelReception": "Reception · Kakinada", "travelHelp": "Need help with travel or stay arrangements? WhatsApp our family.", "viewInvitationAgain": "View invitation again", "installApp": "Add wedding to Home Screen", "thankYouEyebrow": "With grateful hearts", "thankYouTitle": "Thank you for celebrating with us ♡", "thankYouText": "The celebrations may be over, but the memories are only beginning. Our photos, films and updates will continue here and on Instagram.", "filmPlay": "Play engagement film", "musicPlay": "Play music", "musicPause": "Pause music"});
+Object.assign(translations.te, {"weddingHeroRange": "03 సెప్టెంబర్ రాత్రి → 04 సెప్టెంబర్ తెల్లవారుజాము", "latestUpdateLabel": "తాజా సమాచారం", "weddingWeekEyebrow": "వివాహ వారం · ప్రత్యక్షం", "todayLabel": "ఈ రోజు", "tonightLabel": "ఈ రాత్రి", "nextLabel": "తర్వాత", "nowLabel": "ఇప్పుడు", "shareInvitation": "మా ఆహ్వానాన్ని పంచుకోండి ♡", "shareCopied": "ఆహ్వాన లింక్ కాపీ అయింది", "shareText": "సుజన & రాధా కృష్ణ వివాహం · 1–6 సెప్టెంబర్ 2026", "quickSchedule": "సమయాలు", "quickDirections": "దారి", "quickRsvp": "హాజరు", "travelSummary": "వివాహానికి ప్రయాణిస్తున్నారా?", "travelIntro": "బయట ప్రాంతాల నుంచి వచ్చే అతిథుల కోసం చిన్న ప్రయాణ సూచిక.", "travelWedding": "వివాహ వేడుకలు · జగ్గంపేట", "travelReception": "రిసెప్షన్ · కాకినాడ", "travelHelp": "ప్రయాణం లేదా వసతి సహాయం కావాలా? మా కుటుంబానికి WhatsApp చేయండి.", "viewInvitationAgain": "ఆహ్వానాన్ని మళ్లీ చూడండి", "installApp": "వివాహ సైట్‌ను హోమ్ స్క్రీన్‌కు జోడించండి", "thankYouEyebrow": "కృతజ్ఞతలతో", "thankYouTitle": "మాతో కలిసి ఆనందించినందుకు ధన్యవాదాలు ♡", "thankYouText": "వేడుకలు ముగిసినా జ్ఞాపకాలు మొదలయ్యాయి. ఫోటోలు, వీడియోలు మరియు నవీకరణలు ఇక్కడ మరియు Instagramలో కొనసాగుతాయి.", "filmPlay": "నిశ్చితార్థ వీడియో చూడండి", "musicPlay": "సంగీతం ప్లే చేయండి", "musicPause": "సంగీతం ఆపండి"});
+Object.assign(translations.hi, {"weddingHeroRange": "03 सितंबर रात → 04 सितंबर तड़के", "latestUpdateLabel": "ताज़ा अपडेट", "weddingWeekEyebrow": "विवाह सप्ताह · लाइव", "todayLabel": "आज", "tonightLabel": "आज रात", "nextLabel": "आगे", "nowLabel": "अभी", "shareInvitation": "हमारा निमंत्रण साझा करें ♡", "shareCopied": "निमंत्रण लिंक कॉपी हो गया", "shareText": "सुजना & राधा कृष्ण का विवाह · 1–6 सितंबर 2026", "quickSchedule": "कार्यक्रम", "quickDirections": "दिशा", "quickRsvp": "RSVP", "travelSummary": "विवाह के लिए यात्रा कर रहे हैं?", "travelIntro": "बाहर से आने वाले मेहमानों के लिए एक छोटा यात्रा मार्गदर्शक।", "travelWedding": "विवाह समारोह · जग्गमपेटा", "travelReception": "रिसेप्शन · काकीनाडा", "travelHelp": "यात्रा या ठहरने में मदद चाहिए? हमारे परिवार को WhatsApp करें।", "viewInvitationAgain": "निमंत्रण फिर देखें", "installApp": "विवाह साइट होम स्क्रीन पर जोड़ें", "thankYouEyebrow": "कृतज्ञ हृदय से", "thankYouTitle": "हमारे साथ जश्न मनाने के लिए धन्यवाद ♡", "thankYouText": "समारोह समाप्त हो गए हैं, पर यादें अभी शुरू हुई हैं। तस्वीरें, फ़िल्में और अपडेट यहाँ और Instagram पर साझा होते रहेंगे।", "filmPlay": "सगाई की फ़िल्म चलाएँ", "musicPlay": "संगीत चलाएँ", "musicPause": "संगीत रोकें"});
+Object.assign(translations.ta, {"weddingHeroRange": "03 செப்டம்பர் இரவு → 04 செப்டம்பர் அதிகாலை", "latestUpdateLabel": "சமீபத்திய தகவல்", "weddingWeekEyebrow": "திருமண வாரம் · நேரலை", "todayLabel": "இன்று", "tonightLabel": "இன்றிரவு", "nextLabel": "அடுத்து", "nowLabel": "இப்போது", "shareInvitation": "எங்கள் அழைப்பிதழை பகிருங்கள் ♡", "shareCopied": "அழைப்பிதழ் இணைப்பு நகலெடுக்கப்பட்டது", "shareText": "சுஜனா & ராதா கிருஷ்ணா திருமணம் · 1–6 செப்டம்பர் 2026", "quickSchedule": "நிகழ்ச்சிகள்", "quickDirections": "வழி", "quickRsvp": "RSVP", "travelSummary": "திருமணத்திற்கு பயணம் செய்கிறீர்களா?", "travelIntro": "வெளியூரிலிருந்து வரும் விருந்தினர்களுக்கான சுருக்கமான பயண வழிகாட்டி.", "travelWedding": "திருமண விழாக்கள் · ஜக்கம்பேட்டா", "travelReception": "வரவேற்பு · காக்கிநாடா", "travelHelp": "பயணம் அல்லது தங்கும் வசதி உதவி வேண்டுமா? எங்கள் குடும்பத்திற்கு WhatsApp செய்யுங்கள்.", "viewInvitationAgain": "அழைப்பிதழை மீண்டும் பார்க்க", "installApp": "திருமண தளத்தை முகப்புத் திரையில் சேர்க்க", "thankYouEyebrow": "நன்றியுடன்", "thankYouTitle": "எங்களுடன் கொண்டாடியதற்கு நன்றி ♡", "thankYouText": "விழாக்கள் முடிந்தாலும் நினைவுகள் இப்போது தான் தொடங்குகின்றன. புகைப்படங்கள், படங்கள் மற்றும் புதுப்பிப்புகள் இங்கும் Instagram-லும் தொடரும்.", "filmPlay": "நிச்சயதார்த்தப் படத்தை இயக்கவும்", "musicPlay": "இசையை இயக்கவும்", "musicPause": "இசையை நிறுத்தவும்"});
+Object.assign(translations.zh, {"weddingHeroRange": "2026年9月3日晚 → 9月4日凌晨", "latestUpdateLabel": "最新动态", "weddingWeekEyebrow": "婚礼周 · 实时", "todayLabel": "今天", "tonightLabel": "今晚", "nextLabel": "接下来", "nowLabel": "现在", "shareInvitation": "分享我们的邀请函 ♡", "shareCopied": "邀请函链接已复制", "shareText": "苏佳娜 & 拉达·奎师那（高兴）婚礼 · 2026年9月1日至6日", "quickSchedule": "日程", "quickDirections": "导航", "quickRsvp": "出席确认", "travelSummary": "要来参加婚礼吗？", "travelIntro": "为外地宾客准备的一份简洁出行指南。", "travelWedding": "婚礼庆典 · 贾甘佩塔", "travelReception": "婚宴 · 卡基纳达", "travelHelp": "需要出行或住宿协助？欢迎通过 WhatsApp 联系我们的家人。", "viewInvitationAgain": "再次查看邀请函", "installApp": "将婚礼网站添加到主屏幕", "thankYouEyebrow": "满怀感恩", "thankYouTitle": "感谢您与我们共同庆祝 ♡", "thankYouText": "庆典虽已结束，美好回忆才刚刚开始。照片、影片与最新动态仍会在这里和 Instagram 与大家分享。", "filmPlay": "播放订婚影片", "musicPlay": "播放音乐", "musicPause": "暂停音乐"});
+Object.assign(translations.ne, {"weddingHeroRange": "03 सेप्टेम्बर राति → 04 सेप्टेम्बर बिहान", "latestUpdateLabel": "नवीनतम जानकारी", "weddingWeekEyebrow": "विवाह सप्ताह · लाइभ", "todayLabel": "आज", "tonightLabel": "आज राति", "nextLabel": "अर्को", "nowLabel": "अहिले", "shareInvitation": "हाम्रो निमन्त्रणा साझा गर्नुहोस् ♡", "shareCopied": "निमन्त्रणा लिंक प्रतिलिपि भयो", "shareText": "सुजना & राधा कृष्णको विवाह · 1–6 सेप्टेम्बर 2026", "quickSchedule": "कार्यक्रम", "quickDirections": "दिशा", "quickRsvp": "RSVP", "travelSummary": "विवाहमा आउँदै हुनुहुन्छ?", "travelIntro": "बाहिरबाट आउने पाहुनाका लागि छोटो यात्रा मार्गदर्शिका।", "travelWedding": "विवाह उत्सव · जग्गमपेटा", "travelReception": "रिसेप्सन · काकीनाडा", "travelHelp": "यात्रा वा बसाइ सहयोग चाहिन्छ? हाम्रो परिवारलाई WhatsApp गर्नुहोस्।", "viewInvitationAgain": "निमन्त्रणा फेरि हेर्नुहोस्", "installApp": "विवाह साइट होम स्क्रिनमा थप्नुहोस्", "thankYouEyebrow": "कृतज्ञ हृदयले", "thankYouTitle": "हामीसँग उत्सव मनाउनुभएकोमा धन्यवाद ♡", "thankYouText": "उत्सव सकिए पनि सम्झनाहरू अब सुरु भएका छन्। तस्बिर, भिडियो र अपडेटहरू यहाँ र Instagram मा जारी रहनेछन्।", "filmPlay": "सगाईको भिडियो चलाउनुहोस्", "musicPlay": "संगीत बजाउनुहोस्", "musicPause": "संगीत रोक्नुहोस्"});
+
 const eventLabels = {
   "en": {
     "mehendi": "Mehendi — 01 Sep",
@@ -1488,7 +1497,7 @@ document.getElementById("calendarButton").addEventListener("click", () => {
       "DTSTART;VALUE=DATE:20260905",
       "DTEND;VALUE=DATE:20260906",
       "SUMMARY:Sujana & Radha Krishna — Sathyanarayana Swamy Vratham (Morning)",
-      `LOCATION:${location.replace(/,/g, "\\,")}`,
+      `LOCATION:${CONFIG.vrathamVenueName.replace(/,/g, "\\,")}`,
       "DESCRIPTION:Sathyanarayana Swamy Vratham will be held in the morning. The exact time will be confirmed by the family.",
       "END:VEVENT"
     ],
@@ -1619,3 +1628,185 @@ document.addEventListener("keydown", event => {
   request.addEventListener("timeout", () => { counter.hidden = true; });
   request.send();
 })();
+
+
+// =========================================================
+// Version 34 — Wedding companion, sharing, privacy & PWA
+// =========================================================
+const V34 = {
+  openedKey: "radhasujanaInvitationOpened",
+  weddingStart: "2026-09-01",
+  weddingEnd: "2026-09-06",
+  privacySunset: "2026-09-07",
+  shareUrl: "https://radhasujana.com/"
+};
+
+const V34_EVENT_NAMES = {
+  en:{mehendi:"Mehendi",pelli:"Groom & Bride Blessings",haldi:"Haldi",dinner:"Dinner",muhurtham:"Muhurtham",vratham:"Sathyanarayana Swamy Vratham",reception:"Reception"},
+  te:{mehendi:"మెహందీ",pelli:"పెళ్లికొడుకు & పెళ్లికూతురు వేడుకలు",haldi:"హల్దీ",dinner:"విందు",muhurtham:"ముహూర్తం",vratham:"సత్యనారాయణ స్వామి వ్రతం",reception:"రిసెప్షన్"},
+  hi:{mehendi:"मेहंदी",pelli:"वर-वधू आशीर्वाद समारोह",haldi:"हल्दी",dinner:"रात्रिभोज",muhurtham:"मुहूर्त",vratham:"सत्यनारायण स्वामी व्रतम",reception:"रिसेप्शन"},
+  ta:{mehendi:"மெஹந்தி",pelli:"மணமகன் & மணமகள் ஆசீர்வாதச் சடங்குகள்",haldi:"ஹல்தி",dinner:"விருந்து",muhurtham:"முகூர்த்தம்",vratham:"சத்யநாராயண சுவாமி விரதம்",reception:"வரவேற்பு"},
+  zh:{mehendi:"指甲花彩绘之夜",pelli:"新郎与新娘婚前祝福礼",haldi:"姜黄礼",dinner:"晚宴",muhurtham:"婚礼吉时",vratham:"萨蒂亚那罗延祈福礼",reception:"婚宴"},
+  ne:{mehendi:"मेहन्दी",pelli:"दुलाहा-दुलही आशीर्वाद समारोह",haldi:"हल्दी",dinner:"रात्रिभोज",muhurtham:"मुहूर्त",vratham:"सत्यनारायण स्वामी व्रतम",reception:"रिसेप्सन"}
+};
+
+function v34Name(key){ return (V34_EVENT_NAMES[currentLanguage] || V34_EVENT_NAMES.en)[key] || key; }
+function indiaParts(date = new Date()) {
+  const parts = new Intl.DateTimeFormat("en-CA", {timeZone:"Asia/Kolkata",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(date);
+  const p = Object.fromEntries(parts.map(x=>[x.type,x.value]));
+  return {date:`${p.year}-${p.month}-${p.day}`, hour:Number(p.hour), minute:Number(p.minute)};
+}
+function indiaDateLabel(dateStr){
+  const d = new Date(`${dateStr}T12:00:00+05:30`);
+  return new Intl.DateTimeFormat(document.documentElement.lang || "en", {timeZone:"Asia/Kolkata",weekday:"long",day:"numeric",month:"long"}).format(d);
+}
+
+const WEEK_PLAN = {
+  "2026-09-01":[{key:"mehendi",tag:"todayLabel",detail:()=>t("bridesHouse"),href:CONFIG.mehendiMapUrl}],
+  "2026-09-02":[{key:"pelli",tag:"todayLabel",detail:()=>`${t("groomsHouse")} · ${t("bridesHouse")}`,href:"#event-pelli"}],
+  "2026-09-03":[
+    {key:"haldi",tag:"todayLabel",detail:()=>`09:00 · ${t("haldiVenueName").replace(/<[^>]+>/g,"")}`,href:CONFIG.haldiMapUrl,after:[11,30]},
+    {key:"dinner",tag:"tonightLabel",detail:()=>"19:00 · Parinaya Function Hall",href:CONFIG.mapUrl,after:[19,0]},
+    {key:"muhurtham",tag:"nextLabel",detail:()=>"04 Sep · 02:58 · Parinaya Function Hall",href:CONFIG.mapUrl}
+  ],
+  "2026-09-04":[{key:"muhurtham",tag:"todayLabel",detail:()=>"02:58 · Parinaya Function Hall",href:CONFIG.mapUrl,until:[5,30]},{key:"vratham",tag:"nextLabel",detail:()=>`05 Sep · ${t("vrathamVenueName")}`,href:CONFIG.vrathamMapUrl}],
+  "2026-09-05":[{key:"vratham",tag:"todayLabel",detail:()=>`${t("vrathamDay")} · ${t("vrathamVenueName")}`,href:CONFIG.vrathamMapUrl},{key:"reception",tag:"nextLabel",detail:()=>`06 Sep · 18:30 · ${t("receptionVenueName").replace(/<[^>]+>/g,"")}`,href:CONFIG.receptionMapUrl}],
+  "2026-09-06":[{key:"reception",tag:"todayLabel",detail:()=>`18:30 · ${t("receptionVenueName").replace(/<[^>]+>/g,"")}`,href:CONFIG.receptionMapUrl}]
+};
+
+function renderWeddingWeekMode(){
+  const now = indiaParts();
+  const card = document.getElementById("weddingWeekCard");
+  const banner = document.getElementById("latestUpdateBanner");
+  const manual = (window.WEDDING_SITE_CONFIG && window.WEDDING_SITE_CONFIG.latestUpdate || "").trim();
+  if (now.date >= V34.weddingStart && now.date <= V34.weddingEnd) {
+    const items = WEEK_PLAN[now.date] || [];
+    card.hidden = false;
+    card.querySelector(".wedding-week-card__eyebrow").textContent = t("weddingWeekEyebrow");
+    card.querySelector(".wedding-week-card__date").textContent = indiaDateLabel(now.date);
+    const body = card.querySelector(".wedding-week-card__items");
+    body.innerHTML = "";
+    items.forEach((item,idx)=>{
+      const row=document.createElement("div"); row.className="wedding-week-item";
+      let tag = idx===0 ? item.tag : (item.tag || "nextLabel");
+      row.innerHTML = `<span class="wedding-week-item__tag">${t(tag)}</span><span><strong>${v34Name(item.key)}</strong><small>${item.detail()}</small></span>${item.href ? `<a href="${item.href}" ${item.href.startsWith("http")?'target="_blank" rel="noopener noreferrer"':''}>${t("quickDirections")} ↗</a>`:""}`;
+      body.appendChild(row);
+    });
+    const autoText = items[0] ? `${v34Name(items[0].key)} · ${items[0].detail()}` : "";
+    banner.hidden = false;
+    banner.querySelector(".latest-update__label").textContent = t("latestUpdateLabel");
+    banner.querySelector(".latest-update__text").textContent = manual || autoText;
+  } else if (manual) {
+    banner.hidden = false;
+    banner.querySelector(".latest-update__label").textContent = t("latestUpdateLabel");
+    banner.querySelector(".latest-update__text").textContent = manual;
+  } else {
+    card.hidden = true; banner.hidden = true;
+  }
+}
+
+function applyPrivacySunset(){
+  const now=indiaParts();
+  const thanks=document.getElementById("postWeddingThanks");
+  if (now.date >= V34.privacySunset) {
+    document.body.classList.add("post-wedding-mode");
+    document.body.classList.remove("locked");
+    mainContent.classList.add("visible");
+    mainContent.setAttribute("aria-hidden","false");
+    if (thanks) thanks.hidden=false;
+  }
+}
+
+// Returning guests: skip envelope after the first successful opening.
+try {
+  if (localStorage.getItem(V34.openedKey)==="1") {
+    cover.classList.add("opened");
+    mainContent.classList.add("visible");
+    mainContent.setAttribute("aria-hidden","false");
+    document.body.classList.remove("locked");
+  }
+  openButton.addEventListener("click",()=>localStorage.setItem(V34.openedKey,"1"));
+} catch(e) {}
+
+document.getElementById("viewInvitationAgain")?.addEventListener("click",()=>{
+  try{localStorage.removeItem(V34.openedKey)}catch(e){}
+  cover.classList.remove("opened","is-opening");
+  mainContent.classList.remove("visible");
+  mainContent.setAttribute("aria-hidden","true");
+  document.body.classList.add("locked");
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+
+// Native share with clipboard fallback.
+document.getElementById("shareInvitationButton")?.addEventListener("click", async ()=>{
+  const shareData={title:document.title,text:t("shareText"),url:V34.shareUrl};
+  try {
+    if (navigator.share) await navigator.share(shareData);
+    else { await navigator.clipboard.writeText(V34.shareUrl); showToast(t("shareCopied")); }
+  } catch(err) { if (err?.name !== "AbortError") { try{ await navigator.clipboard.writeText(V34.shareUrl); showToast(t("shareCopied")); }catch(e){} } }
+});
+
+// Gallery protection: blocks casual save/drag gestures only.
+document.querySelectorAll(".gallery-item, .lightbox").forEach(el=>el.addEventListener("contextmenu",e=>e.preventDefault()));
+document.querySelectorAll(".gallery-item img, .lightbox img").forEach(img=>{
+  img.setAttribute("draggable","false");
+  img.addEventListener("dragstart",e=>e.preventDefault());
+});
+
+// Lite YouTube: no YouTube iframe/network work until the guest presses Play.
+document.getElementById("filmPlayButton")?.addEventListener("click",()=>{
+  const host=document.getElementById("filmLite");
+  host.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/2CMnmL-LB4U?autoplay=1&rel=0" title="Sujana and Radha Krishna engagement film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+});
+
+// Frosted nav and quick bar.
+const topbar=document.querySelector(".topbar");
+const quickBar=document.getElementById("quickBar");
+const quickDirection=document.getElementById("quickDirection");
+function updateScrollUI(){
+  const scrolled=window.scrollY>120;
+  topbar?.classList.toggle("is-scrolled",scrolled);
+  quickBar?.classList.toggle("is-visible",window.scrollY>520 && !document.body.classList.contains("post-wedding-mode"));
+}
+window.addEventListener("scroll",updateScrollUI,{passive:true}); updateScrollUI();
+function updateQuickDirection(){
+  const d=indiaParts().date;
+  const first=(WEEK_PLAN[d]||[])[0];
+  if (quickDirection) quickDirection.href=(first&&first.href)||CONFIG.mapUrl;
+}
+
+// Event timeline fills as cards enter the viewport.
+const timelineFill=document.getElementById("eventTimelineFill");
+const timelineSteps=[...document.querySelectorAll(".event-progress__step")];
+const eventCards=[...document.querySelectorAll(".event-card")];
+if ("IntersectionObserver" in window && timelineFill) {
+  const seen=new Set();
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{ if(entry.isIntersecting){ const idx=eventCards.indexOf(entry.target); if(idx>=0){seen.add(idx); const max=Math.max(...seen); timelineFill.style.width=`${(max/5)*100}%`; timelineSteps.forEach((s,i)=>{s.classList.toggle("is-past",i<max);s.classList.toggle("is-active",i===max);}); } } });
+  },{threshold:.34});
+  eventCards.forEach(c=>io.observe(c));
+}
+
+// Optional music: enabled only when user supplies a file in site-config.js.
+const musicSrc=(window.WEDDING_SITE_CONFIG&&window.WEDDING_SITE_CONFIG.musicSrc||"").trim();
+const musicToggle=document.getElementById("musicToggle");
+let ambientAudio=null;
+if(musicSrc&&musicToggle){
+  ambientAudio=new Audio(musicSrc); ambientAudio.loop=true; ambientAudio.preload="none"; musicToggle.hidden=false;
+  musicToggle.addEventListener("click",async()=>{
+    if(ambientAudio.paused){try{await ambientAudio.play();musicToggle.classList.add("is-playing");musicToggle.setAttribute("aria-label",t("musicPause"));}catch(e){}}
+    else{ambientAudio.pause();musicToggle.classList.remove("is-playing");musicToggle.setAttribute("aria-label",t("musicPlay"));}
+  });
+}
+
+// PWA install prompt.
+let deferredInstallPrompt=null;
+const installButton=document.getElementById("installAppButton");
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredInstallPrompt=e;if(installButton)installButton.hidden=false;});
+installButton?.addEventListener("click",async()=>{if(!deferredInstallPrompt)return;deferredInstallPrompt.prompt();await deferredInstallPrompt.userChoice;deferredInstallPrompt=null;installButton.hidden=true;});
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("/sw.js").catch(()=>{}));}
+
+renderWeddingWeekMode(); updateQuickDirection(); applyPrivacySunset();
+// Refresh translated dynamic components after language changes.
+languageToggle.addEventListener("click",()=>setTimeout(()=>{renderWeddingWeekMode();updateQuickDirection();},0));
+window.addEventListener("popstate",()=>setTimeout(()=>{renderWeddingWeekMode();updateQuickDirection();},0));

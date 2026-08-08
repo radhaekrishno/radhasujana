@@ -1202,3 +1202,153 @@ body.lang-zh {
   color: var(--gold);
   border-bottom-color: var(--gold);
 }
+
+
+/* =========================================================
+   Version 34 — Wedding companion + privacy refinements
+   ========================================================= */
+body.lang-ne { font-family: "Noto Sans Devanagari", "Montserrat", system-ui, sans-serif; }
+
+/* Scrolled frosted navigation */
+.topbar { transition: background .3s ease, box-shadow .3s ease, border-color .3s ease, padding .3s ease, transform .3s ease; }
+.topbar.is-scrolled {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  width: min(calc(100% - 24px), 1280px);
+  padding: 9px 12px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(111,16,37,.12);
+  border-radius: 999px;
+  background: rgba(255,250,241,.86);
+  box-shadow: 0 12px 35px rgba(65,8,23,.10);
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+}
+.topbar.is-scrolled .monogram { width: 48px; height: 48px; box-shadow: none; }
+.topbar.is-scrolled .instagram-logo-hint { display: none !important; }
+
+/* Latest update */
+.latest-update {
+  width: min(980px, 100%);
+  margin: 28px auto -42px;
+  padding: 11px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid rgba(200,155,81,.32);
+  border-radius: 999px;
+  color: var(--wine);
+  background: rgba(255,250,241,.78);
+  box-shadow: 0 8px 24px rgba(65,8,23,.05);
+  font-size: .72rem;
+  line-height: 1.45;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+.latest-update[hidden] { display: none; }
+.latest-update__label { color: var(--gold); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+
+/* Wedding week live card */
+.wedding-week-card {
+  width: min(780px, 100%);
+  margin: 30px auto 0;
+  padding: 22px 24px;
+  border: 1px solid rgba(200,155,81,.38);
+  background: linear-gradient(145deg, rgba(255,250,241,.94), rgba(248,240,227,.88));
+  box-shadow: 0 18px 50px rgba(65,8,23,.09);
+  text-align: left;
+}
+.wedding-week-card[hidden] { display:none; }
+.wedding-week-card__eyebrow { margin:0 0 12px; color:var(--gold); font-size:.62rem; font-weight:700; letter-spacing:.17em; text-transform:uppercase; }
+.wedding-week-card__date { margin:0 0 15px; color:var(--wine); font:500 clamp(1.7rem,4vw,2.6rem) "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.wedding-week-item { display:grid; grid-template-columns:74px 1fr auto; gap:14px; align-items:center; padding:12px 0; border-top:1px solid var(--line); }
+.wedding-week-item__tag { color:var(--gold); font-size:.58rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+.wedding-week-item strong { display:block; color:var(--wine); font:600 1.12rem "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.wedding-week-item small { display:block; margin-top:2px; color:var(--muted); font-size:.68rem; line-height:1.45; }
+.wedding-week-item a { min-height:38px; display:inline-flex; align-items:center; padding:8px 10px; color:var(--wine); border:1px solid var(--line); font-size:.6rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
+
+/* Indian line-art separators */
+.indian-divider { display:flex; justify-content:center; padding:4px 20px; color:var(--gold); opacity:.34; }
+.indian-divider svg { width:min(260px,65vw); height:54px; fill:none; stroke:currentColor; stroke-width:1.25; vector-effect:non-scaling-stroke; }
+
+/* Event timeline */
+.event-progress { position:relative; width:min(920px,100%); margin:0 auto 42px; padding:0 8px; }
+.event-progress__track { position:absolute; left:7%; right:7%; top:17px; height:1px; background:rgba(111,16,37,.16); overflow:hidden; }
+.event-progress__fill { width:0; height:100%; background:linear-gradient(90deg,var(--gold),var(--wine)); transition:width .6s cubic-bezier(.2,.8,.2,1); }
+.event-progress__steps { position:relative; display:grid; grid-template-columns:repeat(6,1fr); gap:4px; }
+.event-progress__step { display:grid; justify-items:center; gap:7px; color:var(--muted); font-size:.54rem; letter-spacing:.08em; text-transform:uppercase; }
+.event-progress__step i { width:34px; height:34px; display:grid; place-items:center; border:1px solid var(--line); border-radius:50%; color:var(--wine); background:var(--ivory); font-style:normal; font:600 .78rem "Cormorant Garamond",serif; transition:.3s; }
+.event-progress__step.is-active i, .event-progress__step.is-past i { color:#fff8ed; border-color:var(--wine); background:var(--wine); box-shadow:0 0 0 5px rgba(200,155,81,.09); }
+
+/* Micro interactions */
+.event-card a[href*="maps"], .event-card a[href*="google"], .event-card a[href*="share.google"] { transition: transform .2s ease, color .2s ease, border-color .2s ease; }
+.event-card a[href*="maps"]:hover, .event-card a[href*="google"]:hover, .event-card a[href*="share.google"]:hover { transform:translateX(3px); }
+.primary-button { position:relative; overflow:hidden; }
+.primary-button::after { content:""; position:absolute; inset:-60% auto -60% -40%; width:22%; transform:rotate(18deg); background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent); animation:buttonShimmer 7s ease-in-out 2.5s 1; }
+@keyframes buttonShimmer { 0%{left:-40%} 28%,100%{left:130%} }
+
+/* Protected gallery — discourages casual saving; not DRM */
+.gallery-item { -webkit-touch-callout:none; user-select:none; -webkit-user-select:none; }
+.gallery-item img, .lightbox img { -webkit-user-drag:none; user-drag:none; -webkit-touch-callout:none; user-select:none; pointer-events:none; }
+.gallery-watermark { position:absolute; left:14px; bottom:14px; z-index:3; padding:5px 8px; border:1px solid rgba(255,255,255,.26); border-radius:999px; color:rgba(255,255,255,.72); background:rgba(65,8,23,.32); font:500 .52rem "Montserrat",sans-serif; letter-spacing:.06em; backdrop-filter:blur(4px); pointer-events:none; }
+
+/* Lite YouTube embed */
+.film-lite { position:relative; aspect-ratio:16/9; overflow:hidden; display:grid; place-items:center; background:linear-gradient(rgba(65,8,23,.32),rgba(65,8,23,.58)), url('/assets/social-preview.jpg') center/cover no-repeat; }
+.film-lite__play { width:86px; height:86px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.58); border-radius:50%; color:#fff7eb; background:rgba(111,16,37,.82); box-shadow:0 16px 45px rgba(0,0,0,.22); font-size:1.6rem; transition:.25s; }
+.film-lite__play:hover { transform:scale(1.06); background:var(--wine); }
+.film-lite iframe { width:100%; height:100%; border:0; }
+
+/* Travel accordion */
+.travel-details { margin-top:28px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.travel-details summary { display:flex; justify-content:space-between; gap:16px; padding:17px 0; color:var(--wine); cursor:pointer; font:600 1rem "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.travel-details summary::after { content:"＋"; color:var(--gold); }
+.travel-details[open] summary::after { content:"−"; }
+.travel-details__body { padding:0 0 18px; color:var(--muted); font-size:.74rem; line-height:1.75; }
+.travel-details__body a { color:var(--wine); border-bottom:1px solid var(--line); }
+
+/* Footer utilities */
+.footer-utilities { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:25px auto 4px; }
+.footer-utility { min-height:42px; display:inline-flex; align-items:center; justify-content:center; gap:7px; padding:9px 14px; border:1px solid rgba(255,255,255,.24); color:#fff1df; background:rgba(255,255,255,.04); font-size:.64rem; letter-spacing:.06em; text-transform:uppercase; transition:.25s; }
+.footer-utility:hover { color:var(--wine); background:#fff7eb; }
+.footer-utility[hidden] { display:none; }
+
+/* Sticky mobile quick bar */
+.quick-bar { position:fixed; left:50%; bottom:max(10px,env(safe-area-inset-bottom)); z-index:2200; width:min(calc(100% - 22px),520px); display:none; grid-template-columns:repeat(3,1fr); transform:translate(-50%,120%); opacity:0; border:1px solid rgba(111,16,37,.14); border-radius:18px; background:rgba(255,250,241,.92); box-shadow:0 16px 42px rgba(65,8,23,.18); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); transition:.35s ease; overflow:hidden; }
+.quick-bar.is-visible { transform:translate(-50%,0); opacity:1; }
+.quick-bar a { min-height:50px; display:grid; place-items:center; padding:8px 4px; color:var(--wine); font-size:.58rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; text-align:center; }
+.quick-bar a + a { border-left:1px solid var(--line); }
+.quick-bar a:nth-child(2) { color:#fff7eb; background:var(--wine); }
+
+/* Post-wedding thank-you */
+.post-wedding-thanks { width:min(800px,100%); margin:34px auto 0; padding:28px; border:1px solid rgba(200,155,81,.34); background:rgba(255,250,241,.76); text-align:center; box-shadow:0 18px 52px rgba(65,8,23,.07); }
+.post-wedding-thanks[hidden] { display:none; }
+.post-wedding-thanks small { color:var(--gold); font-size:.62rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
+.post-wedding-thanks h2 { margin:10px 0 8px; color:var(--wine); font:400 clamp(2.3rem,6vw,4.4rem) "Italiana","Noto Serif Telugu",serif; }
+.post-wedding-thanks p { margin:0; color:var(--muted); line-height:1.75; }
+body.post-wedding-mode [data-private-after-wedding] { display:none !important; }
+body.post-wedding-mode .invitation-cover { display:none !important; }
+
+/* Optional music control only appears when a supplied audio file is configured. */
+.music-toggle { position:fixed; right:18px; bottom:84px; z-index:2190; width:44px; height:44px; display:grid; place-items:center; border:1px solid rgba(111,16,37,.16); border-radius:50%; color:var(--wine); background:rgba(255,250,241,.9); box-shadow:0 10px 30px rgba(65,8,23,.12); backdrop-filter:blur(12px); }
+.music-toggle[hidden] { display:none; }
+.music-toggle.is-playing { color:#fff7eb; background:var(--wine); }
+
+@media (max-width: 900px) {
+  .quick-bar { display:grid; }
+  body { padding-bottom:72px; }
+  .wedding-week-item { grid-template-columns:64px 1fr; }
+  .wedding-week-item a { grid-column:2; justify-self:start; }
+  .topbar.is-scrolled { top:7px; border-radius:18px; }
+}
+@media (max-width: 760px) {
+  .latest-update { margin-top:42px; margin-bottom:-32px; border-radius:16px; }
+  .event-progress__step span { display:none; }
+  .event-progress__track { left:9%; right:9%; }
+  .wedding-week-card { padding:18px; }
+  .gallery-watermark { left:10px; bottom:10px; font-size:.47rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .primary-button::after { display:none; }
+}
