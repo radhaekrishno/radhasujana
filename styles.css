@@ -1352,3 +1352,83 @@ body.post-wedding-mode .invitation-cover { display:none !important; }
 @media (prefers-reduced-motion: reduce) {
   .primary-button::after { display:none; }
 }
+
+/* v36 · countdown date/time legibility */
+.countdown-section .section-heading { position: relative; z-index: 2; }
+.countdown-section .section-heading h2 {
+  color: #f4d9a4;
+  text-shadow: 0 1px 18px rgba(244,217,164,.08);
+}
+
+/* v36 · uniform venue contact line */
+.venue-card .venue-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(111,16,37,.22);
+  color: var(--wine);
+  font-size: .72rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.venue-card .venue-whatsapp::before {
+  content: "●";
+  color: #3a9a61;
+  font-size: .62rem;
+  line-height: 1;
+}
+.venue-card .venue-whatsapp:hover { border-bottom-color: var(--gold); color: var(--gold); }
+
+/* v36 · engagement film actions */
+.film-actions {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 8px 0;
+}
+.film-actions a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid rgba(255,247,235,.42);
+  border-radius: 999px;
+  color: #fff7eb;
+  background: rgba(255,255,255,.07);
+  font-size: .62rem;
+  font-weight: 650;
+  letter-spacing: .055em;
+  text-align: center;
+  transition: transform .22s ease, background .22s ease, color .22s ease, border-color .22s ease;
+}
+.film-actions a:first-child {
+  color: var(--wine-deep);
+  background: #fff2d9;
+  border-color: #fff2d9;
+}
+.film-actions a:hover,
+.film-actions a:focus-visible {
+  transform: translateY(-1px);
+  color: var(--wine-deep);
+  background: #f4d9a4;
+  border-color: #f4d9a4;
+}
+.film-player-card > p[data-i18n="youtubeNote"] {
+  position: relative;
+  z-index: 2;
+  margin: 16px 12px 8px;
+  color: rgba(255,247,235,.82);
+  text-align: center;
+  line-height: 1.65;
+}
+@media (max-width: 560px) {
+  .film-actions { flex-direction: column; align-items: stretch; margin: 14px 6px 0; }
+  .film-actions a { width: 100%; min-height: 44px; padding: 10px 12px; font-size: .59rem; }
+  .countdown-section .section-heading h2 { color: #f6dfb2; }
+}

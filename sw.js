@@ -1,5 +1,5 @@
-const CACHE="radhasujana-v34";
-const CORE=["/","/en/","/styles.css?v=34","/script.js?v=34","/site-config.js?v=34","/favicon.png","/manifest.webmanifest?v=34","/assets/social-preview.jpg"];
+const CACHE="radhasujana-v36";
+const CORE=["/","/en/","/styles.css?v=36","/script.js?v=36","/site-config.js?v=36","/favicon.png","/manifest.webmanifest?v=36","/assets/social-preview.jpg"];
 self.addEventListener("install",e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener("fetch",e=>{if(e.request.method!=="GET")return;const u=new URL(e.request.url);if(u.origin!==location.origin)return;e.respondWith(caches.match(e.request).then(hit=>hit||fetch(e.request).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r;}).catch(()=>caches.match("/en/"))));});

@@ -1650,7 +1650,7 @@ const V34_EVENT_NAMES = {
   ne:{mehendi:"मेहन्दी",pelli:"दुलाहा-दुलही आशीर्वाद समारोह",haldi:"हल्दी",dinner:"रात्रिभोज",muhurtham:"मुहूर्त",vratham:"सत्यनारायण स्वामी व्रतम",reception:"रिसेप्सन"}
 };
 
-function v34Name(key){ return (V34_EVENT_NAMES[currentLanguage] || V34_EVENT_NAMES.en)[key] || key; }
+function v36Name(key){ return (V34_EVENT_NAMES[currentLanguage] || V34_EVENT_NAMES.en)[key] || key; }
 function indiaParts(date = new Date()) {
   const parts = new Intl.DateTimeFormat("en-CA", {timeZone:"Asia/Kolkata",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(date);
   const p = Object.fromEntries(parts.map(x=>[x.type,x.value]));
@@ -1689,10 +1689,10 @@ function renderWeddingWeekMode(){
     items.forEach((item,idx)=>{
       const row=document.createElement("div"); row.className="wedding-week-item";
       let tag = idx===0 ? item.tag : (item.tag || "nextLabel");
-      row.innerHTML = `<span class="wedding-week-item__tag">${t(tag)}</span><span><strong>${v34Name(item.key)}</strong><small>${item.detail()}</small></span>${item.href ? `<a href="${item.href}" ${item.href.startsWith("http")?'target="_blank" rel="noopener noreferrer"':''}>${t("quickDirections")} ↗</a>`:""}`;
+      row.innerHTML = `<span class="wedding-week-item__tag">${t(tag)}</span><span><strong>${v36Name(item.key)}</strong><small>${item.detail()}</small></span>${item.href ? `<a href="${item.href}" ${item.href.startsWith("http")?'target="_blank" rel="noopener noreferrer"':''}>${t("quickDirections")} ↗</a>`:""}`;
       body.appendChild(row);
     });
-    const autoText = items[0] ? `${v34Name(items[0].key)} · ${items[0].detail()}` : "";
+    const autoText = items[0] ? `${v36Name(items[0].key)} · ${items[0].detail()}` : "";
     banner.hidden = false;
     banner.querySelector(".latest-update__label").textContent = t("latestUpdateLabel");
     banner.querySelector(".latest-update__text").textContent = manual || autoText;
