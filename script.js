@@ -57,7 +57,7 @@ const translations = {
     mehendiDescription: "Henna, music, colour, and an evening that begins the celebration.",
     wednesday: "Wednesday",
     pelliRituals: "Pelli-Koduku<br>& Pelli-Kuthuru",
-    pelliRitualsPlain: "Pellikoduku / Pellikoothuru",
+    pelliRitualsPlain: "Pellikoduku/Pellikoothuru",
     pelliRitualsDate: "02 September 2026",
     pelliRitualsDescription: "A joyful Telugu tradition as both families bless the bride and groom.",
     haldiDay: "Thursday · 09:00 AM",
@@ -105,9 +105,9 @@ const translations = {
     joyfullyYes: "Joyfully yes",
     regretfullyNo: "Regretfully no",
     whichCelebrations: "Which celebrations?",
-    weddingRsvp: "Wedding Ceremony · Thursday, 03 Sep evening into Friday early hours",
-    vrathamRsvp: "Sathyanarayana Swamy Vratham · 05 Sep morning",
-    receptionRsvp: "Reception · 06 Sep · 6:30 PM onwards",
+    weddingRsvp: "Wedding Ceremony",
+    vrathamRsvp: "Satyanarayana Swamy Vratam",
+    receptionRsvp: "Reception",
     guestCount: "Number of guests",
     oneGuest: "1 guest",
     twoGuests: "2 guests",
@@ -240,9 +240,9 @@ const translations = {
     joyfullyYes: "ఆనందంగా వస్తాను",
     regretfullyNo: "రాలేకపోతున్నాను",
     whichCelebrations: "ఏ వేడుకలకు వస్తారు?",
-    weddingRsvp: "వివాహ వేడుక · గురువారం 03 సెప్టెంబర్ సాయంత్రం నుంచి శుక్రవారం తెల్లవారుజాము వరకు",
-    vrathamRsvp: "సత్యనారాయణ స్వామి వ్రతం · 05 సెప్టెంబర్ ఉదయం",
-    receptionRsvp: "రిసెప్షన్ · 06 సెప్టెంబర్ · సాయంత్రం 6:30 నుండి",
+    weddingRsvp: "వివాహ వేడుక",
+    vrathamRsvp: "సత్యనారాయణ స్వామి వ్రతం",
+    receptionRsvp: "రిసెప్షన్",
     guestCount: "అతిథుల సంఖ్య",
     oneGuest: "1 అతిథి",
     twoGuests: "2 అతిథులు",
@@ -374,9 +374,9 @@ const translations = {
     "joyfullyYes": "खुशी से हाँ",
     "regretfullyNo": "अफसोस, नहीं आ पाऊँगा/पाऊँगी",
     "whichCelebrations": "किन समारोहों में आएँगे?",
-    "weddingRsvp": "विवाह समारोह · 03 सितंबर शाम से 04 सितंबर की भोर तक",
-    "vrathamRsvp": "सत्यनारायण स्वामी व्रतम · 05 सितंबर सुबह",
-    "receptionRsvp": "रिसेप्शन · 06 सितंबर · शाम 6:30 बजे से",
+    "weddingRsvp": "विवाह समारोह",
+    "vrathamRsvp": "सत्यनारायण स्वामी व्रतम",
+    "receptionRsvp": "रिसेप्शन",
     "guestCount": "अतिथियों की संख्या",
     "oneGuest": "1 अतिथि",
     "twoGuests": "2 अतिथि",
@@ -508,9 +508,9 @@ const translations = {
     "joyfullyYes": "மகிழ்ச்சியுடன் வருகிறேன்",
     "regretfullyNo": "வர இயலவில்லை",
     "whichCelebrations": "எந்த விழாக்களுக்கு வருவீர்கள்?",
-    "weddingRsvp": "திருமண விழா · செப்டம்பர் 03 மாலை முதல் 04 அதிகாலை வரை",
-    "vrathamRsvp": "சத்யநாராயண சுவாமி விரதம் · செப்டம்பர் 05 காலை",
-    "receptionRsvp": "வரவேற்பு · 06 செப்டம்பர் · மாலை 6:30 மணி முதல்",
+    "weddingRsvp": "திருமண விழா",
+    "vrathamRsvp": "சத்யநாராயண சுவாமி விரதம்",
+    "receptionRsvp": "வரவேற்பு",
     "guestCount": "விருந்தினர்களின் எண்ணிக்கை",
     "oneGuest": "1 விருந்தினர்",
     "twoGuests": "2 விருந்தினர்கள்",
@@ -668,9 +668,9 @@ const translations = {
     "joyfullyYes": "欣然出席",
     "regretfullyNo": "遗憾无法出席",
     "whichCelebrations": "您将参加哪些庆典？",
-    "weddingRsvp": "婚礼仪式 · 9月3日晚至9月4日凌晨",
-    "vrathamRsvp": "萨蒂亚那罗延祈福礼 · 9月5日上午",
-    "receptionRsvp": "婚宴 · 9月6日 · 晚上6:30起",
+    "weddingRsvp": "婚礼仪式",
+    "vrathamRsvp": "萨蒂亚那罗延祈福礼",
+    "receptionRsvp": "婚宴",
     "guestCount": "出席人数",
     "selectGuests": "请选择人数",
     "oneGuest": "1位",
@@ -738,7 +738,7 @@ Object.assign(translations.en, {
   receptionMapTitle: "RAMCOSA Guest House map",
   marriageDirections: "↗ Marriage venue directions",
   receptionDirections: "↗ Reception venue directions",
-  receptionRsvp: "Reception · 06 Sep · 6:30 PM onwards"
+  receptionRsvp: "Reception"
 });
 Object.assign(translations.te, {
   haldiVenueName: "పరిణయ ఫంక్షన్ హాల్ · ముందు లాన్",
@@ -757,7 +757,7 @@ Object.assign(translations.te, {
   receptionMapTitle: "రామ్‌కోసా గెస్ట్ హౌస్ మ్యాప్",
   marriageDirections: "↗ వివాహ వేదిక దారి",
   receptionDirections: "↗ రిసెప్షన్ వేదిక దారి",
-  receptionRsvp: "రిసెప్షన్ · 06 సెప్టెంబర్ · సాయంత్రం 6:30 నుండి"
+  receptionRsvp: "రిసెప్షన్"
 });
 Object.assign(translations.hi, {
   haldiVenueName: "परिणय फंक्शन हॉल · फ्रंट लॉन",
@@ -776,7 +776,7 @@ Object.assign(translations.hi, {
   receptionMapTitle: "RAMCOSA Guest House का नक्शा",
   marriageDirections: "↗ विवाह स्थल की दिशा",
   receptionDirections: "↗ रिसेप्शन स्थल की दिशा",
-  receptionRsvp: "रिसेप्शन · 06 सितंबर · शाम 6:30 बजे से"
+  receptionRsvp: "रिसेप्शन"
 });
 Object.assign(translations.ta, {
   haldiVenueName: "பரிணயா ஃபங்க்ஷன் ஹால் · முன்புற புல்வெளி",
@@ -795,7 +795,7 @@ Object.assign(translations.ta, {
   receptionMapTitle: "RAMCOSA Guest House வரைபடம்",
   marriageDirections: "↗ திருமண இடத்திற்கான வழி",
   receptionDirections: "↗ வரவேற்பு இடத்திற்கான வழி",
-  receptionRsvp: "வரவேற்பு · 06 செப்டம்பர் · மாலை 6:30 மணி முதல்"
+  receptionRsvp: "வரவேற்பு"
 });
 Object.assign(translations.zh, {
   haldiVenueName: "帕里纳雅宴会厅 · 前草坪<br><small class=\"venue-english\">Parinaya Function Hall · Front Lawn</small>",
@@ -816,7 +816,7 @@ Object.assign(translations.zh, {
   receptionMapTitle: "RAMCOSA 宾馆地图",
   marriageDirections: "↗ 婚礼会场导航",
   receptionDirections: "↗ 婚宴会场导航",
-  receptionRsvp: "婚宴 · 9月6日 · 晚上6:30起"
+  receptionRsvp: "婚宴"
 });
 
 translations.ne = {
@@ -919,9 +919,9 @@ translations.ne = {
   joyfullyYes: "खुसीसाथ उपस्थित हुन्छु",
   regretfullyNo: "दुःखका साथ उपस्थित हुन सक्दिनँ",
   whichCelebrations: "कुन-कुन उत्सवमा?",
-  weddingRsvp: "विवाह समारोह · बिहीबार 03 सेप्टेम्बर साँझदेखि शुक्रबार बिहानसम्म",
-  vrathamRsvp: "सत्यनारायण स्वामी व्रतम · 05 सेप्टेम्बर बिहान",
-  receptionRsvp: "रिसेप्सन · 06 सेप्टेम्बर · साँझ 6:30 बजेदेखि",
+  weddingRsvp: "विवाह समारोह",
+  vrathamRsvp: "सत्यनारायण स्वामी व्रतम",
+  receptionRsvp: "रिसेप्सन",
   guestCount: "अतिथिको सङ्ख्या",
   oneGuest: "1 अतिथि",
   twoGuests: "2 अतिथि",
@@ -973,7 +973,7 @@ translations.ne = {
 // Natural-language names for the Telugu pre-wedding preparation and blessing rituals.
 Object.assign(translations.en, {
   pelliRituals: "Groom’s Pre-Wedding Blessing <span class=\"ritual-native\">(Pelli-Koduku)</span><br>& Bride’s Pre-Wedding Blessing <span class=\"ritual-native\">(Pelli-Kuthuru)</span>",
-  pelliRitualsPlain: "Pellikoduku / Pellikoothuru",
+  pelliRitualsPlain: "Pellikoduku/Pellikoothuru",
   pelliRitualsDescription: "Traditional ceremonies in which the groom and bride are prepared and blessed at their respective homes.",
   pelliKodukuLabel: "Groom’s Ceremony",
   pelliKuthuruLabel: "Bride’s Ceremony",

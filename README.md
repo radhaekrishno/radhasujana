@@ -50,3 +50,17 @@ The automatic post-wedding privacy mode hides private logistics from normal visi
 - Replaced the generic countdown rings with a faint gold SR monogram watermark.
 - Balanced the space below the Wedding Ceremony Schedule box before “See all celebrations”.
 - Enlarged Sujana and Radha Krishna in the RSVP side selector and optically centered all option text inside the cards.
+
+
+## Version 40 update
+- RSVP celebration choices now show event names only; dates/times were removed from this form.
+- RSVP event labels are vertically centred with their checkbox and the rows are more compact.
+- The footer Instagram prompt is substantially smaller and visually secondary.
+- Normalized oversized vertical gaps across section headings, RSVP groups, footer utilities, and section padding without changing the overall design language.
+
+
+## Version 40.1 — spacing rhythm refinement
+- Equalized footer utility/credit/view-count/version spacing into a consistent vertical rhythm.
+- Removed the negative version-watermark offset that made the final two footer lines look crowded.
+- Made small spacing corrections to RSVP intro, film heading, ceremony schedule cells, quick actions, and compact Instagram footer stack.
+- No layout redesign or content changes.
