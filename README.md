@@ -27,3 +27,26 @@ Music is wired but hidden unless you supply your own audio. Put an MP3 in `asset
 
 ## Important privacy note
 The automatic post-wedding privacy mode hides private logistics from normal visitors, but because this is a static site, client-side hiding cannot erase those strings from old deployed source files. For strong post-wedding privacy, replace the live build after the wedding with the separate sanitized post-wedding package supplied alongside Version 34.
+
+## Version 37 polish
+- Balanced spacing below Sujana's name so the parentage line no longer appears crowded by the descender of the “j”.
+- Added 2026 below the Celebrations date range for consistency with Wedding Ceremony and Reception.
+- Reworked the Instagram logo cue into subtle borderless handwritten text that stays within the mobile viewport.
+- Kept Team Bride and Team Groom side-by-side on mobile, both in the rivalry picker and RSVP form.
+- Restyled RSVP radio and event selections as clear tappable chips/cards instead of raw browser controls.
+- Made the bottom Quick Bar quieter and changed Directions into a two-option popover for the Marriage Venue and Reception Venue.
+- Added `PREVIEW-WEBSITE.bat` and `LOCAL-PREVIEW.md` so the site can be tested locally before GitHub upload.
+
+
+## Version 38 detail polish
+- Repositioned the Instagram hint with a leading arrow pointing back to the logo.
+- Removed the accidental inner borders around the RSVP bride/groom names and enlarged the names.
+- Shortened the English RSVP ceremony option to “Pellikoduku / Pellikoothuru”.
+- Added a subtle `radhasujana · v38` build watermark below the invitation view counter.
+- Replaced event-card concentric circles with a transparent SR monogram watermark (wine on light cards, pale gold on dark cards).
+
+
+## Version 39 update
+- Replaced the generic countdown rings with a faint gold SR monogram watermark.
+- Balanced the space below the Wedding Ceremony Schedule box before “See all celebrations”.
+- Enlarged Sujana and Radha Krishna in the RSVP side selector and optically centered all option text inside the cards.

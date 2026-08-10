@@ -57,7 +57,7 @@ const translations = {
     mehendiDescription: "Henna, music, colour, and an evening that begins the celebration.",
     wednesday: "Wednesday",
     pelliRituals: "Pelli-Koduku<br>& Pelli-Kuthuru",
-    pelliRitualsPlain: "Pelli-Koduku & Pelli-Kuthuru",
+    pelliRitualsPlain: "Pellikoduku / Pellikoothuru",
     pelliRitualsDate: "02 September 2026",
     pelliRitualsDescription: "A joyful Telugu tradition as both families bless the bride and groom.",
     haldiDay: "Thursday · 09:00 AM",
@@ -973,7 +973,7 @@ translations.ne = {
 // Natural-language names for the Telugu pre-wedding preparation and blessing rituals.
 Object.assign(translations.en, {
   pelliRituals: "Groom’s Pre-Wedding Blessing <span class=\"ritual-native\">(Pelli-Koduku)</span><br>& Bride’s Pre-Wedding Blessing <span class=\"ritual-native\">(Pelli-Kuthuru)</span>",
-  pelliRitualsPlain: "Groom’s Pre-Wedding Blessing (Pelli-Koduku) & Bride’s Pre-Wedding Blessing (Pelli-Kuthuru)",
+  pelliRitualsPlain: "Pellikoduku / Pellikoothuru",
   pelliRitualsDescription: "Traditional ceremonies in which the groom and bride are prepared and blessed at their respective homes.",
   pelliKodukuLabel: "Groom’s Ceremony",
   pelliKuthuruLabel: "Bride’s Ceremony",
@@ -1762,7 +1762,8 @@ document.getElementById("filmPlayButton")?.addEventListener("click",()=>{
 // Frosted nav and quick bar.
 const topbar=document.querySelector(".topbar");
 const quickBar=document.getElementById("quickBar");
-const quickDirection=document.getElementById("quickDirection");
+const quickDirectionToggle=document.getElementById("quickDirectionToggle");
+const quickDirectionsMenu=document.getElementById("quickDirectionsMenu");
 function updateScrollUI(){
   const scrolled=window.scrollY>120;
   topbar?.classList.toggle("is-scrolled",scrolled);
@@ -1770,10 +1771,23 @@ function updateScrollUI(){
 }
 window.addEventListener("scroll",updateScrollUI,{passive:true}); updateScrollUI();
 function updateQuickDirection(){
-  const d=indiaParts().date;
-  const first=(WEEK_PLAN[d]||[])[0];
-  if (quickDirection) quickDirection.href=(first&&first.href)||CONFIG.mapUrl;
+  // v37: the quick bar intentionally offers both main public venues instead of silently choosing one.
 }
+function closeQuickDirections(){
+  if (!quickDirectionsMenu || !quickDirectionToggle) return;
+  quickDirectionsMenu.hidden=true;
+  quickDirectionToggle.setAttribute("aria-expanded","false");
+}
+quickDirectionToggle?.addEventListener("click",event=>{
+  event.stopPropagation();
+  const opening=quickDirectionsMenu?.hidden !== false;
+  if (!quickDirectionsMenu) return;
+  quickDirectionsMenu.hidden=!opening;
+  quickDirectionToggle.setAttribute("aria-expanded",opening?"true":"false");
+});
+quickDirectionsMenu?.addEventListener("click",event=>event.stopPropagation());
+document.addEventListener("click",closeQuickDirections);
+document.addEventListener("keydown",event=>{ if(event.key==="Escape") closeQuickDirections(); });
 
 // Event timeline fills as cards enter the viewport.
 const timelineFill=document.getElementById("eventTimelineFill");

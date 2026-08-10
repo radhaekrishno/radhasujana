@@ -1432,3 +1432,465 @@ body.post-wedding-mode .invitation-cover { display:none !important; }
   .film-actions a { width: 100%; min-height: 44px; padding: 10px 12px; font-size: .59rem; }
   .countdown-section .section-heading h2 { color: #f6dfb2; }
 }
+
+/* =========================================================
+   v37 · mobile polish, RSVP clarity and quieter quick actions
+   ========================================================= */
+
+/* Visually balance Sujana's descender against the parentage line. */
+.couple-names > div:first-child .parentage {
+  margin-top: 16px;
+}
+
+/* Instagram cue: handwriting-like whisper only — no plate, no clipping. */
+.instagram-logo-hint {
+  left: 2px;
+  top: calc(100% + 7px);
+  width: max-content;
+  max-width: 190px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: rgba(111,16,37,.50);
+  background: transparent;
+  box-shadow: none;
+  font-size: .68rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: .015em;
+  white-space: nowrap;
+  transform: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  animation: instagramHintSubtle 5.5s ease-in-out infinite;
+}
+.instagram-logo-hint::before { display: none; content: ""; }
+.instagram-logo-hint::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 4px;
+  color: rgba(200,155,81,.78);
+  font-style: normal;
+  font-size: .7rem;
+}
+@keyframes instagramHintSubtle {
+  0%,100% { opacity: .58; }
+  50% { opacity: .82; }
+}
+
+/* RSVP: make each decision read as a selectable card instead of raw form controls. */
+.rsvp-form fieldset + fieldset {
+  padding-top: 22px;
+  border-top: 1px solid rgba(111,16,37,.12);
+}
+.choice-chip {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.choice-chip > input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.choice-chip > span {
+  position: relative;
+  min-height: 58px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 12px 34px 12px 14px !important;
+  border: 1px solid rgba(111,16,37,.17) !important;
+  border-radius: 12px;
+  color: var(--wine) !important;
+  background: rgba(255,255,255,.38) !important;
+  font-size: .67rem !important;
+  font-weight: 650 !important;
+  letter-spacing: .07em !important;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase !important;
+  transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+}
+.choice-chip > span::after {
+  content: "✓";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) scale(.72);
+  color: var(--gold);
+  opacity: 0;
+  font-size: .9rem;
+  transition: .18s ease;
+}
+.choice-chip > input:checked + span {
+  color: #fff7eb !important;
+  border-color: var(--wine) !important;
+  background: var(--wine) !important;
+  box-shadow: 0 8px 20px rgba(111,16,37,.10);
+}
+.choice-chip > input:checked + span::after { opacity: 1; transform: translateY(-50%) scale(1); }
+.choice-chip:active > span { transform: scale(.985); }
+
+.side-choice-row .choice-chip > span {
+  min-height: 72px;
+  flex-direction: column;
+  gap: 3px;
+  padding: 11px 26px 11px 12px !important;
+}
+.side-choice-row .choice-chip > span > b {
+  color: inherit;
+  font-size: .63rem;
+  letter-spacing: .09em;
+}
+.side-choice-row .choice-chip > span > span {
+  color: inherit;
+  font: 600 1.02rem/1.15 "Cormorant Garamond", "Noto Serif Telugu", serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.event-options label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.event-options span {
+  position: relative;
+  min-height: 62px;
+  padding: 13px 14px 13px 46px;
+  border-radius: 12px;
+  border-color: rgba(111,16,37,.16);
+  background: rgba(255,255,255,.34);
+}
+.event-options span::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+  border: 1px solid rgba(111,16,37,.35);
+  border-radius: 4px;
+  color: var(--wine);
+  background: rgba(255,250,241,.7);
+  font-size: .68rem;
+  line-height: 1;
+}
+.event-options input:checked + span::before {
+  content: "✓";
+  border-color: #f3cf88;
+  color: #f3cf88;
+  background: rgba(255,255,255,.08);
+}
+
+/* Mobile quick bar: quieter, with a two-choice directions popover. */
+.quick-bar {
+  width: min(calc(100% - 32px), 490px);
+  bottom: max(12px,env(safe-area-inset-bottom));
+  border-color: rgba(111,16,37,.11);
+  border-radius: 16px;
+  background: rgba(255,250,241,.86);
+  box-shadow: 0 10px 28px rgba(65,8,23,.11);
+  overflow: visible;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.quick-bar > a,
+.quick-bar__directions > button {
+  width: 100%;
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 7px 5px;
+  border: 0;
+  color: rgba(111,16,37,.88);
+  background: transparent;
+  font: 650 .56rem/1.2 "Montserrat","Noto Sans Telugu",sans-serif;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.quick-bar > a + .quick-bar__directions,
+.quick-bar__directions + a { border-left: 1px solid rgba(111,16,37,.10); }
+.quick-bar__directions { position: relative; display: grid; }
+.quick-bar__directions > button { cursor: pointer; }
+.quick-bar__directions > button::after {
+  content: "⌃";
+  margin-left: 4px;
+  color: rgba(200,155,81,.85);
+  font-size: .58rem;
+}
+.quick-bar__directions > button[aria-expanded="true"] {
+  color: var(--wine);
+  background: rgba(111,16,37,.055);
+}
+.quick-directions-menu {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 9px);
+  z-index: 2;
+  width: min(290px, calc(100vw - 44px));
+  padding: 7px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(111,16,37,.13);
+  border-radius: 14px;
+  background: rgba(255,250,241,.97);
+  box-shadow: 0 14px 38px rgba(65,8,23,.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.quick-directions-menu[hidden] { display: none; }
+.quick-directions-menu a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--wine);
+  font-size: .61rem;
+  font-weight: 650;
+  letter-spacing: .035em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+.quick-directions-menu a + a { border-top: 1px solid rgba(111,16,37,.09); }
+.quick-directions-menu a:hover,
+.quick-directions-menu a:focus-visible { background: rgba(111,16,37,.055); }
+
+@media (max-width: 760px) {
+  .couple-names > div:first-child .parentage { margin-top: 13px; }
+
+  .instagram-logo-hint {
+    left: 0;
+    top: calc(100% + 7px);
+    max-width: 138px;
+    font-size: .57rem;
+    line-height: 1.14;
+    white-space: normal;
+    text-align: left;
+    transform: none;
+  }
+
+  /* Keep both team choices side by side in the rivalry section and RSVP. */
+  .teams {
+    grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
+    gap: 8px;
+  }
+  .team-card {
+    min-height: 132px;
+    padding: 13px 8px;
+    gap: 5px;
+  }
+  .team-card__icon { font-size: 1.7rem; }
+  .team-card small { font-size: .5rem; letter-spacing: .11em; }
+  .team-card strong { font-size: clamp(1.25rem,5.8vw,1.7rem); line-height: 1.08; }
+  .versus { font-size: 1.2rem; }
+
+  .attendance-choice-row,
+  .side-choice-row { grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 8px; }
+  .side-choice-row .choice-chip > span { min-height: 78px; padding-right: 20px !important; }
+  .side-choice-row .choice-chip > span::after { right: 8px; }
+
+  .rsvp-form {
+    gap: 22px;
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+  .rsvp-form legend { margin-bottom: 11px; }
+  .event-options { gap: 8px; }
+  .event-options span { min-height: 58px; font-size: .68rem; }
+}
+
+@media (max-width: 390px) {
+  .instagram-logo-hint { max-width: 126px; font-size: .54rem; }
+  .team-card strong { font-size: 1.2rem; }
+  .side-choice-row .choice-chip > span { padding-left: 8px !important; padding-right: 17px !important; }
+  .side-choice-row .choice-chip > span > b { font-size: .55rem; }
+  .side-choice-row .choice-chip > span > span { font-size: .9rem; }
+}
+
+/* =========================================================
+   v38 · detail polish: cue, RSVP names, build mark, SR watermark
+   ========================================================= */
+
+/* Instagram whisper: sit a little to the right, with the arrow first
+   and pointing back toward the monogram. */
+.instagram-logo-hint {
+  left: 52px;
+  top: calc(100% + 6px);
+  max-width: 190px;
+  color: rgba(111,16,37,.42);
+  font-size: .66rem;
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+.instagram-logo-hint::after { display: none !important; content: "" !important; }
+.instagram-logo-hint::before {
+  content: "↖" !important;
+  display: inline-block !important;
+  margin-right: 5px;
+  color: rgba(200,155,81,.68);
+  font-style: normal;
+  font-size: .72rem;
+  transform: translateY(-1px);
+}
+
+/* RSVP side selector: only the outer choice is framed. The person's
+   name is larger, borderless, and visually subordinate to Bride/Groom. */
+.side-choice-row .choice-chip > span > span {
+  min-height: 0 !important;
+  display: block !important;
+  margin: 1px 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: inherit !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font: 600 1.28rem/1.08 "Cormorant Garamond", "Noto Serif Telugu", serif !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+.side-choice-row .choice-chip > span > span::before,
+.side-choice-row .choice-chip > span > span::after { display: none !important; content: none !important; }
+
+/* Event-card ornament: use the couple's monogram as the faint glassy
+   watermark instead of generic concentric circles. */
+.event-card::before {
+  right: -34px;
+  bottom: -38px;
+  width: 190px;
+  height: 190px;
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 0;
+  background: url('/assets/sr-watermark-wine.png') center/contain no-repeat;
+  box-shadow: none;
+  opacity: .72;
+  filter: none;
+}
+.event-card--dark::before {
+  border: 0;
+  background-image: url('/assets/sr-watermark-gold.png');
+  box-shadow: none;
+  opacity: .82;
+}
+
+/* Tiny build cue below the public counter: visible enough for us,
+   deliberately quiet enough that guests read it as a watermark. */
+.build-watermark {
+  display: block;
+  margin-top: -4px;
+  color: rgba(248,233,212,.23) !important;
+  font: 500 .46rem/1 "Montserrat", sans-serif !important;
+  letter-spacing: .23em !important;
+  text-transform: uppercase !important;
+  user-select: none;
+}
+
+@media (max-width: 760px) {
+  .instagram-logo-hint {
+    left: 32px;
+    top: calc(100% + 7px);
+    max-width: 165px;
+    font-size: .56rem;
+    line-height: 1.12;
+    white-space: nowrap;
+    text-align: left;
+  }
+  .instagram-logo-hint::before { font-size: .64rem; margin-right: 4px; }
+  .side-choice-row .choice-chip > span > span { font-size: 1.14rem !important; }
+  .event-card::before { width: 168px; height: 168px; right: -34px; bottom: -32px; }
+}
+
+@media (max-width: 390px) {
+  .instagram-logo-hint { left: 27px; max-width: 155px; font-size: .52rem; }
+  .side-choice-row .choice-chip > span > span { font-size: 1.02rem !important; }
+}
+
+
+/* =========================================================
+   v39 · countdown monogram, balanced schedule spacing,
+          and RSVP team alignment
+   ========================================================= */
+
+/* Replace the generic countdown rings with the couple's SR monogram.
+   It remains deliberately faint so the numbers/date stay dominant. */
+.countdown-decoration {
+  left: 50%;
+  top: 53%;
+  bottom: auto;
+  width: min(610px, 68vw);
+  height: auto;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border: 0;
+  border-radius: 0;
+  background: url('/assets/sr-watermark-gold.png') center/contain no-repeat;
+  box-shadow: none;
+  opacity: .085;
+  filter: saturate(.85);
+  pointer-events: none;
+}
+
+/* Match the breathing room above the ceremony schedule below it too. */
+.wedding-night-summary + .text-button {
+  display: inline-block;
+  margin-top: 22px;
+}
+
+/* True optical centering inside the RSVP team cards. The old larger
+   right padding reserved for the tick shifted the wording left. */
+.side-choice-row .choice-chip > span {
+  min-height: 84px;
+  padding: 14px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+.side-choice-row .choice-chip > span::after {
+  top: 9px;
+  right: 10px;
+  transform: scale(.72);
+}
+.side-choice-row .choice-chip > input:checked + span::after {
+  transform: scale(1);
+}
+.side-choice-row .choice-chip > span > b {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.side-choice-row .choice-chip > span > span {
+  width: 100%;
+  margin-top: 5px !important;
+  font-size: 1.52rem !important;
+  line-height: 1.02 !important;
+  text-align: center !important;
+}
+
+@media (max-width: 760px) {
+  .countdown-decoration {
+    top: 54%;
+    width: min(480px, 94vw);
+    opacity: .07;
+  }
+  .wedding-night-summary + .text-button { margin-top: 20px; }
+  .side-choice-row .choice-chip > span {
+    min-height: 88px;
+    padding: 13px 10px !important;
+  }
+  .side-choice-row .choice-chip > span > span {
+    margin-top: 6px !important;
+    font-size: 1.34rem !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .side-choice-row .choice-chip > span > span { font-size: 1.2rem !important; }
+}
