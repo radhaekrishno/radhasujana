@@ -78,3 +78,10 @@ The automatic post-wedding privacy mode hides private logistics from normal visi
 - Removed visible checkbox-square artwork from RSVP celebration choices.
 - Attendance, team, and celebration selections now use the same subtle gold check mark when selected.
 - Celebration labels are centred in their button cards; underlying inputs remain intact for accessibility and WhatsApp generation.
+
+
+## Version 40.6 — cache correction
+- Marriage venue card: Thursday, 3 September 2026 · 7:00 PM onwards.
+- Reception venue card unchanged: Sunday, 6 September 2026 · 6:30 PM onwards.
+- All route HTML files, CSS/JS/config/manifest cache-busters, footer watermark, and service-worker cache updated to v40.6 so browsers do not serve older v40.4 assets.
+- Countdown SR watermark visibility retained from the prior polish.
