@@ -90,3 +90,10 @@ The automatic post-wedding privacy mode hides private logistics from normal visi
 ## Version 40.7 correction
 - Sathyanarayana Swamy Vratham corrected to Friday, 04 September 2026 (morning) across all language pages.
 - Calendar export and Wedding Week Mode corrected to the same date.
+
+
+## v40.8
+- Raised and opacified the frosted sticky header so cards and RSVP selected states cannot paint above it.
+- Added direct mobile header shortcuts: Engagement Video (opens YouTube directly) and Insta.
+- Made event-card gold edging permanent and selection styling stable.
+- Normalized service-worker/cache asset versions to v40.8.

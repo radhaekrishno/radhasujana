@@ -2174,3 +2174,121 @@ body.post-wedding-mode .invitation-cover { display:none !important; }
     font-size: .72rem;
   }
 }
+
+
+/* =========================================================
+   v40.8 · stable sticky header, mobile media shortcuts,
+           and consistent event-card gold edging
+   ========================================================= */
+
+/* Keep the frosted navigation physically above all ordinary cards,
+   RSVP selected states and section artwork. Lightbox/toasts retain
+   their intentionally higher layers. */
+.topbar { z-index: 2500; isolation: isolate; }
+.topbar.is-scrolled {
+  z-index: 2500;
+  background: rgba(255,250,241,.965);
+  border-color: rgba(111,16,37,.16);
+  box-shadow: 0 12px 34px rgba(65,8,23,.12);
+}
+.nav-links { z-index: 2510; }
+html { scroll-padding-top: 96px; }
+#festivities, #countdown, #rsvp, #gallery, #film { scroll-margin-top: 96px; }
+
+/* Prevent selected cards or their decorative marks from ever creating
+   a layer above the fixed header. */
+.event-card, .rsvp-form, .choice-chip, .event-options label { isolation: isolate; }
+
+/* Gold edging is now permanent rather than seeming to appear/disappear
+   only when an event is selected. Selection simply strengthens it. */
+.event-card {
+  border-color: rgba(200,155,81,.34);
+  box-shadow: inset 0 0 0 0 rgba(200,155,81,0);
+}
+.event-card--dark {
+  border-color: rgba(243,207,136,.50);
+}
+.event-card.selected {
+  outline: 0;
+  border-color: rgba(200,155,81,.88);
+  box-shadow: inset 0 0 0 1px rgba(200,155,81,.62), 0 18px 46px rgba(65,8,23,.10);
+}
+.event-card--dark.selected {
+  border-color: rgba(249,218,157,.90);
+  box-shadow: inset 0 0 0 1px rgba(249,218,157,.52), 0 18px 46px rgba(65,8,23,.16);
+}
+
+/* Direct shortcuts shown in the mobile/static header. Desktop already
+   has YouTube and Instagram in the full navigation. */
+.mobile-top-links { display: none; }
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 102px; }
+  #festivities, #countdown, #rsvp, #gallery, #film { scroll-margin-top: 102px; }
+
+  .topbar {
+    gap: 7px;
+    background-clip: padding-box;
+  }
+  .topbar.is-scrolled {
+    top: 8px;
+    width: min(calc(100% - 16px), 1280px);
+    padding: 8px 10px;
+  }
+  .topbar.is-scrolled .monogram { width: 44px; height: 44px; }
+  .topbar.is-scrolled .mobile-top-links { display: flex; }
+  .topbar__actions { gap: 5px; min-width: 0; }
+
+  .mobile-top-links {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .mobile-top-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 5px 6px;
+    color: rgba(111,16,37,.78);
+    border: 0;
+    border-bottom: 1px solid rgba(111,16,37,.18);
+    font: 600 .50rem/1.08 "Montserrat", sans-serif;
+    letter-spacing: .035em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .mobile-video-link { max-width: 82px; white-space: normal !important; }
+  .mobile-insta-link { color: var(--wine) !important; }
+  .mobile-top-links a:active { color: var(--gold); border-bottom-color: var(--gold); }
+
+  .language-toggle { min-width: 64px; padding: 7px 6px; }
+  .menu-button { padding: 6px; }
+  .menu-button span:not(.sr-only) { width: 22px; }
+
+  /* Mobile dropdown always paints above page content and under the
+     containing topbar, with an opaque enough surface to avoid bleed. */
+  .nav-links {
+    top: calc(100% + 8px);
+    z-index: 2515;
+    background: rgba(255,250,241,.985);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+}
+
+@media (max-width: 410px) {
+  .mobile-top-links { gap: 3px; }
+  .mobile-top-links a { padding-inline: 4px; font-size: .46rem; }
+  .mobile-video-link { max-width: 72px; }
+  .language-toggle { min-width: 60px; font-size: .59rem; }
+}
+
+@media (max-width: 360px) {
+  .mobile-top-links a { font-size: .43rem; }
+  .mobile-video-link { max-width: 64px; }
+  .mobile-insta-link { padding-inline: 2px !important; }
+  .language-toggle { min-width: 56px; padding-inline: 4px; }
+}
