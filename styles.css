@@ -1319,7 +1319,7 @@ body.lang-ne { font-family: "Noto Sans Devanagari", "Montserrat", system-ui, san
 .quick-bar.is-visible { transform:translate(-50%,0); opacity:1; }
 .quick-bar a { min-height:50px; display:grid; place-items:center; padding:8px 4px; color:var(--wine); font-size:.58rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; text-align:center; }
 .quick-bar a + a { border-left:1px solid var(--line); }
-.quick-bar a:nth-child(2) { color:#fff7eb; background:var(--wine); }
+
 
 /* Post-wedding thank-you */
 .post-wedding-thanks { width:min(800px,100%); margin:34px auto 0; padding:28px; border:1px solid rgba(200,155,81,.34); background:rgba(255,250,241,.76); text-align:center; box-shadow:0 18px 52px rgba(65,8,23,.07); }
@@ -2395,3 +2395,63 @@ html { scroll-padding-top: 96px; }
 .hero__content,
 .latest-update,
 .wedding-night-summary { position: relative; z-index: 1; }
+
+
+/* =========================================================
+   v41.0 · RSVP decline state, uniform quick directions,
+              and explicit mobile social labels
+   ========================================================= */
+
+/* Both destination choices are intentionally neutral. A legacy
+   descendant nth-child rule used to paint the reception option wine. */
+.quick-directions-menu a,
+.quick-directions-menu a:nth-child(2) {
+  color: var(--wine) !important;
+  background: transparent !important;
+}
+.quick-directions-menu a:hover,
+.quick-directions-menu a:focus-visible {
+  color: var(--wine) !important;
+  background: rgba(111,16,37,.05) !important;
+}
+
+/* If the guest cannot attend, celebration choices become visibly
+   unavailable and cannot be toggled from either the RSVP list or cards. */
+.rsvp-events-disabled { opacity: .54; }
+.rsvp-events-disabled legend { opacity: .72; }
+.rsvp-events-disabled .event-options label { cursor: not-allowed; }
+.rsvp-events-disabled .event-options span {
+  background: rgba(231,223,211,.30) !important;
+  border-color: rgba(111,16,37,.10) !important;
+  color: rgba(111,16,37,.50) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.event-select:disabled {
+  opacity: .40;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .topbar.is-scrolled .mobile-top-links {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 3px;
+  }
+  .mobile-top-links a {
+    min-width: 0;
+    max-width: none;
+    padding: 4px 3px;
+    font-size: .44rem;
+    line-height: 1.12;
+    white-space: normal !important;
+  }
+  .mobile-video-link { flex: 1.05 1 0; max-width: 88px; }
+  .mobile-insta-link { flex: .95 1 0; max-width: 82px; }
+}
+@media (max-width: 390px) {
+  .mobile-top-links a { font-size: .40rem; letter-spacing: .018em; }
+  .mobile-video-link { max-width: 78px; }
+  .mobile-insta-link { max-width: 72px; }
+}

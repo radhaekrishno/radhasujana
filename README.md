@@ -102,3 +102,11 @@ The automatic post-wedding privacy mode hides private logistics from normal visi
 ## Version 40.9
 - Opaque sticky header prevents content/timeline bleed-through.
 - Mobile RSVP compressed with two-column event choices and reduced spacing while retaining touch-friendly targets.
+
+
+## Version 41.0
+- Selecting Regretfully no clears and disables all celebration choices (including event-card Add to RSVP controls); choosing Joyfully yes enables them again.
+- The bottom Directions popover now gives Marriage and Reception directions identical neutral styling.
+- Mobile sticky header shortcuts are labelled Our engagement video and Our Instagram account.
+- Share Invitation now sends concise Wedding (Jaggampeta) and Reception (Kakinada) details plus the invitation URL. Clipboard fallback copies the full message.
+- Cache references, footer build marker and service worker updated to v41.0.

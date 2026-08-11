@@ -33,8 +33,8 @@ const translations = {
     navRsvp: "RSVP",
     navInstagram: "Our Instagram",
     navYoutube: "YouTube",
-    mobileEngagementVideo: "Engagement Video",
-    mobileInsta: "Insta",
+    mobileEngagementVideo: "Our engagement video",
+    mobileInsta: "Our Instagram account",
     logoInstagramHint: "Psst… our Instagram is here",
     menu: "Menu",
     warmlyInvited: "You are warmly invited",
@@ -171,8 +171,8 @@ const translations = {
     navRsvp: "హాజరు నిర్ధారణ",
     navInstagram: "మా ఇన్‌స్టాగ్రామ్",
     navYoutube: "యూట్యూబ్",
-    mobileEngagementVideo: "ఎంగేజ్‌మెంట్ వీడియో",
-    mobileInsta: "Insta",
+    mobileEngagementVideo: "మా ఎంగేజ్‌మెంట్ వీడియో",
+    mobileInsta: "మా ఇన్‌స్టాగ్రామ్ ఖాతా",
     logoInstagramHint: "ఇక్కడ మా ఇన్‌స్టాగ్రామ్ ఉంది",
     menu: "మెను",
     warmlyInvited: "మీకు మా హృదయపూర్వక ఆహ్వానం",
@@ -309,8 +309,8 @@ const translations = {
     "navRsvp": "आरएसवीपी",
     "navInstagram": "हमारा इंस्टाग्राम",
     "navYoutube": "यूट्यूब",
-    "mobileEngagementVideo": "सगाई वीडियो",
-    "mobileInsta": "Insta",
+    "mobileEngagementVideo": "हमारा सगाई वीडियो",
+    "mobileInsta": "हमारा Instagram अकाउंट",
     "logoInstagramHint": "यहाँ हमारा इंस्टाग्राम है",
     "menu": "मेनू",
     "warmlyInvited": "आप सादर आमंत्रित हैं",
@@ -446,8 +446,8 @@ const translations = {
     "navRsvp": "வருகை உறுதி",
     "navInstagram": "எங்கள் Instagram",
     "navYoutube": "YouTube",
-    "mobileEngagementVideo": "நிச்சயதார்த்த வீடியோ",
-    "mobileInsta": "Insta",
+    "mobileEngagementVideo": "எங்கள் நிச்சயதார்த்த வீடியோ",
+    "mobileInsta": "எங்கள் Instagram கணக்கு",
     "logoInstagramHint": "எங்கள் Instagram இங்கே",
     "menu": "மெனு",
     "warmlyInvited": "உங்களை அன்புடன் அழைக்கிறோம்",
@@ -583,8 +583,8 @@ const translations = {
     "navRsvp": "出席确认",
     "navInstagram": "我们的 Instagram",
     "navYoutube": "YouTube",
-    "mobileEngagementVideo": "订婚影片",
-    "mobileInsta": "Insta",
+    "mobileEngagementVideo": "我们的订婚影片",
+    "mobileInsta": "我们的 Instagram 账号",
     "logoInstagramHint": "嘘……我们的 Instagram 在这里",
     "menu": "菜单",
     "warmlyInvited": "敬邀您见证我们的婚礼",
@@ -848,8 +848,8 @@ translations.ne = {
   navRsvp: "उपस्थिति पुष्टि",
   navInstagram: "हाम्रो Instagram",
   navYoutube: "YouTube",
-  mobileEngagementVideo: "इन्गेजमेन्ट भिडियो",
-  mobileInsta: "Insta",
+  mobileEngagementVideo: "हाम्रो सगाई भिडियो",
+  mobileInsta: "हाम्रो Instagram खाता",
   logoInstagramHint: "हाम्रो Instagram यहाँ छ",
   menu: "मेनु",
   warmlyInvited: "तपाईंलाई हार्दिक निमन्त्रणा",
@@ -1040,12 +1040,12 @@ Object.assign(translations.ne, {
 
 
 // Version 34 interface copy
-Object.assign(translations.en, {"weddingHeroRange": "03 Sep night → 04 Sep early hours", "latestUpdateLabel": "Latest update", "weddingWeekEyebrow": "Wedding Week · Live", "todayLabel": "Today", "tonightLabel": "Tonight", "nextLabel": "Next", "nowLabel": "Now", "shareInvitation": "Share our invitation ♡", "shareCopied": "Invitation link copied", "shareText": "Sujana & Radha Krishna are getting married · 1–6 September 2026", "quickSchedule": "Schedule", "quickDirections": "Directions", "quickRsvp": "RSVP", "travelSummary": "Travelling to the wedding?", "travelIntro": "A quick guide for guests coming from out of town.", "travelWedding": "Wedding celebrations · Jaggampeta", "travelReception": "Reception · Kakinada", "travelHelp": "Need help with travel or stay arrangements? WhatsApp our family.", "viewInvitationAgain": "View invitation again", "installApp": "Add wedding to Home Screen", "thankYouEyebrow": "With grateful hearts", "thankYouTitle": "Thank you for celebrating with us ♡", "thankYouText": "The celebrations may be over, but the memories are only beginning. Our photos, films and updates will continue here and on Instagram.", "filmPlay": "Play engagement film", "musicPlay": "Play music", "musicPause": "Pause music"});
-Object.assign(translations.te, {"weddingHeroRange": "03 సెప్టెంబర్ రాత్రి → 04 సెప్టెంబర్ తెల్లవారుజాము", "latestUpdateLabel": "తాజా సమాచారం", "weddingWeekEyebrow": "వివాహ వారం · ప్రత్యక్షం", "todayLabel": "ఈ రోజు", "tonightLabel": "ఈ రాత్రి", "nextLabel": "తర్వాత", "nowLabel": "ఇప్పుడు", "shareInvitation": "మా ఆహ్వానాన్ని పంచుకోండి ♡", "shareCopied": "ఆహ్వాన లింక్ కాపీ అయింది", "shareText": "సుజన & రాధా కృష్ణ వివాహం · 1–6 సెప్టెంబర్ 2026", "quickSchedule": "సమయాలు", "quickDirections": "దారి", "quickRsvp": "హాజరు", "travelSummary": "వివాహానికి ప్రయాణిస్తున్నారా?", "travelIntro": "బయట ప్రాంతాల నుంచి వచ్చే అతిథుల కోసం చిన్న ప్రయాణ సూచిక.", "travelWedding": "వివాహ వేడుకలు · జగ్గంపేట", "travelReception": "రిసెప్షన్ · కాకినాడ", "travelHelp": "ప్రయాణం లేదా వసతి సహాయం కావాలా? మా కుటుంబానికి WhatsApp చేయండి.", "viewInvitationAgain": "ఆహ్వానాన్ని మళ్లీ చూడండి", "installApp": "వివాహ సైట్‌ను హోమ్ స్క్రీన్‌కు జోడించండి", "thankYouEyebrow": "కృతజ్ఞతలతో", "thankYouTitle": "మాతో కలిసి ఆనందించినందుకు ధన్యవాదాలు ♡", "thankYouText": "వేడుకలు ముగిసినా జ్ఞాపకాలు మొదలయ్యాయి. ఫోటోలు, వీడియోలు మరియు నవీకరణలు ఇక్కడ మరియు Instagramలో కొనసాగుతాయి.", "filmPlay": "నిశ్చితార్థ వీడియో చూడండి", "musicPlay": "సంగీతం ప్లే చేయండి", "musicPause": "సంగీతం ఆపండి"});
-Object.assign(translations.hi, {"weddingHeroRange": "03 सितंबर रात → 04 सितंबर तड़के", "latestUpdateLabel": "ताज़ा अपडेट", "weddingWeekEyebrow": "विवाह सप्ताह · लाइव", "todayLabel": "आज", "tonightLabel": "आज रात", "nextLabel": "आगे", "nowLabel": "अभी", "shareInvitation": "हमारा निमंत्रण साझा करें ♡", "shareCopied": "निमंत्रण लिंक कॉपी हो गया", "shareText": "सुजना & राधा कृष्ण का विवाह · 1–6 सितंबर 2026", "quickSchedule": "कार्यक्रम", "quickDirections": "दिशा", "quickRsvp": "RSVP", "travelSummary": "विवाह के लिए यात्रा कर रहे हैं?", "travelIntro": "बाहर से आने वाले मेहमानों के लिए एक छोटा यात्रा मार्गदर्शक।", "travelWedding": "विवाह समारोह · जग्गमपेटा", "travelReception": "रिसेप्शन · काकीनाडा", "travelHelp": "यात्रा या ठहरने में मदद चाहिए? हमारे परिवार को WhatsApp करें।", "viewInvitationAgain": "निमंत्रण फिर देखें", "installApp": "विवाह साइट होम स्क्रीन पर जोड़ें", "thankYouEyebrow": "कृतज्ञ हृदय से", "thankYouTitle": "हमारे साथ जश्न मनाने के लिए धन्यवाद ♡", "thankYouText": "समारोह समाप्त हो गए हैं, पर यादें अभी शुरू हुई हैं। तस्वीरें, फ़िल्में और अपडेट यहाँ और Instagram पर साझा होते रहेंगे।", "filmPlay": "सगाई की फ़िल्म चलाएँ", "musicPlay": "संगीत चलाएँ", "musicPause": "संगीत रोकें"});
-Object.assign(translations.ta, {"weddingHeroRange": "03 செப்டம்பர் இரவு → 04 செப்டம்பர் அதிகாலை", "latestUpdateLabel": "சமீபத்திய தகவல்", "weddingWeekEyebrow": "திருமண வாரம் · நேரலை", "todayLabel": "இன்று", "tonightLabel": "இன்றிரவு", "nextLabel": "அடுத்து", "nowLabel": "இப்போது", "shareInvitation": "எங்கள் அழைப்பிதழை பகிருங்கள் ♡", "shareCopied": "அழைப்பிதழ் இணைப்பு நகலெடுக்கப்பட்டது", "shareText": "சுஜனா & ராதா கிருஷ்ணா திருமணம் · 1–6 செப்டம்பர் 2026", "quickSchedule": "நிகழ்ச்சிகள்", "quickDirections": "வழி", "quickRsvp": "RSVP", "travelSummary": "திருமணத்திற்கு பயணம் செய்கிறீர்களா?", "travelIntro": "வெளியூரிலிருந்து வரும் விருந்தினர்களுக்கான சுருக்கமான பயண வழிகாட்டி.", "travelWedding": "திருமண விழாக்கள் · ஜக்கம்பேட்டா", "travelReception": "வரவேற்பு · காக்கிநாடா", "travelHelp": "பயணம் அல்லது தங்கும் வசதி உதவி வேண்டுமா? எங்கள் குடும்பத்திற்கு WhatsApp செய்யுங்கள்.", "viewInvitationAgain": "அழைப்பிதழை மீண்டும் பார்க்க", "installApp": "திருமண தளத்தை முகப்புத் திரையில் சேர்க்க", "thankYouEyebrow": "நன்றியுடன்", "thankYouTitle": "எங்களுடன் கொண்டாடியதற்கு நன்றி ♡", "thankYouText": "விழாக்கள் முடிந்தாலும் நினைவுகள் இப்போது தான் தொடங்குகின்றன. புகைப்படங்கள், படங்கள் மற்றும் புதுப்பிப்புகள் இங்கும் Instagram-லும் தொடரும்.", "filmPlay": "நிச்சயதார்த்தப் படத்தை இயக்கவும்", "musicPlay": "இசையை இயக்கவும்", "musicPause": "இசையை நிறுத்தவும்"});
-Object.assign(translations.zh, {"weddingHeroRange": "2026年9月3日晚 → 9月4日凌晨", "latestUpdateLabel": "最新动态", "weddingWeekEyebrow": "婚礼周 · 实时", "todayLabel": "今天", "tonightLabel": "今晚", "nextLabel": "接下来", "nowLabel": "现在", "shareInvitation": "分享我们的邀请函 ♡", "shareCopied": "邀请函链接已复制", "shareText": "苏佳娜 & 拉达·奎师那（高兴）婚礼 · 2026年9月1日至6日", "quickSchedule": "日程", "quickDirections": "导航", "quickRsvp": "出席确认", "travelSummary": "要来参加婚礼吗？", "travelIntro": "为外地宾客准备的一份简洁出行指南。", "travelWedding": "婚礼庆典 · 贾甘佩塔", "travelReception": "婚宴 · 卡基纳达", "travelHelp": "需要出行或住宿协助？欢迎通过 WhatsApp 联系我们的家人。", "viewInvitationAgain": "再次查看邀请函", "installApp": "将婚礼网站添加到主屏幕", "thankYouEyebrow": "满怀感恩", "thankYouTitle": "感谢您与我们共同庆祝 ♡", "thankYouText": "庆典虽已结束，美好回忆才刚刚开始。照片、影片与最新动态仍会在这里和 Instagram 与大家分享。", "filmPlay": "播放订婚影片", "musicPlay": "播放音乐", "musicPause": "暂停音乐"});
-Object.assign(translations.ne, {"weddingHeroRange": "03 सेप्टेम्बर राति → 04 सेप्टेम्बर बिहान", "latestUpdateLabel": "नवीनतम जानकारी", "weddingWeekEyebrow": "विवाह सप्ताह · लाइभ", "todayLabel": "आज", "tonightLabel": "आज राति", "nextLabel": "अर्को", "nowLabel": "अहिले", "shareInvitation": "हाम्रो निमन्त्रणा साझा गर्नुहोस् ♡", "shareCopied": "निमन्त्रणा लिंक प्रतिलिपि भयो", "shareText": "सुजना & राधा कृष्णको विवाह · 1–6 सेप्टेम्बर 2026", "quickSchedule": "कार्यक्रम", "quickDirections": "दिशा", "quickRsvp": "RSVP", "travelSummary": "विवाहमा आउँदै हुनुहुन्छ?", "travelIntro": "बाहिरबाट आउने पाहुनाका लागि छोटो यात्रा मार्गदर्शिका।", "travelWedding": "विवाह उत्सव · जग्गमपेटा", "travelReception": "रिसेप्सन · काकीनाडा", "travelHelp": "यात्रा वा बसाइ सहयोग चाहिन्छ? हाम्रो परिवारलाई WhatsApp गर्नुहोस्।", "viewInvitationAgain": "निमन्त्रणा फेरि हेर्नुहोस्", "installApp": "विवाह साइट होम स्क्रिनमा थप्नुहोस्", "thankYouEyebrow": "कृतज्ञ हृदयले", "thankYouTitle": "हामीसँग उत्सव मनाउनुभएकोमा धन्यवाद ♡", "thankYouText": "उत्सव सकिए पनि सम्झनाहरू अब सुरु भएका छन्। तस्बिर, भिडियो र अपडेटहरू यहाँ र Instagram मा जारी रहनेछन्।", "filmPlay": "सगाईको भिडियो चलाउनुहोस्", "musicPlay": "संगीत बजाउनुहोस्", "musicPause": "संगीत रोक्नुहोस्"});
+Object.assign(translations.en, {"weddingHeroRange": "03 Sep night → 04 Sep early hours", "latestUpdateLabel": "Latest update", "weddingWeekEyebrow": "Wedding Week · Live", "todayLabel": "Today", "tonightLabel": "Tonight", "nextLabel": "Next", "nowLabel": "Now", "shareInvitation": "Share our invitation ♡", "shareCopied": "Invitation link copied", "shareText": "SUJANA & RADHA KRISHNA are getting married.\n\nWedding (Jaggampeta): 3 September 2026 · 7:00 PM onwards\nReception (Kakinada): 6 September 2026 · 6:30 PM onwards", "quickSchedule": "Schedule", "quickDirections": "Directions", "quickRsvp": "RSVP", "travelSummary": "Travelling to the wedding?", "travelIntro": "A quick guide for guests coming from out of town.", "travelWedding": "Wedding celebrations · Jaggampeta", "travelReception": "Reception · Kakinada", "travelHelp": "Need help with travel or stay arrangements? WhatsApp our family.", "viewInvitationAgain": "View invitation again", "installApp": "Add wedding to Home Screen", "thankYouEyebrow": "With grateful hearts", "thankYouTitle": "Thank you for celebrating with us ♡", "thankYouText": "The celebrations may be over, but the memories are only beginning. Our photos, films and updates will continue here and on Instagram.", "filmPlay": "Play engagement film", "musicPlay": "Play music", "musicPause": "Pause music"});
+Object.assign(translations.te, {"weddingHeroRange": "03 సెప్టెంబర్ రాత్రి → 04 సెప్టెంబర్ తెల్లవారుజాము", "latestUpdateLabel": "తాజా సమాచారం", "weddingWeekEyebrow": "వివాహ వారం · ప్రత్యక్షం", "todayLabel": "ఈ రోజు", "tonightLabel": "ఈ రాత్రి", "nextLabel": "తర్వాత", "nowLabel": "ఇప్పుడు", "shareInvitation": "మా ఆహ్వానాన్ని పంచుకోండి ♡", "shareCopied": "ఆహ్వాన లింక్ కాపీ అయింది", "shareText": "SUJANA & RADHA KRISHNA are getting married.\n\nWedding (Jaggampeta): 3 September 2026 · 7:00 PM onwards\nReception (Kakinada): 6 September 2026 · 6:30 PM onwards", "quickSchedule": "సమయాలు", "quickDirections": "దారి", "quickRsvp": "హాజరు", "travelSummary": "వివాహానికి ప్రయాణిస్తున్నారా?", "travelIntro": "బయట ప్రాంతాల నుంచి వచ్చే అతిథుల కోసం చిన్న ప్రయాణ సూచిక.", "travelWedding": "వివాహ వేడుకలు · జగ్గంపేట", "travelReception": "రిసెప్షన్ · కాకినాడ", "travelHelp": "ప్రయాణం లేదా వసతి సహాయం కావాలా? మా కుటుంబానికి WhatsApp చేయండి.", "viewInvitationAgain": "ఆహ్వానాన్ని మళ్లీ చూడండి", "installApp": "వివాహ సైట్‌ను హోమ్ స్క్రీన్‌కు జోడించండి", "thankYouEyebrow": "కృతజ్ఞతలతో", "thankYouTitle": "మాతో కలిసి ఆనందించినందుకు ధన్యవాదాలు ♡", "thankYouText": "వేడుకలు ముగిసినా జ్ఞాపకాలు మొదలయ్యాయి. ఫోటోలు, వీడియోలు మరియు నవీకరణలు ఇక్కడ మరియు Instagramలో కొనసాగుతాయి.", "filmPlay": "నిశ్చితార్థ వీడియో చూడండి", "musicPlay": "సంగీతం ప్లే చేయండి", "musicPause": "సంగీతం ఆపండి"});
+Object.assign(translations.hi, {"weddingHeroRange": "03 सितंबर रात → 04 सितंबर तड़के", "latestUpdateLabel": "ताज़ा अपडेट", "weddingWeekEyebrow": "विवाह सप्ताह · लाइव", "todayLabel": "आज", "tonightLabel": "आज रात", "nextLabel": "आगे", "nowLabel": "अभी", "shareInvitation": "हमारा निमंत्रण साझा करें ♡", "shareCopied": "निमंत्रण लिंक कॉपी हो गया", "shareText": "SUJANA & RADHA KRISHNA are getting married.\n\nWedding (Jaggampeta): 3 September 2026 · 7:00 PM onwards\nReception (Kakinada): 6 September 2026 · 6:30 PM onwards", "quickSchedule": "कार्यक्रम", "quickDirections": "दिशा", "quickRsvp": "RSVP", "travelSummary": "विवाह के लिए यात्रा कर रहे हैं?", "travelIntro": "बाहर से आने वाले मेहमानों के लिए एक छोटा यात्रा मार्गदर्शक।", "travelWedding": "विवाह समारोह · जग्गमपेटा", "travelReception": "रिसेप्शन · काकीनाडा", "travelHelp": "यात्रा या ठहरने में मदद चाहिए? हमारे परिवार को WhatsApp करें।", "viewInvitationAgain": "निमंत्रण फिर देखें", "installApp": "विवाह साइट होम स्क्रीन पर जोड़ें", "thankYouEyebrow": "कृतज्ञ हृदय से", "thankYouTitle": "हमारे साथ जश्न मनाने के लिए धन्यवाद ♡", "thankYouText": "समारोह समाप्त हो गए हैं, पर यादें अभी शुरू हुई हैं। तस्वीरें, फ़िल्में और अपडेट यहाँ और Instagram पर साझा होते रहेंगे।", "filmPlay": "सगाई की फ़िल्म चलाएँ", "musicPlay": "संगीत चलाएँ", "musicPause": "संगीत रोकें"});
+Object.assign(translations.ta, {"weddingHeroRange": "03 செப்டம்பர் இரவு → 04 செப்டம்பர் அதிகாலை", "latestUpdateLabel": "சமீபத்திய தகவல்", "weddingWeekEyebrow": "திருமண வாரம் · நேரலை", "todayLabel": "இன்று", "tonightLabel": "இன்றிரவு", "nextLabel": "அடுத்து", "nowLabel": "இப்போது", "shareInvitation": "எங்கள் அழைப்பிதழை பகிருங்கள் ♡", "shareCopied": "அழைப்பிதழ் இணைப்பு நகலெடுக்கப்பட்டது", "shareText": "SUJANA & RADHA KRISHNA are getting married.\n\nWedding (Jaggampeta): 3 September 2026 · 7:00 PM onwards\nReception (Kakinada): 6 September 2026 · 6:30 PM onwards", "quickSchedule": "நிகழ்ச்சிகள்", "quickDirections": "வழி", "quickRsvp": "RSVP", "travelSummary": "திருமணத்திற்கு பயணம் செய்கிறீர்களா?", "travelIntro": "வெளியூரிலிருந்து வரும் விருந்தினர்களுக்கான சுருக்கமான பயண வழிகாட்டி.", "travelWedding": "திருமண விழாக்கள் · ஜக்கம்பேட்டா", "travelReception": "வரவேற்பு · காக்கிநாடா", "travelHelp": "பயணம் அல்லது தங்கும் வசதி உதவி வேண்டுமா? எங்கள் குடும்பத்திற்கு WhatsApp செய்யுங்கள்.", "viewInvitationAgain": "அழைப்பிதழை மீண்டும் பார்க்க", "installApp": "திருமண தளத்தை முகப்புத் திரையில் சேர்க்க", "thankYouEyebrow": "நன்றியுடன்", "thankYouTitle": "எங்களுடன் கொண்டாடியதற்கு நன்றி ♡", "thankYouText": "விழாக்கள் முடிந்தாலும் நினைவுகள் இப்போது தான் தொடங்குகின்றன. புகைப்படங்கள், படங்கள் மற்றும் புதுப்பிப்புகள் இங்கும் Instagram-லும் தொடரும்.", "filmPlay": "நிச்சயதார்த்தப் படத்தை இயக்கவும்", "musicPlay": "இசையை இயக்கவும்", "musicPause": "இசையை நிறுத்தவும்"});
+Object.assign(translations.zh, {"weddingHeroRange": "2026年9月3日晚 → 9月4日凌晨", "latestUpdateLabel": "最新动态", "weddingWeekEyebrow": "婚礼周 · 实时", "todayLabel": "今天", "tonightLabel": "今晚", "nextLabel": "接下来", "nowLabel": "现在", "shareInvitation": "分享我们的邀请函 ♡", "shareCopied": "邀请函链接已复制", "shareText": "SUJANA & RADHA KRISHNA are getting married.\n\nWedding (Jaggampeta): 3 September 2026 · 7:00 PM onwards\nReception (Kakinada): 6 September 2026 · 6:30 PM onwards", "quickSchedule": "日程", "quickDirections": "导航", "quickRsvp": "出席确认", "travelSummary": "要来参加婚礼吗？", "travelIntro": "为外地宾客准备的一份简洁出行指南。", "travelWedding": "婚礼庆典 · 贾甘佩塔", "travelReception": "婚宴 · 卡基纳达", "travelHelp": "需要出行或住宿协助？欢迎通过 WhatsApp 联系我们的家人。", "viewInvitationAgain": "再次查看邀请函", "installApp": "将婚礼网站添加到主屏幕", "thankYouEyebrow": "满怀感恩", "thankYouTitle": "感谢您与我们共同庆祝 ♡", "thankYouText": "庆典虽已结束，美好回忆才刚刚开始。照片、影片与最新动态仍会在这里和 Instagram 与大家分享。", "filmPlay": "播放订婚影片", "musicPlay": "播放音乐", "musicPause": "暂停音乐"});
+Object.assign(translations.ne, {"weddingHeroRange": "03 सेप्टेम्बर राति → 04 सेप्टेम्बर बिहान", "latestUpdateLabel": "नवीनतम जानकारी", "weddingWeekEyebrow": "विवाह सप्ताह · लाइभ", "todayLabel": "आज", "tonightLabel": "आज राति", "nextLabel": "अर्को", "nowLabel": "अहिले", "shareInvitation": "हाम्रो निमन्त्रणा साझा गर्नुहोस् ♡", "shareCopied": "निमन्त्रणा लिंक प्रतिलिपि भयो", "shareText": "SUJANA & RADHA KRISHNA are getting married.\n\nWedding (Jaggampeta): 3 September 2026 · 7:00 PM onwards\nReception (Kakinada): 6 September 2026 · 6:30 PM onwards", "quickSchedule": "कार्यक्रम", "quickDirections": "दिशा", "quickRsvp": "RSVP", "travelSummary": "विवाहमा आउँदै हुनुहुन्छ?", "travelIntro": "बाहिरबाट आउने पाहुनाका लागि छोटो यात्रा मार्गदर्शिका।", "travelWedding": "विवाह उत्सव · जग्गमपेटा", "travelReception": "रिसेप्सन · काकीनाडा", "travelHelp": "यात्रा वा बसाइ सहयोग चाहिन्छ? हाम्रो परिवारलाई WhatsApp गर्नुहोस्।", "viewInvitationAgain": "निमन्त्रणा फेरि हेर्नुहोस्", "installApp": "विवाह साइट होम स्क्रिनमा थप्नुहोस्", "thankYouEyebrow": "कृतज्ञ हृदयले", "thankYouTitle": "हामीसँग उत्सव मनाउनुभएकोमा धन्यवाद ♡", "thankYouText": "उत्सव सकिए पनि सम्झनाहरू अब सुरु भएका छन्। तस्बिर, भिडियो र अपडेटहरू यहाँ र Instagram मा जारी रहनेछन्।", "filmPlay": "सगाईको भिडियो चलाउनुहोस्", "musicPlay": "संगीत बजाउनुहोस्", "musicPause": "संगीत रोक्नुहोस्"});
 
 const eventLabels = {
   "en": {
@@ -1430,6 +1430,7 @@ if ("IntersectionObserver" in window) {
 document.querySelectorAll(".event-card").forEach(card => {
   const button = card.querySelector(".event-select");
   button.addEventListener("click", () => {
+    if (rsvpDeclined) return;
     const eventId = card.dataset.eventId;
     const checkbox = document.querySelector(`input[name="events"][data-event-id="${eventId}"]`);
 
@@ -1483,6 +1484,41 @@ teamCards.forEach(button => {
 rsvpTeamInputs.forEach(input => {
   input.addEventListener("change", () => {
     if (input.checked) selectTeam(input.value, true);
+  });
+});
+
+const rsvpAttendanceInputs = [...document.querySelectorAll('input[name="attendance"]')];
+const rsvpEventInputs = [...document.querySelectorAll('input[name="events"]')];
+const rsvpEventsFieldset = rsvpEventInputs[0]?.closest("fieldset");
+const eventSelectButtons = [...document.querySelectorAll(".event-select")];
+let rsvpDeclined = false;
+
+function setCelebrationAvailability(disabled) {
+  rsvpDeclined = disabled;
+  if (rsvpEventsFieldset) {
+    rsvpEventsFieldset.classList.toggle("rsvp-events-disabled", disabled);
+    rsvpEventsFieldset.setAttribute("aria-disabled", disabled ? "true" : "false");
+  }
+  rsvpEventInputs.forEach(input => {
+    input.disabled = disabled;
+    if (disabled) {
+      input.checked = false;
+      const eventId=input.dataset.eventId;
+      selectedEvents.delete(eventId);
+      document.querySelector(`.event-card[data-event-id="${eventId}"]`)?.classList.remove("selected");
+    }
+  });
+  eventSelectButtons.forEach(button => {
+    button.disabled = disabled;
+    button.setAttribute("aria-disabled", disabled ? "true" : "false");
+  });
+  updateEventButtons();
+}
+
+rsvpAttendanceInputs.forEach(input => {
+  input.addEventListener("change", () => {
+    if (!input.checked) return;
+    setCelebrationAvailability(input.value === "no");
   });
 });
 
@@ -1825,11 +1861,16 @@ document.getElementById("viewInvitationAgain")?.addEventListener("click",()=>{
 
 // Native share with clipboard fallback.
 document.getElementById("shareInvitationButton")?.addEventListener("click", async ()=>{
-  const shareData={title:document.title,text:t("shareText"),url:V34.shareUrl};
+  const shareText=t("shareText");
+  const fullShareText=`${shareText}
+
+${V34.shareUrl}
+Open the invitation for directions, RSVP & full details.`;
+  const shareData={title:document.title,text:fullShareText};
   try {
     if (navigator.share) await navigator.share(shareData);
-    else { await navigator.clipboard.writeText(V34.shareUrl); showToast(t("shareCopied")); }
-  } catch(err) { if (err?.name !== "AbortError") { try{ await navigator.clipboard.writeText(V34.shareUrl); showToast(t("shareCopied")); }catch(e){} } }
+    else { await navigator.clipboard.writeText(fullShareText); showToast(t("shareCopied")); }
+  } catch(err) { if (err?.name !== "AbortError") { try{ await navigator.clipboard.writeText(fullShareText); showToast(t("shareCopied")); }catch(e){} } }
 });
 
 // Gallery protection: blocks casual save/drag gestures only.
