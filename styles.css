@@ -467,8 +467,6 @@ img { max-width: 100%; }
 .venue-card p { margin: 7px 0 13px; color: var(--muted); line-height: 1.65; }
 .venue-card--reception { margin-top: 34px; background: linear-gradient(145deg, rgba(255,250,241,.95), rgba(234,214,186,.48)); }
 .venue-card .venue-time { margin-bottom: 0; color: var(--wine); font-size: .72rem; font-weight: 600; letter-spacing: .035em; }
-.venue-card .venue-time span { display: block; }
-.venue-card .venue-time span + span { margin-top: 3px; }
 .mini-map--reception { margin-top: 18px; }
 .venue-whatsapp { display: inline-flex; align-items: center; gap: 5px; padding-bottom: 4px; border-bottom: 1px solid rgba(111,16,37,.25); color: var(--wine); font-size: .72rem; font-weight: 600; }
 .venue-whatsapp > span:first-child { color: #1f9d55; }
