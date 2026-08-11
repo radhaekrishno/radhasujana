@@ -85,3 +85,8 @@ The automatic post-wedding privacy mode hides private logistics from normal visi
 - Reception venue card unchanged: Sunday, 6 September 2026 · 6:30 PM onwards.
 - All route HTML files, CSS/JS/config/manifest cache-busters, footer watermark, and service-worker cache updated to v40.6 so browsers do not serve older v40.4 assets.
 - Countdown SR watermark visibility retained from the prior polish.
+
+
+## Version 40.7 correction
+- Sathyanarayana Swamy Vratham corrected to Friday, 04 September 2026 (morning) across all language pages.
+- Calendar export and Wedding Week Mode corrected to the same date.

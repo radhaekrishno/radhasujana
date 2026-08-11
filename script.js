@@ -66,9 +66,9 @@ const translations = {
     haldiDescription: "Sunshine, turmeric, teasing cousins, and a little harmless yellow warfare.",
     weddingDay: "Thursday evening → after midnight",
     weddingDateCard: "03 September 2026",
-    vrathamDay: "Saturday · Morning",
+    vrathamDay: "Friday · Morning",
     vratham: "Sathyanarayana Swamy Vratham",
-    vrathamDate: "05 September 2026",
+    vrathamDate: "04 September 2026",
     vrathamDescription: "A serene morning of prayer, prasadam, and gratitude as the celebrations settle into blessings.",
 
     dateTba: "Sunday",
@@ -202,9 +202,9 @@ const translations = {
     haldiDescription: "పసుపు, నవ్వులు, ఆటపాటలు—కొంచెం పసుపు యుద్ధం కూడా తప్పదు.",
     weddingDay: "గురువారం సాయంత్రం → అర్ధరాత్రి తరువాత",
     weddingDateCard: "03 సెప్టెంబర్ 2026",
-    vrathamDay: "శనివారం · ఉదయం",
+    vrathamDay: "శుక్రవారం · ఉదయం",
     vratham: "సత్యనారాయణ స్వామి వ్రతం",
-    vrathamDate: "05 సెప్టెంబర్ 2026",
+    vrathamDate: "04 సెప్టెంబర్ 2026",
     vrathamDescription: "పూజ, ప్రసాదం, కృతజ్ఞతలతో వేడుకలు ఆశీర్వాదాలుగా మారే ప్రశాంతమైన ఉదయం.",
 
     dateTba: "ఆదివారం",
@@ -338,9 +338,9 @@ const translations = {
     "haldiDescription": "धूप, हल्दी, चिढ़ाते कज़िन और थोड़ी-सी प्यारी पीली जंग।",
     "weddingDay": "गुरुवार शाम → आधी रात के बाद",
     "weddingDateCard": "03 सितंबर 2026",
-    "vrathamDay": "शनिवार · सुबह",
+    "vrathamDay": "शुक्रवार · सुबह",
     "vratham": "सत्यनारायण स्वामी व्रतम",
-    "vrathamDate": "05 सितंबर 2026",
+    "vrathamDate": "04 सितंबर 2026",
     "vrathamDescription": "पूजा, प्रसाद और कृतज्ञता से भरी शांत सुबह—जहाँ उत्सव आशीर्वाद में बदलते हैं।",
     "dateTba": "रविवार",
     "reception": "रिसेप्शन",
@@ -473,9 +473,9 @@ const translations = {
     "haldiDescription": "மஞ்சள், சிரிப்பு, உறவினர்களின் கலாட்டா—சிறிது மஞ்சள் போரும் தவிர்க்க முடியாது.",
     "weddingDay": "வியாழன் மாலை → நள்ளிரவுக்குப் பின்",
     "weddingDateCard": "03 செப்டம்பர் 2026",
-    "vrathamDay": "சனிக்கிழமை · காலை",
+    "vrathamDay": "வெள்ளிக்கிழமை · காலை",
     "vratham": "சத்யநாராயண சுவாமி விரதம்",
-    "vrathamDate": "05 செப்டம்பர் 2026",
+    "vrathamDate": "04 செப்டம்பர் 2026",
     "vrathamDescription": "பூஜை, பிரசாதம், நன்றியால் நிறைந்த அமைதியான காலை—விழாக்கள் ஆசிகளாக மலரும் தருணம்.",
     "dateTba": "ஞாயிறு",
     "reception": "வரவேற்பு",
@@ -620,9 +620,9 @@ const translations = {
     "haldiVenueName": "帕里纳雅宴会厅 · 前草坪<br><small class=\"venue-english\">Parinaya Function Hall · Front Lawn</small>",
     "weddingDay": "星期四晚间 → 星期五凌晨",
     "weddingDateCard": "2026年9月3日晚 — 9月4日凌晨",
-    "vrathamDay": "星期六 · 上午",
+    "vrathamDay": "星期五 · 上午",
     "vratham": "萨蒂亚那罗延祈福礼",
-    "vrathamDate": "2026年9月5日",
+    "vrathamDate": "2026年9月4日",
     "vrathamDescription": "在婚礼的欢庆渐渐沉淀之后，<br>我们以一个宁静的早晨祈祷、感恩，<br>并与家人分享供神后祝福的圣食。<br><br>让所有的喜悦，最终化作祝福。",
     "vrathamVenuePending": "祈福礼地点稍后更新。",
     "vrathamVenueName": "新娘公寓 · 二楼",
@@ -876,9 +876,9 @@ translations.ne = {
   haldiVenueName: "Parinaya Function Hall · अगाडिको लन",
   weddingDay: "बिहीबार साँझ → मध्यरातपछि",
   weddingDateCard: "03 सेप्टेम्बर 2026",
-  vrathamDay: "शनिबार · बिहान",
+  vrathamDay: "शुक्रबार · बिहान",
   vratham: "सत्यनारायण स्वामी व्रतम",
-  vrathamDate: "05 सेप्टेम्बर 2026",
+  vrathamDate: "04 सेप्टेम्बर 2026",
   vrathamDescription: "पूजा, प्रसाद र कृतज्ञताले भरिएको शान्त बिहान।",
   vrathamVenuePending: "व्रतमको स्थान पछि जानकारी गराइनेछ।",
   vrathamVenueName: "दुलहीको अपार्टमेन्ट · दोस्रो तला",
@@ -1041,7 +1041,7 @@ const eventLabels = {
     "pellirituals": "Pelli-Koduku & Pelli-Kuthuru — 02 Sep",
     "haldi": "Haldi — 03 Sep, 09:00 AM",
     "wedding": "Wedding Ceremony — Dinner: Thursday, 3rd September from 7:00 PM onwards; Muhurtham: early hours of Friday at 2:58 AM",
-    "vratham": "Sathyanarayana Swamy Vratham — 05 September morning",
+    "vratham": "Sathyanarayana Swamy Vratham — 04 September morning",
     "reception": "Reception — 06 September 2026"
   },
   "te": {
@@ -1049,7 +1049,7 @@ const eventLabels = {
     "pellirituals": "పెళ్లికొడుకు & పెళ్లికూతురు — 02 సెప్టెంబర్",
     "haldi": "హల్దీ — 03 సెప్టెంబర్, ఉదయం 09:00",
     "wedding": "వివాహ వేడుక — విందు: గురువారం, 3 సెప్టెంబర్ సాయంత్రం 7:00 గంటల నుండి; ముహూర్తం: శుక్రవారం తెల్లవారుజామున 2:58 గంటలకు",
-    "vratham": "సత్యనారాయణ స్వామి వ్రతం — 05 సెప్టెంబర్ ఉదయం",
+    "vratham": "సత్యనారాయణ స్వామి వ్రతం — 04 సెప్టెంబర్ ఉదయం",
     "reception": "రిసెప్షన్ — 06 సెప్టెంబర్ 2026"
   },
   "hi": {
@@ -1057,7 +1057,7 @@ const eventLabels = {
     "pellirituals": "पेल्ली-कोडुकु & पेल्ली-कुथुरु — 02 सितंबर",
     "haldi": "हल्दी — 03 सितंबर, सुबह 09:00",
     "wedding": "विवाह समारोह — रात्रिभोज: 3 सितंबर शाम 7:00 बजे से; मुहूर्त: 4 सितंबर की भोर में 2:58 बजे",
-    "vratham": "सत्यनारायण स्वामी व्रतम — 05 सितंबर सुबह",
+    "vratham": "सत्यनारायण स्वामी व्रतम — 04 सितंबर सुबह",
     "reception": "रिसेप्शन — 06 सितंबर 2026"
   },
   "ta": {
@@ -1065,7 +1065,7 @@ const eventLabels = {
     "pellirituals": "பெல்லி-கொடுகு & பெல்லி-குத்துரு — 02 செப்டம்பர்",
     "haldi": "ஹல்தி — 03 செப்டம்பர், காலை 09:00",
     "wedding": "திருமண விழா — விருந்து: செப்டம்பர் 3 மாலை 7:00 மணி முதல்; முகூர்த்தம்: செப்டம்பர் 4 அதிகாலை 2:58",
-    "vratham": "சத்யநாராயண சுவாமி விரதம் — 05 செப்டம்பர் காலை",
+    "vratham": "சத்யநாராயண சுவாமி விரதம் — 04 செப்டம்பர் காலை",
     "reception": "வரவேற்பு — 06 செப்டம்பர் 2026"
   },
   "zh": {
@@ -1073,34 +1073,34 @@ const eventLabels = {
     "pellirituals": "新郎婚前祝福礼 & 新娘婚前祝福礼 — 9月2日",
     "haldi": "姜黄礼 — 9月3日上午9:00 · 帕里纳雅宴会厅前草坪",
     "wedding": "婚礼仪式 — 晚宴：9月3日晚7:00起；婚礼吉时：9月4日凌晨2:58",
-    "vratham": "萨蒂亚那罗延祈福礼 — 9月5日上午 · 新娘公寓二楼",
+    "vratham": "萨蒂亚那罗延祈福礼 — 9月4日上午 · 新娘公寓二楼",
     "reception": "婚宴 — 2026年9月6日 · 晚上6:30起 · RAMCOSA 宾馆"
   }
 };
 
 Object.assign(eventLabels.en, {
   pellirituals: "Pelli-Koduku at the Groom's house & Pelli-Kuthuru at the Bride's house — 02 Sep",
-  vratham: "Sathyanarayana Swamy Vratham — 05 September morning · Venue to be updated",
+  vratham: "Sathyanarayana Swamy Vratham — 04 September morning · Bride's Apartment · 2nd floor",
   reception: "Reception — 06 September 2026 · 6:30 PM onwards · RAMCOSA Guest House"
 });
 Object.assign(eventLabels.te, {
   pellirituals: "పెళ్లికొడుకు వరుడి ఇంటి వద్ద & పెళ్లికూతురు వధువు ఇంటి వద్ద — 02 సెప్టెంబర్",
-  vratham: "సత్యనారాయణ స్వామి వ్రతం — 05 సెప్టెంబర్ ఉదయం · వేదిక త్వరలో",
+  vratham: "సత్యనారాయణ స్వామి వ్రతం — 04 సెప్టెంబర్ ఉదయం · వధువు అపార్ట్‌మెంట్ · 2వ అంతస్తు",
   reception: "రిసెప్షన్ — 06 సెప్టెంబర్ 2026 · సాయంత్రం 6:30 నుండి · రామ్‌కోసా గెస్ట్ హౌస్"
 });
 Object.assign(eventLabels.hi, {
   pellirituals: "पेल्ली-कोडुकु दूल्हे के घर & पेल्ली-कुथुरु दुल्हन के घर — 02 सितंबर",
-  vratham: "सत्यनारायण स्वामी व्रतम — 05 सितंबर सुबह · स्थान बाद में",
+  vratham: "सत्यनारायण स्वामी व्रतम — 04 सितंबर सुबह · दुल्हन का अपार्टमेंट · दूसरी मंज़िल",
   reception: "रिसेप्शन — 06 सितंबर 2026 · शाम 6:30 बजे से · RAMCOSA Guest House"
 });
 Object.assign(eventLabels.ta, {
   pellirituals: "பெல்லி-கொடுகு மணமகன் இல்லத்தில் & பெல்லி-குத்துரு மணமகள் இல்லத்தில் — 02 செப்டம்பர்",
-  vratham: "சத்யநாராயண சுவாமி விரதம் — 05 செப்டம்பர் காலை · இடம் பின்னர்",
+  vratham: "சத்யநாராயண சுவாமி விரதம் — 04 செப்டம்பர் காலை · மணமகளின் அபார்ட்மென்ட் · 2-வது மாடி",
   reception: "வரவேற்பு — 06 செப்டம்பர் 2026 · மாலை 6:30 மணி முதல் · RAMCOSA Guest House"
 });
 Object.assign(eventLabels.zh, {
   pellirituals: "新郎婚前祝福礼（新郎家）& 新娘婚前祝福礼（新娘家）— 9月2日",
-  vratham: "萨蒂亚那罗延祈福礼 — 9月5日上午 · 新娘公寓二楼",
+  vratham: "萨蒂亚那罗延祈福礼 — 9月4日上午 · 新娘公寓二楼",
   reception: "婚宴 — 2026年9月6日 · 晚上6:30起 · RAMCOSA 宾馆"
 });
 eventLabels.ne = {
@@ -1108,7 +1108,7 @@ eventLabels.ne = {
   pellirituals: "पेल्ली-कोडुकु दुलाहाको घरमा & पेल्ली-कुथुरु दुलहीको घरमा — 02 सेप्टेम्बर",
   haldi: "हल्दी — 03 सेप्टेम्बर, बिहान 09:00",
   wedding: "विवाह समारोह — रात्रिभोज: 3 सेप्टेम्बर साँझ 7:00 बजेदेखि; मुहूर्त: 4 सेप्टेम्बर बिहान 2:58 बजे",
-  vratham: "सत्यनारायण स्वामी व्रतम — 05 सेप्टेम्बर बिहान · स्थान पछि",
+  vratham: "सत्यनारायण स्वामी व्रतम — 04 सेप्टेम्बर बिहान · दुलहीको अपार्टमेन्ट · दोस्रो तला",
   reception: "रिसेप्सन — 06 सेप्टेम्बर 2026 · साँझ 6:30 बजेदेखि · RAMCOSA Guest House"
 };
 
@@ -1127,7 +1127,7 @@ Object.assign(eventLabels.ta, {
 });
 Object.assign(eventLabels.zh, {
   pellirituals: "新郎婚前祝福礼（新郎家）& 新娘婚前祝福礼（新娘家）— 9月2日",
-  vratham: "萨蒂亚那罗延祈福礼 — 9月5日上午 · 新娘公寓二楼",
+  vratham: "萨蒂亚那罗延祈福礼 — 9月4日上午 · 新娘公寓二楼",
   reception: "婚宴 — 2026年9月6日 · 晚上6:30起 · RAMCOSA 宾馆"
 });
 Object.assign(eventLabels.ne, {
@@ -1568,8 +1568,8 @@ document.getElementById("calendarButton").addEventListener("click", () => {
       "BEGIN:VEVENT",
       "UID:vratham-2026@sujana-radha",
       `DTSTAMP:${toICSDate(new Date())}`,
-      "DTSTART;VALUE=DATE:20260905",
-      "DTEND;VALUE=DATE:20260906",
+      "DTSTART;VALUE=DATE:20260904",
+      "DTEND;VALUE=DATE:20260905",
       "SUMMARY:Sujana & Radha Krishna — Sathyanarayana Swamy Vratham (Morning)",
       `LOCATION:${CONFIG.vrathamVenueName.replace(/,/g, "\\,")}`,
       "DESCRIPTION:Sathyanarayana Swamy Vratham will be held in the morning. The exact time will be confirmed by the family.",
@@ -1743,8 +1743,8 @@ const WEEK_PLAN = {
     {key:"dinner",tag:"tonightLabel",detail:()=>"19:00 · Parinaya Function Hall",href:CONFIG.mapUrl,after:[19,0]},
     {key:"muhurtham",tag:"nextLabel",detail:()=>"04 Sep · 02:58 · Parinaya Function Hall",href:CONFIG.mapUrl}
   ],
-  "2026-09-04":[{key:"muhurtham",tag:"todayLabel",detail:()=>"02:58 · Parinaya Function Hall",href:CONFIG.mapUrl,until:[5,30]},{key:"vratham",tag:"nextLabel",detail:()=>`05 Sep · ${t("vrathamVenueName")}`,href:CONFIG.vrathamMapUrl}],
-  "2026-09-05":[{key:"vratham",tag:"todayLabel",detail:()=>`${t("vrathamDay")} · ${t("vrathamVenueName")}`,href:CONFIG.vrathamMapUrl},{key:"reception",tag:"nextLabel",detail:()=>`06 Sep · 18:30 · ${t("receptionVenueName").replace(/<[^>]+>/g,"")}`,href:CONFIG.receptionMapUrl}],
+  "2026-09-04":[{key:"muhurtham",tag:"todayLabel",detail:()=>"02:58 · Parinaya Function Hall",href:CONFIG.mapUrl,until:[5,30]},{key:"vratham",tag:"todayLabel",detail:()=>`${t("vrathamDay")} · ${t("vrathamVenueName")}`,href:CONFIG.vrathamMapUrl}],
+  "2026-09-05":[{key:"reception",tag:"nextLabel",detail:()=>`06 Sep · 18:30 · ${t("receptionVenueName").replace(/<[^>]+>/g,"")}`,href:CONFIG.receptionMapUrl}],
   "2026-09-06":[{key:"reception",tag:"todayLabel",detail:()=>`18:30 · ${t("receptionVenueName").replace(/<[^>]+>/g,"")}`,href:CONFIG.receptionMapUrl}]
 };
 
