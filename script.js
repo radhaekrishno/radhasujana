@@ -1128,6 +1128,57 @@ Object.assign(eventLabels.ne, {
   pellirituals: "दुलाहाको विवाहपूर्व आशीर्वाद समारोह दुलाहाको घरमा & दुलहीको विवाहपूर्व आशीर्वाद समारोह दुलहीको घरमा — 02 सेप्टेम्बर"
 });
 
+const rsvpMessageEventLabels = {
+  en: {
+    mehendi: "Mehendi",
+    pellirituals: "Pellikoduku/Pellikoothuru",
+    haldi: "Haldi",
+    wedding: "Wedding Ceremony",
+    vratham: "Satyanarayana Swamy Vratam",
+    reception: "Reception"
+  },
+  te: {
+    mehendi: "మెహందీ",
+    pellirituals: "పెళ్లికొడుకు / పెళ్లికూతురు",
+    haldi: "హల్దీ",
+    wedding: "వివాహ వేడుక",
+    vratham: "సత్యనారాయణ స్వామి వ్రతం",
+    reception: "రిసెప్షన్"
+  },
+  hi: {
+    mehendi: "मेहंदी",
+    pellirituals: "पेल्लीकोडुकु / पेल्लीकुथुरु",
+    haldi: "हल्दी",
+    wedding: "विवाह समारोह",
+    vratham: "सत्यनारायण स्वामी व्रतम",
+    reception: "रिसेप्शन"
+  },
+  ta: {
+    mehendi: "மெஹந்தி",
+    pellirituals: "பெல்லிகொடுகு / பெல்லிகூத்துரு",
+    haldi: "ஹல்தி",
+    wedding: "திருமண விழா",
+    vratham: "சத்யநாராயண சுவாமி விரதம்",
+    reception: "வரவேற்பு"
+  },
+  zh: {
+    mehendi: "指甲花彩绘之夜",
+    pellirituals: "新郎婚前祝福礼 / 新娘婚前祝福礼",
+    haldi: "姜黄礼",
+    wedding: "婚礼仪式",
+    vratham: "萨蒂亚那罗延祈福礼",
+    reception: "婚宴"
+  },
+  ne: {
+    mehendi: "मेहन्दी",
+    pellirituals: "पेल्लीकोडुकु / पेल्लीकुथुरु",
+    haldi: "हल्दी",
+    wedding: "विवाह समारोह",
+    vratham: "सत्यनारायण स्वामी व्रतम",
+    reception: "रिसेप्सन"
+  }
+};
+
 const teamLabels = {
   "en": {
     "bride": "Team Bride — Sujana",
@@ -1430,16 +1481,33 @@ rsvpForm.addEventListener("submit", event => {
   const formTeam = String(formData.get("rsvpTeam") || "");
   if (formTeam) selectTeam(formTeam, false);
 
-  const message = [
-    `*${t("rsvpHeading")}*`,
+  const attending = attendance === "yes";
+  const selectedEvents = new Set(events);
+  const eventOrder = ["mehendi", "pellirituals", "haldi", "wedding", "vratham", "reception"];
+  const messageLines = [
+    `*🪷 ${t("rsvpHeading")}*`,
     "",
-    `${t("labelName")}: ${name}`,
-    `${t("labelAttendance")}: ${attendance === "yes" ? t("attendanceYes") : t("attendanceNo")}`,
-    `${t("labelCelebrations")}: ${events.length ? events.map(id => eventLabels[currentLanguage][id]).join(", ") : t("notSpecified")}`,
-    `${t("labelGuests")}: ${count}`,
-    `${t("labelSide")}: ${selectedTeamId ? teamLabels[currentLanguage][selectedTeamId] : t("noSide")}`,
-    `${t("labelMessage")}: ${note}`
-  ].join("\n");
+    `*${t("labelName")}:* ${name}`,
+    `*${t("labelAttendance")}:* ${attending ? t("attendanceYes") : t("attendanceNo")}`
+  ];
+
+  if (attending) {
+    messageLines.push("", `*${t("labelCelebrations")}:*`);
+    eventOrder.forEach(id => {
+      const mark = selectedEvents.has(id) ? "✔️" : "❌";
+      messageLines.push(`${mark} ${rsvpMessageEventLabels[currentLanguage][id]}`);
+    });
+    messageLines.push("", `*${t("labelGuests")}:* ${count}`);
+  } else {
+    messageLines.push("", `*${t("labelGuests")}:* —`);
+  }
+
+  if (selectedTeamId) {
+    messageLines.push(`*${t("labelSide")}:* ${teamLabels[currentLanguage][selectedTeamId]}`);
+  }
+  messageLines.push(`*${t("labelMessage")}:* ${note}`);
+
+  const message = messageLines.join("\n");
 
   const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
   // Same-tab navigation is intentional: it avoids browser pop-up blockers and reliably opens WhatsApp/Web WhatsApp.

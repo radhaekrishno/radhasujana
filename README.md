@@ -64,3 +64,17 @@ The automatic post-wedding privacy mode hides private logistics from normal visi
 - Removed the negative version-watermark offset that made the final two footer lines look crowded.
 - Made small spacing corrections to RSVP intro, film heading, ceremony schedule cells, quick actions, and compact Instagram footer stack.
 - No layout redesign or content changes.
+
+
+## Version 40.4 — WhatsApp RSVP message
+- WhatsApp RSVP header now begins with the lotus emoji 🪷.
+- When attending, all six celebrations are listed on separate lines with ✔️ for selected and ❌ for unselected.
+- RSVP WhatsApp labels are bolded for faster scanning.
+- If attendance is declined, the six-event list is omitted to avoid a long block of six crosses.
+- Only the selected Bride/Groom side is included.
+
+
+## Version 40.4 — unified RSVP selection cards
+- Removed visible checkbox-square artwork from RSVP celebration choices.
+- Attendance, team, and celebration selections now use the same subtle gold check mark when selected.
+- Celebration labels are centred in their button cards; underlying inputs remain intact for accessibility and WhatsApp generation.

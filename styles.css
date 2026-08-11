@@ -2000,7 +2000,7 @@ body.post-wedding-mode .invitation-cover { display:none !important; }
 
 
 /* =========================================================
-   v40.2 · vertical-rhythm refinement
+   v40.4 · vertical-rhythm refinement
    A spacing-only pass: equalize stacked metadata/footer gaps and
    smooth a few small rhythm inconsistencies without redesigning.
    ========================================================= */
@@ -2049,7 +2049,7 @@ body.post-wedding-mode .invitation-cover { display:none !important; }
 
 
 /* =========================================================
-   v40.2 · RSVP checkbox/text optical alignment
+   v40.4 · RSVP checkbox/text optical alignment
    ========================================================= */
 /* Use the checkbox and event title as two real grid columns so their
    vertical centres always share the same horizontal axis, even when
@@ -2082,5 +2082,94 @@ body.post-wedding-mode .invitation-cover { display:none !important; }
   .event-options span::before {
     position: static;
     transform: none;
+  }
+}
+
+
+/* =========================================================
+   v40.4 · unified RSVP selection cards
+   Native radio/checkbox controls remain accessible form inputs but
+   are visually hidden. Every RSVP choice uses the same restrained
+   selected-state tick; event rows no longer draw checkbox squares.
+   ========================================================= */
+
+/* All RSVP selectable cards share one selection cue. */
+.rsvp-form .choice-chip > span,
+.rsvp-form .event-options span {
+  position: relative;
+}
+
+/* Remove the old square checkbox artwork from celebration choices. */
+.rsvp-form .event-options span::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Celebration choices now read as clean buttons, just like attendance
+   and team choices, with the event title optically centred. */
+.rsvp-form .event-options span {
+  min-height: 54px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 11px 34px 11px 16px !important;
+  text-align: center !important;
+  border: 1px solid rgba(111,16,37,.16) !important;
+  border-radius: 12px;
+  color: var(--wine) !important;
+  background: rgba(255,255,255,.34) !important;
+  transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+}
+
+/* One small gold tick in the upper-right corner for every selected
+   RSVP card: attendance, team, and celebration. */
+.rsvp-form .choice-chip > span::after,
+.rsvp-form .event-options span::after {
+  content: "✓";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: rgba(243,207,136,.92);
+  font: 600 .78rem/1 "Montserrat", sans-serif;
+  opacity: 0;
+  transform: scale(.72);
+  transition: opacity .18s ease, transform .18s ease;
+  pointer-events: none;
+}
+
+.rsvp-form .choice-chip > input:checked + span::after,
+.rsvp-form .event-options input:checked + span::after {
+  opacity: .9;
+  transform: scale(1);
+}
+
+/* Selected celebrations use the same wine treatment as the other RSVP
+   cards, while keeping the mark intentionally quiet. */
+.rsvp-form .event-options input:checked + span {
+  color: #fff7eb !important;
+  border-color: var(--wine) !important;
+  background: var(--wine) !important;
+  box-shadow: 0 8px 20px rgba(111,16,37,.10);
+}
+
+.rsvp-form .event-options label:active span { transform: scale(.985); }
+
+/* Keep team names centred; the corner tick must never shift them. */
+.rsvp-form .side-choice-row .choice-chip > span {
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+
+@media (max-width:760px) {
+  .rsvp-form .event-options span {
+    min-height: 52px;
+    padding: 10px 30px 10px 12px !important;
+    font-size: .68rem;
+  }
+  .rsvp-form .choice-chip > span::after,
+  .rsvp-form .event-options span::after {
+    top: 7px;
+    right: 8px;
+    font-size: .72rem;
   }
 }

@@ -1,4 +1,4 @@
-const CACHE="radhasujana-v40.1";
+const CACHE="radhasujana-v40.4";
 const CORE=["/","/en/","/styles.css?v=40.1","/script.js?v=40.1","/site-config.js?v=40.1","/favicon.png","/manifest.webmanifest?v=40.1","/assets/social-preview.jpg"];
 self.addEventListener("install",e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
