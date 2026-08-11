@@ -2292,3 +2292,106 @@ html { scroll-padding-top: 96px; }
   .mobile-insta-link { padding-inline: 2px !important; }
   .language-toggle { min-width: 56px; padding-inline: 4px; }
 }
+
+
+/* =========================================================
+   v40.9 · opaque sticky header + compact mobile RSVP
+   ========================================================= */
+
+/* The sticky bar is intentionally near-opaque. Content may scroll
+   beneath a fixed header, but it must never remain visually readable
+   through the bar (event timeline dots were previously showing through). */
+.topbar.is-scrolled {
+  background: linear-gradient(180deg, #fffaf1 0%, #fdf7ec 100%);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 10px 28px rgba(65,8,23,.10);
+}
+.topbar.is-scrolled::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: #fffaf1;
+  pointer-events: none;
+}
+.event-progress { z-index: 0; }
+.event-progress__steps, .event-progress__step { z-index: 0; }
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 126px; }
+  #festivities, #countdown, #rsvp, #gallery, #film { scroll-margin-top: 126px; }
+
+  /* Compact but still finger-friendly RSVP. Two-column celebration
+     grid saves the most vertical space without shrinking tap targets. */
+  .rsvp.section-pad { padding-top: 52px; padding-bottom: 52px; }
+  .rsvp__intro { margin-bottom: 18px; }
+  .rsvp-form {
+    gap: 12px;
+    padding: 18px 16px 20px;
+    border-radius: 18px;
+  }
+  .rsvp-form label > span,
+  .rsvp-form legend { margin-bottom: 6px; font-size: .61rem; }
+  .rsvp-form fieldset + fieldset { padding-top: 8px; }
+
+  .rsvp-form input[type="text"],
+  .rsvp-form select,
+  .rsvp-form textarea { padding: 9px 0; }
+  .rsvp-form textarea { min-height: 54px; max-height: 72px; resize: vertical; }
+
+  .attendance-choice-row,
+  .side-choice-row { grid-template-columns: 1fr 1fr !important; gap: 8px; }
+  .attendance-choice-row .choice-chip > span {
+    min-height: 48px;
+    padding: 9px 22px 9px 10px !important;
+    font-size: .62rem;
+  }
+  .side-choice-row .choice-chip > span {
+    min-height: 64px;
+    padding: 9px 18px 9px 8px !important;
+  }
+  .side-choice-row .choice-chip > span > b { font-size: .51rem !important; }
+  .side-choice-row .choice-chip > span > span {
+    margin-top: 3px !important;
+    font-size: 1.05rem !important;
+    line-height: 1 !important;
+  }
+
+  .event-options {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 7px !important;
+  }
+  .rsvp-form .event-options span {
+    min-height: 48px !important;
+    padding: 8px 22px 8px 9px !important;
+    font-size: .60rem !important;
+    line-height: 1.22 !important;
+    text-align: center;
+    justify-content: center !important;
+  }
+  .rsvp-form .choice-chip > span::after,
+  .rsvp-form .event-options span::after {
+    right: 7px !important;
+    font-size: .72rem !important;
+  }
+
+  .rsvp-form .primary-button { min-height: 46px; padding: 11px 14px; }
+  .rsvp-form > small { margin-top: -3px; font-size: .58rem; line-height: 1.35; }
+}
+
+@media (max-width: 390px) {
+  .rsvp-form { padding-inline: 13px; }
+  .rsvp-form .event-options span { font-size: .55rem !important; }
+  .side-choice-row .choice-chip > span > span { font-size: .96rem !important; }
+}
+
+/* Let the fixed header participate in the page's root stacking order.
+   The hero's old isolation context trapped the header below later
+   sections, so high-z-index event artwork could still paint over it. */
+.hero { isolation: auto; }
+.hero::before { z-index: 0; pointer-events: none; }
+.hero__content,
+.latest-update,
+.wedding-night-summary { position: relative; z-index: 1; }

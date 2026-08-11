@@ -97,3 +97,8 @@ The automatic post-wedding privacy mode hides private logistics from normal visi
 - Added direct mobile header shortcuts: Engagement Video (opens YouTube directly) and Insta.
 - Made event-card gold edging permanent and selection styling stable.
 - Normalized service-worker/cache asset versions to v40.8.
+
+
+## Version 40.9
+- Opaque sticky header prevents content/timeline bleed-through.
+- Mobile RSVP compressed with two-column event choices and reduced spacing while retaining touch-friendly targets.
