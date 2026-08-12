@@ -109,9 +109,14 @@ The automatic post-wedding privacy mode hides private logistics from normal visi
 - The bottom Directions popover now gives Marriage and Reception directions identical neutral styling.
 - Mobile sticky header shortcuts are labelled Our engagement video and Our Instagram account.
 - Share Invitation now sends concise Wedding (Jaggampeta) and Reception (Kakinada) details plus the invitation URL. Clipboard fallback copies the full message.
-- Cache references, footer build marker and service worker updated to v41.1.
+- Cache references, footer build marker and service worker updated to v41.2.
 
 
-## v41.1
+## v41.2
 - Vratham moved to Saturday, 05 September 2026 across cards, translations, calendar export and Wedding Week Mode.
 - Mobile sticky social links standardized to two-line “Our / …” layout with equal sizing.
+
+
+## v41.2
+- Fixed mobile sticky-header social shortcut overlap by allocating the remaining header width to a true two-column shortcut grid.
+- Preserves two-line labels: OUR / ENGAGEMENT VIDEO and OUR / INSTAGRAM ACCOUNT.

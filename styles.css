@@ -2398,7 +2398,7 @@ html { scroll-padding-top: 96px; }
 
 
 /* =========================================================
-   v41.1 · RSVP decline state, uniform quick directions,
+   v41.2 · RSVP decline state, uniform quick directions,
               and explicit mobile social labels
    ========================================================= */
 
@@ -2457,7 +2457,7 @@ html { scroll-padding-top: 96px; }
 }
 
 /* =========================================================
-   v41.1 · uniform two-line mobile social shortcuts
+   v41.2 · uniform two-line mobile social shortcuts
    ========================================================= */
 @media (max-width: 760px) {
   .topbar.is-scrolled .mobile-top-links {
@@ -2510,4 +2510,79 @@ html { scroll-padding-top: 96px; }
   .mobile-top-links a { padding-inline: 3px; }
   .mobile-top-links a span { font-size: .34rem; }
   .mobile-top-links a strong { font-size: .41rem; letter-spacing: .02em; }
+}
+
+
+/* =========================================================
+   v41.2 · mobile sticky-header shortcut layout fix
+   ========================================================= */
+@media (max-width: 760px) {
+  .topbar.is-scrolled {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .topbar.is-scrolled .brand-instagram {
+    flex: 0 0 auto;
+  }
+  .topbar.is-scrolled .topbar__actions {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 6px;
+  }
+  .topbar.is-scrolled .mobile-top-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    gap: 0;
+    overflow: hidden;
+  }
+  .topbar.is-scrolled .mobile-top-links a {
+    min-width: 0;
+    width: 100%;
+    max-width: none !important;
+    overflow: hidden;
+    padding: 4px 3px 5px;
+  }
+  .topbar.is-scrolled .mobile-top-links a span {
+    width: 100%;
+    margin: 0 0 2px;
+    font-size: .34rem;
+    line-height: 1;
+    letter-spacing: .12em;
+    white-space: nowrap;
+  }
+  .topbar.is-scrolled .mobile-top-links a strong {
+    width: 100%;
+    font-size: .41rem;
+    line-height: 1.02;
+    letter-spacing: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+  }
+  .topbar.is-scrolled .language-toggle {
+    flex: 0 0 auto;
+    min-width: 62px;
+  }
+  .topbar.is-scrolled .menu-button {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .topbar.is-scrolled { gap: 5px; }
+  .topbar.is-scrolled .topbar__actions { gap: 4px; }
+  .topbar.is-scrolled .monogram { width: 40px; height: 40px; }
+  .topbar.is-scrolled .mobile-top-links a { padding-inline: 2px; }
+  .topbar.is-scrolled .mobile-top-links a span { font-size: .31rem; }
+  .topbar.is-scrolled .mobile-top-links a strong { font-size: .37rem; }
+  .topbar.is-scrolled .language-toggle { min-width: 58px; padding-inline: 4px; }
 }
