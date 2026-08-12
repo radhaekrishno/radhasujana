@@ -2398,7 +2398,7 @@ html { scroll-padding-top: 96px; }
 
 
 /* =========================================================
-   v41.0 · RSVP decline state, uniform quick directions,
+   v41.1 · RSVP decline state, uniform quick directions,
               and explicit mobile social labels
    ========================================================= */
 
@@ -2454,4 +2454,60 @@ html { scroll-padding-top: 96px; }
   .mobile-top-links a { font-size: .40rem; letter-spacing: .018em; }
   .mobile-video-link { max-width: 78px; }
   .mobile-insta-link { max-width: 72px; }
+}
+
+/* =========================================================
+   v41.1 · uniform two-line mobile social shortcuts
+   ========================================================= */
+@media (max-width: 760px) {
+  .topbar.is-scrolled .mobile-top-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex: 1 1 auto;
+    width: min(190px, 39vw);
+    max-width: 190px;
+    gap: 0;
+    align-items: stretch;
+  }
+  .mobile-top-links a,
+  .mobile-video-link,
+  .mobile-insta-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: none !important;
+    min-width: 0;
+    padding: 3px 5px 5px;
+    color: var(--wine) !important;
+    text-align: center;
+    border-bottom: 1px solid rgba(111,16,37,.22);
+    line-height: 1.05;
+  }
+  .mobile-top-links a + a { border-left: 1px solid rgba(111,16,37,.12); }
+  .mobile-top-links a span {
+    display: block;
+    margin-bottom: 2px;
+    font-size: .38rem;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    opacity: .68;
+  }
+  .mobile-top-links a strong {
+    display: block;
+    font: inherit;
+    font-size: .47rem;
+    font-weight: 600;
+    letter-spacing: .035em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 390px) {
+  .topbar.is-scrolled .mobile-top-links { width: min(166px, 38vw); max-width: 166px; }
+  .mobile-top-links a { padding-inline: 3px; }
+  .mobile-top-links a span { font-size: .34rem; }
+  .mobile-top-links a strong { font-size: .41rem; letter-spacing: .02em; }
 }
