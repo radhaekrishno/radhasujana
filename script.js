@@ -12,8 +12,8 @@ const CONFIG = {
   haldiMapUrl: "https://share.google/Nb8oauGBBMUAH0cGv",
   vrathamVenueName: "Bride's Apartment, 2nd floor",
   vrathamMapUrl: "https://maps.app.goo.gl/74idPKEkske2SgAH9",
-  receptionVenueName: "RAMCOSA Guest House",
-  receptionVenueAddress: "Madhav Nagar, Dwaraka Nagar, Ramanayyapeta, Andhra Pradesh 533003, India",
+  receptionVenueName: "RAMCOSA FUNCTION HALL",
+  receptionVenueAddress: "D.no 2-817/5, Venkat Nagar,<br>Beside RMC Men's Hostel,<br>Kakinada, Andhra Pradesh, India.<br>PIN: 533002.",
   receptionMapUrl: "https://share.google/Bx2va6zVbhM6UoSrD",
   timeZone: "Asia/Kolkata"
 };
@@ -642,10 +642,10 @@ const translations = {
     "venueLabel": "地点",
     "venue": "地点",
     "receptionVenueLabel": "婚宴会场",
-    "receptionVenueName": "RAMCOSA 宾馆<br><small class=\"venue-english\">RAMCOSA Guest House</small>",
-    "receptionVenueAddress": "马达夫纳加尔，德瓦拉卡纳加尔，<br>拉马纳亚佩塔，安得拉邦 533003，印度",
+    "receptionVenueName": "RAMCOSA 宴会厅<br><small class=\"venue-english\">RAMCOSA FUNCTION HALL</small>",
+    "receptionVenueAddress": "D.no 2-817/5，Venkat Nagar，<br>RMC 男生宿舍旁，<br>卡基纳达，安得拉邦，印度。<br>PIN：533002。",
     "receptionVenueTime": "2026年9月6日 星期日 · 晚上6:30起",
-    "receptionMapTitle": "RAMCOSA 宾馆地图",
+    "receptionMapTitle": "RAMCOSA 宴会厅地图",
     "receptionMapLink": "在 Google 地图中查看 ↗",
     "receptionDirections": "↗ 婚宴会场导航",
     "addRsvp": "加入出席计划",
@@ -747,10 +747,10 @@ Object.assign(translations.en, {
   venueLabel: "Venue",
   dateTimeSoon: "06 September 2026 · 6:30 PM onwards",
   receptionVenueLabel: "Reception Venue",
-  receptionVenueName: "RAMCOSA Guest House",
-  receptionVenueAddress: "Madhav Nagar, Dwaraka Nagar, Ramanayyapeta, Andhra Pradesh 533003, India",
+  receptionVenueName: "RAMCOSA FUNCTION HALL",
+  receptionVenueAddress: "D.no 2-817/5, Venkat Nagar,<br>Beside RMC Men's Hostel,<br>Kakinada, Andhra Pradesh, India.<br>PIN: 533002.",
   receptionVenueTime: "Sunday, 6 September 2026 · 6:30 PM onwards",
-  receptionMapTitle: "RAMCOSA Guest House map",
+  receptionMapTitle: "RAMCOSA FUNCTION HALL map",
   marriageDirections: "↗ Marriage venue directions",
   receptionDirections: "↗ Reception venue directions",
   receptionRsvp: "Reception"
@@ -766,10 +766,10 @@ Object.assign(translations.te, {
   venueLabel: "వేదిక",
   dateTimeSoon: "06 సెప్టెంబర్ 2026 · సాయంత్రం 6:30 గంటల నుండి",
   receptionVenueLabel: "రిసెప్షన్ వేదిక",
-  receptionVenueName: "రామ్‌కోసా గెస్ట్ హౌస్",
-  receptionVenueAddress: "మాధవ్ నగర్, ద్వారకా నగర్, రమణయ్యపేట, ఆంధ్రప్రదేశ్ 533003, ఇండియా",
+  receptionVenueName: "రామ్‌కోసా ఫంక్షన్ హాల్",
+  receptionVenueAddress: "D.no 2-817/5, వెంకట్ నగర్,<br>RMC పురుషుల హాస్టల్ పక్కన,<br>కాకినాడ, ఆంధ్రప్రదేశ్, ఇండియా.<br>PIN: 533002.",
   receptionVenueTime: "ఆదివారం, 6 సెప్టెంబర్ 2026 · సాయంత్రం 6:30 నుంచి",
-  receptionMapTitle: "రామ్‌కోసా గెస్ట్ హౌస్ మ్యాప్",
+  receptionMapTitle: "రామ్‌కోసా ఫంక్షన్ హాల్ మ్యాప్",
   marriageDirections: "↗ వివాహ వేదిక దారి",
   receptionDirections: "↗ రిసెప్షన్ వేదిక దారి",
   receptionRsvp: "రిసెప్షన్"
@@ -785,10 +785,10 @@ Object.assign(translations.hi, {
   venueLabel: "स्थान",
   dateTimeSoon: "06 सितंबर 2026 · शाम 6:30 बजे से",
   receptionVenueLabel: "रिसेप्शन स्थल",
-  receptionVenueName: "RAMCOSA Guest House",
-  receptionVenueAddress: "माधव नगर, द्वारका नगर, रामनय्यापेटा, आंध्र प्रदेश 533003, भारत",
+  receptionVenueName: "RAMCOSA FUNCTION HALL",
+  receptionVenueAddress: "D.no 2-817/5, वेंकट नगर,<br>RMC पुरुष छात्रावास के पास,<br>काकीनाडा, आंध्र प्रदेश, भारत।<br>PIN: 533002.",
   receptionVenueTime: "रविवार, 6 सितंबर 2026 · शाम 6:30 बजे से",
-  receptionMapTitle: "RAMCOSA Guest House का नक्शा",
+  receptionMapTitle: "RAMCOSA FUNCTION HALL का नक्शा",
   marriageDirections: "↗ विवाह स्थल की दिशा",
   receptionDirections: "↗ रिसेप्शन स्थल की दिशा",
   receptionRsvp: "रिसेप्शन"
@@ -804,10 +804,10 @@ Object.assign(translations.ta, {
   venueLabel: "இடம்",
   dateTimeSoon: "06 செப்டம்பர் 2026 · மாலை 6:30 மணி முதல்",
   receptionVenueLabel: "வரவேற்பு நிகழ்ச்சி இடம்",
-  receptionVenueName: "RAMCOSA Guest House",
-  receptionVenueAddress: "மாதவ் நகர், துவாரகா நகர், ராமனய்யாபேட்டா, ஆந்திரப் பிரதேசம் 533003, இந்தியா",
+  receptionVenueName: "RAMCOSA FUNCTION HALL",
+  receptionVenueAddress: "D.no 2-817/5, வெங்கட் நகர்,<br>RMC ஆண்கள் விடுதி அருகில்,<br>காக்கிநாடா, ஆந்திரப் பிரதேசம், இந்தியா.<br>PIN: 533002.",
   receptionVenueTime: "ஞாயிறு, 6 செப்டம்பர் 2026 · மாலை 6:30 மணி முதல்",
-  receptionMapTitle: "RAMCOSA Guest House வரைபடம்",
+  receptionMapTitle: "RAMCOSA FUNCTION HALL வரைபடம்",
   marriageDirections: "↗ திருமண இடத்திற்கான வழி",
   receptionDirections: "↗ வரவேற்பு இடத்திற்கான வழி",
   receptionRsvp: "வரவேற்பு"
@@ -825,10 +825,10 @@ Object.assign(translations.zh, {
   venueLabel: "地点",
   dateTimeSoon: "2026年9月6日 · 晚上6:30起",
   receptionVenueLabel: "婚宴会场",
-  receptionVenueName: "RAMCOSA 宾馆<br><small class=\"venue-english\">RAMCOSA Guest House</small>",
-  receptionVenueAddress: "马达夫纳加尔，德瓦拉卡纳加尔，<br>拉马纳亚佩塔，安得拉邦 533003，印度",
+  receptionVenueName: "RAMCOSA 宴会厅<br><small class=\"venue-english\">RAMCOSA FUNCTION HALL</small>",
+  receptionVenueAddress: "D.no 2-817/5，Venkat Nagar，<br>RMC 男生宿舍旁，<br>卡基纳达，安得拉邦，印度。<br>PIN：533002。",
   receptionVenueTime: "2026年9月6日 星期日 · 晚上6:30起",
-  receptionMapTitle: "RAMCOSA 宾馆地图",
+  receptionMapTitle: "RAMCOSA 宴会厅地图",
   marriageDirections: "↗ 婚礼会场导航",
   receptionDirections: "↗ 婚宴会场导航",
   receptionRsvp: "婚宴"
@@ -900,10 +900,10 @@ translations.ne = {
   receptionDescription: "मिति पक्का भयो—अब पेन्सिल होइन, मसीले लेख्नुस्।",
   venueLabel: "स्थान",
   receptionVenueLabel: "रिसेप्सन स्थल",
-  receptionVenueName: "RAMCOSA Guest House",
-  receptionVenueAddress: "माधव नगर, द्वारका नगर, रामनय्यापेटा, आन्ध्र प्रदेश 533003, भारत",
+  receptionVenueName: "RAMCOSA FUNCTION HALL",
+  receptionVenueAddress: "D.no 2-817/5, Venkat Nagar,<br>RMC Men's Hostel को छेउमा,<br>काकीनाडा, आन्ध्र प्रदेश, भारत।<br>PIN: 533002.",
   receptionVenueTime: "आइतबार, 6 सेप्टेम्बर 2026 · साँझ 6:30 बजेदेखि",
-  receptionMapTitle: "RAMCOSA Guest House को नक्सा",
+  receptionMapTitle: "RAMCOSA FUNCTION HALL को नक्सा",
   marriageDirections: "↗ विवाह स्थलको दिशा",
   receptionDirections: "↗ रिसेप्सन स्थलको दिशा",
   addRsvp: "उपस्थिति सूचीमा थप्नुहोस्",
@@ -1086,34 +1086,34 @@ const eventLabels = {
     "haldi": "姜黄礼 — 9月3日上午9:00 · 帕里纳雅宴会厅前草坪",
     "wedding": "婚礼仪式 — 晚宴：9月3日晚7:00起；婚礼吉时：9月4日凌晨2:58",
     "vratham": "萨蒂亚那罗延祈福礼 — 9月5日上午 · 新娘公寓二楼",
-    "reception": "婚宴 — 2026年9月6日 · 晚上6:30起 · RAMCOSA 宾馆"
+    "reception": "婚宴 — 2026年9月6日 · 晚上6:30起 · RAMCOSA 宴会厅"
   }
 };
 
 Object.assign(eventLabels.en, {
   pellirituals: "Pelli-Koduku at the Groom's house & Pelli-Kuthuru at the Bride's house — 02 Sep",
   vratham: "Sathyanarayana Swamy Vratham — 05 September morning · Bride's Apartment · 2nd floor",
-  reception: "Reception — 06 September 2026 · 6:30 PM onwards · RAMCOSA Guest House"
+  reception: "Reception — 06 September 2026 · 6:30 PM onwards · RAMCOSA FUNCTION HALL"
 });
 Object.assign(eventLabels.te, {
   pellirituals: "పెళ్లికొడుకు వరుడి ఇంటి వద్ద & పెళ్లికూతురు వధువు ఇంటి వద్ద — 02 సెప్టెంబర్",
   vratham: "సత్యనారాయణ స్వామి వ్రతం — 05 సెప్టెంబర్ ఉదయం · వధువు అపార్ట్‌మెంట్ · 2వ అంతస్తు",
-  reception: "రిసెప్షన్ — 06 సెప్టెంబర్ 2026 · సాయంత్రం 6:30 నుండి · రామ్‌కోసా గెస్ట్ హౌస్"
+  reception: "రిసెప్షన్ — 06 సెప్టెంబర్ 2026 · సాయంత్రం 6:30 నుండి · రామ్‌కోసా ఫంక్షన్ హాల్"
 });
 Object.assign(eventLabels.hi, {
   pellirituals: "पेल्ली-कोडुकु दूल्हे के घर & पेल्ली-कुथुरु दुल्हन के घर — 02 सितंबर",
   vratham: "सत्यनारायण स्वामी व्रतम — 05 सितंबर सुबह · दुल्हन का अपार्टमेंट · दूसरी मंज़िल",
-  reception: "रिसेप्शन — 06 सितंबर 2026 · शाम 6:30 बजे से · RAMCOSA Guest House"
+  reception: "रिसेप्शन — 06 सितंबर 2026 · शाम 6:30 बजे से · RAMCOSA FUNCTION HALL"
 });
 Object.assign(eventLabels.ta, {
   pellirituals: "பெல்லி-கொடுகு மணமகன் இல்லத்தில் & பெல்லி-குத்துரு மணமகள் இல்லத்தில் — 02 செப்டம்பர்",
   vratham: "சத்யநாராயண சுவாமி விரதம் — 05 செப்டம்பர் காலை · மணமகளின் அபார்ட்மென்ட் · 2-வது மாடி",
-  reception: "வரவேற்பு — 06 செப்டம்பர் 2026 · மாலை 6:30 மணி முதல் · RAMCOSA Guest House"
+  reception: "வரவேற்பு — 06 செப்டம்பர் 2026 · மாலை 6:30 மணி முதல் · RAMCOSA FUNCTION HALL"
 });
 Object.assign(eventLabels.zh, {
   pellirituals: "新郎婚前祝福礼（新郎家）& 新娘婚前祝福礼（新娘家）— 9月2日",
   vratham: "萨蒂亚那罗延祈福礼 — 9月5日上午 · 新娘公寓二楼",
-  reception: "婚宴 — 2026年9月6日 · 晚上6:30起 · RAMCOSA 宾馆"
+  reception: "婚宴 — 2026年9月6日 · 晚上6:30起 · RAMCOSA 宴会厅"
 });
 eventLabels.ne = {
   mehendi: "मेहन्दी — 01 सेप्टेम्बर",
@@ -1121,7 +1121,7 @@ eventLabels.ne = {
   haldi: "हल्दी — 03 सेप्टेम्बर, बिहान 09:00",
   wedding: "विवाह समारोह — रात्रिभोज: 3 सेप्टेम्बर साँझ 7:00 बजेदेखि; मुहूर्त: 4 सेप्टेम्बर बिहान 2:58 बजे",
   vratham: "सत्यनारायण स्वामी व्रतम — 05 सेप्टेम्बर बिहान · दुलहीको अपार्टमेन्ट · दोस्रो तला",
-  reception: "रिसेप्सन — 06 सेप्टेम्बर 2026 · साँझ 6:30 बजेदेखि · RAMCOSA Guest House"
+  reception: "रिसेप्सन — 06 सेप्टेम्बर 2026 · साँझ 6:30 बजेदेखि · RAMCOSA FUNCTION HALL"
 };
 
 
@@ -1140,7 +1140,7 @@ Object.assign(eventLabels.ta, {
 Object.assign(eventLabels.zh, {
   pellirituals: "新郎婚前祝福礼（新郎家）& 新娘婚前祝福礼（新娘家）— 9月2日",
   vratham: "萨蒂亚那罗延祈福礼 — 9月5日上午 · 新娘公寓二楼",
-  reception: "婚宴 — 2026年9月6日 · 晚上6:30起 · RAMCOSA 宾馆"
+  reception: "婚宴 — 2026年9月6日 · 晚上6:30起 · RAMCOSA 宴会厅"
 });
 Object.assign(eventLabels.ne, {
   pellirituals: "दुलाहाको विवाहपूर्व आशीर्वाद समारोह दुलाहाको घरमा & दुलहीको विवाहपूर्व आशीर्वाद समारोह दुलहीको घरमा — 02 सेप्टेम्बर"

@@ -120,3 +120,8 @@ The automatic post-wedding privacy mode hides private logistics from normal visi
 ## v41.2
 - Fixed mobile sticky-header social shortcut overlap by allocating the remaining header width to a true two-column shortcut grid.
 - Preserves two-line labels: OUR / ENGAGEMENT VIDEO and OUR / INSTAGRAM ACCOUNT.
+
+
+## V41.3
+- Reception venue updated to RAMCOSA FUNCTION HALL, D.no 2-817/5, Venkat Nagar, Beside RMC Men's Hostel, Kakinada, Andhra Pradesh, India, PIN 533002.
+- Existing reception Google Maps link retained because no replacement map URL was supplied.
