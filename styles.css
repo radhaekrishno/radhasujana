@@ -2587,7 +2587,7 @@ html { scroll-padding-top: 96px; }
   .topbar.is-scrolled .language-toggle { min-width: 58px; padding-inline: 4px; }
 }
 
-/* v41.4 · Vratham temple note — ceremonial, not a public directions block */
+/* v41.5 · Vratham temple note — ceremonial, not a public directions block */
 .vratham-temple-note {
   position: relative;
   z-index: 1;

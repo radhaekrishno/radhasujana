@@ -127,7 +127,13 @@ The automatic post-wedding privacy mode hides private logistics from normal visi
 - Existing reception Google Maps link retained because no replacement map URL was supplied.
 
 
-## V41.4
+## V41.5
 - Vratham location changed to Sri Veera Venkata Satyanarayana Swamy Vari Devasthanam, Annavaram.
 - Removed the old Bride's Apartment address and Vratham directions link from the public card.
 - Added ceremonial temple wording without presenting it as a general directions/invitation block.
+
+
+## V41.5
+- Vratham remains listed in the wedding schedule but is no longer an RSVP-selectable event.
+- Removed the Add to RSVP button from the Vratham card.
+- Removed Vratham from the RSVP form and WhatsApp RSVP celebration checklist.

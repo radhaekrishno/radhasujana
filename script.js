@@ -112,7 +112,6 @@ const translations = {
     regretfullyNo: "Regretfully no",
     whichCelebrations: "Which celebrations?",
     weddingRsvp: "Wedding Ceremony",
-    vrathamRsvp: "Satyanarayana Swamy Vratam",
     receptionRsvp: "Reception",
     guestCount: "Number of guests",
     oneGuest: "1 guest",
@@ -210,7 +209,6 @@ const translations = {
     weddingDay: "గురువారం సాయంత్రం → అర్ధరాత్రి తరువాత",
     weddingDateCard: "03 సెప్టెంబర్ 2026",
     vrathamDay: "శనివారం · ఉదయం",
-    vratham: "సత్యనారాయణ స్వామి వ్రతం",
     vrathamDate: "05 సెప్టెంబర్ 2026",
     vrathamSacredIntro: "పవిత్రమైన, శుభప్రదమైన ప్రాంగణంలో",
     vrathamTempleName: "శ్రీ వీర వెంకట సత్యనారాయణ స్వామివారి దేవస్థానం, అన్నవరం",
@@ -254,7 +252,6 @@ const translations = {
     regretfullyNo: "రాలేకపోతున్నాను",
     whichCelebrations: "ఏ వేడుకలకు వస్తారు?",
     weddingRsvp: "వివాహ వేడుక",
-    vrathamRsvp: "సత్యనారాయణ స్వామి వ్రతం",
     receptionRsvp: "రిసెప్షన్",
     guestCount: "అతిథుల సంఖ్య",
     oneGuest: "1 అతిథి",
@@ -395,7 +392,6 @@ const translations = {
     "regretfullyNo": "अफसोस, नहीं आ पाऊँगा/पाऊँगी",
     "whichCelebrations": "किन समारोहों में आएँगे?",
     "weddingRsvp": "विवाह समारोह",
-    "vrathamRsvp": "सत्यनारायण स्वामी व्रतम",
     "receptionRsvp": "रिसेप्शन",
     "guestCount": "अतिथियों की संख्या",
     "oneGuest": "1 अतिथि",
@@ -536,7 +532,6 @@ const translations = {
     "regretfullyNo": "வர இயலவில்லை",
     "whichCelebrations": "எந்த விழாக்களுக்கு வருவீர்கள்?",
     "weddingRsvp": "திருமண விழா",
-    "vrathamRsvp": "சத்யநாராயண சுவாமி விரதம்",
     "receptionRsvp": "வரவேற்பு",
     "guestCount": "விருந்தினர்களின் எண்ணிக்கை",
     "oneGuest": "1 விருந்தினர்",
@@ -703,7 +698,6 @@ const translations = {
     "regretfullyNo": "遗憾无法出席",
     "whichCelebrations": "您将参加哪些庆典？",
     "weddingRsvp": "婚礼仪式",
-    "vrathamRsvp": "萨蒂亚那罗延祈福礼",
     "receptionRsvp": "婚宴",
     "guestCount": "出席人数",
     "selectGuests": "请选择人数",
@@ -908,7 +902,6 @@ translations.ne = {
   weddingDay: "बिहीबार साँझ → मध्यरातपछि",
   weddingDateCard: "03 सेप्टेम्बर 2026",
   vrathamDay: "शनिबार · बिहान",
-  vratham: "सत्यनारायण स्वामी व्रतम",
   vrathamDate: "05 सेप्टेम्बर 2026",
   vrathamSacredIntro: "पवित्र र शुभ परिसरमा",
   vrathamTempleName: "श्री वीर वेंकट सत्यनारायण स्वामी वारी देवस्थानम, अन्नवरम",
@@ -961,7 +954,6 @@ translations.ne = {
   regretfullyNo: "दुःखका साथ उपस्थित हुन सक्दिनँ",
   whichCelebrations: "कुन-कुन उत्सवमा?",
   weddingRsvp: "विवाह समारोह",
-  vrathamRsvp: "सत्यनारायण स्वामी व्रतम",
   receptionRsvp: "रिसेप्सन",
   guestCount: "अतिथिको सङ्ख्या",
   oneGuest: "1 अतिथि",
@@ -1175,7 +1167,6 @@ const rsvpMessageEventLabels = {
     pellirituals: "Pellikoduku/Pellikoothuru",
     haldi: "Haldi",
     wedding: "Wedding Ceremony",
-    vratham: "Satyanarayana Swamy Vratam",
     reception: "Reception"
   },
   te: {
@@ -1191,7 +1182,6 @@ const rsvpMessageEventLabels = {
     pellirituals: "पेल्लीकोडुकु / पेल्लीकुथुरु",
     haldi: "हल्दी",
     wedding: "विवाह समारोह",
-    vratham: "सत्यनारायण स्वामी व्रतम",
     reception: "रिसेप्शन"
   },
   ta: {
@@ -1199,7 +1189,6 @@ const rsvpMessageEventLabels = {
     pellirituals: "பெல்லிகொடுகு / பெல்லிகூத்துரு",
     haldi: "ஹல்தி",
     wedding: "திருமண விழா",
-    vratham: "சத்யநாராயண சுவாமி விரதம்",
     reception: "வரவேற்பு"
   },
   zh: {
@@ -1207,7 +1196,6 @@ const rsvpMessageEventLabels = {
     pellirituals: "新郎婚前祝福礼 / 新娘婚前祝福礼",
     haldi: "姜黄礼",
     wedding: "婚礼仪式",
-    vratham: "萨蒂亚那罗延祈福礼",
     reception: "婚宴"
   },
   ne: {
@@ -1560,7 +1548,7 @@ rsvpForm.addEventListener("submit", event => {
 
   const attending = attendance === "yes";
   const selectedEvents = new Set(events);
-  const eventOrder = ["mehendi", "pellirituals", "haldi", "wedding", "vratham", "reception"];
+  const eventOrder = ["mehendi", "pellirituals", "haldi", "wedding", "reception"];
   const messageLines = [
     `*🪷 ${t("rsvpHeading")}*`,
     "",
