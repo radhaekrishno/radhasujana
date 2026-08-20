@@ -1309,6 +1309,9 @@ function updateEventButtons() {
   document.querySelectorAll(".event-card").forEach(card => {
     const eventId = card.dataset.eventId;
     const button = card.querySelector(".event-select");
+    // Some ceremonies (currently Vratham) are informational only and
+    // intentionally have no RSVP control. Never let those cards break startup.
+    if (!button) return;
     button.textContent = selectedEvents.has(eventId) ? t("addedRsvp") : t("addRsvp");
   });
 }
@@ -1375,7 +1378,9 @@ window.addEventListener("popstate", () => {
   applyLanguage(routeLanguage);
 });
 
-openButton.addEventListener("click", () => {
+function openInvitationNow() {
+  // Guard against double taps/bubbling while the envelope animation is running.
+  if (cover.classList.contains("is-opening") || cover.classList.contains("opened")) return;
   cover.classList.add("is-opening");
   setTimeout(() => {
     cover.classList.add("opened");
@@ -1383,6 +1388,14 @@ openButton.addEventListener("click", () => {
     mainContent.setAttribute("aria-hidden", "false");
     document.body.classList.remove("locked");
   }, 780);
+}
+
+openButton.addEventListener("click", openInvitationNow);
+// Make the visible “Tap to open” instruction and the rest of the cover
+// forgiving touch targets on phones, not just the envelope button itself.
+cover.addEventListener("click", event => {
+  if (event.target.closest("#openInvitation")) return;
+  openInvitationNow();
 });
 
 const menuButton = document.getElementById("menuButton");
@@ -1440,6 +1453,8 @@ if ("IntersectionObserver" in window) {
 
 document.querySelectorAll(".event-card").forEach(card => {
   const button = card.querySelector(".event-select");
+  // Informational-only event cards do not participate in RSVP.
+  if (!button) return;
   button.addEventListener("click", () => {
     if (rsvpDeclined) return;
     const eventId = card.dataset.eventId;

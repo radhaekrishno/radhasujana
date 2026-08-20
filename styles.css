@@ -177,7 +177,7 @@ img { max-width: 100%; }
   letter-spacing: .22em;
   text-transform: uppercase;
   animation: pulse 1.7s ease-in-out infinite;
-}
+ cursor: pointer; touch-action: manipulation; user-select: none; }
 @keyframes pulse { 50% { opacity: .42; transform: translateY(3px); } }
 
 .site-shell { opacity: 0; transition: opacity .9s ease; }
@@ -2587,7 +2587,7 @@ html { scroll-padding-top: 96px; }
   .topbar.is-scrolled .language-toggle { min-width: 58px; padding-inline: 4px; }
 }
 
-/* v41.5 · Vratham temple note — ceremonial, not a public directions block */
+/* v41.6 · Vratham temple note — ceremonial, not a public directions block */
 .vratham-temple-note {
   position: relative;
   z-index: 1;
