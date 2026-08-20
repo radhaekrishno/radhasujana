@@ -10,8 +10,7 @@ const CONFIG = {
   pelliKodukuMapUrl: "https://maps.app.goo.gl/TPiLFo3Geq5v96W66",
   haldiVenueName: "Parinaya Function Hall, Front Lawn",
   haldiMapUrl: "https://share.google/Nb8oauGBBMUAH0cGv",
-  vrathamVenueName: "Bride's Apartment, 2nd floor",
-  vrathamMapUrl: "https://maps.app.goo.gl/74idPKEkske2SgAH9",
+  vrathamVenueName: "Sri Veera Venkata Satyanarayana Swamy Vari Devasthanam, Annavaram",
   receptionVenueName: "RAMCOSA FUNCTION HALL",
   receptionVenueAddress: "D.no 2-817/5, Venkat Nagar,<br>Beside RMC Men's Hostel,<br>Kakinada, Andhra Pradesh, India.<br>PIN: 533002.",
   receptionMapUrl: "https://share.google/Bx2va6zVbhM6UoSrD",
@@ -71,7 +70,11 @@ const translations = {
     vrathamDay: "Saturday · Morning",
     vratham: "Sathyanarayana Swamy Vratham",
     vrathamDate: "05 September 2026",
-    vrathamDescription: "A serene morning of prayer, prasadam, and gratitude as the celebrations settle into blessings.",
+    vrathamSacredIntro: "In the sacred and auspicious premises of",
+    vrathamTempleName: "Sri Veera Venkata Satyanarayana Swamy Vari Devasthanam, Annavaram",
+    vrathamPrayer: "With prayers of gratitude and devotion, we seek the blessings of Sri Satyanarayana Swamy as we begin this new chapter of our lives together.",
+    vrathamClosing: "A quiet morning of faith, family, gratitude and blessings.",
+    vrathamDescription: "With prayers of gratitude and devotion, we seek the blessings of Sri Satyanarayana Swamy as we begin this new chapter of our lives together.",
 
     dateTba: "Sunday",
     reception: "Reception",
@@ -209,7 +212,11 @@ const translations = {
     vrathamDay: "శనివారం · ఉదయం",
     vratham: "సత్యనారాయణ స్వామి వ్రతం",
     vrathamDate: "05 సెప్టెంబర్ 2026",
-    vrathamDescription: "పూజ, ప్రసాదం, కృతజ్ఞతలతో వేడుకలు ఆశీర్వాదాలుగా మారే ప్రశాంతమైన ఉదయం.",
+    vrathamSacredIntro: "పవిత్రమైన, శుభప్రదమైన ప్రాంగణంలో",
+    vrathamTempleName: "శ్రీ వీర వెంకట సత్యనారాయణ స్వామివారి దేవస్థానం, అన్నవరం",
+    vrathamPrayer: "కృతజ్ఞతతో, భక్తితో ప్రార్థిస్తూ, మా జీవితంలోని ఈ కొత్త అధ్యాయాన్ని ప్రారంభించే వేళ శ్రీ సత్యనారాయణ స్వామివారి ఆశీస్సులను కోరుకుంటున్నాము.",
+    vrathamClosing: "భక్తి, కుటుంబం, కృతజ్ఞత మరియు ఆశీర్వాదాలతో నిండిన ప్రశాంతమైన ఉదయం.",
+    vrathamDescription: "కృతజ్ఞతతో, భక్తితో ప్రార్థిస్తూ, మా జీవితంలోని ఈ కొత్త అధ్యాయాన్ని ప్రారంభించే వేళ శ్రీ సత్యనారాయణ స్వామివారి ఆశీస్సులను కోరుకుంటున్నాము.",
 
     dateTba: "ఆదివారం",
     reception: "రిసెప్షన్",
@@ -347,7 +354,11 @@ const translations = {
     "vrathamDay": "शनिवार · सुबह",
     "vratham": "सत्यनारायण स्वामी व्रतम",
     "vrathamDate": "05 सितंबर 2026",
-    "vrathamDescription": "पूजा, प्रसाद और कृतज्ञता से भरी शांत सुबह—जहाँ उत्सव आशीर्वाद में बदलते हैं।",
+    "vrathamSacredIntro": "पवित्र और मंगलमय प्रांगण में",
+    "vrathamTempleName": "श्री वीर वेंकट सत्यनारायण स्वामी वारी देवस्थानम, अन्नवरम",
+    "vrathamPrayer": "कृतज्ञता और श्रद्धा के साथ प्रार्थना करते हुए, हम अपने जीवन के इस नए अध्याय की शुरुआत पर श्री सत्यनारायण स्वामी का आशीर्वाद चाहते हैं।",
+    "vrathamClosing": "आस्था, परिवार, कृतज्ञता और आशीर्वाद से भरी एक शांत सुबह।",
+    "vrathamDescription": "कृतज्ञता और श्रद्धा के साथ प्रार्थना करते हुए, हम अपने जीवन के इस नए अध्याय की शुरुआत पर श्री सत्यनारायण स्वामी का आशीर्वाद चाहते हैं।",
     "dateTba": "रविवार",
     "reception": "रिसेप्शन",
     "dateTimeSoon": "06 सितंबर 2026",
@@ -484,7 +495,11 @@ const translations = {
     "vrathamDay": "சனிக்கிழமை · காலை",
     "vratham": "சத்யநாராயண சுவாமி விரதம்",
     "vrathamDate": "05 செப்டம்பர் 2026",
-    "vrathamDescription": "பூஜை, பிரசாதம், நன்றியால் நிறைந்த அமைதியான காலை—விழாக்கள் ஆசிகளாக மலரும் தருணம்.",
+    "vrathamSacredIntro": "புனிதமும் மங்களகரமானதுமான திருத்தல வளாகத்தில்",
+    "vrathamTempleName": "ஸ்ரீ வீர வெங்கட சத்யநாராயண சுவாமி வாரி தேவஸ்தானம், அன்னவரம்",
+    "vrathamPrayer": "நன்றியுடனும் பக்தியுடனும் பிரார்த்தித்து, எங்கள் வாழ்க்கையின் புதிய அத்தியாயத்தை தொடங்கும் இந்த நேரத்தில் ஸ்ரீ சத்யநாராயண சுவாமியின் ஆசீர்வாதத்தை நாடுகிறோம்.",
+    "vrathamClosing": "நம்பிக்கை, குடும்பம், நன்றி மற்றும் ஆசீர்வாதங்கள் நிறைந்த அமைதியான காலை.",
+    "vrathamDescription": "நன்றியுடனும் பக்தியுடனும் பிரார்த்தித்து, எங்கள் வாழ்க்கையின் புதிய அத்தியாயத்தை தொடங்கும் இந்த நேரத்தில் ஸ்ரீ சத்யநாராயண சுவாமியின் ஆசீர்வாதத்தை நாடுகிறோம்.",
     "dateTba": "ஞாயிறு",
     "reception": "வரவேற்பு",
     "dateTimeSoon": "06 செப்டம்பர் 2026",
@@ -633,9 +648,13 @@ const translations = {
     "vrathamDay": "星期六 · 上午",
     "vratham": "萨蒂亚那罗延祈福礼",
     "vrathamDate": "2026年9月5日",
-    "vrathamDescription": "在婚礼的欢庆渐渐沉淀之后，<br>我们以一个宁静的早晨祈祷、感恩，<br>并与家人分享供神后祝福的圣食。<br><br>让所有的喜悦，最终化作祝福。",
+    "vrathamSacredIntro": "于庄严而吉祥的圣殿境内",
+    "vrathamTempleName": "安纳瓦拉姆 Sri Veera Venkata Satyanarayana Swamy Vari Devasthanam",
+    "vrathamPrayer": "怀着感恩与虔敬的祈愿，在我们共同开启人生新篇章之际，祈求 Sri Satyanarayana Swamy 的慈悲庇佑。",
+    "vrathamClosing": "一个属于信仰、家人、感恩与祝福的宁静清晨。",
+    "vrathamDescription": "怀着感恩与虔敬的祈愿，在我们共同开启人生新篇章之际，祈求 Sri Satyanarayana Swamy 的慈悲庇佑。",
     "vrathamVenuePending": "祈福礼地点稍后更新。",
-    "vrathamVenueName": "新娘公寓 · 二楼",
+    "vrathamVenueName": "安纳瓦拉姆 Sri Veera Venkata Satyanarayana Swamy Vari Devasthanam",
     "dateTba": "星期日",
     "dateTimeSoon": "2026年9月6日 · 晚上6:30起",
     "receptionDescription": "",
@@ -743,7 +762,7 @@ Object.assign(translations.en, {
   groomsHouse: "Groom's house",
   bridesHouse: "Bride's house",
   vrathamVenuePending: "Venue will be updated.",
-  vrathamVenueName: "Bride's Apartment · 2nd floor",
+  vrathamVenueName: "Sri Veera Venkata Satyanarayana Swamy Vari Devasthanam, Annavaram",
   venueLabel: "Venue",
   dateTimeSoon: "06 September 2026 · 6:30 PM onwards",
   receptionVenueLabel: "Reception Venue",
@@ -762,7 +781,7 @@ Object.assign(translations.te, {
   groomsHouse: "వరుడి ఇంటి వద్ద",
   bridesHouse: "వధువు ఇంటి వద్ద",
   vrathamVenuePending: "వ్రతం వేదిక త్వరలో తెలియజేయబడుతుంది.",
-  vrathamVenueName: "వధువు అపార్ట్‌మెంట్ · 2వ అంతస్తు",
+  vrathamVenueName: "శ్రీ వీర వెంకట సత్యనారాయణ స్వామివారి దేవస్థానం, అన్నవరం",
   venueLabel: "వేదిక",
   dateTimeSoon: "06 సెప్టెంబర్ 2026 · సాయంత్రం 6:30 గంటల నుండి",
   receptionVenueLabel: "రిసెప్షన్ వేదిక",
@@ -781,7 +800,7 @@ Object.assign(translations.hi, {
   groomsHouse: "दूल्हे के घर",
   bridesHouse: "दुल्हन के घर",
   vrathamVenuePending: "व्रतम का स्थान बाद में बताया जाएगा।",
-  vrathamVenueName: "दुल्हन का अपार्टमेंट · दूसरी मंज़िल",
+  vrathamVenueName: "श्री वीर वेंकट सत्यनारायण स्वामी वारी देवस्थानम, अन्नवरम",
   venueLabel: "स्थान",
   dateTimeSoon: "06 सितंबर 2026 · शाम 6:30 बजे से",
   receptionVenueLabel: "रिसेप्शन स्थल",
@@ -800,7 +819,7 @@ Object.assign(translations.ta, {
   groomsHouse: "மணமகன் இல்லத்தில்",
   bridesHouse: "மணமகள் இல்லத்தில்",
   vrathamVenuePending: "விரதத்தின் இடம் பின்னர் அறிவிக்கப்படும்.",
-  vrathamVenueName: "மணமகளின் அபார்ட்மென்ட் · 2-வது மாடி",
+  vrathamVenueName: "ஸ்ரீ வீர வெங்கட சத்யநாராயண சுவாமி வாரி தேவஸ்தானம், அன்னவரம்",
   venueLabel: "இடம்",
   dateTimeSoon: "06 செப்டம்பர் 2026 · மாலை 6:30 மணி முதல்",
   receptionVenueLabel: "வரவேற்பு நிகழ்ச்சி இடம்",
@@ -821,7 +840,7 @@ Object.assign(translations.zh, {
   groomsHousePelli: "地点：新郎家",
   bridesHousePelli: "地点：新娘家",
   vrathamVenuePending: "祈福礼地点稍后更新。",
-  vrathamVenueName: "新娘公寓 · 二楼",
+  vrathamVenueName: "安纳瓦拉姆 Sri Veera Venkata Satyanarayana Swamy Vari Devasthanam",
   venueLabel: "地点",
   dateTimeSoon: "2026年9月6日 · 晚上6:30起",
   receptionVenueLabel: "婚宴会场",
@@ -891,9 +910,13 @@ translations.ne = {
   vrathamDay: "शनिबार · बिहान",
   vratham: "सत्यनारायण स्वामी व्रतम",
   vrathamDate: "05 सेप्टेम्बर 2026",
-  vrathamDescription: "पूजा, प्रसाद र कृतज्ञताले भरिएको शान्त बिहान।",
+  vrathamSacredIntro: "पवित्र र शुभ परिसरमा",
+  vrathamTempleName: "श्री वीर वेंकट सत्यनारायण स्वामी वारी देवस्थानम, अन्नवरम",
+  vrathamPrayer: "कृतज्ञता र श्रद्धाका साथ प्रार्थना गर्दै, जीवनको यो नयाँ अध्याय सुरु गर्ने बेला हामी श्री सत्यनारायण स्वामीको आशीर्वाद माग्छौं।",
+  vrathamClosing: "आस्था, परिवार, कृतज्ञता र आशीर्वादले भरिएको शान्त बिहान।",
+  vrathamDescription: "कृतज्ञता र श्रद्धाका साथ प्रार्थना गर्दै, जीवनको यो नयाँ अध्याय सुरु गर्ने बेला हामी श्री सत्यनारायण स्वामीको आशीर्वाद माग्छौं।",
   vrathamVenuePending: "व्रतमको स्थान पछि जानकारी गराइनेछ।",
-  vrathamVenueName: "दुलहीको अपार्टमेन्ट · दोस्रो तला",
+  vrathamVenueName: "श्री वीर वेंकट सत्यनारायण स्वामी वारी देवस्थानम, अन्नवरम",
   dateTba: "आइतबार",
   reception: "रिसेप्सन",
   dateTimeSoon: "06 सेप्टेम्बर 2026 · साँझ 6:30 बजेदेखि",
@@ -1085,34 +1108,34 @@ const eventLabels = {
     "pellirituals": "新郎婚前祝福礼 & 新娘婚前祝福礼 — 9月2日",
     "haldi": "姜黄礼 — 9月3日上午9:00 · 帕里纳雅宴会厅前草坪",
     "wedding": "婚礼仪式 — 晚宴：9月3日晚7:00起；婚礼吉时：9月4日凌晨2:58",
-    "vratham": "萨蒂亚那罗延祈福礼 — 9月5日上午 · 新娘公寓二楼",
+    "vratham": "萨蒂亚那罗延祈福礼 — 9月5日上午 · 安纳瓦拉姆 Sri Veera Venkata Satyanarayana Swamy Vari Devasthanam",
     "reception": "婚宴 — 2026年9月6日 · 晚上6:30起 · RAMCOSA 宴会厅"
   }
 };
 
 Object.assign(eventLabels.en, {
   pellirituals: "Pelli-Koduku at the Groom's house & Pelli-Kuthuru at the Bride's house — 02 Sep",
-  vratham: "Sathyanarayana Swamy Vratham — 05 September morning · Bride's Apartment · 2nd floor",
+  vratham: "Sathyanarayana Swamy Vratham — 05 September morning · Sri Veera Venkata Satyanarayana Swamy Vari Devasthanam, Annavaram",
   reception: "Reception — 06 September 2026 · 6:30 PM onwards · RAMCOSA FUNCTION HALL"
 });
 Object.assign(eventLabels.te, {
   pellirituals: "పెళ్లికొడుకు వరుడి ఇంటి వద్ద & పెళ్లికూతురు వధువు ఇంటి వద్ద — 02 సెప్టెంబర్",
-  vratham: "సత్యనారాయణ స్వామి వ్రతం — 05 సెప్టెంబర్ ఉదయం · వధువు అపార్ట్‌మెంట్ · 2వ అంతస్తు",
+  vratham: "సత్యనారాయణ స్వామి వ్రతం — 05 సెప్టెంబర్ ఉదయం · శ్రీ వీర వెంకట సత్యనారాయణ స్వామివారి దేవస్థానం, అన్నవరం",
   reception: "రిసెప్షన్ — 06 సెప్టెంబర్ 2026 · సాయంత్రం 6:30 నుండి · రామ్‌కోసా ఫంక్షన్ హాల్"
 });
 Object.assign(eventLabels.hi, {
   pellirituals: "पेल्ली-कोडुकु दूल्हे के घर & पेल्ली-कुथुरु दुल्हन के घर — 02 सितंबर",
-  vratham: "सत्यनारायण स्वामी व्रतम — 05 सितंबर सुबह · दुल्हन का अपार्टमेंट · दूसरी मंज़िल",
+  vratham: "सत्यनारायण स्वामी व्रतम — 05 सितंबर सुबह · श्री वीर वेंकट सत्यनारायण स्वामी वारी देवस्थानम, अन्नवरम",
   reception: "रिसेप्शन — 06 सितंबर 2026 · शाम 6:30 बजे से · RAMCOSA FUNCTION HALL"
 });
 Object.assign(eventLabels.ta, {
   pellirituals: "பெல்லி-கொடுகு மணமகன் இல்லத்தில் & பெல்லி-குத்துரு மணமகள் இல்லத்தில் — 02 செப்டம்பர்",
-  vratham: "சத்யநாராயண சுவாமி விரதம் — 05 செப்டம்பர் காலை · மணமகளின் அபார்ட்மென்ட் · 2-வது மாடி",
+  vratham: "சத்யநாராயண சுவாமி விரதம் — 05 செப்டம்பர் காலை · ஸ்ரீ வீர வெங்கட சத்யநாராயண சுவாமி வாரி தேவஸ்தானம், அன்னவரம்",
   reception: "வரவேற்பு — 06 செப்டம்பர் 2026 · மாலை 6:30 மணி முதல் · RAMCOSA FUNCTION HALL"
 });
 Object.assign(eventLabels.zh, {
   pellirituals: "新郎婚前祝福礼（新郎家）& 新娘婚前祝福礼（新娘家）— 9月2日",
-  vratham: "萨蒂亚那罗延祈福礼 — 9月5日上午 · 新娘公寓二楼",
+  vratham: "萨蒂亚那罗延祈福礼 — 9月5日上午 · 安纳瓦拉姆 Sri Veera Venkata Satyanarayana Swamy Vari Devasthanam",
   reception: "婚宴 — 2026年9月6日 · 晚上6:30起 · RAMCOSA 宴会厅"
 });
 eventLabels.ne = {
@@ -1120,7 +1143,7 @@ eventLabels.ne = {
   pellirituals: "पेल्ली-कोडुकु दुलाहाको घरमा & पेल्ली-कुथुरु दुलहीको घरमा — 02 सेप्टेम्बर",
   haldi: "हल्दी — 03 सेप्टेम्बर, बिहान 09:00",
   wedding: "विवाह समारोह — रात्रिभोज: 3 सेप्टेम्बर साँझ 7:00 बजेदेखि; मुहूर्त: 4 सेप्टेम्बर बिहान 2:58 बजे",
-  vratham: "सत्यनारायण स्वामी व्रतम — 05 सेप्टेम्बर बिहान · दुलहीको अपार्टमेन्ट · दोस्रो तला",
+  vratham: "सत्यनारायण स्वामी व्रतम — 05 सेप्टेम्बर बिहान · श्री वीर वेंकट सत्यनारायण स्वामी वारी देवस्थानम, अन्नवरम",
   reception: "रिसेप्सन — 06 सेप्टेम्बर 2026 · साँझ 6:30 बजेदेखि · RAMCOSA FUNCTION HALL"
 };
 
@@ -1139,7 +1162,7 @@ Object.assign(eventLabels.ta, {
 });
 Object.assign(eventLabels.zh, {
   pellirituals: "新郎婚前祝福礼（新郎家）& 新娘婚前祝福礼（新娘家）— 9月2日",
-  vratham: "萨蒂亚那罗延祈福礼 — 9月5日上午 · 新娘公寓二楼",
+  vratham: "萨蒂亚那罗延祈福礼 — 9月5日上午 · 安纳瓦拉姆 Sri Veera Venkata Satyanarayana Swamy Vari Devasthanam",
   reception: "婚宴 — 2026年9月6日 · 晚上6:30起 · RAMCOSA 宴会厅"
 });
 Object.assign(eventLabels.ne, {
@@ -1620,7 +1643,7 @@ document.getElementById("calendarButton").addEventListener("click", () => {
       "DTEND;VALUE=DATE:20260906",
       "SUMMARY:Sujana & Radha Krishna — Sathyanarayana Swamy Vratham (Morning)",
       `LOCATION:${CONFIG.vrathamVenueName.replace(/,/g, "\\,")}`,
-      "DESCRIPTION:Sathyanarayana Swamy Vratham will be held in the morning. The exact time will be confirmed by the family.",
+      "DESCRIPTION:Sathyanarayana Swamy Vratham will be observed in the morning in the sacred premises of Sri Veera Venkata Satyanarayana Swamy Vari Devasthanam, Annavaram.",
       "END:VEVENT"
     ],
     ...createCalendarEvent({
@@ -1792,7 +1815,7 @@ const WEEK_PLAN = {
     {key:"muhurtham",tag:"nextLabel",detail:()=>"04 Sep · 02:58 · Parinaya Function Hall",href:CONFIG.mapUrl}
   ],
   "2026-09-04":[{key:"muhurtham",tag:"todayLabel",detail:()=>"02:58 · Parinaya Function Hall",href:CONFIG.mapUrl,until:[5,30]}],
-  "2026-09-05":[{key:"vratham",tag:"todayLabel",detail:()=>`${t("vrathamDay")} · ${t("vrathamVenueName")}`,href:CONFIG.vrathamMapUrl},{key:"reception",tag:"nextLabel",detail:()=>`06 Sep · 18:30 · ${t("receptionVenueName").replace(/<[^>]+>/g,"")}`,href:CONFIG.receptionMapUrl}],
+  "2026-09-05":[{key:"vratham",tag:"todayLabel",detail:()=>`${t("vrathamDay")} · ${t("vrathamVenueName")}`,href:null},{key:"reception",tag:"nextLabel",detail:()=>`06 Sep · 18:30 · ${t("receptionVenueName").replace(/<[^>]+>/g,"")}`,href:CONFIG.receptionMapUrl}],
   "2026-09-06":[{key:"reception",tag:"todayLabel",detail:()=>`18:30 · ${t("receptionVenueName").replace(/<[^>]+>/g,"")}`,href:CONFIG.receptionMapUrl}]
 };
 

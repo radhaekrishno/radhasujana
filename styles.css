@@ -2586,3 +2586,38 @@ html { scroll-padding-top: 96px; }
   .topbar.is-scrolled .mobile-top-links a strong { font-size: .37rem; }
   .topbar.is-scrolled .language-toggle { min-width: 58px; padding-inline: 4px; }
 }
+
+/* v41.4 · Vratham temple note — ceremonial, not a public directions block */
+.vratham-temple-note {
+  position: relative;
+  z-index: 1;
+  margin: 18px 0 20px;
+  padding: 16px 0 2px;
+  border-top: 1px solid rgba(200,155,81,.34);
+  text-align: center;
+}
+.vratham-temple-note > span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--gold);
+  font: italic 500 .92rem/1.45 "Cormorant Garamond", "Noto Serif Telugu", serif;
+}
+.vratham-temple-note > strong {
+  display: block;
+  max-width: 34rem;
+  margin: 0 auto;
+  color: var(--wine);
+  font: 600 1.16rem/1.35 "Cormorant Garamond", "Noto Serif Telugu", serif;
+}
+.vratham-temple-note > em {
+  display: block;
+  max-width: 30rem;
+  margin: 10px auto 0;
+  color: var(--muted);
+  font-size: .72rem;
+  line-height: 1.55;
+}
+@media (max-width: 760px) {
+  .vratham-temple-note { margin: 15px 0 17px; padding-top: 14px; }
+  .vratham-temple-note > strong { font-size: 1.05rem; }
+}
