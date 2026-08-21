@@ -171,3 +171,56 @@ The automatic post-wedding privacy mode hides private logistics from normal visi
 ## Version 42.2
 - Event rail now stays around the vertical center of the viewport while scrolling festivities, instead of climbing beneath the sticky header.
 - YouTube, Instagram, and language-toggle spacing is visually equalized on mobile.
+
+
+## Version 42.5 · Ritual reveal prototype
+- Added Mehendi dotted-vine tracing reveal.
+- Added Haldi turmeric rubbing reveal.
+- Added Wedding curtain-draw reveal.
+- Added Reveal all celebrations escape hatch and remembered unlock state.
+- Wedding-week logic auto-reveals current/next interactive logistics cards.
+- Event rail marks revealed interactive cards with a subtle gold dot.
+- Corrected all runtime/service-worker cache references to v42.5.
+
+
+## V42.5 — ritual reveals reset every visit
+- Mehendi, Haldi and Wedding reveal covers now reset on every page load/refresh; unlocks are no longer stored in localStorage.
+- Removed wedding-week auto-unlocking for these ritual cards so the interaction is required on each visit.
+- Fixed the Reveal card fallback with reliable click/touch handling and a fully interactive overlay.
+
+
+## V42.6 — floral Mehendi trace + natural wedding curtains
+- Replaced the abstract Mehendi vine with an eight-petal floral outline and ornamental centre.
+- Guests trace the flower perimeter to reveal the Mehendi card.
+- Redesigned Wedding curtains with layered fabric folds, gold trim, top valance, tie-backs, irregular inner edges, and subtle 3D perspective while opening.
+- Updated all cache/build references to v42.6.
+
+
+## V42.7
+- Mehendi trace simplified from eight petals to a five-petal flower.
+- Wedding curtain styling and opening motion restored to the cleaner V42.5 design.
+
+
+## V42.9
+Completed ritual reveal interactions for all six festivities. Added blessing-shower gesture for Pellikoduku/Pellikoothuru, press-and-hold diya lighting for Vratham, and upward sparkler reveal for Reception. All reveals reset each visit and retain Reveal card / Reveal all fallbacks.
+
+
+## V43.0
+- Restored a single short instruction sentence for every ritual reveal with a subtle cue.
+- Removed visible action-title labels such as PelliRevealAction and ReceptionRevealAction.
+- Updated the Pelli instruction to match the current five-tap blessing interaction.
+
+
+## V43.1 — ritual instructions + completion sounds
+- Fixed Pelli/Vratham/Reception instruction keys rendering as literal translation-key names.
+- Added polished instruction copy in all six languages before initial language rendering.
+- Added short, low-volume browser-generated completion sounds for all six ritual interactions.
+- Reveal Card / Reveal All fallbacks remain silent; no audio autoplays.
+
+
+## V44.0 — mobile haptics + code audit
+- Removed all synthesized ritual-completion sounds.
+- Added short, low-intensity vibration patterns after successful ritual completion on supported touch/mobile browsers via `navigator.vibrate()`.
+- Haptics do not run for Reveal card / Reveal all fallback actions.
+- Vibration is feature-detected and safely no-ops on browsers that do not expose the Vibration API (including current iOS Safari).
+- Ritual reveals remain per-visit and reset on each fresh page load.

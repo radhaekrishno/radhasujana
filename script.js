@@ -1062,6 +1062,14 @@ Object.assign(translations.ta, {"weddingHeroRange": "03 செப்டம்ப
 Object.assign(translations.zh, {"weddingHeroRange": "2026年9月3日晚 → 9月4日凌晨", "latestUpdateLabel": "最新动态", "weddingWeekEyebrow": "婚礼周 · 实时", "todayLabel": "今天", "tonightLabel": "今晚", "nextLabel": "接下来", "nowLabel": "现在", "shareInvitation": "分享我们的邀请函 ♡", "shareCopied": "邀请函链接已复制", "shareText": "SUJANA & RADHA KRISHNA are getting married.\n\nWedding (Jaggampeta): 3 September 2026 · 7:00 PM onwards\nReception (Kakinada): 6 September 2026 · 6:30 PM onwards", "quickSchedule": "日程", "quickDirections": "导航", "quickRsvp": "出席确认", "travelSummary": "要来参加婚礼吗？", "travelIntro": "为外地宾客准备的一份简洁出行指南。", "travelWedding": "婚礼庆典 · 贾甘佩塔", "travelReception": "婚宴 · 卡基纳达", "travelHelp": "需要出行或住宿协助？欢迎通过 WhatsApp 联系我们的家人。", "viewInvitationAgain": "再次查看邀请函", "installApp": "将婚礼网站添加到主屏幕", "thankYouEyebrow": "满怀感恩", "thankYouTitle": "感谢您与我们共同庆祝 ♡", "thankYouText": "庆典虽已结束，美好回忆才刚刚开始。照片、影片与最新动态仍会在这里和 Instagram 与大家分享。", "filmPlay": "播放订婚影片", "musicPlay": "播放音乐", "musicPause": "暂停音乐"});
 Object.assign(translations.ne, {"weddingHeroRange": "03 सेप्टेम्बर राति → 04 सेप्टेम्बर बिहान", "latestUpdateLabel": "नवीनतम जानकारी", "weddingWeekEyebrow": "विवाह सप्ताह · लाइभ", "todayLabel": "आज", "tonightLabel": "आज राति", "nextLabel": "अर्को", "nowLabel": "अहिले", "shareInvitation": "हाम्रो निमन्त्रणा साझा गर्नुहोस् ♡", "shareCopied": "निमन्त्रणा लिंक प्रतिलिपि भयो", "shareText": "SUJANA & RADHA KRISHNA are getting married.\n\nWedding (Jaggampeta): 3 September 2026 · 7:00 PM onwards\nReception (Kakinada): 6 September 2026 · 6:30 PM onwards", "quickSchedule": "कार्यक्रम", "quickDirections": "दिशा", "quickRsvp": "RSVP", "travelSummary": "विवाहमा आउँदै हुनुहुन्छ?", "travelIntro": "बाहिरबाट आउने पाहुनाका लागि छोटो यात्रा मार्गदर्शिका।", "travelWedding": "विवाह उत्सव · जग्गमपेटा", "travelReception": "रिसेप्सन · काकीनाडा", "travelHelp": "यात्रा वा बसाइ सहयोग चाहिन्छ? हाम्रो परिवारलाई WhatsApp गर्नुहोस्।", "viewInvitationAgain": "निमन्त्रणा फेरि हेर्नुहोस्", "installApp": "विवाह साइट होम स्क्रिनमा थप्नुहोस्", "thankYouEyebrow": "कृतज्ञ हृदयले", "thankYouTitle": "हामीसँग उत्सव मनाउनुभएकोमा धन्यवाद ♡", "thankYouText": "उत्सव सकिए पनि सम्झनाहरू अब सुरु भएका छन्। तस्बिर, भिडियो र अपडेटहरू यहाँ र Instagram मा जारी रहनेछन्।", "filmPlay": "सगाईको भिडियो चलाउनुहोस्", "musicPlay": "संगीत बजाउनुहोस्", "musicPause": "संगीत रोक्नुहोस्"});
 
+// V44.0 · ritual-inspired event reveal interactions
+Object.assign(translations.en, {"revealAllCelebrations":"Reveal all celebrations","revealCard":"Reveal card","mehendiRevealPrompt":"Trace the rounded flower outline to reveal the celebration.","pelliRevealPrompt":"Tap the ॐ five times to shower Pellikoduku and Pellikoothuru with flowers and blessings.","haldiRevealPrompt":"Rub away the turmeric until the celebration card is revealed.","weddingRevealPrompt":"Draw the curtains apart to reveal the wedding ceremony.","weddingRevealHandle":"Draw apart","vrathamRevealPrompt":"Touch and hold the diya until the flame gently comes to life.","receptionRevealPrompt":"Lift the sparkler upward to light up and reveal the Reception."});
+Object.assign(translations.te, {"revealAllCelebrations":"అన్ని వేడుకలను చూపించండి","revealCard":"కార్డ్ చూపించండి","mehendiRevealPrompt":"గుండ్రని పువ్వు ఆకారాన్ని పూర్తిగా అనుసరించి వేడుకను తెరవండి.","pelliRevealPrompt":"ॐ గుర్తును ఐదు సార్లు తాకి పెళ్లికొడుకు, పెళ్లికూతురిపై పూలూ ఆశీర్వాదాలూ కురిపించండి.","haldiRevealPrompt":"వేడుక కార్డు కనిపించే వరకు పసుపును రుద్ది తొలగించండి.","weddingRevealPrompt":"తెరలను పక్కకు జరిపి వివాహ వేడుకను చూడండి.","weddingRevealHandle":"తెరలను విప్పండి","vrathamRevealPrompt":"దీపపు జ్యోతి మృదువుగా వెలిగే వరకు దీపాన్ని తాకి పట్టుకోండి.","receptionRevealPrompt":"స్పార్క్లర్‌ను పైకి ఎత్తి రిసెప్షన్ వేడుకను వెలిగించి తెరవండి."});
+Object.assign(translations.hi, {"revealAllCelebrations":"सभी समारोह दिखाएँ","revealCard":"कार्ड दिखाएँ","mehendiRevealPrompt":"गोल फूल की रूपरेखा पूरी करके समारोह खोलें।","pelliRevealPrompt":"ॐ पर पाँच बार टैप करके पेल्लीकोडुकु और पेल्लीकुथुरु पर फूल और आशीर्वाद बरसाएँ।","haldiRevealPrompt":"कार्ड दिखाई देने तक हल्दी को रगड़कर हटाएँ।","weddingRevealPrompt":"परदे अलग खींचकर विवाह समारोह प्रकट करें।","weddingRevealHandle":"परदे खोलें","vrathamRevealPrompt":"दीये को छूकर दबाए रखें, जब तक लौ धीरे से जल उठे।","receptionRevealPrompt":"स्पार्कलर को ऊपर उठाकर रिसेप्शन को रोशन करें और कार्ड प्रकट करें।"});
+Object.assign(translations.ta, {"revealAllCelebrations":"அனைத்து விழாக்களையும் காண்பிக்கவும்","revealCard":"அட்டையைத் திறக்கவும்","mehendiRevealPrompt":"வட்டமான மலர் வடிவத்தை முழுமையாகத் தொடர்ந்து விழாவை வெளிப்படுத்துங்கள்.","pelliRevealPrompt":"ॐ குறியீட்டை ஐந்து முறைத் தட்டி பெல்லிகொடுகு மற்றும் பெல்லிகூத்துருவிற்கு மலர்களும் ஆசிகளும் பொழியுங்கள்.","haldiRevealPrompt":"விழா அட்டை தெரியும் வரை மஞ்சளைத் தேய்த்து அகற்றுங்கள்.","weddingRevealPrompt":"திரைகளை இருபுறமும் இழுத்து திருமணத்தை வெளிப்படுத்துங்கள்.","weddingRevealHandle":"திரைகளைத் திறக்கவும்","vrathamRevealPrompt":"தீபத்தின் ஜ்வாலை மெதுவாக ஒளிரும் வரை தொட்டு அழுத்திப் பிடியுங்கள்.","receptionRevealPrompt":"ஸ்பார்க்லரை மேலே உயர்த்தி வரவேற்பை ஒளிரச் செய்து அட்டையை வெளிப்படுத்துங்கள்."});
+Object.assign(translations.zh, {"revealAllCelebrations":"显示全部庆典","revealCard":"直接查看","mehendiRevealPrompt":"沿着圆润的花朵轮廓完整描绘，揭开庆典卡片。","pelliRevealPrompt":"轻触 ॐ 五次，让花瓣与祝福洒向新郎、新娘的婚前祝福礼。","haldiRevealPrompt":"轻轻擦去姜黄，直到庆典卡片完全显现。","weddingRevealPrompt":"向两侧拉开帷幕，揭开婚礼仪式。","weddingRevealHandle":"拉开帷幕","vrathamRevealPrompt":"轻触并按住油灯，直到灯火温柔点亮。","receptionRevealPrompt":"向上提起仙女棒，点亮并揭开婚宴卡片。"});
+Object.assign(translations.ne, {"revealAllCelebrations":"सबै उत्सव देखाउनुहोस्","revealCard":"कार्ड देखाउनुहोस्","mehendiRevealPrompt":"गोलाकार फूलको रूपरेखा पूरा गरेर उत्सव खोल्नुहोस्।","pelliRevealPrompt":"ॐ मा पाँच पटक ट्याप गरेर पेल्लीकोडुकु र पेल्लीकुथुरुमाथि फूल र आशीर्वाद वर्षाउनुहोस्।","haldiRevealPrompt":"कार्ड देखिने गरी हल्दी पुछ्नुहोस्।","weddingRevealPrompt":"पर्दा दुवैतिर तानेर विवाह समारोह प्रकट गर्नुहोस्।","weddingRevealHandle":"पर्दा खोल्नुहोस्","vrathamRevealPrompt":"दियोको ज्वाला बिस्तारै बलुञ्जेल छोएर थिचेर राख्नुहोस्।","receptionRevealPrompt":"स्पार्कलर माथि उठाएर रिसेप्सन उज्यालो पार्दै कार्ड खोल्नुहोस्।"});
+
 const eventLabels = {
   "en": {
     "mehendi": "Mehendi — 01 Sep",
@@ -1877,12 +1885,16 @@ try {
 } catch(e) {}
 
 document.getElementById("viewInvitationAgain")?.addEventListener("click",()=>{
-  try{localStorage.removeItem(V34.openedKey)}catch(e){}
-  cover.classList.remove("opened","is-opening");
-  mainContent.classList.remove("visible");
-  mainContent.setAttribute("aria-hidden","true");
-  document.body.classList.add("locked");
-  window.scrollTo({top:0,behavior:"smooth"});
+  try{
+    localStorage.removeItem(V34.openedKey);
+    localStorage.removeItem("radhasujana-event-reveals-v42.4");
+    // Also clear the previous prototype key once, so upgrades do not carry old unlocks forward.
+    localStorage.removeItem("radhasujana-event-reveals-v42.3");
+  }catch(e){}
+  // A reload cleanly resets canvas/tracing/curtain state as well as the envelope.
+  try{history.replaceState(null,"",location.pathname+location.search);}catch(e){}
+  window.scrollTo(0,0);
+  window.location.reload();
 });
 
 // Native share with clipboard fallback.
@@ -2030,6 +2042,358 @@ timelineSteps.forEach((step,index)=>{
       requestTimelineSync();
     },420);
   });
+});
+
+
+
+
+// =========================================================
+// V44.0 · ritual-inspired event reveal interactions
+// Mehendi: trace a floral outline · Haldi: rub turmeric · Wedding: draw natural curtains.
+// These are progressive enhancements: skip/reveal-all and keyboard fallbacks remain available.
+// =========================================================
+const revealableEvents=new Set(["mehendi","pellirituals","haldi","wedding","vratham","reception"]);
+// V44.0: ritual reveals remain intentionally per-visit. Every page load starts locked again.
+let revealedEvents=new Set();
+try{
+  // Clean up old persistent reveal keys from earlier prototypes; they are no longer used.
+  ["radhasujana-event-reveals-v42.4","radhasujana-event-reveals-v42.3"].forEach(key=>localStorage.removeItem(key));
+}catch(e){}
+function persistReveals(){ /* intentionally no-op: do not remember reveals across loads */ }
+
+function timelineStepForEvent(eventId){
+  return timelineSteps.find(step=>document.querySelector(step.dataset.target)?.dataset.eventId===eventId);
+}
+
+function setCardContentLocked(card,locked){
+  [...card.children].forEach(child=>{
+    if(child.classList.contains("event-reveal")) return;
+    if(locked){ child.setAttribute("inert",""); child.setAttribute("aria-hidden","true"); }
+    else { child.removeAttribute("inert"); child.removeAttribute("aria-hidden"); }
+  });
+}
+
+function isMobileHapticDevice(){
+  return (navigator.maxTouchPoints||0)>0 && (window.matchMedia?.("(pointer: coarse)")?.matches || window.innerWidth<=900);
+}
+function triggerRitualHaptic(eventId){
+  // The Web Vibration API is supported on many Android browsers but not all mobile browsers (notably iOS Safari).
+  if(!isMobileHapticDevice() || typeof navigator.vibrate!=="function" || document.visibilityState!=="visible") return;
+  const patterns={
+    mehendi:[18,24,32],
+    pellirituals:[16,22,16,22,34],
+    haldi:[22,24,38],
+    wedding:[28,28,48],
+    vratham:[18,30,42],
+    reception:[16,20,16,20,44]
+  };
+  try{ navigator.vibrate(patterns[eventId]||[24,28,42]); }catch(e){}
+}
+
+function unlockEventReveal(eventId,{persist=true,animate=true,haptic=true}={}){
+  const card=document.querySelector(`.event-card[data-event-id="${eventId}"]`);
+  const cover=card?.querySelector(`.event-reveal[data-reveal-for="${eventId}"]`);
+  if(!card||!cover) return;
+  if(card.classList.contains("is-reveal-unlocked")) return;
+  revealedEvents.add(eventId);
+  if(haptic) triggerRitualHaptic(eventId);
+  if(persist) persistReveals();
+  card.classList.add("is-reveal-unlocked");
+  cover.classList.add("is-completing");
+  setCardContentLocked(card,false);
+  const step=timelineStepForEvent(eventId);
+  step?.classList.add("is-revealed");
+  window.setTimeout(()=>{
+    cover.hidden=true;
+    if(animate && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      card.classList.remove("timeline-focus"); void card.offsetWidth; card.classList.add("timeline-focus");
+      window.setTimeout(()=>card.classList.remove("timeline-focus"),1150);
+    }
+  },window.matchMedia("(prefers-reduced-motion: reduce)").matches?0:520);
+}
+
+function indiaDateKey(){
+  try{
+    const parts=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kolkata",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+    const get=t=>parts.find(p=>p.type===t)?.value||"";
+    return `${get("year")}-${get("month")}-${get("day")}`;
+  }catch(e){ return ""; }
+}
+
+// V44.0: even during wedding week, interactive cards begin concealed on every page load.
+const autoRevealNow=new Set();
+
+document.querySelectorAll(".event-reveal").forEach(cover=>{
+  const eventId=cover.dataset.revealFor;
+  const card=cover.closest(".event-card");
+  card?.classList.add("has-event-reveal");
+  const already=revealedEvents.has(eventId)||autoRevealNow.has(eventId);
+  if(already){
+    if(card){card.classList.add("is-reveal-unlocked");setCardContentLocked(card,false);}
+    cover.hidden=true;
+    timelineStepForEvent(eventId)?.classList.add("is-revealed");
+  }else if(card){
+    setCardContentLocked(card,true);
+  }
+  const revealButton=cover.querySelector(".event-reveal__skip");
+  revealButton?.addEventListener("click",e=>{
+    e.preventDefault();
+    e.stopPropagation();
+    unlockEventReveal(eventId,{persist:false,haptic:false});
+  });
+});
+
+// Reveal all escape hatch.
+document.getElementById("revealAllCelebrations")?.addEventListener("click",()=>{
+  revealableEvents.forEach(eventId=>unlockEventReveal(eventId,{persist:false,animate:false,haptic:false}));
+});
+
+// Mehendi tracing -----------------------------------------------------------
+document.querySelectorAll('.event-reveal[data-reveal-kind="mehendi"]').forEach(cover=>{
+  if(cover.hidden) return;
+  const zone=cover.querySelector(".mehendi-trace");
+  const svg=zone?.querySelector("svg");
+  const guide=svg?.querySelector(".mehendi-guide");
+  const progressPath=svg?.querySelector(".mehendi-progress");
+  if(!zone||!svg||!guide||!progressPath) return;
+  const total=guide.getTotalLength();
+  let progress=0,dragging=false,pointerId=null;
+  progressPath.style.strokeDasharray=`${total}`;
+  progressPath.style.strokeDashoffset=`${total}`;
+  const setProgress=value=>{
+    progress=Math.max(progress,Math.min(1,value));
+    progressPath.style.strokeDashoffset=`${total*(1-progress)}`;
+    zone.style.setProperty("--trace-progress",progress.toFixed(3));
+    if(progress>=.86) unlockEventReveal("mehendi");
+  };
+  function locate(clientX,clientY){
+    const r=svg.getBoundingClientRect();
+    const vb=svg.viewBox.baseVal;
+    const x=(clientX-r.left)/r.width*vb.width+vb.x;
+    const y=(clientY-r.top)/r.height*vb.height+vb.y;
+    let bestD=Infinity,bestT=0;
+    const samples=190;
+    for(let i=0;i<=samples;i++){
+      const t=i/samples;
+      if(t<Math.max(0,progress-.07)||t>Math.min(1,progress+.19)) continue;
+      const p=guide.getPointAtLength(total*t);
+      const d=(p.x-x)*(p.x-x)+(p.y-y)*(p.y-y);
+      if(d<bestD){bestD=d;bestT=t;}
+    }
+    if(Math.sqrt(bestD)<30) setProgress(bestT);
+  }
+  zone.addEventListener("pointerdown",e=>{dragging=true;pointerId=e.pointerId;zone.setPointerCapture?.(e.pointerId);locate(e.clientX,e.clientY);});
+  zone.addEventListener("pointermove",e=>{if(dragging&&e.pointerId===pointerId) locate(e.clientX,e.clientY);});
+  const end=e=>{if(e.pointerId===pointerId){dragging=false;pointerId=null;}};
+  zone.addEventListener("pointerup",end);zone.addEventListener("pointercancel",end);
+  zone.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();unlockEventReveal("mehendi");}});
+});
+
+// Haldi rubbing -------------------------------------------------------------
+document.querySelectorAll('.event-reveal[data-reveal-kind="haldi"]').forEach(cover=>{
+  if(cover.hidden) return;
+  const canvas=cover.querySelector(".haldi-canvas");
+  const zone=cover.querySelector(".haldi-rub-zone");
+  if(!canvas||!zone) return;
+  let ctx,scale=1,dragging=false,pointerId=null;
+  const erased=new Set();
+  const eligible=new Set();
+  const cols=18,rows=24;
+  function refreshEligibleCells(){
+    eligible.clear();
+    const cr=cover.getBoundingClientRect();
+    const zr=zone.getBoundingClientRect();
+    const left=zr.left-cr.left, right=zr.right-cr.left;
+    const top=zr.top-cr.top, bottom=zr.bottom-cr.top;
+    for(let yy=0;yy<rows;yy++) for(let xx=0;xx<cols;xx++){
+      const cx=(xx+.5)/cols*cr.width, cy=(yy+.5)/rows*cr.height;
+      if(cx>=left&&cx<=right&&cy>=top&&cy<=bottom) eligible.add(`${xx}:${yy}`);
+    }
+  }
+  function paint(){
+    const r=cover.getBoundingClientRect();
+    scale=Math.min(window.devicePixelRatio||1,1.6);
+    canvas.width=Math.max(1,Math.round(r.width*scale));
+    canvas.height=Math.max(1,Math.round(r.height*scale));
+    canvas.style.width=`${r.width}px`;canvas.style.height=`${r.height}px`;
+    ctx=canvas.getContext("2d");ctx.setTransform(scale,0,0,scale,0,0);
+    const g=ctx.createLinearGradient(0,0,r.width,r.height);
+    g.addColorStop(0,"#e1b84f");g.addColorStop(.5,"#d39a27");g.addColorStop(1,"#e8c45f");
+    ctx.fillStyle=g;ctx.fillRect(0,0,r.width,r.height);
+    for(let i=0;i<260;i++){
+      const x=Math.random()*r.width,y=Math.random()*r.height,rr=2+Math.random()*10;
+      ctx.fillStyle=`rgba(${150+Math.random()*55},${92+Math.random()*45},18,${.035+Math.random()*.07})`;
+      ctx.beginPath();ctx.arc(x,y,rr,0,Math.PI*2);ctx.fill();
+    }
+    erased.clear();
+    refreshEligibleCells();
+  }
+  paint();
+  function erase(clientX,clientY){
+    if(!ctx) return;
+    const r=cover.getBoundingClientRect();
+    const x=clientX-r.left,y=clientY-r.top;
+    const radius=Math.max(25,Math.min(42,r.width*.075));
+    ctx.save();ctx.globalCompositeOperation="destination-out";
+    const grad=ctx.createRadialGradient(x,y,radius*.25,x,y,radius);
+    grad.addColorStop(0,"rgba(0,0,0,1)");grad.addColorStop(1,"rgba(0,0,0,0)");
+    ctx.fillStyle=grad;ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fill();ctx.restore();
+    const cx=Math.floor(x/r.width*cols),cy=Math.floor(y/r.height*rows);
+    for(let yy=cy-2;yy<=cy+2;yy++) for(let xx=cx-2;xx<=cx+2;xx++){
+      if(xx<0||xx>=cols||yy<0||yy>=rows) continue;
+      const key=`${xx}:${yy}`;
+      if(eligible.has(key)) erased.add(key);
+    }
+    const threshold=Math.max(1,Math.ceil(eligible.size*.85));
+    if(erased.size>=threshold) unlockEventReveal("haldi");
+  }
+  zone.addEventListener("pointerdown",e=>{dragging=true;pointerId=e.pointerId;zone.setPointerCapture?.(e.pointerId);erase(e.clientX,e.clientY);});
+  zone.addEventListener("pointermove",e=>{if(dragging&&e.pointerId===pointerId) erase(e.clientX,e.clientY);});
+  const end=e=>{if(e.pointerId===pointerId){dragging=false;pointerId=null;}};
+  zone.addEventListener("pointerup",end);zone.addEventListener("pointercancel",end);
+  zone.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();unlockEventReveal("haldi");}});
+  let haldiResizeTimer;
+  window.addEventListener("resize",()=>{clearTimeout(haldiResizeTimer);haldiResizeTimer=setTimeout(()=>{if(!cover.hidden) paint();},160);},{passive:true});
+});
+
+// Wedding curtain -----------------------------------------------------------
+document.querySelectorAll('.event-reveal[data-reveal-kind="wedding"]').forEach(cover=>{
+  if(cover.hidden) return;
+  const handle=cover.querySelector(".wedding-reveal__handle");
+  const left=cover.querySelector(".wedding-curtain--left");
+  const right=cover.querySelector(".wedding-curtain--right");
+  const center=cover.querySelector(".wedding-reveal__center");
+  if(!handle||!left||!right) return;
+  let dragging=false,startX=0,pointerId=null,progress=0;
+  function apply(p,animate=false){
+    progress=Math.max(0,Math.min(1,p));
+    const shift=progress*104;
+    left.style.transition=right.style.transition=animate?"transform .45s cubic-bezier(.2,.8,.2,1)":"none";
+    left.style.transform=`translateX(-${shift}%)`;
+    right.style.transform=`translateX(${shift}%)`;
+    if(center) center.style.opacity=String(Math.max(.12,1-progress*1.45));
+  }
+  handle.addEventListener("pointerdown",e=>{dragging=true;startX=e.clientX;pointerId=e.pointerId;handle.setPointerCapture?.(e.pointerId);});
+  handle.addEventListener("pointermove",e=>{if(!dragging||e.pointerId!==pointerId)return;const width=Math.max(1,cover.getBoundingClientRect().width);apply(Math.abs(e.clientX-startX)/(width*.34));if(progress>=.85){dragging=false;unlockEventReveal("wedding");}});
+  const finish=e=>{if(e.pointerId!==pointerId)return;dragging=false;pointerId=null;if(progress<.85) apply(0,true);};
+  handle.addEventListener("pointerup",finish);handle.addEventListener("pointercancel",finish);
+  handle.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();apply(1,true);setTimeout(()=>unlockEventReveal("wedding"),220);}});
+  handle.addEventListener("click",()=>{if(progress===0&&!dragging){apply(.18,true);setTimeout(()=>{if(!cover.hidden&&progress<.85)apply(0,true);},500);}});
+});
+
+
+
+
+
+/* v44.0 · clean ritual instructions */
+Object.assign(translations.en,{mehendiRevealAction:"Trace the flower",haldiRevealAction:"Rub to reveal",pelliRevealAction:"Tap to bless"});
+Object.assign(translations.te,{mehendiRevealAction:"పువ్వును గీయండి",haldiRevealAction:"రుద్ది చూడండి",pelliRevealAction:"ఆశీర్వదించేందుకు తాకండి"});
+Object.assign(translations.hi,{mehendiRevealAction:"फूल की रूपरेखा बनाएँ",haldiRevealAction:"रगड़कर खोलें",pelliRevealAction:"आशीर्वाद के लिए टैप करें"});
+Object.assign(translations.ta,{mehendiRevealAction:"மலரை வரையுங்கள்",haldiRevealAction:"தேய்த்து திறக்கவும்",pelliRevealAction:"ஆசீர்வதிக்கத் தட்டவும்"});
+Object.assign(translations.zh,{mehendiRevealAction:"描绘花朵",haldiRevealAction:"擦拭揭晓",pelliRevealAction:"轻触送上祝福"});
+Object.assign(translations.ne,{mehendiRevealAction:"फूल कोर्नुहोस्",haldiRevealAction:"पुछेर खोल्नुहोस्",pelliRevealAction:"आशीर्वाद दिन ट्याप गर्नुहोस्"});
+
+// Pellikoduku / Pellikoothuru blessing shower ------------------------------
+document.querySelectorAll('.event-reveal[data-reveal-kind="pelli"]').forEach(cover=>{
+  if(cover.hidden) return;
+  const zone=cover.querySelector('.pelli-blessing-zone');
+  const dots=[...cover.querySelectorAll('.blessing-progress i')];
+  if(!zone) return;
+  let taps=0;
+  const needed=5;
+  function spawnBlessings(x,y){
+    const r=zone.getBoundingClientRect();
+    const localX=Math.max(18,Math.min(r.width-18,x-r.left));
+    const localY=Math.max(18,Math.min(r.height-18,y-r.top));
+    const glyphs=['✦','•','❀','•','✧'];
+    for(let i=0;i<9;i++){
+      const p=document.createElement('i');
+      p.className='blessing-particle';
+      p.textContent=glyphs[Math.floor(Math.random()*glyphs.length)];
+      p.style.left=`${localX+(Math.random()-.5)*66}px`;
+      p.style.top=`${Math.max(8,localY-34)+(Math.random()-.5)*14}px`;
+      p.style.setProperty('--fall-x',`${(Math.random()-.5)*84}px`);
+      p.style.setProperty('--fall-y',`${82+Math.random()*82}px`);
+      p.style.animationDelay=`${Math.random()*80}ms`;
+      zone.appendChild(p);
+      setTimeout(()=>p.remove(),1050);
+    }
+  }
+  function bless(x,y){
+    if(taps>=needed) return;
+    taps++;
+    dots.forEach((d,i)=>d.classList.toggle('is-filled',i<taps));
+    zone.classList.remove('is-tapped');
+    void zone.offsetWidth;
+    zone.classList.add('is-tapped');
+    spawnBlessings(x,y);
+    if(taps>=needed) setTimeout(()=>unlockEventReveal('pellirituals'),360);
+  }
+  zone.addEventListener('pointerdown',e=>{
+    
+    e.preventDefault();
+    bless(e.clientX,e.clientY);
+  });
+  zone.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      
+      const r=zone.getBoundingClientRect();
+      bless(r.left+r.width/2,r.top+r.height*.38);
+    }
+  });
+});
+
+// Vratham diya -------------------------------------------------------------
+document.querySelectorAll('.event-reveal[data-reveal-kind="vratham"]').forEach(cover=>{
+  if(cover.hidden) return;
+  const zone=cover.querySelector('.vratham-diya-zone');
+  if(!zone) return;
+  let pointerId=null,start=0,raf=0,holding=false,progress=0;
+  const holdMs=1700;
+  function render(p){progress=Math.max(0,Math.min(1,p));zone.style.setProperty('--diya-progress',progress.toFixed(3));zone.style.setProperty('--diya-angle',`${progress*360}deg`);zone.style.setProperty('--halo-alpha',String(.08+progress*.30));zone.style.setProperty('--halo-scale',String(.82+progress*.25));zone.style.setProperty('--flame-scale',String(.18+progress*.82));zone.style.setProperty('--flame-opacity',String(.08+progress*.92));}
+  function tick(ts){
+    if(!holding) return;
+    if(!start) start=ts;
+    render((ts-start)/holdMs);
+    if(progress>=1){holding=false;cancelAnimationFrame(raf);zone.classList.add('is-lit');setTimeout(()=>unlockEventReveal('vratham'),420);return;}
+    raf=requestAnimationFrame(tick);
+  }
+  function begin(e){holding=true;start=0;pointerId=e.pointerId;zone.setPointerCapture?.(e.pointerId);cancelAnimationFrame(raf);raf=requestAnimationFrame(tick);}
+  function stop(e){if(pointerId!==null&&e.pointerId!==pointerId)return;holding=false;pointerId=null;cancelAnimationFrame(raf);if(progress<1){zone.classList.remove('is-lit');render(0);}}
+  zone.addEventListener('pointerdown',begin);zone.addEventListener('pointerup',stop);zone.addEventListener('pointercancel',stop);
+  zone.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&!holding){e.preventDefault();holding=true;start=0;raf=requestAnimationFrame(tick);}});
+  zone.addEventListener('keyup',e=>{if((e.key==='Enter'||e.key===' ')&&holding&&progress<1){e.preventDefault();holding=false;cancelAnimationFrame(raf);render(0);}});
+});
+
+// Reception sparkler -------------------------------------------------------
+document.querySelectorAll('.event-reveal[data-reveal-kind="reception"]').forEach(cover=>{
+  if(cover.hidden) return;
+  const zone=cover.querySelector('.reception-sparkler-zone');
+  if(!zone) return;
+  let pointerId=null,startY=0,dragging=false,progress=0,lastSpark=0;
+  function spark(x,y){
+    const r=zone.getBoundingClientRect();
+    const lx=x-r.left,ly=y-r.top;
+    for(let i=0;i<6;i++){
+      const p=document.createElement('i');p.className='reception-spark';
+      p.style.left=`${lx}px`;p.style.top=`${ly}px`;
+      const a=Math.random()*Math.PI*2,d=18+Math.random()*36;
+      p.style.setProperty('--sx',`${Math.cos(a)*d}px`);p.style.setProperty('--sy',`${Math.sin(a)*d}px`);
+      p.style.animationDelay=`${Math.random()*45}ms`;zone.appendChild(p);setTimeout(()=>p.remove(),760);
+    }
+  }
+  function apply(p,x,y){
+    progress=Math.max(progress,Math.min(1,p));
+    zone.style.setProperty('--spark-progress',progress.toFixed(3));zone.style.setProperty('--spark-y',`${-progress*145}px`);zone.style.setProperty('--spark-glow',`${6+progress*18}px`);
+    if(performance.now()-lastSpark>65){spark(x,y);lastSpark=performance.now();}
+    if(progress>=.86){dragging=false;zone.classList.add('is-lit');setTimeout(()=>unlockEventReveal('reception'),300);}
+  }
+  zone.addEventListener('pointerdown',e=>{dragging=true;pointerId=e.pointerId;startY=e.clientY;zone.setPointerCapture?.(e.pointerId);apply(.03,e.clientX,e.clientY);});
+  zone.addEventListener('pointermove',e=>{if(!dragging||e.pointerId!==pointerId)return;const h=Math.max(150,zone.getBoundingClientRect().height*.72);apply((startY-e.clientY)/h,e.clientX,e.clientY);});
+  const finish=e=>{if(e.pointerId!==pointerId)return;dragging=false;pointerId=null;if(progress<.86){progress=0;zone.style.setProperty('--spark-progress','0');zone.style.setProperty('--spark-y','0px');zone.style.setProperty('--spark-glow','6px');}};
+  zone.addEventListener('pointerup',finish);zone.addEventListener('pointercancel',finish);
+  zone.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();zone.style.setProperty('--spark-progress','1');zone.style.setProperty('--spark-y','-145px');zone.style.setProperty('--spark-glow','24px');zone.classList.add('is-lit');setTimeout(()=>unlockEventReveal('reception'),300);}});
 });
 
 // Optional music: enabled only when user supplies a file in site-config.js.

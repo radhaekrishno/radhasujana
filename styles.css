@@ -3194,3 +3194,416 @@ html { scroll-padding-top: 96px; }
     gap: 11px !important;
   }
 }
+
+
+/* =========================================================
+   v44.0 · ritual-inspired celebration reveals
+   ========================================================= */
+.reveal-all-events {
+  display: block;
+  margin: -24px auto 34px;
+  padding: 8px 4px 6px;
+  border: 0;
+  border-bottom: 1px solid rgba(111,16,37,.24);
+  color: var(--wine);
+  background: transparent;
+  font: 600 .62rem/1.2 "Montserrat",sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.reveal-all-events:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+.event-card.has-event-reveal { isolation: isolate; }
+.event-reveal {
+  position: absolute;
+  inset: 0;
+  z-index: 16;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .48s ease, visibility .48s step-end;
+}
+.event-reveal.is-completing { opacity: 0; visibility: hidden; }
+.event-reveal__interactive,
+.event-reveal__skip { pointer-events: auto; }
+.event-reveal__chrome {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  top: 28px;
+  left: 28px;
+  right: 28px;
+  text-align: center;
+}
+.event-reveal__chrome span,
+.wedding-reveal__center > span {
+  display: block;
+  color: var(--gold);
+  font: 600 .62rem/1.3 "Montserrat",sans-serif;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.event-reveal__chrome p,
+.wedding-reveal__center p {
+  max-width: 430px;
+  margin: 9px auto 0;
+  color: var(--muted);
+  font-size: .76rem;
+  line-height: 1.55;
+}
+.event-reveal__skip {
+  position: absolute;
+  z-index: 8;
+  right: 20px;
+  bottom: 18px;
+  padding: 7px 4px 5px;
+  border: 0;
+  border-bottom: 1px solid rgba(111,16,37,.24);
+  color: rgba(111,16,37,.68);
+  background: transparent;
+  font: 600 .54rem/1.2 "Montserrat",sans-serif;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.event-reveal__skip:hover { color: var(--wine); border-bottom-color: var(--wine); }
+
+/* Mehendi tracing */
+.event-reveal--mehendi {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(200,155,81,.09), transparent 25%),
+    linear-gradient(145deg, #fffaf1 0%, #f9efdf 100%);
+}
+.mehendi-trace {
+  width: min(78%, 390px);
+  margin-top: 36px;
+  outline: none;
+  touch-action: none;
+  cursor: crosshair;
+}
+.mehendi-trace svg { display: block; width: 100%; height: auto; overflow: visible; }
+.mehendi-guide,
+.mehendi-progress { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.mehendi-guide { stroke: rgba(111,16,37,.35); stroke-width: 4; stroke-dasharray: 1 10; }
+.mehendi-progress { stroke: #6f1025; stroke-width: 5; filter: drop-shadow(0 2px 5px rgba(111,16,37,.16)); }
+.mehendi-start { fill: var(--gold); stroke: #fffaf1; stroke-width: 4; filter: drop-shadow(0 4px 8px rgba(65,8,23,.18)); }
+.mehendi-flower-ornament { fill: rgba(111,16,37,.10); stroke: rgba(111,16,37,.24); stroke-width: 1.15; pointer-events: none; }
+.mehendi-flower-core { fill: rgba(200,155,81,.10); stroke: rgba(111,16,37,.28); stroke-width: 1.4; }
+.mehendi-flower-ring { fill: none; stroke: rgba(111,16,37,.18); stroke-width: 1.3; stroke-dasharray: 2 7; }
+.mehendi-flower-ornament circle:not(.mehendi-flower-core):not(.mehendi-flower-ring) { fill: rgba(111,16,37,.30); stroke: none; }
+.mehendi-trace:focus-visible { border-radius: 18px; outline: 2px solid rgba(200,155,81,.58); outline-offset: 8px; }
+
+/* Haldi rubbing */
+.event-reveal--haldi { background: transparent; }
+.haldi-canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none; }
+.event-reveal--haldi .event-reveal__chrome { z-index: 4; }
+.event-reveal--haldi .event-reveal__chrome span { color: #fff5d6; }
+.event-reveal--haldi .event-reveal__chrome p { color: rgba(72,42,8,.76); }
+.haldi-rub-zone {
+  position: relative;
+  z-index: 4;
+  width: min(68%, 340px);
+  aspect-ratio: 1.7;
+  margin-top: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed rgba(255,250,226,.62);
+  border-radius: 44% 56% 48% 52% / 54% 46% 56% 44%;
+  color: rgba(255,250,226,.9);
+  background: rgba(255,255,255,.045);
+  box-shadow: inset 0 0 50px rgba(108,67,8,.08);
+  touch-action: none;
+  cursor: grab;
+}
+.haldi-rub-zone:active { cursor: grabbing; }
+.haldi-rub-zone span { font-size: 1.7rem; text-shadow: 0 3px 12px rgba(90,55,7,.18); }
+.event-reveal--haldi .event-reveal__skip { color: rgba(82,44,7,.72); border-bottom-color: rgba(82,44,7,.25); }
+
+/* Wedding curtain reveal */
+.event-reveal--wedding { background: transparent; }
+.wedding-curtain {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: 51.5%;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(243,207,136,.10), transparent 26%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.018) 0 18px, rgba(0,0,0,.018) 18px 36px),
+    linear-gradient(145deg,#7d102b,#4b0616);
+  box-shadow: inset 0 0 0 1px rgba(243,207,136,.16);
+  will-change: transform;
+}
+.wedding-curtain--left { left: 0; border-right: 1px solid rgba(243,207,136,.35); }
+.wedding-curtain--right { right: 0; border-left: 1px solid rgba(243,207,136,.35); }
+.wedding-reveal__center {
+  position: relative;
+  z-index: 5;
+  width: min(78%, 440px);
+  text-align: center;
+  transition: opacity .18s ease;
+  pointer-events: none;
+}
+.wedding-reveal__center > span { color: #f0c97c; }
+.wedding-reveal__center > strong {
+  display: block;
+  margin: 18px 0 10px;
+  color: #f6ddb0;
+  font: 400 clamp(2.7rem,7vw,4.5rem)/1 "Cormorant Garamond",serif;
+  text-shadow: 0 8px 28px rgba(0,0,0,.18);
+}
+.wedding-reveal__center p { color: rgba(255,247,235,.78); }
+.wedding-reveal__handle {
+  margin-top: 22px;
+  min-width: 150px;
+  min-height: 44px;
+  padding: 10px 22px;
+  border: 1px solid rgba(243,207,136,.42);
+  border-radius: 999px;
+  color: #f7ddb0;
+  background: rgba(255,255,255,.055);
+  font: 600 .58rem/1.2 "Montserrat",sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: ew-resize;
+  touch-action: none;
+  pointer-events: auto;
+}
+.wedding-reveal__handle::before { content: "←  "; opacity: .68; }
+.wedding-reveal__handle::after { content: "  →"; opacity: .68; }
+.event-reveal--wedding .event-reveal__skip { color: rgba(255,247,235,.68); border-bottom-color: rgba(255,247,235,.24); }
+
+/* The rail quietly records revealed interactive celebrations. */
+.event-progress__step.is-revealed i::before {
+  content: "";
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid #fffaf1;
+  background: var(--gold);
+  box-shadow: 0 2px 6px rgba(65,8,23,.20);
+}
+
+@media (max-width:760px){
+  .reveal-all-events { margin-top: -20px; margin-bottom: 26px; font-size: .56rem; }
+  .event-reveal__chrome { top: 22px; left: 18px; right: 18px; }
+  .event-reveal__chrome p,.wedding-reveal__center p { font-size: .70rem; }
+  .event-reveal__skip { right: 14px; bottom: 12px; }
+  .mehendi-trace { width: 88%; margin-top: 34px; }
+  .haldi-rub-zone { width: 76%; margin-top: 34px; }
+  .wedding-reveal__center { width: 84%; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .event-reveal,.wedding-curtain,.wedding-reveal__center { transition:none !important; }
+}
+
+
+/* =========================================================
+   v44.0 · remaining ritual reveals
+   Pelli blessings · Vratham diya · Reception sparkler
+   ========================================================= */
+.event-reveal--pelli {
+  background:
+    radial-gradient(circle at 50% 47%, rgba(243,207,136,.11), transparent 34%),
+    linear-gradient(145deg,#771027 0%,#4b0616 100%);
+}
+.event-reveal--pelli .event-reveal__chrome span { color:#f0c97c; }
+.event-reveal--pelli .event-reveal__chrome p { color:rgba(255,247,235,.76); }
+.event-reveal--pelli .event-reveal__skip { color:rgba(255,247,235,.68);border-bottom-color:rgba(255,247,235,.24); }
+.pelli-blessing-zone {
+  position:relative;z-index:5;width:min(76%,390px);min-height:220px;margin-top:42px;
+  display:grid;align-content:center;justify-items:center;gap:17px;padding:20px 24px;
+  border:1px solid rgba(243,207,136,.26);border-radius:34px;
+  background:rgba(255,255,255,.035);box-shadow:inset 0 0 45px rgba(255,226,166,.03);
+  touch-action:none;cursor:ns-resize;outline:none;overflow:hidden;
+}
+.pelli-blessing-zone:focus-visible { outline:2px solid rgba(243,207,136,.68);outline-offset:5px; }
+.blessing-pair { display:flex;align-items:center;justify-content:center;gap:18px;width:100%; }
+.blessing-pair>span { display:grid;place-items:center;gap:6px;min-width:92px; }
+.blessing-pair b {
+  display:grid;place-items:center;width:58px;height:58px;border:1px solid rgba(243,207,136,.48);border-radius:50%;
+  color:#f4d49a;background:rgba(255,250,241,.055);font:500 1.45rem/1 "Cormorant Garamond",serif;
+  box-shadow:0 9px 24px rgba(19,2,7,.18),inset 0 1px 0 rgba(255,255,255,.12);
+}
+.blessing-pair small { max-width:120px;color:rgba(255,247,235,.82);font:.66rem/1.15 "Montserrat",sans-serif;text-align:center; }
+.blessing-pair>i { color:#d9ad61;font:italic 1.45rem/1 "Cormorant Garamond",serif; }
+.blessing-progress { display:flex;gap:7px; }
+.blessing-progress i { width:7px;height:7px;border:1px solid rgba(243,207,136,.48);border-radius:50%;background:transparent;transition:.2s ease; }
+.blessing-progress i.is-filled { background:#edc77c;box-shadow:0 0 12px rgba(237,199,124,.46);transform:scale(1.15); }
+.blessing-action { color:#e8c276;font:600 .55rem/1.2 "Montserrat",sans-serif;letter-spacing:.12em;text-transform:uppercase; }
+.blessing-particle { position:absolute;z-index:8;color:#efc979;font-style:normal;font-size:.82rem;pointer-events:none;animation:blessing-fall .92s cubic-bezier(.2,.75,.25,1) forwards; }
+@keyframes blessing-fall { 0%{opacity:0;transform:translate(0,-8px) rotate(0)}18%{opacity:1}100%{opacity:0;transform:translate(var(--fall-x),var(--fall-y)) rotate(145deg)} }
+
+.event-reveal--vratham {
+  background:
+    radial-gradient(circle at 50% 58%, rgba(211,160,74,.14), transparent 28%),
+    linear-gradient(145deg,#fffaf1 0%,#f7ead4 100%);
+}
+.vratham-diya-zone {
+  --diya-progress:0;--diya-angle:0deg;--halo-alpha:.08;--halo-scale:.82;--flame-scale:.18;--flame-opacity:.08;position:relative;z-index:5;width:min(70%,330px);min-height:230px;margin-top:38px;
+  display:grid;place-items:center;align-content:center;gap:20px;outline:none;cursor:pointer;touch-action:none;
+}
+.vratham-diya-zone:focus-visible { border-radius:28px;outline:2px solid rgba(200,155,81,.62);outline-offset:6px; }
+.diya-progress-ring {
+  position:relative;width:152px;height:152px;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(var(--gold) var(--diya-angle),rgba(111,16,37,.08) 0);
+  box-shadow:inset 0 0 0 10px #f9efdf,0 10px 35px rgba(111,16,37,.08);
+}
+.diya-progress-ring::after { content:"";position:absolute;inset:11px;border-radius:50%;background:#fbf2e3; }
+.diya-halo { position:absolute;z-index:2;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(236,185,90,var(--halo-alpha)),transparent 68%);transform:scale(var(--halo-scale)); }
+.diya-bowl { position:absolute;z-index:5;top:91px;width:80px;height:32px;border-radius:8% 8% 50% 50% / 10% 10% 85% 85%;background:linear-gradient(180deg,#b9752e,#7f3a19);box-shadow:inset 0 4px 8px rgba(255,217,132,.32),0 6px 12px rgba(90,44,15,.15); }
+.diya-bowl::before { content:"";position:absolute;left:-4px;right:-4px;top:-7px;height:14px;border-radius:50%;background:#d89a46;border:1px solid rgba(111,55,15,.30); }
+.diya-wick { position:absolute;z-index:6;top:72px;width:3px;height:24px;border-radius:3px;background:#5a311a;transform:rotate(2deg); }
+.diya-flame { position:absolute;z-index:7;top:40px;width:24px;height:38px;border-radius:58% 42% 62% 38% / 72% 70% 30% 28%;background:linear-gradient(180deg,#fff2a6 4%,#f7bd47 44%,#d96c24 100%);filter:drop-shadow(0 0 12px rgba(243,165,47,.55));transform:scale(var(--flame-scale)) rotate(5deg);transform-origin:50% 100%;opacity:var(--flame-opacity);transition:filter .2s ease; }
+.vratham-diya-zone.is-lit .diya-flame { animation:diya-flicker .48s ease-in-out infinite alternate;filter:drop-shadow(0 0 18px rgba(243,165,47,.78)); }
+@keyframes diya-flicker { to{transform:scale(1.04,.94) rotate(-3deg)} }
+.vratham-diya-zone>span { color:var(--wine);font:600 .56rem/1.2 "Montserrat",sans-serif;letter-spacing:.11em;text-transform:uppercase;text-align:center; }
+
+.event-reveal--reception {
+  background:
+    radial-gradient(circle at 50% 46%, rgba(244,203,121,.12), transparent 30%),
+    linear-gradient(145deg,#641022 0%,#34040f 100%);
+}
+.event-reveal--reception .event-reveal__chrome span { color:#f0c97c; }
+.event-reveal--reception .event-reveal__chrome p { color:rgba(255,247,235,.76); }
+.event-reveal--reception .event-reveal__skip { color:rgba(255,247,235,.68);border-bottom-color:rgba(255,247,235,.24); }
+.reception-sparkler-zone {
+  --spark-progress:0;--spark-y:0px;--spark-glow:6px;position:relative;z-index:5;width:min(68%,340px);height:250px;margin-top:38px;
+  display:grid;justify-items:center;align-content:end;padding-bottom:18px;outline:none;touch-action:none;cursor:ns-resize;
+}
+.reception-sparkler-zone:focus-visible { border-radius:28px;outline:2px solid rgba(243,207,136,.64);outline-offset:5px; }
+.sparkler-guide { position:absolute;left:50%;top:22px;bottom:74px;width:1px;border-left:1px dashed rgba(243,207,136,.26);transform:translateX(-50%); }
+.sparkler-star { position:absolute;left:50%;top:6px;color:#f5cf82;font-size:1.1rem;transform:translateX(-50%);text-shadow:0 0 15px rgba(245,207,130,.40); }
+.reception-sparkler { position:absolute;left:50%;bottom:51px;width:46px;height:112px;transform:translate(-50%,var(--spark-y));transition:transform .04s linear; }
+.sparkler-stick { position:absolute;left:50%;bottom:0;width:2px;height:84px;background:linear-gradient(#b98b54,#e4d0ae 58%,#8b6945);transform:translateX(-50%); }
+.sparkler-tip { position:absolute;z-index:2;left:50%;top:10px;width:12px;height:12px;border-radius:50%;background:#f6d27d;transform:translateX(-50%);box-shadow:0 0 9px #f7c85c,0 0 var(--spark-glow) rgba(255,217,119,.78); }
+.reception-sparkler-zone>span { color:#edcb8c;font:600 .55rem/1.2 "Montserrat",sans-serif;letter-spacing:.11em;text-transform:uppercase;text-align:center; }
+.reception-spark { position:absolute;z-index:9;width:4px;height:4px;border-radius:50%;background:#ffe5a6;box-shadow:0 0 7px #ffc95e;pointer-events:none;animation:spark-pop .68s ease-out forwards; }
+@keyframes spark-pop { 0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--sx),var(--sy)) scale(.15)} }
+
+@media (max-width:760px){
+  .pelli-blessing-zone { width:84%;min-height:210px;margin-top:38px;padding:18px 14px; }
+  .blessing-pair { gap:12px; }
+  .blessing-pair b { width:52px;height:52px;font-size:1.28rem; }
+  .blessing-pair small { max-width:100px;font-size:.58rem; }
+  .vratham-diya-zone { width:80%;min-height:220px;margin-top:34px; }
+  .diya-progress-ring { width:140px;height:140px; }
+  .reception-sparkler-zone { width:80%;height:230px;margin-top:34px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .blessing-particle,.vratham-diya-zone.is-lit .diya-flame,.reception-spark { animation:none !important; }
+}
+
+
+/* =========================================================
+   v44.0 · cleaner ritual overlays + simpler blessings
+   ========================================================= */
+/* Keep each reveal visually self-explanatory: one short action cue only. */
+.event-reveal__chrome { display:none !important; }
+.ritual-action-label,
+.mehendi-trace > .ritual-action-label {
+  display:block;
+  margin-top:10px;
+  color:rgba(111,16,37,.72);
+  font:600 .55rem/1.25 "Montserrat",sans-serif;
+  letter-spacing:.10em;
+  text-align:center;
+  text-transform:uppercase;
+}
+.mehendi-trace { display:flex; flex-direction:column; align-items:center; }
+.haldi-rub-zone { grid-auto-flow:row; gap:8px; }
+.haldi-rub-zone .ritual-action-label { margin:0; color:rgba(255,250,226,.88); }
+.wedding-reveal__center > strong { margin:0 0 18px; }
+
+/* Simple, unmistakable Pelli interaction: five taps = five blessings. */
+.pelli-blessing-zone {
+  width:min(68%,330px);
+  min-height:230px;
+  margin-top:0;
+  gap:20px;
+  border:0;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,250,241,.065),rgba(255,250,241,.018) 52%,transparent 72%);
+  box-shadow:none;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+.blessing-symbol {
+  display:grid;
+  place-items:center;
+  width:112px;
+  height:112px;
+  border:1px solid rgba(243,207,136,.36);
+  border-radius:50%;
+  color:#f3d396;
+  background:rgba(255,250,241,.035);
+  box-shadow:0 14px 34px rgba(19,2,7,.16), inset 0 1px 0 rgba(255,255,255,.10);
+  font:400 2.8rem/1 "Cormorant Garamond",serif;
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.pelli-blessing-zone.is-tapped .blessing-symbol {
+  transform:scale(.92);
+  box-shadow:0 7px 18px rgba(19,2,7,.13), inset 0 1px 0 rgba(255,255,255,.10);
+}
+.blessing-progress { gap:9px; }
+.blessing-progress i { width:8px;height:8px; }
+.blessing-action { color:rgba(242,205,137,.90); }
+.blessing-pair { display:none !important; }
+
+@media(max-width:760px){
+  .pelli-blessing-zone { width:76%; min-height:220px; margin-top:0; padding:16px; }
+  .blessing-symbol { width:98px;height:98px;font-size:2.45rem; }
+}
+
+
+/* =========================================================
+   v44.0 · instruction-only ritual copy (no action titles)
+   ========================================================= */
+.ritual-instruction {
+  position:absolute;
+  z-index:7;
+  top:24px;
+  left:28px;
+  right:28px;
+  max-width:470px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  color:rgba(111,16,37,.74);
+  font:500 .70rem/1.5 "Montserrat",sans-serif;
+  letter-spacing:.015em;
+  text-align:center;
+  text-transform:none;
+  pointer-events:none;
+}
+.ritual-instruction::before {
+  content:"";
+  width:5px;height:5px;flex:0 0 5px;border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 0 4px rgba(200,155,81,.10);
+  opacity:.82;
+}
+.event-reveal--pelli .ritual-instruction,
+.event-reveal--wedding .ritual-instruction,
+.event-reveal--reception .ritual-instruction { color:rgba(255,247,235,.80); }
+.event-reveal--haldi .ritual-instruction { color:rgba(72,42,8,.80); }
+.ritual-action-label,.blessing-action,.vratham-diya-zone>span,.reception-sparkler-zone>span { display:none!important; }
+.mehendi-trace{margin-top:54px}.pelli-blessing-zone{margin-top:56px}.haldi-rub-zone{margin-top:54px}.wedding-reveal__center{margin-top:30px}.vratham-diya-zone{margin-top:54px}.reception-sparkler-zone{margin-top:54px}
+@media(max-width:760px){
+  .ritual-instruction{top:18px;left:18px;right:18px;gap:7px;font-size:.64rem;line-height:1.45}
+  .ritual-instruction::before{width:4px;height:4px;flex-basis:4px;box-shadow:0 0 0 3px rgba(200,155,81,.09)}
+  .mehendi-trace,.pelli-blessing-zone,.haldi-rub-zone,.vratham-diya-zone,.reception-sparkler-zone{margin-top:50px}
+  .wedding-reveal__center{margin-top:26px}
+}
