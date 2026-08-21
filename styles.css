@@ -2973,7 +2973,7 @@ html { scroll-padding-top: 96px; }
 
 
 /* =========================================================
-   v42.1 · thumb-friendly mobile event rail + icon shortcuts
+   v42.2 · thumb-friendly mobile event rail + icon shortcuts
    ========================================================= */
 
 /* A little breathing room below the fixed header when navigating by number. */
@@ -3082,7 +3082,7 @@ html { scroll-padding-top: 96px; }
 
 
 /* =========================================================
-   v42.1 · recognizable brand social marks in mobile header
+   v42.2 · recognizable brand social marks in mobile header
    ========================================================= */
 @media (max-width: 760px) {
   .topbar.is-scrolled .mobile-top-links {
@@ -3146,4 +3146,51 @@ html { scroll-padding-top: 96px; }
   .topbar.is-scrolled .mobile-top-links { gap: 10px !important; }
   .mobile-top-links .brand-social-logo--youtube { width: 32px !important; }
   .mobile-top-links .brand-social-logo--instagram { width: 29px !important; height: 29px !important; }
+}
+
+
+/* =========================================================
+   v42.2 · centered sticky event rail + even social spacing
+   ========================================================= */
+
+/* The rail begins naturally beside the first card. Once its normal
+   position reaches the middle zone, it remains there rather than
+   climbing up underneath the fixed header. */
+.event-progress {
+  top: clamp(145px, calc(50vh - 158px), 285px);
+}
+
+@media (max-width: 760px) {
+  .event-progress {
+    top: clamp(185px, calc(50vh - 142px), 310px);
+  }
+
+  /* Keep the three visual intervals equal:
+     YouTube ↔ Instagram ↔ language selector. */
+  .topbar.is-scrolled .topbar__actions {
+    column-gap: 14px !important;
+  }
+  .topbar.is-scrolled .mobile-top-links {
+    gap: 14px !important;
+  }
+
+  /* No hidden width from the old two-column shortcut treatment. */
+  .topbar.is-scrolled .mobile-top-links {
+    display: flex !important;
+    width: auto !important;
+    max-width: none !important;
+    overflow: visible !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .event-progress {
+    top: clamp(170px, calc(50vh - 136px), 285px);
+  }
+  .topbar.is-scrolled .topbar__actions {
+    column-gap: 11px !important;
+  }
+  .topbar.is-scrolled .mobile-top-links {
+    gap: 11px !important;
+  }
 }

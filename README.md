@@ -162,7 +162,12 @@ The automatic post-wedding privacy mode hides private logistics from normal visi
 - Updated runtime and service-worker cache references to V41.9.
 
 
-## V42.1
+## V42.2
 - Mobile event rail moved to the right for thumb reach; desktop remains left.
 - Timeline jumps leave extra space beneath the sticky header.
 - Mobile sticky social text shortcuts replaced with accessible YouTube and Instagram icon buttons.
+
+
+## Version 42.2
+- Event rail now stays around the vertical center of the viewport while scrolling festivities, instead of climbing beneath the sticky header.
+- YouTube, Instagram, and language-toggle spacing is visually equalized on mobile.
