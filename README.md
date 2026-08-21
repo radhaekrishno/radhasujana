@@ -143,3 +143,26 @@ The automatic post-wedding privacy mode hides private logistics from normal visi
 - Fixed a startup JavaScript error caused by the informational-only Vratham card having no RSVP button.
 - Event-card RSVP logic now safely ignores cards without RSVP controls.
 - The envelope, “Tap to open” instruction, and open-cover area are forgiving touch targets on mobile.
+
+
+## V41.8 — Sticky vertical event rail
+- Replaced the horizontal timeline with a sticky vertical six-event navigation rail beside the festivities cards.
+- The rail remains visible while scrolling the festivities section.
+- Active number follows the currently viewed card; progress works in both scroll directions.
+- Tapping any number smoothly jumps to and briefly lifts the linked card in 3D.
+- Event cards use a single editorial column so the rail has a clear sequential relationship.
+- Corrected runtime/service-worker cache references to V41.8.
+
+
+## V41.9 — Compact event-card consistency
+- Preserved the sticky vertical 01–06 event rail.
+- Restored compact editorial card proportions instead of letting cards stretch across the full desktop width.
+- Standardized card width, padding, minimum height, and inter-card gaps across desktop/tablet breakpoints.
+- Kept mobile cards naturally sized to content while using consistent padding and spacing.
+- Updated runtime and service-worker cache references to V41.9.
+
+
+## V42.1
+- Mobile event rail moved to the right for thumb reach; desktop remains left.
+- Timeline jumps leave extra space beneath the sticky header.
+- Mobile sticky social text shortcuts replaced with accessible YouTube and Instagram icon buttons.

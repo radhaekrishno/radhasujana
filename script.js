@@ -1942,20 +1942,69 @@ quickDirectionsMenu?.addEventListener("click",event=>event.stopPropagation());
 document.addEventListener("click",closeQuickDirections);
 document.addEventListener("keydown",event=>{ if(event.key==="Escape") closeQuickDirections(); });
 
-// Event timeline fills as cards enter the viewport.
+// Sticky vertical event rail: always available while the festivities cards are in view.
 const timelineFill=document.getElementById("eventTimelineFill");
 const timelineSteps=[...document.querySelectorAll(".event-progress__step")];
 const eventCards=[...document.querySelectorAll(".event-card")];
-if ("IntersectionObserver" in window && timelineFill) {
-  const seen=new Set();
-  const io=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{ if(entry.isIntersecting){ const idx=eventCards.indexOf(entry.target); if(idx>=0){seen.add(idx); const max=Math.max(...seen); timelineFill.style.width=`${(max/5)*100}%`; timelineSteps.forEach((s,i)=>{s.classList.toggle("is-past",i<max);s.classList.toggle("is-active",i===max);}); } } });
-  },{threshold:.34});
-  eventCards.forEach(c=>io.observe(c));
+const festivitiesSection=document.getElementById("festivities");
+const timelineRail=document.querySelector(".event-progress");
+let timelineRaf=0;
+
+function updateEventRailOffset(){
+  const bar=document.querySelector(".topbar");
+  const isFixed=bar?.classList.contains("is-scrolled");
+  const bottom=isFixed ? bar.getBoundingClientRect().bottom : 0;
+  const extra=window.innerWidth<=760 ? 12 : 16;
+  document.documentElement.style.setProperty("--event-rail-top",`${Math.max(18,Math.ceil(bottom+extra))}px`);
 }
 
-// Tactile timeline navigation: press the raised dot, then lift the linked card forward.
-timelineSteps.forEach(step=>{
+function setActiveTimelineStep(index){
+  if(!timelineSteps.length) return;
+  const safe=Math.max(0,Math.min(timelineSteps.length-1,index));
+  timelineSteps.forEach((step,i)=>{
+    step.classList.toggle("is-past",i<safe);
+    step.classList.toggle("is-active",i===safe);
+    step.setAttribute("aria-current",i===safe?"step":"false");
+  });
+  if(timelineFill){
+    const pct=timelineSteps.length>1 ? (safe/(timelineSteps.length-1))*100 : 0;
+    timelineFill.style.height=`${pct}%`;
+  }
+}
+
+function syncTimelineToScroll(){
+  timelineRaf=0;
+  updateEventRailOffset();
+  if(!eventCards.length||!festivitiesSection) return;
+
+  const topbar=document.querySelector(".topbar");
+  const headerBottom=topbar?.classList.contains("is-scrolled") ? topbar.getBoundingClientRect().bottom : 0;
+  const anchor=headerBottom + Math.min(180,Math.max(95,window.innerHeight*.24));
+
+  let active=0;
+  let best=Infinity;
+  eventCards.forEach((card,i)=>{
+    const rect=card.getBoundingClientRect();
+    if(rect.top<=anchor && rect.bottom>=anchor){ active=i; best=-1; return; }
+    if(best>=0){
+      const distance=Math.abs(rect.top-anchor);
+      if(distance<best){ best=distance; active=i; }
+    }
+  });
+  setActiveTimelineStep(active);
+}
+
+function requestTimelineSync(){
+  if(!timelineRaf) timelineRaf=requestAnimationFrame(syncTimelineToScroll);
+}
+
+window.addEventListener("scroll",requestTimelineSync,{passive:true});
+window.addEventListener("resize",requestTimelineSync,{passive:true});
+requestTimelineSync();
+
+// Tactile rail navigation: press the raised number, jump to its card,
+// then momentarily lift that card forward while the rail remains visible.
+timelineSteps.forEach((step,index)=>{
   step.addEventListener("click",()=>{
     const selector=step.dataset.target;
     const target=selector?document.querySelector(selector):null;
@@ -1965,16 +2014,20 @@ timelineSteps.forEach(step=>{
     void step.offsetWidth;
     step.classList.add("is-pressed");
     window.setTimeout(()=>step.classList.remove("is-pressed"),380);
+    setActiveTimelineStep(index);
 
-    const stickyHeader=document.querySelector(".site-header");
-    const headerOffset=stickyHeader?.classList.contains("is-scrolled") ? stickyHeader.getBoundingClientRect().height + 18 : 24;
-    const top=target.getBoundingClientRect().top + window.scrollY - headerOffset;
+    updateEventRailOffset();
+    const topbar=document.querySelector(".topbar");
+    const headerBottom=topbar?.classList.contains("is-scrolled") ? topbar.getBoundingClientRect().bottom : 0;
+    const jumpGap=window.innerWidth<=760 ? 38 : 30;
+    const top=target.getBoundingClientRect().top + window.scrollY - headerBottom - jumpGap;
     window.scrollTo({top:Math.max(0,top),behavior:"smooth"});
 
     window.setTimeout(()=>{
       eventCards.forEach(card=>card.classList.remove("timeline-focus"));
       target.classList.add("timeline-focus");
       window.setTimeout(()=>target.classList.remove("timeline-focus"),1250);
+      requestTimelineSync();
     },420);
   });
 });
