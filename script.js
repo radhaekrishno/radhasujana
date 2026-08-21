@@ -1954,6 +1954,31 @@ if ("IntersectionObserver" in window && timelineFill) {
   eventCards.forEach(c=>io.observe(c));
 }
 
+// Tactile timeline navigation: press the raised dot, then lift the linked card forward.
+timelineSteps.forEach(step=>{
+  step.addEventListener("click",()=>{
+    const selector=step.dataset.target;
+    const target=selector?document.querySelector(selector):null;
+    if(!target) return;
+
+    step.classList.remove("is-pressed");
+    void step.offsetWidth;
+    step.classList.add("is-pressed");
+    window.setTimeout(()=>step.classList.remove("is-pressed"),380);
+
+    const stickyHeader=document.querySelector(".site-header");
+    const headerOffset=stickyHeader?.classList.contains("is-scrolled") ? stickyHeader.getBoundingClientRect().height + 18 : 24;
+    const top=target.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({top:Math.max(0,top),behavior:"smooth"});
+
+    window.setTimeout(()=>{
+      eventCards.forEach(card=>card.classList.remove("timeline-focus"));
+      target.classList.add("timeline-focus");
+      window.setTimeout(()=>target.classList.remove("timeline-focus"),1250);
+    },420);
+  });
+});
+
 // Optional music: enabled only when user supplies a file in site-config.js.
 const musicSrc=(window.WEDDING_SITE_CONFIG&&window.WEDDING_SITE_CONFIG.musicSrc||"").trim();
 const musicToggle=document.getElementById("musicToggle");

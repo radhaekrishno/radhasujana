@@ -2587,7 +2587,7 @@ html { scroll-padding-top: 96px; }
   .topbar.is-scrolled .language-toggle { min-width: 58px; padding-inline: 4px; }
 }
 
-/* v41.6 · Vratham temple note — ceremonial, not a public directions block */
+/* v41.7 · Vratham temple note — ceremonial, not a public directions block */
 .vratham-temple-note {
   position: relative;
   z-index: 1;
@@ -2620,4 +2620,121 @@ html { scroll-padding-top: 96px; }
 @media (max-width: 760px) {
   .vratham-temple-note { margin: 15px 0 17px; padding-top: 14px; }
   .vratham-temple-note > strong { font-size: 1.05rem; }
+}
+
+
+/* =========================================================
+   v41.7 · tactile 3D celebration timeline navigation
+   ========================================================= */
+.event-progress {
+  perspective: 900px;
+  isolation: isolate;
+}
+.event-progress__track { z-index: 0; }
+.event-progress__steps { z-index: 1; }
+.event-progress__step {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: transparent;
+  transform-style: preserve-3d;
+}
+.event-progress__step i {
+  position: relative;
+  transform: translateZ(14px) translateY(-2px);
+  border-color: rgba(200,155,81,.42);
+  background: linear-gradient(145deg, #fffdf8 0%, #f8eddd 100%);
+  box-shadow:
+    0 11px 20px rgba(65,8,23,.16),
+    0 3px 6px rgba(65,8,23,.11),
+    inset 0 1px 0 rgba(255,255,255,.95),
+    inset 0 -2px 5px rgba(200,155,81,.08);
+  transition: transform .24s cubic-bezier(.2,.8,.2,1), box-shadow .24s ease, background .24s ease, border-color .24s ease;
+}
+.event-progress__step i::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.72);
+  pointer-events: none;
+}
+.event-progress__step:hover i,
+.event-progress__step:focus-visible i {
+  transform: translateZ(24px) translateY(-5px) scale(1.055);
+  border-color: rgba(200,155,81,.7);
+  box-shadow:
+    0 16px 28px rgba(65,8,23,.21),
+    0 5px 10px rgba(65,8,23,.12),
+    inset 0 1px 0 rgba(255,255,255,.95);
+}
+.event-progress__step:focus-visible i {
+  outline: 2px solid rgba(200,155,81,.72);
+  outline-offset: 4px;
+}
+.event-progress__step.is-active i,
+.event-progress__step.is-past i {
+  transform: translateZ(18px) translateY(-3px);
+  border-color: rgba(200,155,81,.72);
+  background: linear-gradient(145deg, #8d1532, #65091f);
+  box-shadow:
+    0 13px 24px rgba(65,8,23,.25),
+    0 4px 8px rgba(65,8,23,.15),
+    0 0 0 5px rgba(200,155,81,.10),
+    inset 0 1px 0 rgba(255,255,255,.14);
+}
+.event-progress__step.is-pressed i {
+  animation: timelineDotPress .34s cubic-bezier(.22,.8,.3,1);
+}
+@keyframes timelineDotPress {
+  0%   { transform: translateZ(18px) translateY(-3px) scale(1); }
+  42%  { transform: translateZ(2px) translateY(1px) scale(.90); box-shadow: 0 3px 6px rgba(65,8,23,.13); }
+  100% { transform: translateZ(22px) translateY(-4px) scale(1.03); }
+}
+
+.event-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.event-card.timeline-focus {
+  z-index: 8;
+  animation: timelineCardLift 1.15s cubic-bezier(.18,.78,.22,1) both;
+}
+@keyframes timelineCardLift {
+  0%   { transform: perspective(1100px) translateZ(0) scale(1); box-shadow: 0 0 0 rgba(65,8,23,0); }
+  28%  { transform: perspective(1100px) translateZ(34px) translateY(-7px) scale(1.018) rotateX(.45deg); box-shadow: 0 28px 54px rgba(65,8,23,.18), 0 0 0 1px rgba(200,155,81,.44); }
+  72%  { transform: perspective(1100px) translateZ(18px) translateY(-3px) scale(1.009); box-shadow: 0 20px 38px rgba(65,8,23,.13), 0 0 0 1px rgba(200,155,81,.28); }
+  100% { transform: perspective(1100px) translateZ(0) translateY(0) scale(1); box-shadow: 0 0 0 rgba(65,8,23,0); }
+}
+.event-card--dark.timeline-focus {
+  animation-name: timelineCardLiftDark;
+}
+@keyframes timelineCardLiftDark {
+  0%   { transform: perspective(1100px) translateZ(0) scale(1); box-shadow: 0 0 0 rgba(65,8,23,0); }
+  28%  { transform: perspective(1100px) translateZ(34px) translateY(-7px) scale(1.018) rotateX(.45deg); box-shadow: 0 30px 58px rgba(65,8,23,.32), 0 0 0 1px rgba(242,205,134,.62); }
+  72%  { transform: perspective(1100px) translateZ(18px) translateY(-3px) scale(1.009); box-shadow: 0 22px 40px rgba(65,8,23,.24), 0 0 0 1px rgba(242,205,134,.38); }
+  100% { transform: perspective(1100px) translateZ(0) translateY(0) scale(1); box-shadow: 0 0 0 rgba(65,8,23,0); }
+}
+
+@media (max-width: 760px) {
+  .event-progress__step i {
+    transform: translateZ(10px) translateY(-1px);
+    box-shadow: 0 8px 15px rgba(65,8,23,.15), 0 2px 5px rgba(65,8,23,.10), inset 0 1px 0 rgba(255,255,255,.94);
+  }
+  .event-progress__step:hover i,
+  .event-progress__step:focus-visible i { transform: translateZ(17px) translateY(-3px) scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .event-progress__step.is-pressed i,
+  .event-card.timeline-focus,
+  .event-card--dark.timeline-focus { animation: none !important; }
 }
