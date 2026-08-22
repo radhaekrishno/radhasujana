@@ -2182,7 +2182,7 @@ document.querySelectorAll('.event-reveal[data-reveal-kind="mehendi"]').forEach(c
     }
     if(Math.sqrt(bestD)<30) setProgress(bestT);
   }
-  zone.addEventListener("pointerdown",e=>{dragging=true;pointerId=e.pointerId;zone.setPointerCapture?.(e.pointerId);locate(e.clientX,e.clientY);});
+  zone.addEventListener("pointerdown",e=>{e.preventDefault();dragging=true;pointerId=e.pointerId;zone.setPointerCapture?.(e.pointerId);locate(e.clientX,e.clientY);});
   zone.addEventListener("pointermove",e=>{if(dragging&&e.pointerId===pointerId) locate(e.clientX,e.clientY);});
   const end=e=>{if(e.pointerId===pointerId){dragging=false;pointerId=null;}};
   zone.addEventListener("pointerup",end);zone.addEventListener("pointercancel",end);
@@ -2247,7 +2247,7 @@ document.querySelectorAll('.event-reveal[data-reveal-kind="haldi"]').forEach(cov
     const threshold=Math.max(1,Math.ceil(eligible.size*.85));
     if(erased.size>=threshold) unlockEventReveal("haldi");
   }
-  zone.addEventListener("pointerdown",e=>{dragging=true;pointerId=e.pointerId;zone.setPointerCapture?.(e.pointerId);erase(e.clientX,e.clientY);});
+  zone.addEventListener("pointerdown",e=>{e.preventDefault();dragging=true;pointerId=e.pointerId;zone.setPointerCapture?.(e.pointerId);erase(e.clientX,e.clientY);});
   zone.addEventListener("pointermove",e=>{if(dragging&&e.pointerId===pointerId) erase(e.clientX,e.clientY);});
   const end=e=>{if(e.pointerId===pointerId){dragging=false;pointerId=null;}};
   zone.addEventListener("pointerup",end);zone.addEventListener("pointercancel",end);
@@ -2273,7 +2273,7 @@ document.querySelectorAll('.event-reveal[data-reveal-kind="wedding"]').forEach(c
     right.style.transform=`translateX(${shift}%)`;
     if(center) center.style.opacity=String(Math.max(.12,1-progress*1.45));
   }
-  handle.addEventListener("pointerdown",e=>{dragging=true;startX=e.clientX;pointerId=e.pointerId;handle.setPointerCapture?.(e.pointerId);});
+  handle.addEventListener("pointerdown",e=>{e.preventDefault();dragging=true;startX=e.clientX;pointerId=e.pointerId;handle.setPointerCapture?.(e.pointerId);});
   handle.addEventListener("pointermove",e=>{if(!dragging||e.pointerId!==pointerId)return;const width=Math.max(1,cover.getBoundingClientRect().width);apply(Math.abs(e.clientX-startX)/(width*.34));if(progress>=.85){dragging=false;unlockEventReveal("wedding");}});
   const finish=e=>{if(e.pointerId!==pointerId)return;dragging=false;pointerId=null;if(progress<.85) apply(0,true);};
   handle.addEventListener("pointerup",finish);handle.addEventListener("pointercancel",finish);
@@ -2344,6 +2344,15 @@ document.querySelectorAll('.event-reveal[data-reveal-kind="pelli"]').forEach(cov
   });
 });
 
+
+
+// V44.1 · Treat ritual overlays like interaction controls, not selectable content.
+document.querySelectorAll('.event-reveal').forEach(cover=>{
+  ['selectstart','dragstart','contextmenu'].forEach(type=>{
+    cover.addEventListener(type,e=>e.preventDefault());
+  });
+});
+
 // Vratham diya -------------------------------------------------------------
 document.querySelectorAll('.event-reveal[data-reveal-kind="vratham"]').forEach(cover=>{
   if(cover.hidden) return;
@@ -2359,7 +2368,7 @@ document.querySelectorAll('.event-reveal[data-reveal-kind="vratham"]').forEach(c
     if(progress>=1){holding=false;cancelAnimationFrame(raf);zone.classList.add('is-lit');setTimeout(()=>unlockEventReveal('vratham'),420);return;}
     raf=requestAnimationFrame(tick);
   }
-  function begin(e){holding=true;start=0;pointerId=e.pointerId;zone.setPointerCapture?.(e.pointerId);cancelAnimationFrame(raf);raf=requestAnimationFrame(tick);}
+  function begin(e){e.preventDefault();holding=true;start=0;pointerId=e.pointerId;zone.setPointerCapture?.(e.pointerId);cancelAnimationFrame(raf);raf=requestAnimationFrame(tick);}
   function stop(e){if(pointerId!==null&&e.pointerId!==pointerId)return;holding=false;pointerId=null;cancelAnimationFrame(raf);if(progress<1){zone.classList.remove('is-lit');render(0);}}
   zone.addEventListener('pointerdown',begin);zone.addEventListener('pointerup',stop);zone.addEventListener('pointercancel',stop);
   zone.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&!holding){e.preventDefault();holding=true;start=0;raf=requestAnimationFrame(tick);}});
@@ -2389,7 +2398,7 @@ document.querySelectorAll('.event-reveal[data-reveal-kind="reception"]').forEach
     if(performance.now()-lastSpark>65){spark(x,y);lastSpark=performance.now();}
     if(progress>=.86){dragging=false;zone.classList.add('is-lit');setTimeout(()=>unlockEventReveal('reception'),300);}
   }
-  zone.addEventListener('pointerdown',e=>{dragging=true;pointerId=e.pointerId;startY=e.clientY;zone.setPointerCapture?.(e.pointerId);apply(.03,e.clientX,e.clientY);});
+  zone.addEventListener('pointerdown',e=>{e.preventDefault();dragging=true;pointerId=e.pointerId;startY=e.clientY;zone.setPointerCapture?.(e.pointerId);apply(.03,e.clientX,e.clientY);});
   zone.addEventListener('pointermove',e=>{if(!dragging||e.pointerId!==pointerId)return;const h=Math.max(150,zone.getBoundingClientRect().height*.72);apply((startY-e.clientY)/h,e.clientX,e.clientY);});
   const finish=e=>{if(e.pointerId!==pointerId)return;dragging=false;pointerId=null;if(progress<.86){progress=0;zone.style.setProperty('--spark-progress','0');zone.style.setProperty('--spark-y','0px');zone.style.setProperty('--spark-glow','6px');}};
   zone.addEventListener('pointerup',finish);zone.addEventListener('pointercancel',finish);

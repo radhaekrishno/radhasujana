@@ -3607,3 +3607,34 @@ html { scroll-padding-top: 96px; }
   .mehendi-trace,.pelli-blessing-zone,.haldi-rub-zone,.vratham-diya-zone,.reception-sparkler-zone{margin-top:50px}
   .wedding-reveal__center{margin-top:26px}
 }
+
+
+/* =========================================================
+   v44.1 · ritual interaction selection guard
+   Prevent long-press/text-selection artifacts inside the
+   reveal activities without affecting normal site content.
+   ========================================================= */
+.event-reveal,
+.event-reveal * {
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none !important;
+}
+.event-reveal svg,
+.event-reveal canvas,
+.event-reveal img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+.mehendi-trace,
+.haldi-rub-zone,
+.wedding-reveal__handle,
+.pelli-blessing-zone,
+.vratham-diya-zone,
+.reception-sparkler-zone {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

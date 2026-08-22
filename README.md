@@ -224,3 +224,8 @@ Completed ritual reveal interactions for all six festivities. Added blessing-sho
 - Haptics do not run for Reveal card / Reveal all fallback actions.
 - Vibration is feature-detected and safely no-ops on browsers that do not expose the Vibration API (including current iOS Safari).
 - Ritual reveals remain per-visit and reset on each fresh page load.
+
+
+## V44.1
+- Prevents text/image selection and long-press callouts inside ritual reveal interactions.
+- Adds defensive selection/drag/context-menu suppression for reveal overlays.
