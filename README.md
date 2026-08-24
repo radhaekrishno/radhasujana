@@ -251,6 +251,6 @@ Completed ritual reveal interactions for all six festivities. Added blessing-sho
 - Site transition remains a direct cross-fade with no blur phase.
 
 
-## V44.8
+## V44.9
 - Replaying the invitation now always returns the website to the top after the intro closes, including Safari scroll-restoration cases.
 - Added a subtle View invitation again control near the top of the hero in addition to the footer control.

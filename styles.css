@@ -4486,3 +4486,81 @@ html { scroll-padding-top: 96px; }
     opacity: .82;
   }
 }
+
+
+/* =========================================================
+   V44.9 · top cue balance + true centered intro tap pulse
+   ========================================================= */
+
+/* Keep the replay invitation cue visually opposite the Instagram whisper. */
+.hero-replay-invitation {
+  display: flex;
+  width: max-content;
+  margin: 10px 4px 0 auto;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* Draw the Instagram pointer in CSS rather than using a Unicode arrow.
+   This prevents iOS from replacing it with an emoji-style glyph. */
+.instagram-logo-hint::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 15px;
+  height: 8px;
+  margin-right: 6px;
+  border-top: 1.15px solid rgba(200,155,81,.70);
+  border-left: 1.15px solid rgba(200,155,81,.70);
+  background: transparent;
+  transform: translateY(1px) rotate(-17deg) !important;
+  transform-origin: center;
+  border-radius: 1px 0 0 0;
+}
+
+/* The intro prompt must never animate its horizontal centering away. */
+.intro-v446__tap {
+  transform: translateX(-50%) scale(1);
+  transform-origin: 50% 50%;
+  animation: introTapCenteredPulse 2.8s ease-in-out infinite !important;
+  will-change: transform, opacity;
+}
+.intro-v446.is-ready:not(.is-opening) .intro-v446__tap {
+  opacity: .78;
+  transform: translateX(-50%) scale(1);
+}
+.intro-v446.is-opening .intro-v446__tap {
+  animation: none !important;
+  opacity: 0;
+  transform: translateX(-50%) scale(.985);
+}
+@keyframes introTapCenteredPulse {
+  0%, 100% { opacity: .66; transform: translateX(-50%) scale(.992); }
+  50%      { opacity: .86; transform: translateX(-50%) scale(1.018); }
+}
+
+@media (max-width: 760px) {
+  .hero-replay-invitation {
+    width: max-content;
+    max-width: 48vw;
+    margin: 8px 4px 0 auto;
+    justify-content: flex-end;
+    text-align: right;
+  }
+  .instagram-logo-hint {
+    left: 28px;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-replay-invitation { max-width: 50vw; margin-right: 2px; }
+  .instagram-logo-hint { left: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-v446__tap,
+  .intro-v446.is-ready:not(.is-opening) .intro-v446__tap {
+    animation: none !important;
+    opacity: .78;
+    transform: translateX(-50%) scale(1);
+  }
+}
