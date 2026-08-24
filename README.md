@@ -226,6 +226,26 @@ Completed ritual reveal interactions for all six festivities. Added blessing-sho
 - Ritual reveals remain per-visit and reset on each fresh page load.
 
 
-## V44.1
+## V44.5
 - Prevents text/image selection and long-press callouts inside ritual reveal interactions.
 - Adds defensive selection/drag/context-menu suppression for reveal overlays.
+
+
+## V44.5 — cinematic 3D intro
+- Rebuilt the envelope opening with perspective, depth-separated layers, a physical flap rotation, seal-release motion, invitation-card lift, ambient shadows, and desktop pointer parallax.
+- Opening duration remains brief (~1.5 s; reduced-motion users get a fast simplified transition).
+- Opening state is now saved from the central open function, so tapping any valid area of the cover consistently counts as an opened invitation.
+
+
+## V44.7 — rebuilt modern envelope intro
+- Replaced the previous envelope/card animation with a new intro structure rather than layering more fixes onto the legacy envelope.
+- Fully closed ivory envelope with SR wax seal.
+- Smooth seal release, flap opening, continuous physical card extraction, gradual scale toward the viewer, and direct cross-fade into the website.
+- Same invitation wording and seal logo preserved across all language routes.
+
+
+## V44.7 intro extraction fix
+- Replaced the stepped invitation-card keyframe extraction with one continuous CSS transform transition.
+- The card now begins fully within the envelope bounds, so it cannot flash underneath the envelope while opening.
+- The lower part of the card remains behind the front pocket throughout the extraction for a physical paper-in-envelope effect.
+- Site transition remains a direct cross-fade with no blur phase.

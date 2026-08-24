@@ -1386,25 +1386,68 @@ window.addEventListener("popstate", () => {
   applyLanguage(routeLanguage);
 });
 
+let introReady = false;
+let introOpenQueued = false;
+const introReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+
+function markIntroReady() {
+  if (introReady) return;
+  introReady = true;
+  cover.classList.add("is-ready");
+  if (introOpenQueued) {
+    introOpenQueued = false;
+    openInvitationNow();
+  }
+}
+
+// A brief modern arrival establishes the closed envelope before interaction.
+setTimeout(markIntroReady, introReducedMotion ? 0 : 900);
+
 function openInvitationNow() {
-  // Guard against double taps/bubbling while the envelope animation is running.
+  if (!introReady) {
+    introOpenQueued = true;
+    return;
+  }
   if (cover.classList.contains("is-opening") || cover.classList.contains("opened")) return;
+  try { localStorage.setItem(V34.openedKey, "1"); } catch(e) {}
   cover.classList.add("is-opening");
+
+  // Let the single continuous card extraction finish, hold for a beat, then cross-fade directly into the site.
+  const revealAt = introReducedMotion ? 80 : 3060;
+  const finishAt = introReducedMotion ? 210 : 3780;
   setTimeout(() => {
-    cover.classList.add("opened");
     mainContent.classList.add("visible");
     mainContent.setAttribute("aria-hidden", "false");
+    cover.classList.add("is-finishing");
+  }, revealAt);
+
+  setTimeout(() => {
+    cover.classList.add("opened");
     document.body.classList.remove("locked");
-  }, 780);
+  }, finishAt);
 }
 
 openButton.addEventListener("click", openInvitationNow);
-// Make the visible “Tap to open” instruction and the rest of the cover
-// forgiving touch targets on phones, not just the envelope button itself.
 cover.addEventListener("click", event => {
   if (event.target.closest("#openInvitation")) return;
   openInvitationNow();
 });
+
+// Very restrained desktop parallax; touch devices stay stable.
+if (window.matchMedia?.("(hover: hover) and (pointer: fine)")?.matches) {
+  cover.addEventListener("pointermove", event => {
+    if (!introReady || cover.classList.contains("is-opening") || cover.classList.contains("opened")) return;
+    const rect = cover.getBoundingClientRect();
+    const nx = ((event.clientX - rect.left) / rect.width) - .5;
+    const ny = ((event.clientY - rect.top) / rect.height) - .5;
+    openButton.style.setProperty("--tilt-y", `${(-nx * 4.5).toFixed(2)}deg`);
+    openButton.style.setProperty("--tilt-x", `${(ny * 3.2).toFixed(2)}deg`);
+  }, {passive:true});
+  cover.addEventListener("pointerleave", () => {
+    openButton.style.removeProperty("--tilt-x");
+    openButton.style.removeProperty("--tilt-y");
+  });
+}
 
 const menuButton = document.getElementById("menuButton");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -1881,7 +1924,6 @@ try {
     mainContent.setAttribute("aria-hidden","false");
     document.body.classList.remove("locked");
   }
-  openButton.addEventListener("click",()=>localStorage.setItem(V34.openedKey,"1"));
 } catch(e) {}
 
 document.getElementById("viewInvitationAgain")?.addEventListener("click",()=>{
@@ -2346,7 +2388,7 @@ document.querySelectorAll('.event-reveal[data-reveal-kind="pelli"]').forEach(cov
 
 
 
-// V44.1 · Treat ritual overlays like interaction controls, not selectable content.
+// V44.3 · Treat ritual overlays like interaction controls, not selectable content.
 document.querySelectorAll('.event-reveal').forEach(cover=>{
   ['selectstart','dragstart','contextmenu'].forEach(type=>{
     cover.addEventListener(type,e=>e.preventDefault());
