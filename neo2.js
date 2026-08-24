@@ -1385,11 +1385,13 @@ const INTRO_REPLAY_KEY = "radhasujana-replay-intro-v44.9";
 let introReplaySession = false;
 try {
   introReplaySession = sessionStorage.getItem(INTRO_REPLAY_KEY) === "1";
-  if (introReplaySession) {
-    sessionStorage.removeItem(INTRO_REPLAY_KEY);
-    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-    window.scrollTo(0, 0);
-  }
+  if (introReplaySession) sessionStorage.removeItem(INTRO_REPLAY_KEY);
+} catch(e) {}
+
+// Neo 2.1: every page load begins with the invitation at the top.
+try {
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
 } catch(e) {}
 const introReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
@@ -1412,15 +1414,15 @@ function openInvitationNow() {
     return;
   }
   if (cover.classList.contains("is-opening") || cover.classList.contains("opened")) return;
-  try { localStorage.setItem(V34.openedKey, "1"); } catch(e) {}
-  if (introReplaySession) window.scrollTo(0, 0);
+  // Do not persist an opened state: every fresh load requires the invitation interaction.
+  window.scrollTo(0, 0);
   cover.classList.add("is-opening");
 
   // Let the single continuous card extraction finish, hold for a beat, then cross-fade directly into the site.
   const revealAt = introReducedMotion ? 80 : 3060;
   const finishAt = introReducedMotion ? 210 : 3780;
   setTimeout(() => {
-    if (introReplaySession) window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     mainContent.classList.add("visible");
     mainContent.setAttribute("aria-hidden", "false");
     cover.classList.add("is-finishing");
@@ -1429,11 +1431,9 @@ function openInvitationNow() {
   setTimeout(() => {
     cover.classList.add("opened");
     document.body.classList.remove("locked");
-    if (introReplaySession) {
-      window.scrollTo(0, 0);
-      introReplaySession = false;
-      if ("scrollRestoration" in history) history.scrollRestoration = "auto";
-    }
+    window.scrollTo(0, 0);
+    introReplaySession = false;
+    if ("scrollRestoration" in history) history.scrollRestoration = "auto";
   }, finishAt);
 }
 
@@ -1926,14 +1926,9 @@ function applyPrivacySunset(){
   }
 }
 
-// Returning guests: skip envelope after the first successful opening.
+// Neo 2.1: remove the legacy permanent bypass so returning guests see the intro too.
 try {
-  if (!introReplaySession && localStorage.getItem(V34.openedKey)==="1") {
-    cover.classList.add("opened");
-    mainContent.classList.add("visible");
-    mainContent.setAttribute("aria-hidden","false");
-    document.body.classList.remove("locked");
-  }
+  localStorage.removeItem(V34.openedKey);
 } catch(e) {}
 
 function replayInvitation() {
@@ -1954,8 +1949,16 @@ function replayInvitation() {
 document.getElementById("viewInvitationAgain")?.addEventListener("click", replayInvitation);
 document.getElementById("heroViewInvitationAgain")?.addEventListener("click", replayInvitation);
 
-window.addEventListener("pageshow", () => {
-  if (introReplaySession) requestAnimationFrame(() => window.scrollTo(0, 0));
+window.addEventListener("pageshow", event => {
+  // Back/forward cache can restore an already-open DOM without running a fresh load.
+  // Reload once so returning to the site still begins with the invitation ritual.
+  if (event.persisted && cover.classList.contains("opened")) {
+    window.location.reload();
+    return;
+  }
+  if (!cover.classList.contains("opened")) {
+    requestAnimationFrame(() => window.scrollTo(0, 0));
+  }
 });
 
 // Native share with clipboard fallback.
