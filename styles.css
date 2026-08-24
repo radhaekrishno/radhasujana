@@ -4450,3 +4450,39 @@ html { scroll-padding-top: 96px; }
     transform: translate3d(-50%, -35%, 36px) scale(1.02);
   }
 }
+
+
+/* V44.8 · subtle invitation replay control near the hero */
+.hero-replay-invitation {
+  position: relative;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 0 auto;
+  padding: 5px 2px;
+  border: 0;
+  border-bottom: 1px solid rgba(111,16,37,.14);
+  color: rgba(111,16,37,.58);
+  background: transparent;
+  font: 500 .56rem/1.2 "Montserrat", sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .22s ease, border-color .22s ease, transform .18s ease;
+}
+.hero-replay-invitation > span:first-child {
+  color: rgba(200,155,81,.72);
+  font-size: .82rem;
+  line-height: 1;
+}
+.hero-replay-invitation:hover { color: var(--wine); border-bottom-color: rgba(111,16,37,.34); }
+.hero-replay-invitation:active { transform: scale(.97); }
+@media (max-width: 760px) {
+  .hero-replay-invitation {
+    margin-top: 7px;
+    font-size: .5rem;
+    letter-spacing: .06em;
+    opacity: .82;
+  }
+}

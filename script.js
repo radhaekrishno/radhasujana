@@ -1388,6 +1388,16 @@ window.addEventListener("popstate", () => {
 
 let introReady = false;
 let introOpenQueued = false;
+const INTRO_REPLAY_KEY = "radhasujana-replay-intro-v44.8";
+let introReplaySession = false;
+try {
+  introReplaySession = sessionStorage.getItem(INTRO_REPLAY_KEY) === "1";
+  if (introReplaySession) {
+    sessionStorage.removeItem(INTRO_REPLAY_KEY);
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  }
+} catch(e) {}
 const introReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
 function markIntroReady() {
@@ -1410,12 +1420,14 @@ function openInvitationNow() {
   }
   if (cover.classList.contains("is-opening") || cover.classList.contains("opened")) return;
   try { localStorage.setItem(V34.openedKey, "1"); } catch(e) {}
+  if (introReplaySession) window.scrollTo(0, 0);
   cover.classList.add("is-opening");
 
   // Let the single continuous card extraction finish, hold for a beat, then cross-fade directly into the site.
   const revealAt = introReducedMotion ? 80 : 3060;
   const finishAt = introReducedMotion ? 210 : 3780;
   setTimeout(() => {
+    if (introReplaySession) window.scrollTo(0, 0);
     mainContent.classList.add("visible");
     mainContent.setAttribute("aria-hidden", "false");
     cover.classList.add("is-finishing");
@@ -1424,6 +1436,11 @@ function openInvitationNow() {
   setTimeout(() => {
     cover.classList.add("opened");
     document.body.classList.remove("locked");
+    if (introReplaySession) {
+      window.scrollTo(0, 0);
+      introReplaySession = false;
+      if ("scrollRestoration" in history) history.scrollRestoration = "auto";
+    }
   }, finishAt);
 }
 
@@ -1918,7 +1935,7 @@ function applyPrivacySunset(){
 
 // Returning guests: skip envelope after the first successful opening.
 try {
-  if (localStorage.getItem(V34.openedKey)==="1") {
+  if (!introReplaySession && localStorage.getItem(V34.openedKey)==="1") {
     cover.classList.add("opened");
     mainContent.classList.add("visible");
     mainContent.setAttribute("aria-hidden","false");
@@ -1926,17 +1943,26 @@ try {
   }
 } catch(e) {}
 
-document.getElementById("viewInvitationAgain")?.addEventListener("click",()=>{
-  try{
+function replayInvitation() {
+  try {
     localStorage.removeItem(V34.openedKey);
     localStorage.removeItem("radhasujana-event-reveals-v42.4");
-    // Also clear the previous prototype key once, so upgrades do not carry old unlocks forward.
     localStorage.removeItem("radhasujana-event-reveals-v42.3");
-  }catch(e){}
-  // A reload cleanly resets canvas/tracing/curtain state as well as the envelope.
-  try{history.replaceState(null,"",location.pathname+location.search);}catch(e){}
-  window.scrollTo(0,0);
+    sessionStorage.setItem(INTRO_REPLAY_KEY, "1");
+  } catch(e) {}
+  try {
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    history.replaceState(null, "", location.pathname + location.search);
+  } catch(e) {}
+  window.scrollTo(0, 0);
   window.location.reload();
+}
+
+document.getElementById("viewInvitationAgain")?.addEventListener("click", replayInvitation);
+document.getElementById("heroViewInvitationAgain")?.addEventListener("click", replayInvitation);
+
+window.addEventListener("pageshow", () => {
+  if (introReplaySession) requestAnimationFrame(() => window.scrollTo(0, 0));
 });
 
 // Native share with clipboard fallback.

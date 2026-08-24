@@ -249,3 +249,8 @@ Completed ritual reveal interactions for all six festivities. Added blessing-sho
 - The card now begins fully within the envelope bounds, so it cannot flash underneath the envelope while opening.
 - The lower part of the card remains behind the front pocket throughout the extraction for a physical paper-in-envelope effect.
 - Site transition remains a direct cross-fade with no blur phase.
+
+
+## V44.8
+- Replaying the invitation now always returns the website to the top after the intro closes, including Safari scroll-restoration cases.
+- Added a subtle View invitation again control near the top of the hero in addition to the footer control.
