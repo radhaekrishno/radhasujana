@@ -1,5 +1,55 @@
-const CACHE="radhasujana-v44.9";
-const CORE=["/","/en/","/styles.css?v=44.9","/script.js?v=44.9","/site-config.js?v=44.7","/favicon.png","/manifest.webmanifest?v=44.7","/assets/social-preview.jpg"];
-self.addEventListener("install",e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())));
-self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
-self.addEventListener("fetch",e=>{if(e.request.method!=="GET")return;const u=new URL(e.request.url);if(u.origin!==location.origin)return;e.respondWith(caches.match(e.request).then(hit=>hit||fetch(e.request).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r;}).catch(()=>caches.match("/en/"))));});
+const CACHE="radhasujana-neo-2.0";
+const CORE=[
+  "/","/en/","/te/","/hi/","/ta/","/zh/","/ne/",
+  "/neo2.css","/neo2.js","/neo2-config.js",
+  "/favicon.png","/manifest.webmanifest","/assets/social-preview.jpg"
+];
+
+self.addEventListener("install",event=>{
+  event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));
+});
+
+self.addEventListener("activate",event=>{
+  event.waitUntil(
+    caches.keys()
+      .then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key))))
+      .then(()=>self.clients.claim())
+  );
+});
+
+async function networkFirst(request){
+  try{
+    const response=await fetch(request,{cache:"no-store"});
+    if(response && response.ok){
+      const cache=await caches.open(CACHE);
+      cache.put(request,response.clone());
+    }
+    return response;
+  }catch(error){
+    return (await caches.match(request)) || (request.mode==="navigate" ? caches.match("/en/") : Response.error());
+  }
+}
+
+async function cacheFirst(request){
+  const hit=await caches.match(request);
+  if(hit) return hit;
+  const response=await fetch(request);
+  if(response && response.ok){
+    const cache=await caches.open(CACHE);
+    cache.put(request,response.clone());
+  }
+  return response;
+}
+
+self.addEventListener("fetch",event=>{
+  if(event.request.method!=="GET") return;
+  const url=new URL(event.request.url);
+  if(url.origin!==self.location.origin) return;
+  const type=event.request.destination;
+  const isCode=type==="script" || type==="style" || url.pathname.endsWith(".html") || url.pathname.endsWith(".webmanifest");
+  if(event.request.mode==="navigate" || isCode){
+    event.respondWith(networkFirst(event.request));
+  }else{
+    event.respondWith(cacheFirst(event.request));
+  }
+});

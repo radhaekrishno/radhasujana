@@ -1,0 +1,4686 @@
+:root {
+  --wine: #6f1025;
+  --wine-deep: #410817;
+  --rose: #b74c63;
+  --gold: #c89b51;
+  --cream: #f8f0e3;
+  --ivory: #fffaf1;
+  --ink: #2e211e;
+  --muted: #75645f;
+  --line: rgba(111, 16, 37, 0.18);
+  --shadow: 0 22px 60px rgba(67, 26, 30, 0.16);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--ivory);
+  font-family: "Montserrat", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+body.locked { overflow: hidden; }
+body.lang-te { font-family: "Noto Sans Telugu", "Montserrat", system-ui, sans-serif; }
+body.lang-hi { font-family: "Noto Sans Devanagari", "Montserrat", system-ui, sans-serif; }
+body.lang-ta { font-family: "Noto Sans Tamil", "Montserrat", system-ui, sans-serif; }
+body.lang-zh { font-family: "Noto Sans SC", "Montserrat", system-ui, sans-serif; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .24;
+  z-index: 999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+}
+
+.invitation-cover {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255,255,255,.18), transparent 36%),
+    linear-gradient(145deg, #8b223a, var(--wine-deep));
+  transition: opacity .75s ease, visibility .75s ease;
+}
+.invitation-cover::before,
+.invitation-cover::after {
+  content: "";
+  position: absolute;
+  width: 58vw;
+  aspect-ratio: 1;
+  border: 1px solid rgba(248, 240, 227, .18);
+  border-radius: 50%;
+}
+.invitation-cover::before { top: -32vw; left: -20vw; }
+.invitation-cover::after { right: -24vw; bottom: -34vw; }
+.invitation-cover.opened { opacity: 0; visibility: hidden; }
+
+.cover-flower {
+  position: absolute;
+  width: 300px;
+  height: 420px;
+  opacity: .48;
+  background:
+    radial-gradient(ellipse at 50% 20%, transparent 17%, rgba(229,190,133,.6) 18% 19%, transparent 20%),
+    radial-gradient(ellipse at 30% 40%, transparent 19%, rgba(229,190,133,.4) 20% 21%, transparent 22%),
+    radial-gradient(ellipse at 65% 56%, transparent 20%, rgba(229,190,133,.35) 21% 22%, transparent 23%);
+  filter: blur(.2px);
+}
+.cover-flower--left { left: -100px; bottom: -40px; transform: rotate(-28deg); }
+.cover-flower--right { right: -110px; top: -70px; transform: rotate(150deg); }
+
+.envelope {
+  position: relative;
+  width: min(78vw, 410px);
+  aspect-ratio: 1.42;
+  border: 0;
+  background: transparent;
+  filter: drop-shadow(0 28px 24px rgba(23, 0, 5, .38));
+  transform: translateY(-12px);
+}
+.envelope__back,
+.envelope__front,
+.envelope__flap,
+.envelope__paper { position: absolute; inset: 0; border-radius: 4px; }
+.envelope__back { background: #eadcc9; }
+.envelope__paper {
+  inset: 7% 8% 10%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding: 22px;
+  color: var(--wine);
+  background: #fff9ed;
+  border: 1px solid rgba(111, 16, 37, .1);
+  transition: transform .9s cubic-bezier(.2,.7,.1,1), opacity .5s ease;
+}
+.envelope__paper::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(200,155,81,.45);
+  pointer-events: none;
+}
+.envelope__paper .tiny-label { margin-bottom: 9px; font-size: .56rem; letter-spacing: .18em; text-transform: uppercase; }
+.cover-parentage { display: block; margin: 1px 0 4px; color: rgba(67,26,30,.72); font: 500 .46rem "Montserrat", sans-serif; letter-spacing: .04em; }
+.envelope__paper strong { font-family: "Italiana", "Noto Serif Telugu", "Times New Roman", serif; font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 400; }
+.envelope__paper .ampersand { color: var(--gold); font: italic 1.5rem/.8 "Cormorant Garamond", serif; }
+.envelope__paper .date { margin-top: 10px; font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; }
+.envelope__front {
+  z-index: 3;
+  overflow: hidden;
+  background:
+    linear-gradient(32deg, #dccbb4 50%, transparent 50%) left/50% 100% no-repeat,
+    linear-gradient(-32deg, #e7d8c4 50%, transparent 50%) right/50% 100% no-repeat;
+}
+.envelope__front::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, transparent 49.8%, rgba(111,16,37,.08) 50%, transparent 50.4%);
+}
+.envelope__flap {
+  z-index: 4;
+  transform-origin: top center;
+  clip-path: polygon(0 0, 100% 0, 50% 68%);
+  background: #f0e4d3;
+  transition: transform .65s cubic-bezier(.2,.8,.2,1);
+}
+.wax-seal {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 47%;
+  width: 70px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 28%, rgba(255,252,245,.98), rgba(244,230,197,.9) 68%, rgba(220,191,135,.95));
+  border: 1px solid rgba(161, 115, 34, .2);
+  box-shadow: inset 0 0 0 3px rgba(255,255,255,.45), 0 8px 18px rgba(48,0,10,.16);
+  transition: transform .45s ease, opacity .35s ease, box-shadow .35s ease;
+}
+.seal-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: .98;
+  filter: drop-shadow(0 1px 1px rgba(120, 78, 8, .1));
+}
+.envelope:hover .wax-seal { box-shadow: inset 0 0 0 3px rgba(255,255,255,.55), 0 12px 22px rgba(48,0,10,.18); }
+.envelope:hover .wax-seal { transform: translate(-50%,-50%) scale(1.04) rotate(-2deg); }
+.invitation-cover.is-opening .envelope__flap { z-index: 1; transform: rotateX(180deg); }
+.invitation-cover.is-opening .wax-seal { opacity: 0; transform: translate(-50%,-50%) scale(.2); }
+.invitation-cover.is-opening .envelope__paper { transform: translateY(-58%) scale(1.04); }
+.tap-copy {
+  position: absolute;
+  bottom: clamp(38px, 8vh, 72px);
+  color: rgba(255,250,241,.82);
+  font-size: .7rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  animation: pulse 1.7s ease-in-out infinite;
+ cursor: pointer; touch-action: manipulation; user-select: none; }
+@keyframes pulse { 50% { opacity: .42; transform: translateY(3px); } }
+
+.site-shell { opacity: 0; transition: opacity .9s ease; }
+.site-shell.visible { opacity: 1; }
+.section-pad { padding: 96px clamp(20px, 5vw, 82px); }
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    linear-gradient(rgba(255,250,241,.92), rgba(255,250,241,.96)),
+    repeating-linear-gradient(90deg, rgba(111,16,37,.05) 0 1px, transparent 1px 72px);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(200,155,81,.14), transparent 30%),
+    radial-gradient(circle at 82% 80%, rgba(183,76,99,.12), transparent 28%);
+}
+.topbar {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  padding: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, rgba(255,255,255,.94), rgba(255,248,236,.82));
+  border: 1px solid rgba(200,155,81,.24);
+  box-shadow: 0 8px 20px rgba(65,24,31,.06);
+  backdrop-filter: blur(2px);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.monogram__logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: .96;
+}
+.monogram:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(65,24,31,.1); border-color: rgba(200,155,81,.34); }
+
+.brand-instagram {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.instagram-logo-hint {
+  position: absolute;
+  left: 78px;
+  top: 28px;
+  width: max-content;
+  max-width: 220px;
+  color: rgba(92, 48, 52, .72);
+  font: italic 500 .74rem/1.25 "Cormorant Garamond", "Noto Serif Telugu", serif;
+  letter-spacing: .025em;
+  transform: rotate(-2deg);
+  pointer-events: none;
+  animation: instagramHintFloat 3.4s ease-in-out infinite;
+}
+.instagram-logo-hint::before {
+  content: "←";
+  display: inline-block;
+  margin-right: 7px;
+  color: var(--gold);
+  font-size: 1.05rem;
+  transform: translateY(1px) rotate(7deg);
+}
+@keyframes instagramHintFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); opacity: .76; }
+  50% { transform: translateY(-2px) rotate(-2deg); opacity: 1; }
+}
+.nav-instagram { color: var(--wine); }
+.nav-instagram::before {
+  content: "◎";
+  margin-right: 5px;
+  color: var(--gold);
+  font-size: .72rem;
+}
+
+.topbar__actions { display: flex; align-items: center; gap: 22px; }
+.nav-links { display: flex; gap: 28px; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
+.nav-links a { position: relative; }
+.nav-links a::after { content: ""; position: absolute; left: 0; bottom: -7px; width: 0; height: 1px; background: var(--wine); transition: .25s; }
+.nav-links a:hover::after { width: 100%; }
+.language-toggle {
+  min-width: 80px;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  color: var(--wine);
+  background: rgba(255,250,241,.72);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  transition: .25s;
+}
+.language-toggle:hover { color: #fff; background: var(--wine); }
+.menu-button { display: none; padding: 8px; border: 0; background: transparent; }
+.menu-button span:not(.sr-only) { display: block; width: 24px; height: 1px; margin: 5px 0; background: var(--wine); }
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  width: min(980px, 100%);
+  margin: clamp(82px, 13vh, 135px) auto 0;
+  text-align: center;
+}
+.eyebrow { margin: 0 0 16px; color: var(--gold); font-size: .68rem; font-weight: 600; letter-spacing: .25em; text-transform: uppercase; }
+.couple-names { margin: 0; color: var(--wine); font-family: "Italiana", "Noto Serif Telugu", "Times New Roman", serif; font-weight: 400; line-height: .9; }
+.name-block { display: block; }
+.main-name { display: block; font-size: clamp(3.6rem, 9vw, 8rem); }
+.couple-names .parentage {
+  display: block;
+  max-width: min(540px, 92vw);
+  margin: 10px auto 2px;
+  color: rgba(67,26,30,.68);
+  font-family: "Montserrat", "Noto Sans Telugu", sans-serif !important;
+  font-size: clamp(.68rem, 1vw, .88rem) !important;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: .055em;
+  text-transform: none;
+}
+.couple-names em { display: block; margin: 11px 0 8px; color: var(--gold); font: italic 400 clamp(2.3rem, 5vw, 3.8rem) "Cormorant Garamond", serif; }
+.hero__verse { max-width: 560px; margin: 30px auto 34px; color: var(--muted); font: 500 clamp(1.1rem, 2.4vw, 1.5rem) "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.hero__date-card { display: inline-flex; align-items: stretch; gap: 25px; padding: 17px 26px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.hero__date-card div { min-width: 112px; display: grid; grid-template-columns: auto auto; column-gap: 8px; align-items: end; text-align: left; }
+.hero__date-card span { grid-column: 1/-1; color: var(--muted); font-size: .55rem; letter-spacing: .18em; text-transform: uppercase; }
+.hero__date-card strong { color: var(--wine); font: 600 2rem "Cormorant Garamond", serif; }
+.hero__date-card small { max-width: 98px; padding-bottom: 5px; color: var(--muted); font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; line-height: 1.3; }
+.hero__date-card i { width: 1px; background: var(--line); }
+
+.wedding-night-summary {
+  max-width: 800px;
+  margin: 22px auto 0;
+  border: 1px solid var(--line);
+  background: rgba(255,250,241,.62);
+  text-align: left;
+  box-shadow: 0 14px 42px rgba(67,26,30,.06);
+}
+.wedding-night-summary__heading {
+  margin: 0;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .55rem;
+  font-weight: 600;
+  letter-spacing: .19em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.wedding-night-summary__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.wedding-night-summary article { padding: 18px 22px 20px; }
+.wedding-night-summary article + article { border-left: 1px solid var(--line); }
+.schedule-label { margin: 0 0 7px; color: var(--gold); font-size: .58rem; font-weight: 600; letter-spacing: .19em; text-transform: uppercase; }
+.wedding-night-summary strong { display: block; color: var(--wine); font: 600 1.12rem "Cormorant Garamond", "Noto Serif Telugu", serif; line-height: 1.38; }
+.wedding-night-summary small { display: block; margin-top: 7px; color: var(--muted); font: 500 .76rem/1.45 "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.scroll-cue { display: block; margin-top: 42px; color: var(--wine); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; }
+.scroll-cue b { display: block; margin-top: 10px; font-size: 1rem; font-weight: 400; animation: down 1.6s ease-in-out infinite; }
+@keyframes down { 50% { transform: translateY(7px); } }
+
+.hero__arch {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: -300px;
+  width: min(1040px, 105vw);
+  aspect-ratio: 1.6;
+  transform: translateX(-50%);
+  border: 1px solid rgba(111,16,37,.11);
+  border-bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+.sun { position: absolute; left: 50%; top: 17%; width: 78px; aspect-ratio: 1; transform: translateX(-50%); border: 1px solid rgba(200,155,81,.28); border-radius: 50%; }
+.temple-line { position: absolute; left: 50%; top: 26%; width: 58%; height: 54%; transform: translateX(-50%); border-top: 1px solid rgba(111,16,37,.1); clip-path: polygon(50% 0,100% 100%,0 100%); background: repeating-linear-gradient(90deg, transparent 0 38px, rgba(111,16,37,.05) 39px 40px); }
+
+.blessing-strip { display: flex; justify-content: center; align-items: center; gap: 24px; padding: 26px 20px; color: #f8ead5; background: var(--wine); text-align: center; }
+.blessing-strip p { margin: 0; font: 500 clamp(1rem, 2.5vw, 1.25rem) "Cormorant Garamond", "Noto Serif Telugu", serif; letter-spacing: .04em; }
+.blessing-strip span { color: var(--gold); font-size: 1.35rem; }
+
+.festivities { background: var(--cream); }
+.section-heading { max-width: 680px; margin: 0 auto 50px; text-align: center; }
+.section-heading h2 { margin: 0 0 16px; color: var(--wine); font: 400 clamp(2.8rem, 6vw, 5rem) "Italiana", "Noto Serif Telugu", "Times New Roman", serif; }
+.section-heading > p:last-child { margin: 0; color: var(--muted); line-height: 1.8; }
+.event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; max-width: 1380px; margin: 0 auto; }
+.event-card { position: relative; min-height: 520px; display: flex; flex-direction: column; padding: 30px; overflow: hidden; border: 1px solid rgba(111,16,37,.15); background: rgba(255,250,241,.8); transition: transform .35s ease, box-shadow .35s ease; }
+.event-card::before { content: ""; position: absolute; right: -48px; bottom: -54px; width: 170px; aspect-ratio: 1; border: 1px solid rgba(111,16,37,.12); border-radius: 50%; box-shadow: 0 0 0 20px rgba(111,16,37,.025),0 0 0 40px rgba(111,16,37,.02); pointer-events: none; }
+.event-card:hover { transform: translateY(-8px); box-shadow: var(--shadow); }
+.event-card__number { color: rgba(111,16,37,.28); font: 400 3.15rem "Italiana", serif; line-height: 1; }
+.event-card__day { display: inline-flex; align-self: flex-start; margin: 18px 0 14px; padding: 0 0 4px; color: #9b6d26; background: transparent; border: 0; border-bottom: 1px solid rgba(155,109,38,.38); border-radius: 0; font-size: .62rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; line-height: 1.35; }
+.event-card h3 { margin: 0; color: var(--wine); font: 500 clamp(1.75rem, 2.7vw, 2.55rem)/.98 "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.event-card h3 { text-wrap: balance; }
+.event-card[data-event-id="pellirituals"] h3 { font-size: clamp(1.62rem, 2.35vw, 2.2rem); line-height: 1.02; }
+.ritual-native { display: inline; color: var(--gold); font: 600 .38em/1.2 "Montserrat", sans-serif; letter-spacing: .01em; white-space: nowrap; }
+.event-card--dark .ritual-native { color: #f7d99d; }
+.event-card__date { margin: 18px 0; color: var(--ink); font-size: .69rem; letter-spacing: .07em; text-transform: uppercase; line-height: 1.5; }
+.event-card__description { margin: 0; color: var(--muted); font-size: .81rem; line-height: 1.7; }
+.event-card__schedule { display: grid; gap: 11px; margin: 4px 0 10px; }
+.event-card__schedule p { margin: 0; }
+.event-card__schedule strong { display: block; color: var(--gold); font-size: .58rem; letter-spacing: .15em; text-transform: uppercase; }
+.event-card__schedule span { display: block; margin-top: 3px; color: rgba(255,247,235,.84); font-size: .73rem; line-height: 1.45; }
+.event-card__clarity { margin: 2px 0 10px; padding: 9px 10px; border: 1px solid rgba(255,255,255,.18); color: #fff7eb; background: rgba(255,255,255,.07); font-size: .72rem; font-weight: 600; line-height: 1.5; }
+.event-card__astro { margin: 0; color: rgba(255,247,235,.72); font: 500 .77rem/1.5 "Cormorant Garamond", "Noto Serif Telugu", serif; }
+
+.event-card__locations { position: relative; z-index: 1; display: grid; gap: 8px; margin: 16px 0 18px; padding-top: 13px; border-top: 1px solid rgba(111,16,37,.15); }
+.event-card__locations p { display: grid; grid-template-columns: minmax(105px,.8fr) minmax(0,1fr) auto; gap: 12px; margin: 0; align-items: baseline; }
+.event-card__locations strong, .event-card__venue > strong { color: var(--gold); font-size: .56rem; letter-spacing: .13em; text-transform: uppercase; }
+.event-card__locations span { color: var(--ink); font-size: .75rem; line-height: 1.45; }
+.event-card__locations a { position: relative; z-index: 2; display: inline-flex; align-items: center; justify-content: center; justify-self: end; min-height: 32px; margin: -7px -8px; padding: 7px 8px; color: var(--wine); border-bottom: 1px solid rgba(111,16,37,.28); font-size: .58rem; letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+.event-card__locations a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+.event-card__venue-note { margin: 16px 0 0; padding: 10px 12px; border-left: 2px solid var(--gold); color: var(--muted); background: rgba(255,255,255,.38); font-size: .7rem; line-height: 1.5; }
+.event-card__venue { display: grid; gap: 5px; margin: 16px 0 18px; padding-top: 13px; border-top: 1px solid rgba(111,16,37,.15); position: relative; z-index: 1; }
+.event-card__venue > span { color: var(--wine); font: 600 .92rem/1.35 "Cormorant Garamond", "Noto Serif Devanagari", "Noto Serif Telugu", serif; }
+.event-card__venue small { color: var(--muted); font-size: .67rem; line-height: 1.5; }
+.event-card__venue a { justify-self: start; margin-top: 4px; color: var(--wine); border-bottom: 1px solid rgba(111,16,37,.28); font-size: .61rem; letter-spacing: .08em; text-transform: uppercase; }
+.event-card__venue a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+.event-select { position: relative; z-index: 1; align-self: flex-start; margin-top: auto; padding: 12px 0 5px; border: 0; border-bottom: 1px solid rgba(111,16,37,.3); color: var(--wine); background: transparent; font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; }
+.event-card--accent:not(.event-card--dark) { background: #ead6ba; }
+.event-card--vratham { background: linear-gradient(145deg,#fffaf1,#f0dfbd); }
+.event-card--reception:not(.event-card--dark) { background: linear-gradient(145deg,#fffaf1,#ead6ba); }
+.event-card--dark { color: #fff7eb; background: var(--wine); border-color: var(--wine); }
+.event-card--dark::before { border-color: rgba(255,255,255,.14); box-shadow: 0 0 0 20px rgba(255,255,255,.025),0 0 0 40px rgba(255,255,255,.02); }
+.event-card--dark .event-card__number { color: rgba(245,202,116,.88); font-size: 3.15rem; }
+.event-card--dark h3,
+.event-card--dark .event-card__date,
+.event-card--dark .event-select { color: #fff7eb; }
+.event-card--dark .event-select { border-bottom-color: rgba(255,255,255,.4); }
+.event-card--dark .event-card__day { color: rgba(249,218,157,.9); background: transparent; border: 0; border-bottom: 1px solid rgba(249,218,157,.38); }
+.event-card--dark .event-card__date { color: #ffe2a8; font-size: .78rem; font-weight: 700; letter-spacing: .09em; text-shadow: 0 1px 0 rgba(0,0,0,.12); }
+.event-card--dark .event-card__description { color: rgba(255,247,235,.78); }
+.event-card--dark .event-card__locations,
+.event-card--dark .event-card__venue { border-top-color: rgba(255,255,255,.18); }
+.event-card--dark .event-card__locations span,
+.event-card--dark .event-card__venue small { color: rgba(255,247,235,.82); }
+.event-card--dark .event-card__venue > span { color: #fff7eb; }
+.event-card--dark .event-card__venue a { color: #f3cf88; border-bottom-color: rgba(243,207,136,.45); }
+.event-card--dark .event-card__locations a { color: #f3cf88; border-bottom-color: rgba(243,207,136,.45); }
+.event-card--dark .event-card__venue a:hover { color: #fff7eb; border-bottom-color: #fff7eb; }
+.event-card--dark .event-card__locations a:hover { color: #fff7eb; border-bottom-color: #fff7eb; }
+.event-card.selected { outline: 2px solid var(--gold); outline-offset: -7px; }
+
+.side-picker { background: var(--ivory); }
+.teams { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 22px; max-width: 760px; margin: 0 auto; }
+.team-card { min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 24px; border: 1px solid var(--line); color: var(--wine); background: transparent; transition: .3s; }
+.team-card:hover, .team-card.active { color: #fff; background: var(--wine); box-shadow: var(--shadow); transform: translateY(-5px); }
+.team-card__icon { color: var(--gold); font-size: 2.5rem; }
+.team-card small { font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; }
+.team-card strong { font: 500 2rem "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.versus { color: var(--gold); font: italic 1.8rem "Cormorant Garamond", serif; }
+
+.countdown-section { position: relative; overflow: hidden; color: #fff5e7; background: var(--wine-deep); }
+.countdown-section::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0, rgba(200,155,81,.18), transparent 38%); }
+.countdown-decoration { position: absolute; left: 50%; bottom: -270px; width: 650px; aspect-ratio: 1; transform: translateX(-50%); border: 1px solid rgba(255,255,255,.07); border-radius: 50%; box-shadow: 0 0 0 60px rgba(255,255,255,.025),0 0 0 120px rgba(255,255,255,.015); }
+.section-heading--light { position: relative; }
+.section-heading--light h2 { color: #fff5e7; font: 500 clamp(1.6rem,4vw,3.2rem) "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.countdown { position: relative; display: grid; grid-template-columns: repeat(4,1fr); max-width: 860px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.13); border-bottom: 1px solid rgba(255,255,255,.13); }
+.countdown div { position: relative; display: flex; flex-direction: column; align-items: center; padding: 36px 10px; }
+.countdown div:not(:last-child)::after { content: ""; position: absolute; right: 0; top: 24%; bottom: 24%; width: 1px; background: rgba(255,255,255,.13); }
+.countdown strong { font: 400 clamp(3rem,8vw,6.5rem) "Italiana", serif; }
+.countdown span { color: rgba(255,245,231,.6); font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; }
+
+.rsvp { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(40px,8vw,110px); max-width: 1280px; margin: 0 auto; background: var(--ivory); }
+.rsvp__intro { padding-top: 10px; }
+.rsvp__intro h2 { margin: 0 0 20px; color: var(--wine); font: 400 clamp(2.7rem,5vw,4.7rem)/1.02 "Italiana", "Noto Serif Telugu", serif; }
+.rsvp__intro > p:not(.eyebrow) { color: var(--muted); line-height: 1.8; }
+.venue-card { margin: 30px 0 0; padding: 22px 24px; border-left: 3px solid var(--gold); background: rgba(234,214,186,.38); font-style: normal; }
+.venue-card > span { display: block; margin-bottom: 8px; color: var(--gold); font-size: .62rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+.venue-card strong { display: block; color: var(--wine); font: 600 1.55rem "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.venue-card p { margin: 7px 0 13px; color: var(--muted); line-height: 1.65; }
+.venue-card--reception { margin-top: 34px; background: linear-gradient(145deg, rgba(255,250,241,.95), rgba(234,214,186,.48)); }
+.venue-card .venue-time { margin-bottom: 0; color: var(--wine); font-size: .72rem; font-weight: 600; letter-spacing: .035em; }
+.mini-map--reception { margin-top: 18px; }
+.venue-whatsapp { display: inline-flex; align-items: center; gap: 5px; padding-bottom: 4px; border-bottom: 1px solid rgba(111,16,37,.25); color: var(--wine); font-size: .72rem; font-weight: 600; }
+.venue-whatsapp > span:first-child { color: #1f9d55; }
+.mini-map { margin-top: 18px; overflow: hidden; border: 1px solid var(--line); background: #eee4d5; box-shadow: 0 10px 25px rgba(67,26,30,.08); }
+.mini-map iframe { display: block; filter: saturate(.75) sepia(.08); }
+.quick-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 13px; margin-top: 28px; }
+.text-button { padding: 0 0 7px; border: 0; border-bottom: 1px solid var(--line); color: var(--wine); background: transparent; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+.rsvp-form { display: flex; flex-direction: column; gap: 26px; padding: 38px; border: 1px solid var(--line); background: var(--cream); box-shadow: 0 14px 50px rgba(67,26,30,.07); }
+.rsvp-form label > span, .rsvp-form legend { display: block; margin-bottom: 9px; color: var(--wine); font-size: .67rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.rsvp-form label > span > span { display: inline; }
+.rsvp-form small { color: var(--muted); font-weight: 400; letter-spacing: 0; text-transform: none; }
+.rsvp-form input[type="text"], .rsvp-form select, .rsvp-form textarea { width: 100%; padding: 14px 0; border: 0; border-bottom: 1px solid rgba(111,16,37,.22); outline: 0; color: var(--ink); background: transparent; }
+.rsvp-form input[type="text"]:focus, .rsvp-form select:focus, .rsvp-form textarea:focus { border-color: var(--wine); }
+.rsvp-form fieldset { margin: 0; padding: 0; border: 0; }
+.choice-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.side-choice-row .choice-chip span { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.side-choice-row b { color: inherit; font-size: .69rem; letter-spacing: .08em; text-transform: uppercase; }
+.side-choice-row small { color: inherit; opacity: .78; font-size: .75rem; }
+.choice-chip input, .event-options input { position: absolute; opacity: 0; pointer-events: none; }
+.choice-chip span, .event-options span { display: block; padding: 13px 14px; border: 1px solid var(--line); color: var(--muted); background: rgba(255,255,255,.4); transition: .25s; }
+.choice-chip input:checked + span, .event-options input:checked + span { color: #fff; border-color: var(--wine); background: var(--wine); }
+.event-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.event-options span { height: 100%; display: flex; align-items: center; font-size: .72rem; line-height: 1.45; }
+.primary-button { padding: 17px 24px; border: 1px solid var(--wine); color: #fff7eb; background: var(--wine); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; transition: .25s; }
+.primary-button:hover { color: var(--wine); background: transparent; }
+.form-note { margin: -10px 0 0; color: var(--muted); font-size: .7rem; text-align: center; }
+
+.gallery-section { background: var(--cream); }
+.gallery-details { max-width: 1280px; margin: 0 auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.gallery-details summary { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 30px 4px; list-style: none; color: var(--wine); cursor: pointer; }
+.gallery-details summary::-webkit-details-marker { display: none; }
+.gallery-details summary span { display: flex; flex-direction: column; gap: 7px; }
+.gallery-details summary small { color: var(--gold); font-size: .62rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+.gallery-details summary strong { font: 400 clamp(2rem,5vw,4.2rem) "Italiana", "Noto Serif Telugu", serif; }
+.gallery-details summary i { flex: 0 0 auto; display: grid; place-items: center; width: 46px; aspect-ratio: 1; border: 1px solid var(--line); border-radius: 50%; font-style: normal; font-size: 1.4rem; transition: .3s; }
+.gallery-details[open] summary i { transform: rotate(45deg); }
+.gallery-content { padding: 5px 0 45px; }
+.gallery-content > p { max-width: 620px; margin: 0 0 28px; color: var(--muted); line-height: 1.8; }
+.gallery-grid { display: flex; flex-direction: column; gap: clamp(26px, 4vw, 48px); width: min(100%, 1040px); margin: 32px auto 0; }
+.gallery-item { position: relative; width: 100%; overflow: hidden; padding: 0; border: 0; border-radius: 12px; background: transparent; box-shadow: 0 12px 30px rgba(66,22,30,.13); cursor: zoom-in; transition: box-shadow .3s ease, transform .3s ease; }
+.gallery-item::after { content: "↗"; position: absolute; right: 13px; bottom: 13px; display: grid; place-items: center; width: 34px; aspect-ratio: 1; border-radius: 50%; color: #fff; background: rgba(65,8,23,.7); opacity: 0; transform: translateY(5px); transition: .3s; }
+.gallery-item:hover::after { opacity: 1; transform: none; }
+.gallery-item:hover { box-shadow: 0 14px 30px rgba(66, 22, 30, .18); transform: translateY(-2px); }
+.gallery-item img { display: block; width: 100%; height: auto; object-fit: contain; transition: transform .65s ease; }
+.gallery-item:hover img { transform: scale(1.006); }
+
+.lightbox { position: fixed; inset: 0; z-index: 3000; display: grid; place-items: center; padding: 30px 70px; visibility: hidden; opacity: 0; background: rgba(19,4,8,.94); transition: .25s; }
+.lightbox.open { visibility: visible; opacity: 1; }
+.lightbox figure { max-width: min(900px,88vw); max-height: 90vh; margin: 0; text-align: center; }
+.lightbox img { display: block; max-width: 100%; max-height: 84vh; margin: 0 auto; object-fit: contain; box-shadow: 0 22px 80px rgba(0,0,0,.45); }
+.lightbox figcaption { margin-top: 10px; color: rgba(255,255,255,.7); font-size: .72rem; letter-spacing: .12em; }
+.lightbox__close, .lightbox__nav { position: absolute; border: 0; color: #fff; background: transparent; }
+.lightbox__close { top: 18px; right: 24px; font-size: 2.2rem; }
+.lightbox__nav { top: 50%; width: 50px; height: 70px; transform: translateY(-50%); font-size: 3rem; }
+.lightbox__nav--prev { left: 12px; }
+.lightbox__nav--next { right: 12px; }
+
+.footer { color: #f8e9d4; background: var(--wine); text-align: center; }
+.footer__om { color: var(--gold); font-size: 2rem; }
+.footer p { max-width: 720px; margin: 18px auto; font: 500 1.25rem/1.5 "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.footer h2 { margin: 28px 0 18px; font: 400 clamp(2.2rem,5vw,4rem) "Italiana", "Noto Serif Telugu", serif; }
+.footer h2 i { color: var(--gold); font: italic 400 1em "Cormorant Garamond", serif; }
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 4px;
+}
+.footer small { color: rgba(255,255,255,.5); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; }
+.footer-credit {
+  display: block;
+  width: fit-content;
+  max-width: min(92vw, 780px);
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.footer-credit a {
+  color: rgba(248,233,212,.88);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200,155,81,.42);
+  transition: color .25s ease, border-color .25s ease;
+}
+.footer-credit a:hover,
+.footer-credit a:focus-visible {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.footer-instagram {
+  width: min(720px, 92vw);
+  margin: 30px auto 26px;
+  padding: 26px clamp(18px, 4vw, 38px);
+  border: 1px solid rgba(200,155,81,.32);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255,255,255,.055), rgba(200,155,81,.07));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 18px 42px rgba(29,0,8,.14);
+}
+.footer .footer-instagram__lead {
+  margin: 0 0 14px;
+  color: rgba(248,233,212,.92);
+  font: 500 clamp(1.15rem, 2vw, 1.42rem)/1.35 "Cormorant Garamond", "Noto Serif Telugu", serif;
+}
+.footer-instagram__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 11px 22px;
+  border: 1px solid rgba(200,155,81,.56);
+  border-radius: 999px;
+  color: var(--wine-deep);
+  background: linear-gradient(135deg, #f5dfb3, var(--gold));
+  box-shadow: 0 10px 24px rgba(22,0,6,.2);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+.footer-instagram__button i { font-style: normal; font-size: 1rem; }
+.footer-instagram__button:hover,
+.footer-instagram__button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(22,0,6,.25);
+  filter: brightness(1.04);
+}
+.footer .footer-instagram__note {
+  max-width: 590px;
+  margin: 14px auto 0;
+  color: rgba(248,233,212,.62);
+  font: 400 .92rem/1.55 "Montserrat", sans-serif;
+  letter-spacing: .015em;
+}
+
+
+.toast { position: fixed; z-index: 4000; left: 50%; bottom: 24px; padding: 12px 18px; border: 1px solid rgba(255,255,255,.18); color: #fff; background: rgba(65,8,23,.94); box-shadow: var(--shadow); font-size: .75rem; transform: translate(-50%,120px); transition: .35s; }
+.toast.show { transform: translate(-50%,0); }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.in-view { opacity: 1; transform: none; }
+noscript { position: fixed; z-index: 5000; left: 10px; right: 10px; bottom: 10px; padding: 14px; color: #fff; background: #410817; text-align: center; }
+
+.lang-te .eyebrow,
+.lang-te .nav-links,
+.lang-te .event-card__day,
+.lang-te .event-card__date,
+.lang-te .event-select,
+.lang-te .countdown span,
+.lang-te .text-button,
+.lang-te .primary-button,
+.lang-te .gallery-details summary small,
+.lang-te .footer small { letter-spacing: .03em; text-transform: none; }
+.lang-te .couple-names,
+.lang-te .section-heading h2,
+.lang-te .rsvp__intro h2,
+.lang-te .gallery-details summary strong,
+.lang-te .footer h2 { line-height: 1.3; }
+.lang-te .main-name { font-size: clamp(3rem,7vw,6.7rem); }
+.lang-te .couple-names .parentage { margin-top: 6px; font-family: "Noto Sans Telugu", sans-serif !important; letter-spacing: 0; }
+.lang-te .wedding-night-summary strong,
+.lang-te .event-card h3,
+.lang-te .team-card strong { line-height: 1.45; }
+
+
+/* Script-aware typography for the one-tap language cycle. */
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .eyebrow,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .nav-links,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .event-card__day,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .event-card__date,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .event-select,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .countdown span,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .text-button,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .primary-button,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .gallery-details summary small,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .footer small { letter-spacing: .02em; text-transform: none; }
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .couple-names,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .section-heading h2,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .rsvp__intro h2,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .gallery-details summary strong,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .footer h2 { line-height: 1.32; }
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .main-name { font-size: clamp(2.8rem,6.5vw,6.2rem); }
+.lang-hi .main-name, .lang-hi .couple-names, .lang-hi .section-heading h2, .lang-hi .event-card h3, .lang-hi .team-card strong, .lang-hi .footer h2,
+.lang-ne .main-name, .lang-ne .couple-names, .lang-ne .section-heading h2, .lang-ne .event-card h3, .lang-ne .team-card strong, .lang-ne .footer h2 { font-family: "Noto Serif Devanagari", serif; }
+.lang-ta .main-name, .lang-ta .couple-names, .lang-ta .section-heading h2, .lang-ta .event-card h3, .lang-ta .team-card strong, .lang-ta .footer h2 { font-family: "Noto Serif Tamil", serif; }
+.lang-zh .main-name, .lang-zh .couple-names, .lang-zh .section-heading h2, .lang-zh .event-card h3, .lang-zh .team-card strong, .lang-zh .footer h2 { font-family: "Noto Serif SC", serif; }
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .couple-names .parentage { margin-top: 6px; letter-spacing: 0; }
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .wedding-night-summary strong,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .event-card h3,
+:is(.lang-hi,.lang-ne,.lang-ta,.lang-zh) .team-card strong { line-height: 1.42; }
+
+@media (max-width: 1180px) {
+  .event-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .event-card { min-height: 430px; }
+}
+
+@media (max-width: 1024px) {
+  .rsvp { grid-template-columns: 1fr; }
+  .rsvp__intro { max-width: 680px; }
+  .gallery-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+
+@media (max-width: 760px) {
+
+  .instagram-logo-hint { display: none; }
+  .footer-instagram { border-radius: 26px; margin-top: 24px; padding: 22px 18px; }
+  .footer-instagram__button { width: 100%; max-width: 330px; }
+
+  .section-pad { padding: 72px 20px; }
+  .hero { padding-top: 22px; }
+  .topbar__actions { gap: 8px; }
+  .menu-button { display: block; }
+  .language-toggle { min-width: 68px; padding: 7px 8px; font-size: .64rem; }
+  .nav-links { position: absolute; top: 50px; right: 0; display: none; flex-direction: column; gap: 18px; min-width: 200px; padding: 20px; border: 1px solid var(--line); background: rgba(255,250,241,.97); box-shadow: var(--shadow); }
+  .nav-links.open { display: flex; }
+  .hero__content { margin-top: 82px; }
+  .main-name { font-size: clamp(3rem,15vw,5.2rem); }
+  .couple-names .parentage { margin-top: 7px; padding: 0 10px; font-size: .72rem !important; }
+  .hero__date-card { width: 100%; justify-content: center; gap: 7px; padding: 14px 5px; }
+  .hero__date-card div { min-width: 0; grid-template-columns: auto; text-align: center; }
+  .hero__date-card span, .hero__date-card strong, .hero__date-card small { grid-column: 1; max-width: none; padding: 0; }
+  .hero__date-card strong { font-size: 1.65rem; }
+  .wedding-night-summary__grid { grid-template-columns: 1fr; }
+  .wedding-night-summary article + article { border-top: 1px solid var(--line); border-left: 0; }
+  .event-grid { grid-template-columns: 1fr; }
+  .event-card { min-height: 390px; }
+  .event-card__locations p { grid-template-columns: 1fr; gap: 3px; }
+  .event-card__locations a { justify-self: start; margin: -3px -8px 0; }
+  .wedding-card { min-height: 470px; }
+  .teams { grid-template-columns: 1fr; }
+  .versus { text-align: center; }
+  .team-card { min-height: 180px; }
+  .countdown strong { font-size: clamp(2rem,11vw,3.3rem); }
+  .countdown div { padding: 28px 4px; }
+  .countdown span { font-size: .5rem; letter-spacing: .08em; }
+  .rsvp-form { padding: 25px 18px; }
+  .event-options, .choice-row { grid-template-columns: 1fr; }
+  .blessing-strip { flex-direction: column-reverse; gap: 8px; }
+  .gallery-details summary { align-items: flex-end; }
+  .gallery-details summary strong { font-size: clamp(1.8rem,9vw,3.2rem); }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .lightbox { padding: 25px 44px; }
+  .lightbox__nav { width: 40px; }
+  .lightbox__nav--prev { left: 2px; }
+  .lightbox__nav--next { right: 2px; }
+}
+
+@media (max-width: 420px) {
+  .monogram { width: 54px; height: 54px; padding: 5px; }
+  .wax-seal { width: 62px; padding: 7px; }
+  .envelope { width: 90vw; }
+  .envelope__paper { padding: 14px; }
+  .cover-parentage { font-size: .42rem; }
+  .hero__date-card small { font-size: .52rem; }
+  .wedding-night-summary article { padding: 17px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition-duration: .01ms !important; }
+}
+
+.visitor-counter {
+  width: fit-content;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: baseline;
+  justify-content: center;
+  gap: 7px;
+  margin: 0 auto;
+  color: rgba(255,245,231,.52);
+  font: 500 .54rem "Montserrat", "Noto Sans Telugu", sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.visitor-counter.is-ready {
+  opacity: 1;
+  transform: translateY(0);
+}
+.visitor-counter i {
+  color: rgba(200,155,81,.72);
+  font-style: normal;
+}
+.visitor-counter strong {
+  color: var(--gold);
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+
+/* Version 23: paired language switch and true-top logo */
+.monogram {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: max-content;
+  white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.language-toggle__option {
+  opacity: .55;
+  font-weight: 500;
+  transition: opacity .2s ease, color .2s ease;
+}
+.language-toggle__option.is-active {
+  opacity: 1;
+  color: var(--wine);
+  font-weight: 700;
+}
+.language-toggle__divider {
+  color: var(--gold);
+  opacity: .9;
+}
+@media (max-width: 760px) {
+
+  .instagram-logo-hint { display: none; }
+  .footer-instagram { border-radius: 26px; margin-top: 24px; padding: 22px 18px; }
+  .footer-instagram__button { width: 100%; max-width: 330px; }
+
+  .language-toggle {
+    gap: 4px;
+    padding: 7px 8px;
+    font-size: .6rem;
+  }
+}
+
+
+/* Version 25: responsive Instagram logo cue */
+.instagram-logo-hint {
+  left: 80px;
+  top: 50%;
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  max-width: 240px;
+  padding: 7px 12px 7px 10px;
+  color: rgba(111, 16, 37, .86);
+  background: rgba(255, 250, 241, .88);
+  border: 1px solid rgba(200, 155, 81, .34);
+  border-radius: 999px;
+  box-shadow: 0 7px 18px rgba(65, 24, 31, .07);
+  font-size: .79rem;
+  font-weight: 600;
+  letter-spacing: .018em;
+  line-height: 1.15;
+  transform: translateY(-50%) rotate(-1deg);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.instagram-logo-hint::before {
+  content: "←";
+  flex: 0 0 auto;
+  margin-right: 8px;
+  color: var(--gold);
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1;
+  transform: translateY(-1px) rotate(5deg);
+}
+@keyframes instagramHintFloat {
+  0%, 100% { transform: translateY(-50%) rotate(-1deg); opacity: .9; }
+  50% { transform: translateY(calc(-50% - 2px)) rotate(-1deg); opacity: 1; }
+}
+
+/* Tablets and landscape phones: keep the cue under the logo, away from navigation. */
+@media (max-width: 1100px), (max-height: 540px) {
+  .brand-instagram { align-self: flex-start; }
+  .instagram-logo-hint {
+    left: 50%;
+    top: calc(100% + 7px);
+    display: inline-flex !important;
+    max-width: 185px;
+    padding: 5px 9px;
+    font-size: .69rem;
+    line-height: 1.1;
+    white-space: nowrap;
+    transform: translateX(-50%) rotate(-1deg);
+  }
+  .instagram-logo-hint::before {
+    content: "↑";
+    margin-right: 6px;
+    font-size: .92rem;
+    transform: none;
+  }
+  @keyframes instagramHintFloat {
+    0%, 100% { transform: translateX(-50%) rotate(-1deg); opacity: .9; }
+    50% { transform: translateX(-50%) translateY(-2px) rotate(-1deg); opacity: 1; }
+  }
+}
+
+/* Portrait phones: show the cue clearly beneath the logo without crowding controls. */
+@media (max-width: 760px) {
+  .instagram-logo-hint {
+    display: inline-flex !important;
+    top: calc(100% + 6px);
+    max-width: 170px;
+    padding: 5px 8px;
+    font-size: .66rem;
+    box-shadow: 0 6px 15px rgba(65, 24, 31, .06);
+  }
+}
+
+@media (max-width: 420px) {
+  .instagram-logo-hint {
+    max-width: 152px;
+    padding: 4px 7px;
+    font-size: .61rem;
+    letter-spacing: 0;
+  }
+}
+
+
+/* Engagement film */
+.nav-youtube { color: var(--wine); }
+.nav-youtube::before {
+  content: "▶";
+  margin-right: 5px;
+  color: var(--gold);
+  font-size: .58rem;
+}
+.film-section {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(200,155,81,.12), transparent 26%),
+    radial-gradient(circle at 88% 78%, rgba(111,16,37,.08), transparent 28%),
+    #fffaf1;
+  border-top: 1px solid var(--line);
+}
+.film-section::before,
+.film-section::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(200,155,81,.18);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.film-section::before { left: -125px; top: 80px; }
+.film-section::after { right: -125px; bottom: 60px; }
+.film-heading {
+  position: relative;
+  z-index: 1;
+  width: min(780px, 100%);
+  margin: 0 auto 38px;
+}
+.film-heading small {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--gold);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.film-heading h2 {
+  margin: 0;
+  color: var(--wine);
+  font: 400 clamp(2.7rem, 6vw, 5.4rem)/1.05 "Italiana", "Noto Serif Telugu", serif;
+}
+.film-heading p {
+  max-width: 650px;
+  margin: 20px auto 0;
+  color: rgba(67,26,30,.68);
+  line-height: 1.75;
+}
+.film-player-card {
+  position: relative;
+  z-index: 1;
+  width: min(1040px, 100%);
+  margin: 0 auto;
+  padding: 14px;
+  border: 1px solid rgba(200,155,81,.32);
+  border-radius: 26px;
+  background: linear-gradient(145deg, #781128, #4f0717);
+  box-shadow: 0 28px 70px rgba(66, 13, 29, .2);
+}
+.film-player-card__topline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 2px 8px 13px;
+  color: rgba(255,245,226,.76);
+}
+.film-player-card__topline > span { color: var(--gold); font-size: .72rem; }
+.film-player-card__topline small {
+  font-size: .58rem;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.film-player {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  background: #170309;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+}
+.film-player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.youtube-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+.youtube-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 13px 22px;
+  border: 1px solid var(--wine);
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+}
+.youtube-button--primary { color: #fff7e8; background: var(--wine); }
+.youtube-button--secondary { color: var(--wine); background: rgba(255,255,255,.58); }
+.youtube-button:hover,
+.youtube-button:focus-visible { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(67,26,30,.14); }
+.youtube-button--secondary:hover,
+.youtube-button--secondary:focus-visible { color: #fff7e8; background: var(--wine); }
+.youtube-note {
+  position: relative;
+  z-index: 1;
+  margin: 18px auto 0;
+  color: rgba(67,26,30,.58);
+  font: italic 500 1rem/1.5 "Cormorant Garamond", "Noto Serif Telugu", serif;
+}
+:is(.lang-hi,.lang-ne) .film-heading h2 { font-family: "Noto Serif Devanagari", serif; line-height: 1.25; }
+.lang-ta .film-heading h2 { font-family: "Noto Serif Tamil", serif; line-height: 1.3; }
+.lang-zh .film-heading h2 { font-family: "Noto Serif SC", serif; line-height: 1.25; }
+
+@media (max-width: 1180px) and (min-width: 761px) {
+  .nav-links { gap: 18px; font-size: .64rem; }
+  .topbar__actions { gap: 14px; }
+}
+@media (max-width: 760px) {
+  .film-heading { margin-bottom: 28px; }
+  .film-player-card { padding: 8px; border-radius: 18px; }
+  .film-player-card__topline { padding-bottom: 9px; }
+  .film-player-card__topline small { font-size: .48rem; letter-spacing: .11em; }
+  .film-player { border-radius: 12px; }
+  .youtube-actions { flex-direction: column; align-items: stretch; }
+  .youtube-button { width: 100%; }
+}
+
+/* v32 — Chinese editorial refresh */
+body.lang-zh {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  letter-spacing: .01em;
+}
+.lang-zh :is(
+  .envelope__paper strong,
+  .main-name,
+  .couple-names,
+  .section-heading h2,
+  .event-card h3,
+  .team-card strong,
+  .rsvp__intro h2,
+  .gallery-details summary strong,
+  .film-heading h2,
+  .footer h2,
+  .footer-instagram__lead
+) {
+  font-family: "ZCOOL XiaoWei", "Noto Serif SC", "Songti SC", serif;
+  font-weight: 400;
+}
+.lang-zh :is(
+  .hero__verse,
+  .wedding-night-summary strong,
+  .wedding-night-summary small,
+  .blessing-strip p,
+  .event-card__description,
+  .event-card__astro,
+  .event-card__venue > span,
+  .event-card__locations span,
+  .gallery-content > p,
+  .film-heading p,
+  .youtube-note,
+  .footer > p,
+  .footer-instagram__note
+) {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+}
+.lang-zh .main-name {
+  font-size: clamp(2.55rem, 6vw, 5.7rem);
+  line-height: 1.12;
+  letter-spacing: .015em;
+}
+.lang-zh .couple-names .parentage {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif !important;
+  font-size: clamp(.67rem, 1.35vw, .82rem);
+  line-height: 1.6;
+}
+.lang-zh .hero__verse,
+.lang-zh .blessing-strip p,
+.lang-zh .section-heading > p:not(.eyebrow) {
+  line-height: 1.9;
+}
+.lang-zh .hero__date-card {
+  gap: 14px;
+  padding-inline: 18px;
+}
+.lang-zh .hero__date-card div {
+  min-width: 170px;
+  grid-template-columns: 1fr;
+  text-align: center;
+  align-items: center;
+}
+.lang-zh .hero__date-card span {
+  grid-column: 1;
+  font-size: .62rem;
+  letter-spacing: .1em;
+  text-transform: none;
+}
+.lang-zh .hero__date-card strong {
+  grid-column: 1;
+  max-width: 190px;
+  color: var(--wine);
+  font: 500 clamp(.78rem, 1.45vw, 1rem)/1.55 "Noto Serif SC", "Songti SC", serif;
+}
+.lang-zh .wedding-night-summary strong {
+  line-height: 1.7;
+}
+.lang-zh .event-card h3 {
+  line-height: 1.3;
+  letter-spacing: .01em;
+}
+.lang-zh .event-card__description {
+  line-height: 1.85;
+}
+.lang-zh .event-card__venue > strong,
+.lang-zh .event-card__locations strong,
+.lang-zh .event-card__day,
+.lang-zh .event-card__date,
+.lang-zh .event-select {
+  text-transform: none;
+  letter-spacing: .06em;
+}
+.lang-zh .venue-english {
+  display: block;
+  margin-top: 4px;
+  font-family: "Montserrat", "Noto Sans SC", sans-serif;
+  font-size: .68em;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: .02em;
+  opacity: .72;
+}
+.lang-zh .event-card--dark .venue-english {
+  color: rgba(255,247,235,.78);
+  opacity: 1;
+}
+.lang-zh .team-card strong {
+  max-width: 250px;
+  font-size: clamp(1.22rem, 2.3vw, 1.7rem);
+  line-height: 1.5;
+}
+.lang-zh .side-choice-chip b {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  line-height: 1.45;
+}
+.lang-zh .venue-card strong {
+  font-family: "ZCOOL XiaoWei", "Noto Serif SC", serif;
+  line-height: 1.55;
+}
+.lang-zh .footer-credit {
+  line-height: 1.8;
+}
+
+@media (max-width: 760px) {
+  .lang-zh .hero__date-card {
+    gap: 5px;
+    padding-inline: 3px;
+  }
+  .lang-zh .hero__date-card div {
+    min-width: 0;
+  }
+  .lang-zh .hero__date-card strong {
+    max-width: 112px;
+    font-size: .67rem;
+    line-height: 1.45;
+  }
+  .lang-zh .hero__date-card span {
+    font-size: .5rem;
+    letter-spacing: .04em;
+  }
+  .lang-zh .main-name {
+    font-size: clamp(2.35rem, 12vw, 4.25rem);
+  }
+  .lang-zh .event-card h3 {
+    font-size: clamp(1.72rem, 8vw, 2.3rem);
+  }
+}
+.lang-zh .venue-map-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--wine);
+  border-bottom: 1px solid rgba(111,16,37,.28);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+.lang-zh .venue-map-link:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+
+/* =========================================================
+   Version 34 — Wedding companion + privacy refinements
+   ========================================================= */
+body.lang-ne { font-family: "Noto Sans Devanagari", "Montserrat", system-ui, sans-serif; }
+
+/* Scrolled frosted navigation */
+.topbar { transition: background .3s ease, box-shadow .3s ease, border-color .3s ease, padding .3s ease, transform .3s ease; }
+.topbar.is-scrolled {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  width: min(calc(100% - 24px), 1280px);
+  padding: 9px 12px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(111,16,37,.12);
+  border-radius: 999px;
+  background: rgba(255,250,241,.86);
+  box-shadow: 0 12px 35px rgba(65,8,23,.10);
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+}
+.topbar.is-scrolled .monogram { width: 48px; height: 48px; box-shadow: none; }
+.topbar.is-scrolled .instagram-logo-hint { display: none !important; }
+
+/* Latest update */
+.latest-update {
+  width: min(980px, 100%);
+  margin: 28px auto -42px;
+  padding: 11px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid rgba(200,155,81,.32);
+  border-radius: 999px;
+  color: var(--wine);
+  background: rgba(255,250,241,.78);
+  box-shadow: 0 8px 24px rgba(65,8,23,.05);
+  font-size: .72rem;
+  line-height: 1.45;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+.latest-update[hidden] { display: none; }
+.latest-update__label { color: var(--gold); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+
+/* Wedding week live card */
+.wedding-week-card {
+  width: min(780px, 100%);
+  margin: 30px auto 0;
+  padding: 22px 24px;
+  border: 1px solid rgba(200,155,81,.38);
+  background: linear-gradient(145deg, rgba(255,250,241,.94), rgba(248,240,227,.88));
+  box-shadow: 0 18px 50px rgba(65,8,23,.09);
+  text-align: left;
+}
+.wedding-week-card[hidden] { display:none; }
+.wedding-week-card__eyebrow { margin:0 0 12px; color:var(--gold); font-size:.62rem; font-weight:700; letter-spacing:.17em; text-transform:uppercase; }
+.wedding-week-card__date { margin:0 0 15px; color:var(--wine); font:500 clamp(1.7rem,4vw,2.6rem) "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.wedding-week-item { display:grid; grid-template-columns:74px 1fr auto; gap:14px; align-items:center; padding:12px 0; border-top:1px solid var(--line); }
+.wedding-week-item__tag { color:var(--gold); font-size:.58rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+.wedding-week-item strong { display:block; color:var(--wine); font:600 1.12rem "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.wedding-week-item small { display:block; margin-top:2px; color:var(--muted); font-size:.68rem; line-height:1.45; }
+.wedding-week-item a { min-height:38px; display:inline-flex; align-items:center; padding:8px 10px; color:var(--wine); border:1px solid var(--line); font-size:.6rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
+
+/* Indian line-art separators */
+.indian-divider { display:flex; justify-content:center; padding:4px 20px; color:var(--gold); opacity:.34; }
+.indian-divider svg { width:min(260px,65vw); height:54px; fill:none; stroke:currentColor; stroke-width:1.25; vector-effect:non-scaling-stroke; }
+
+/* Event timeline */
+.event-progress { position:relative; width:min(920px,100%); margin:0 auto 42px; padding:0 8px; }
+.event-progress__track { position:absolute; left:7%; right:7%; top:17px; height:1px; background:rgba(111,16,37,.16); overflow:hidden; }
+.event-progress__fill { width:0; height:100%; background:linear-gradient(90deg,var(--gold),var(--wine)); transition:width .6s cubic-bezier(.2,.8,.2,1); }
+.event-progress__steps { position:relative; display:grid; grid-template-columns:repeat(6,1fr); gap:4px; }
+.event-progress__step { display:grid; justify-items:center; gap:7px; color:var(--muted); font-size:.54rem; letter-spacing:.08em; text-transform:uppercase; }
+.event-progress__step i { width:34px; height:34px; display:grid; place-items:center; border:1px solid var(--line); border-radius:50%; color:var(--wine); background:var(--ivory); font-style:normal; font:600 .78rem "Cormorant Garamond",serif; transition:.3s; }
+.event-progress__step.is-active i, .event-progress__step.is-past i { color:#fff8ed; border-color:var(--wine); background:var(--wine); box-shadow:0 0 0 5px rgba(200,155,81,.09); }
+
+/* Micro interactions */
+.event-card a[href*="maps"], .event-card a[href*="google"], .event-card a[href*="share.google"] { transition: transform .2s ease, color .2s ease, border-color .2s ease; }
+.event-card a[href*="maps"]:hover, .event-card a[href*="google"]:hover, .event-card a[href*="share.google"]:hover { transform:translateX(3px); }
+.primary-button { position:relative; overflow:hidden; }
+.primary-button::after { content:""; position:absolute; inset:-60% auto -60% -40%; width:22%; transform:rotate(18deg); background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent); animation:buttonShimmer 7s ease-in-out 2.5s 1; }
+@keyframes buttonShimmer { 0%{left:-40%} 28%,100%{left:130%} }
+
+/* Protected gallery — discourages casual saving; not DRM */
+.gallery-item { -webkit-touch-callout:none; user-select:none; -webkit-user-select:none; }
+.gallery-item img, .lightbox img { -webkit-user-drag:none; user-drag:none; -webkit-touch-callout:none; user-select:none; pointer-events:none; }
+.gallery-watermark { position:absolute; left:14px; bottom:14px; z-index:3; padding:5px 8px; border:1px solid rgba(255,255,255,.26); border-radius:999px; color:rgba(255,255,255,.72); background:rgba(65,8,23,.32); font:500 .52rem "Montserrat",sans-serif; letter-spacing:.06em; backdrop-filter:blur(4px); pointer-events:none; }
+
+/* Lite YouTube embed */
+.film-lite { position:relative; aspect-ratio:16/9; overflow:hidden; display:grid; place-items:center; background:linear-gradient(rgba(65,8,23,.32),rgba(65,8,23,.58)), url('/assets/social-preview.jpg') center/cover no-repeat; }
+.film-lite__play { width:86px; height:86px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.58); border-radius:50%; color:#fff7eb; background:rgba(111,16,37,.82); box-shadow:0 16px 45px rgba(0,0,0,.22); font-size:1.6rem; transition:.25s; }
+.film-lite__play:hover { transform:scale(1.06); background:var(--wine); }
+.film-lite iframe { width:100%; height:100%; border:0; }
+
+/* Travel accordion */
+.travel-details { margin-top:28px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.travel-details summary { display:flex; justify-content:space-between; gap:16px; padding:17px 0; color:var(--wine); cursor:pointer; font:600 1rem "Cormorant Garamond", "Noto Serif Telugu", serif; }
+.travel-details summary::after { content:"＋"; color:var(--gold); }
+.travel-details[open] summary::after { content:"−"; }
+.travel-details__body { padding:0 0 18px; color:var(--muted); font-size:.74rem; line-height:1.75; }
+.travel-details__body a { color:var(--wine); border-bottom:1px solid var(--line); }
+
+/* Footer utilities */
+.footer-utilities { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:25px auto 4px; }
+.footer-utility { min-height:42px; display:inline-flex; align-items:center; justify-content:center; gap:7px; padding:9px 14px; border:1px solid rgba(255,255,255,.24); color:#fff1df; background:rgba(255,255,255,.04); font-size:.64rem; letter-spacing:.06em; text-transform:uppercase; transition:.25s; }
+.footer-utility:hover { color:var(--wine); background:#fff7eb; }
+.footer-utility[hidden] { display:none; }
+
+/* Sticky mobile quick bar */
+.quick-bar { position:fixed; left:50%; bottom:max(10px,env(safe-area-inset-bottom)); z-index:2200; width:min(calc(100% - 22px),520px); display:none; grid-template-columns:repeat(3,1fr); transform:translate(-50%,120%); opacity:0; border:1px solid rgba(111,16,37,.14); border-radius:18px; background:rgba(255,250,241,.92); box-shadow:0 16px 42px rgba(65,8,23,.18); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); transition:.35s ease; overflow:hidden; }
+.quick-bar.is-visible { transform:translate(-50%,0); opacity:1; }
+.quick-bar a { min-height:50px; display:grid; place-items:center; padding:8px 4px; color:var(--wine); font-size:.58rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; text-align:center; }
+.quick-bar a + a { border-left:1px solid var(--line); }
+
+
+/* Post-wedding thank-you */
+.post-wedding-thanks { width:min(800px,100%); margin:34px auto 0; padding:28px; border:1px solid rgba(200,155,81,.34); background:rgba(255,250,241,.76); text-align:center; box-shadow:0 18px 52px rgba(65,8,23,.07); }
+.post-wedding-thanks[hidden] { display:none; }
+.post-wedding-thanks small { color:var(--gold); font-size:.62rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
+.post-wedding-thanks h2 { margin:10px 0 8px; color:var(--wine); font:400 clamp(2.3rem,6vw,4.4rem) "Italiana","Noto Serif Telugu",serif; }
+.post-wedding-thanks p { margin:0; color:var(--muted); line-height:1.75; }
+body.post-wedding-mode [data-private-after-wedding] { display:none !important; }
+body.post-wedding-mode .invitation-cover { display:none !important; }
+
+/* Optional music control only appears when a supplied audio file is configured. */
+.music-toggle { position:fixed; right:18px; bottom:84px; z-index:2190; width:44px; height:44px; display:grid; place-items:center; border:1px solid rgba(111,16,37,.16); border-radius:50%; color:var(--wine); background:rgba(255,250,241,.9); box-shadow:0 10px 30px rgba(65,8,23,.12); backdrop-filter:blur(12px); }
+.music-toggle[hidden] { display:none; }
+.music-toggle.is-playing { color:#fff7eb; background:var(--wine); }
+
+@media (max-width: 900px) {
+  .quick-bar { display:grid; }
+  body { padding-bottom:72px; }
+  .wedding-week-item { grid-template-columns:64px 1fr; }
+  .wedding-week-item a { grid-column:2; justify-self:start; }
+  .topbar.is-scrolled { top:7px; border-radius:18px; }
+}
+@media (max-width: 760px) {
+  .latest-update { margin-top:42px; margin-bottom:-32px; border-radius:16px; }
+  .event-progress__step span { display:none; }
+  .event-progress__track { left:9%; right:9%; }
+  .wedding-week-card { padding:18px; }
+  .gallery-watermark { left:10px; bottom:10px; font-size:.47rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .primary-button::after { display:none; }
+}
+
+/* v36 · countdown date/time legibility */
+.countdown-section .section-heading { position: relative; z-index: 2; }
+.countdown-section .section-heading h2 {
+  color: #f4d9a4;
+  text-shadow: 0 1px 18px rgba(244,217,164,.08);
+}
+
+/* v36 · uniform venue contact line */
+.venue-card .venue-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(111,16,37,.22);
+  color: var(--wine);
+  font-size: .72rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.venue-card .venue-whatsapp::before {
+  content: "●";
+  color: #3a9a61;
+  font-size: .62rem;
+  line-height: 1;
+}
+.venue-card .venue-whatsapp:hover { border-bottom-color: var(--gold); color: var(--gold); }
+
+/* v36 · engagement film actions */
+.film-actions {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 8px 0;
+}
+.film-actions a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid rgba(255,247,235,.42);
+  border-radius: 999px;
+  color: #fff7eb;
+  background: rgba(255,255,255,.07);
+  font-size: .62rem;
+  font-weight: 650;
+  letter-spacing: .055em;
+  text-align: center;
+  transition: transform .22s ease, background .22s ease, color .22s ease, border-color .22s ease;
+}
+.film-actions a:first-child {
+  color: var(--wine-deep);
+  background: #fff2d9;
+  border-color: #fff2d9;
+}
+.film-actions a:hover,
+.film-actions a:focus-visible {
+  transform: translateY(-1px);
+  color: var(--wine-deep);
+  background: #f4d9a4;
+  border-color: #f4d9a4;
+}
+.film-player-card > p[data-i18n="youtubeNote"] {
+  position: relative;
+  z-index: 2;
+  margin: 16px 12px 8px;
+  color: rgba(255,247,235,.82);
+  text-align: center;
+  line-height: 1.65;
+}
+@media (max-width: 560px) {
+  .film-actions { flex-direction: column; align-items: stretch; margin: 14px 6px 0; }
+  .film-actions a { width: 100%; min-height: 44px; padding: 10px 12px; font-size: .59rem; }
+  .countdown-section .section-heading h2 { color: #f6dfb2; }
+}
+
+/* =========================================================
+   v37 · mobile polish, RSVP clarity and quieter quick actions
+   ========================================================= */
+
+/* Visually balance Sujana's descender against the parentage line. */
+.couple-names > div:first-child .parentage {
+  margin-top: 16px;
+}
+
+/* Instagram cue: handwriting-like whisper only — no plate, no clipping. */
+.instagram-logo-hint {
+  left: 2px;
+  top: calc(100% + 7px);
+  width: max-content;
+  max-width: 190px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: rgba(111,16,37,.50);
+  background: transparent;
+  box-shadow: none;
+  font-size: .68rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: .015em;
+  white-space: nowrap;
+  transform: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  animation: instagramHintSubtle 5.5s ease-in-out infinite;
+}
+.instagram-logo-hint::before { display: none; content: ""; }
+.instagram-logo-hint::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 4px;
+  color: rgba(200,155,81,.78);
+  font-style: normal;
+  font-size: .7rem;
+}
+@keyframes instagramHintSubtle {
+  0%,100% { opacity: .58; }
+  50% { opacity: .82; }
+}
+
+/* RSVP: make each decision read as a selectable card instead of raw form controls. */
+.rsvp-form fieldset + fieldset {
+  padding-top: 22px;
+  border-top: 1px solid rgba(111,16,37,.12);
+}
+.choice-chip {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.choice-chip > input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.choice-chip > span {
+  position: relative;
+  min-height: 58px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 12px 34px 12px 14px !important;
+  border: 1px solid rgba(111,16,37,.17) !important;
+  border-radius: 12px;
+  color: var(--wine) !important;
+  background: rgba(255,255,255,.38) !important;
+  font-size: .67rem !important;
+  font-weight: 650 !important;
+  letter-spacing: .07em !important;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase !important;
+  transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+}
+.choice-chip > span::after {
+  content: "✓";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) scale(.72);
+  color: var(--gold);
+  opacity: 0;
+  font-size: .9rem;
+  transition: .18s ease;
+}
+.choice-chip > input:checked + span {
+  color: #fff7eb !important;
+  border-color: var(--wine) !important;
+  background: var(--wine) !important;
+  box-shadow: 0 8px 20px rgba(111,16,37,.10);
+}
+.choice-chip > input:checked + span::after { opacity: 1; transform: translateY(-50%) scale(1); }
+.choice-chip:active > span { transform: scale(.985); }
+
+.side-choice-row .choice-chip > span {
+  min-height: 72px;
+  flex-direction: column;
+  gap: 3px;
+  padding: 11px 26px 11px 12px !important;
+}
+.side-choice-row .choice-chip > span > b {
+  color: inherit;
+  font-size: .63rem;
+  letter-spacing: .09em;
+}
+.side-choice-row .choice-chip > span > span {
+  color: inherit;
+  font: 600 1.02rem/1.15 "Cormorant Garamond", "Noto Serif Telugu", serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.event-options label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.event-options span {
+  position: relative;
+  min-height: 62px;
+  padding: 13px 14px 13px 46px;
+  border-radius: 12px;
+  border-color: rgba(111,16,37,.16);
+  background: rgba(255,255,255,.34);
+}
+.event-options span::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+  border: 1px solid rgba(111,16,37,.35);
+  border-radius: 4px;
+  color: var(--wine);
+  background: rgba(255,250,241,.7);
+  font-size: .68rem;
+  line-height: 1;
+}
+.event-options input:checked + span::before {
+  content: "✓";
+  border-color: #f3cf88;
+  color: #f3cf88;
+  background: rgba(255,255,255,.08);
+}
+
+/* Mobile quick bar: quieter, with a two-choice directions popover. */
+.quick-bar {
+  width: min(calc(100% - 32px), 490px);
+  bottom: max(12px,env(safe-area-inset-bottom));
+  border-color: rgba(111,16,37,.11);
+  border-radius: 16px;
+  background: rgba(255,250,241,.86);
+  box-shadow: 0 10px 28px rgba(65,8,23,.11);
+  overflow: visible;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.quick-bar > a,
+.quick-bar__directions > button {
+  width: 100%;
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 7px 5px;
+  border: 0;
+  color: rgba(111,16,37,.88);
+  background: transparent;
+  font: 650 .56rem/1.2 "Montserrat","Noto Sans Telugu",sans-serif;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.quick-bar > a + .quick-bar__directions,
+.quick-bar__directions + a { border-left: 1px solid rgba(111,16,37,.10); }
+.quick-bar__directions { position: relative; display: grid; }
+.quick-bar__directions > button { cursor: pointer; }
+.quick-bar__directions > button::after {
+  content: "⌃";
+  margin-left: 4px;
+  color: rgba(200,155,81,.85);
+  font-size: .58rem;
+}
+.quick-bar__directions > button[aria-expanded="true"] {
+  color: var(--wine);
+  background: rgba(111,16,37,.055);
+}
+.quick-directions-menu {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 9px);
+  z-index: 2;
+  width: min(290px, calc(100vw - 44px));
+  padding: 7px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(111,16,37,.13);
+  border-radius: 14px;
+  background: rgba(255,250,241,.97);
+  box-shadow: 0 14px 38px rgba(65,8,23,.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.quick-directions-menu[hidden] { display: none; }
+.quick-directions-menu a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--wine);
+  font-size: .61rem;
+  font-weight: 650;
+  letter-spacing: .035em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+.quick-directions-menu a + a { border-top: 1px solid rgba(111,16,37,.09); }
+.quick-directions-menu a:hover,
+.quick-directions-menu a:focus-visible { background: rgba(111,16,37,.055); }
+
+@media (max-width: 760px) {
+  .couple-names > div:first-child .parentage { margin-top: 13px; }
+
+  .instagram-logo-hint {
+    left: 0;
+    top: calc(100% + 7px);
+    max-width: 138px;
+    font-size: .57rem;
+    line-height: 1.14;
+    white-space: normal;
+    text-align: left;
+    transform: none;
+  }
+
+  /* Keep both team choices side by side in the rivalry section and RSVP. */
+  .teams {
+    grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
+    gap: 8px;
+  }
+  .team-card {
+    min-height: 132px;
+    padding: 13px 8px;
+    gap: 5px;
+  }
+  .team-card__icon { font-size: 1.7rem; }
+  .team-card small { font-size: .5rem; letter-spacing: .11em; }
+  .team-card strong { font-size: clamp(1.25rem,5.8vw,1.7rem); line-height: 1.08; }
+  .versus { font-size: 1.2rem; }
+
+  .attendance-choice-row,
+  .side-choice-row { grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 8px; }
+  .side-choice-row .choice-chip > span { min-height: 78px; padding-right: 20px !important; }
+  .side-choice-row .choice-chip > span::after { right: 8px; }
+
+  .rsvp-form {
+    gap: 22px;
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+  .rsvp-form legend { margin-bottom: 11px; }
+  .event-options { gap: 8px; }
+  .event-options span { min-height: 58px; font-size: .68rem; }
+}
+
+@media (max-width: 390px) {
+  .instagram-logo-hint { max-width: 126px; font-size: .54rem; }
+  .team-card strong { font-size: 1.2rem; }
+  .side-choice-row .choice-chip > span { padding-left: 8px !important; padding-right: 17px !important; }
+  .side-choice-row .choice-chip > span > b { font-size: .55rem; }
+  .side-choice-row .choice-chip > span > span { font-size: .9rem; }
+}
+
+/* =========================================================
+   v38 · detail polish: cue, RSVP names, build mark, SR watermark
+   ========================================================= */
+
+/* Instagram whisper: sit a little to the right, with the arrow first
+   and pointing back toward the monogram. */
+.instagram-logo-hint {
+  left: 52px;
+  top: calc(100% + 6px);
+  max-width: 190px;
+  color: rgba(111,16,37,.42);
+  font-size: .66rem;
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+.instagram-logo-hint::after { display: none !important; content: "" !important; }
+.instagram-logo-hint::before {
+  content: "↖" !important;
+  display: inline-block !important;
+  margin-right: 5px;
+  color: rgba(200,155,81,.68);
+  font-style: normal;
+  font-size: .72rem;
+  transform: translateY(-1px);
+}
+
+/* RSVP side selector: only the outer choice is framed. The person's
+   name is larger, borderless, and visually subordinate to Bride/Groom. */
+.side-choice-row .choice-chip > span > span {
+  min-height: 0 !important;
+  display: block !important;
+  margin: 1px 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: inherit !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font: 600 1.28rem/1.08 "Cormorant Garamond", "Noto Serif Telugu", serif !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+.side-choice-row .choice-chip > span > span::before,
+.side-choice-row .choice-chip > span > span::after { display: none !important; content: none !important; }
+
+/* Event-card ornament: use the couple's monogram as the faint glassy
+   watermark instead of generic concentric circles. */
+.event-card::before {
+  right: -34px;
+  bottom: -38px;
+  width: 190px;
+  height: 190px;
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 0;
+  background: url('/assets/sr-watermark-wine.png') center/contain no-repeat;
+  box-shadow: none;
+  opacity: .72;
+  filter: none;
+}
+.event-card--dark::before {
+  border: 0;
+  background-image: url('/assets/sr-watermark-gold.png');
+  box-shadow: none;
+  opacity: .82;
+}
+
+/* Tiny build cue below the public counter: visible enough for us,
+   deliberately quiet enough that guests read it as a watermark. */
+.build-watermark {
+  display: block;
+  margin-top: -4px;
+  color: rgba(248,233,212,.23) !important;
+  font: 500 .46rem/1 "Montserrat", sans-serif !important;
+  letter-spacing: .23em !important;
+  text-transform: uppercase !important;
+  user-select: none;
+}
+
+@media (max-width: 760px) {
+  .instagram-logo-hint {
+    left: 32px;
+    top: calc(100% + 7px);
+    max-width: 165px;
+    font-size: .56rem;
+    line-height: 1.12;
+    white-space: nowrap;
+    text-align: left;
+  }
+  .instagram-logo-hint::before { font-size: .64rem; margin-right: 4px; }
+  .side-choice-row .choice-chip > span > span { font-size: 1.14rem !important; }
+  .event-card::before { width: 168px; height: 168px; right: -34px; bottom: -32px; }
+}
+
+@media (max-width: 390px) {
+  .instagram-logo-hint { left: 27px; max-width: 155px; font-size: .52rem; }
+  .side-choice-row .choice-chip > span > span { font-size: 1.02rem !important; }
+}
+
+
+/* =========================================================
+   v39 · countdown monogram, balanced schedule spacing,
+          and RSVP team alignment
+   ========================================================= */
+
+/* Replace the generic countdown rings with the couple's SR monogram.
+   It remains deliberately faint so the numbers/date stay dominant. */
+.countdown-decoration {
+  left: 50%;
+  top: 53%;
+  bottom: auto;
+  width: min(610px, 68vw);
+  height: auto;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border: 0;
+  border-radius: 0;
+  background: url('/assets/sr-watermark-gold.png') center/contain no-repeat;
+  mix-blend-mode: screen;
+  box-shadow: none;
+  opacity: .16;
+  filter: saturate(.95) brightness(1.08);
+  pointer-events: none;
+}
+
+/* Match the breathing room above the ceremony schedule below it too. */
+.wedding-night-summary + .text-button {
+  display: inline-block;
+  margin-top: 22px;
+}
+
+/* True optical centering inside the RSVP team cards. The old larger
+   right padding reserved for the tick shifted the wording left. */
+.side-choice-row .choice-chip > span {
+  min-height: 84px;
+  padding: 14px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+.side-choice-row .choice-chip > span::after {
+  top: 9px;
+  right: 10px;
+  transform: scale(.72);
+}
+.side-choice-row .choice-chip > input:checked + span::after {
+  transform: scale(1);
+}
+.side-choice-row .choice-chip > span > b {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.side-choice-row .choice-chip > span > span {
+  width: 100%;
+  margin-top: 5px !important;
+  font-size: 1.52rem !important;
+  line-height: 1.02 !important;
+  text-align: center !important;
+}
+
+@media (max-width: 760px) {
+  .countdown-decoration {
+    top: 54%;
+    width: min(480px, 94vw);
+    opacity: .13;
+  }
+  .wedding-night-summary + .text-button { margin-top: 20px; }
+  .side-choice-row .choice-chip > span {
+    min-height: 88px;
+    padding: 13px 10px !important;
+  }
+  .side-choice-row .choice-chip > span > span {
+    margin-top: 6px !important;
+    font-size: 1.34rem !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .side-choice-row .choice-chip > span > span { font-size: 1.2rem !important; }
+}
+
+
+/* =========================================================
+   v40 · RSVP event-only labels, compact Instagram footer,
+          and measured spacing normalization
+   ========================================================= */
+
+/* RSVP celebrations: short event names, vertically centred with
+   the custom checkbox.  The shorter rows are intentionally more
+   compact now that dates/times are not repeated here. */
+.event-options {
+  gap: 9px;
+}
+.event-options span {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  padding: 11px 16px 11px 48px;
+  line-height: 1.25;
+}
+.event-options span::before {
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* The Instagram footer prompt is a supporting CTA, not another
+   major section. Keep it compact and visually secondary. */
+.footer-instagram {
+  width: min(500px, 88vw);
+  margin: 20px auto 18px;
+  padding: 15px 20px 16px;
+  border-radius: 24px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 10px 28px rgba(29,0,8,.10);
+}
+.footer .footer-instagram__lead {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+.footer-instagram__button {
+  min-height: 36px;
+  padding: 8px 16px;
+  gap: 7px;
+  font-size: .61rem;
+  letter-spacing: .09em;
+  box-shadow: 0 7px 18px rgba(22,0,6,.16);
+}
+.footer-instagram__button i { font-size: .82rem; }
+.footer .footer-instagram__note {
+  max-width: 430px;
+  margin: 8px auto 0;
+  font-size: .72rem;
+  line-height: 1.45;
+  opacity: .9;
+}
+
+/* Spacing normalization: modest rather than a redesign. These values
+   remove oversized dead zones while preserving the editorial rhythm. */
+.section-pad { padding-top: 88px; padding-bottom: 88px; }
+.section-heading { margin-bottom: 44px; }
+.rsvp-form { gap: 22px; }
+.rsvp-form fieldset + fieldset { padding-top: 18px; }
+.quick-actions { gap: 11px; margin-top: 24px; }
+.footer.section-pad { padding-top: 72px; padding-bottom: 56px; }
+.footer p { margin-top: 14px; margin-bottom: 14px; }
+.footer h2 { margin-top: 22px; margin-bottom: 14px; }
+.footer-meta { gap: 9px; }
+
+@media (max-width: 760px) {
+  .section-pad { padding-top: 64px; padding-bottom: 64px; }
+  .section-heading { margin-bottom: 36px; }
+  .rsvp-form { gap: 20px; }
+  .rsvp-form fieldset + fieldset { padding-top: 16px; }
+  .event-options { gap: 7px; }
+  .event-options span {
+    min-height: 52px;
+    padding: 10px 14px 10px 45px;
+    font-size: .68rem;
+  }
+  .event-options span::before { left: 14px; }
+  .footer-instagram {
+    width: min(420px, 88vw);
+    margin: 16px auto 15px;
+    padding: 13px 15px 14px;
+    border-radius: 20px;
+  }
+  .footer .footer-instagram__lead { margin-bottom: 7px; font-size: .92rem; }
+  .footer-instagram__button {
+    width: auto;
+    max-width: none;
+    min-height: 34px;
+    padding: 7px 14px;
+    font-size: .58rem;
+  }
+  .footer .footer-instagram__note {
+    max-width: 320px;
+    margin-top: 7px;
+    font-size: .66rem;
+    line-height: 1.4;
+  }
+  .footer.section-pad { padding-top: 54px; padding-bottom: 44px; }
+}
+
+
+/* =========================================================
+   v40.4 · vertical-rhythm refinement
+   A spacing-only pass: equalize stacked metadata/footer gaps and
+   smooth a few small rhythm inconsistencies without redesigning.
+   ========================================================= */
+
+/* Footer metadata is a single visual stack. Give every adjacent row
+   the same 8px breathing room: utilities → credit → views → version. */
+.footer-utilities {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.footer-meta {
+  margin-top: 8px;
+  gap: 8px;
+}
+.footer-credit {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.45;
+}
+.visitor-counter {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+.build-watermark {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.2 !important;
+}
+
+/* Small stacked text groups elsewhere use a measured 12–16px rhythm.
+   These are intentionally tiny corrections rather than compression. */
+.rsvp__intro h2 { margin-bottom: 16px; }
+.film-heading p { margin-top: 16px; }
+.wedding-night-summary article { padding-top: 18px; padding-bottom: 18px; }
+.quick-actions { gap: 12px; }
+.footer .footer-instagram__lead { margin-bottom: 8px; }
+.footer .footer-instagram__note { margin-top: 8px; }
+
+@media (max-width: 760px) {
+  .footer-utilities { margin-top: 18px; }
+  .footer-meta { margin-top: 8px; gap: 8px; }
+  .rsvp__intro h2 { margin-bottom: 14px; }
+  .film-heading p { margin-top: 14px; }
+}
+
+
+/* =========================================================
+   v40.4 · RSVP checkbox/text optical alignment
+   ========================================================= */
+/* Use the checkbox and event title as two real grid columns so their
+   vertical centres always share the same horizontal axis, even when
+   an event name wraps onto a second line. */
+.event-options span {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 14px;
+  padding: 11px 16px;
+  text-align: left;
+}
+.event-options span::before {
+  position: static;
+  grid-column: 1;
+  width: 16px;
+  height: 16px;
+  transform: none;
+  justify-self: center;
+  align-self: center;
+}
+
+@media (max-width: 760px) {
+  .event-options span {
+    grid-template-columns: 18px minmax(0, 1fr);
+    column-gap: 13px;
+    min-height: 52px;
+    padding: 10px 14px;
+  }
+  .event-options span::before {
+    position: static;
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   v40.4 · unified RSVP selection cards
+   Native radio/checkbox controls remain accessible form inputs but
+   are visually hidden. Every RSVP choice uses the same restrained
+   selected-state tick; event rows no longer draw checkbox squares.
+   ========================================================= */
+
+/* All RSVP selectable cards share one selection cue. */
+.rsvp-form .choice-chip > span,
+.rsvp-form .event-options span {
+  position: relative;
+}
+
+/* Remove the old square checkbox artwork from celebration choices. */
+.rsvp-form .event-options span::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Celebration choices now read as clean buttons, just like attendance
+   and team choices, with the event title optically centred. */
+.rsvp-form .event-options span {
+  min-height: 54px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 11px 34px 11px 16px !important;
+  text-align: center !important;
+  border: 1px solid rgba(111,16,37,.16) !important;
+  border-radius: 12px;
+  color: var(--wine) !important;
+  background: rgba(255,255,255,.34) !important;
+  transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+}
+
+/* One small gold tick in the upper-right corner for every selected
+   RSVP card: attendance, team, and celebration. */
+.rsvp-form .choice-chip > span::after,
+.rsvp-form .event-options span::after {
+  content: "✓";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: rgba(243,207,136,.92);
+  font: 600 .78rem/1 "Montserrat", sans-serif;
+  opacity: 0;
+  transform: scale(.72);
+  transition: opacity .18s ease, transform .18s ease;
+  pointer-events: none;
+}
+
+.rsvp-form .choice-chip > input:checked + span::after,
+.rsvp-form .event-options input:checked + span::after {
+  opacity: .9;
+  transform: scale(1);
+}
+
+/* Selected celebrations use the same wine treatment as the other RSVP
+   cards, while keeping the mark intentionally quiet. */
+.rsvp-form .event-options input:checked + span {
+  color: #fff7eb !important;
+  border-color: var(--wine) !important;
+  background: var(--wine) !important;
+  box-shadow: 0 8px 20px rgba(111,16,37,.10);
+}
+
+.rsvp-form .event-options label:active span { transform: scale(.985); }
+
+/* Keep team names centred; the corner tick must never shift them. */
+.rsvp-form .side-choice-row .choice-chip > span {
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+
+@media (max-width:760px) {
+  .rsvp-form .event-options span {
+    min-height: 52px;
+    padding: 10px 30px 10px 12px !important;
+    font-size: .68rem;
+  }
+  .rsvp-form .choice-chip > span::after,
+  .rsvp-form .event-options span::after {
+    top: 7px;
+    right: 8px;
+    font-size: .72rem;
+  }
+}
+
+
+/* =========================================================
+   v40.8 · stable sticky header, mobile media shortcuts,
+           and consistent event-card gold edging
+   ========================================================= */
+
+/* Keep the frosted navigation physically above all ordinary cards,
+   RSVP selected states and section artwork. Lightbox/toasts retain
+   their intentionally higher layers. */
+.topbar { z-index: 2500; isolation: isolate; }
+.topbar.is-scrolled {
+  z-index: 2500;
+  background: rgba(255,250,241,.965);
+  border-color: rgba(111,16,37,.16);
+  box-shadow: 0 12px 34px rgba(65,8,23,.12);
+}
+.nav-links { z-index: 2510; }
+html { scroll-padding-top: 96px; }
+#festivities, #countdown, #rsvp, #gallery, #film { scroll-margin-top: 96px; }
+
+/* Prevent selected cards or their decorative marks from ever creating
+   a layer above the fixed header. */
+.event-card, .rsvp-form, .choice-chip, .event-options label { isolation: isolate; }
+
+/* Gold edging is now permanent rather than seeming to appear/disappear
+   only when an event is selected. Selection simply strengthens it. */
+.event-card {
+  border-color: rgba(200,155,81,.34);
+  box-shadow: inset 0 0 0 0 rgba(200,155,81,0);
+}
+.event-card--dark {
+  border-color: rgba(243,207,136,.50);
+}
+.event-card.selected {
+  outline: 0;
+  border-color: rgba(200,155,81,.88);
+  box-shadow: inset 0 0 0 1px rgba(200,155,81,.62), 0 18px 46px rgba(65,8,23,.10);
+}
+.event-card--dark.selected {
+  border-color: rgba(249,218,157,.90);
+  box-shadow: inset 0 0 0 1px rgba(249,218,157,.52), 0 18px 46px rgba(65,8,23,.16);
+}
+
+/* Direct shortcuts shown in the mobile/static header. Desktop already
+   has YouTube and Instagram in the full navigation. */
+.mobile-top-links { display: none; }
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 102px; }
+  #festivities, #countdown, #rsvp, #gallery, #film { scroll-margin-top: 102px; }
+
+  .topbar {
+    gap: 7px;
+    background-clip: padding-box;
+  }
+  .topbar.is-scrolled {
+    top: 8px;
+    width: min(calc(100% - 16px), 1280px);
+    padding: 8px 10px;
+  }
+  .topbar.is-scrolled .monogram { width: 44px; height: 44px; }
+  .topbar.is-scrolled .mobile-top-links { display: flex; }
+  .topbar__actions { gap: 5px; min-width: 0; }
+
+  .mobile-top-links {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .mobile-top-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 5px 6px;
+    color: rgba(111,16,37,.78);
+    border: 0;
+    border-bottom: 1px solid rgba(111,16,37,.18);
+    font: 600 .50rem/1.08 "Montserrat", sans-serif;
+    letter-spacing: .035em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .mobile-video-link { max-width: 82px; white-space: normal !important; }
+  .mobile-insta-link { color: var(--wine) !important; }
+  .mobile-top-links a:active { color: var(--gold); border-bottom-color: var(--gold); }
+
+  .language-toggle { min-width: 64px; padding: 7px 6px; }
+  .menu-button { padding: 6px; }
+  .menu-button span:not(.sr-only) { width: 22px; }
+
+  /* Mobile dropdown always paints above page content and under the
+     containing topbar, with an opaque enough surface to avoid bleed. */
+  .nav-links {
+    top: calc(100% + 8px);
+    z-index: 2515;
+    background: rgba(255,250,241,.985);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+}
+
+@media (max-width: 410px) {
+  .mobile-top-links { gap: 3px; }
+  .mobile-top-links a { padding-inline: 4px; font-size: .46rem; }
+  .mobile-video-link { max-width: 72px; }
+  .language-toggle { min-width: 60px; font-size: .59rem; }
+}
+
+@media (max-width: 360px) {
+  .mobile-top-links a { font-size: .43rem; }
+  .mobile-video-link { max-width: 64px; }
+  .mobile-insta-link { padding-inline: 2px !important; }
+  .language-toggle { min-width: 56px; padding-inline: 4px; }
+}
+
+
+/* =========================================================
+   v40.9 · opaque sticky header + compact mobile RSVP
+   ========================================================= */
+
+/* The sticky bar is intentionally near-opaque. Content may scroll
+   beneath a fixed header, but it must never remain visually readable
+   through the bar (event timeline dots were previously showing through). */
+.topbar.is-scrolled {
+  background: linear-gradient(180deg, #fffaf1 0%, #fdf7ec 100%);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 10px 28px rgba(65,8,23,.10);
+}
+.topbar.is-scrolled::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: #fffaf1;
+  pointer-events: none;
+}
+.event-progress { z-index: 0; }
+.event-progress__steps, .event-progress__step { z-index: 0; }
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 126px; }
+  #festivities, #countdown, #rsvp, #gallery, #film { scroll-margin-top: 126px; }
+
+  /* Compact but still finger-friendly RSVP. Two-column celebration
+     grid saves the most vertical space without shrinking tap targets. */
+  .rsvp.section-pad { padding-top: 52px; padding-bottom: 52px; }
+  .rsvp__intro { margin-bottom: 18px; }
+  .rsvp-form {
+    gap: 12px;
+    padding: 18px 16px 20px;
+    border-radius: 18px;
+  }
+  .rsvp-form label > span,
+  .rsvp-form legend { margin-bottom: 6px; font-size: .61rem; }
+  .rsvp-form fieldset + fieldset { padding-top: 8px; }
+
+  .rsvp-form input[type="text"],
+  .rsvp-form select,
+  .rsvp-form textarea { padding: 9px 0; }
+  .rsvp-form textarea { min-height: 54px; max-height: 72px; resize: vertical; }
+
+  .attendance-choice-row,
+  .side-choice-row { grid-template-columns: 1fr 1fr !important; gap: 8px; }
+  .attendance-choice-row .choice-chip > span {
+    min-height: 48px;
+    padding: 9px 22px 9px 10px !important;
+    font-size: .62rem;
+  }
+  .side-choice-row .choice-chip > span {
+    min-height: 64px;
+    padding: 9px 18px 9px 8px !important;
+  }
+  .side-choice-row .choice-chip > span > b { font-size: .51rem !important; }
+  .side-choice-row .choice-chip > span > span {
+    margin-top: 3px !important;
+    font-size: 1.05rem !important;
+    line-height: 1 !important;
+  }
+
+  .event-options {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 7px !important;
+  }
+  .rsvp-form .event-options span {
+    min-height: 48px !important;
+    padding: 8px 22px 8px 9px !important;
+    font-size: .60rem !important;
+    line-height: 1.22 !important;
+    text-align: center;
+    justify-content: center !important;
+  }
+  .rsvp-form .choice-chip > span::after,
+  .rsvp-form .event-options span::after {
+    right: 7px !important;
+    font-size: .72rem !important;
+  }
+
+  .rsvp-form .primary-button { min-height: 46px; padding: 11px 14px; }
+  .rsvp-form > small { margin-top: -3px; font-size: .58rem; line-height: 1.35; }
+}
+
+@media (max-width: 390px) {
+  .rsvp-form { padding-inline: 13px; }
+  .rsvp-form .event-options span { font-size: .55rem !important; }
+  .side-choice-row .choice-chip > span > span { font-size: .96rem !important; }
+}
+
+/* Let the fixed header participate in the page's root stacking order.
+   The hero's old isolation context trapped the header below later
+   sections, so high-z-index event artwork could still paint over it. */
+.hero { isolation: auto; }
+.hero::before { z-index: 0; pointer-events: none; }
+.hero__content,
+.latest-update,
+.wedding-night-summary { position: relative; z-index: 1; }
+
+
+/* =========================================================
+   v41.2 · RSVP decline state, uniform quick directions,
+              and explicit mobile social labels
+   ========================================================= */
+
+/* Both destination choices are intentionally neutral. A legacy
+   descendant nth-child rule used to paint the reception option wine. */
+.quick-directions-menu a,
+.quick-directions-menu a:nth-child(2) {
+  color: var(--wine) !important;
+  background: transparent !important;
+}
+.quick-directions-menu a:hover,
+.quick-directions-menu a:focus-visible {
+  color: var(--wine) !important;
+  background: rgba(111,16,37,.05) !important;
+}
+
+/* If the guest cannot attend, celebration choices become visibly
+   unavailable and cannot be toggled from either the RSVP list or cards. */
+.rsvp-events-disabled { opacity: .54; }
+.rsvp-events-disabled legend { opacity: .72; }
+.rsvp-events-disabled .event-options label { cursor: not-allowed; }
+.rsvp-events-disabled .event-options span {
+  background: rgba(231,223,211,.30) !important;
+  border-color: rgba(111,16,37,.10) !important;
+  color: rgba(111,16,37,.50) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.event-select:disabled {
+  opacity: .40;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .topbar.is-scrolled .mobile-top-links {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 3px;
+  }
+  .mobile-top-links a {
+    min-width: 0;
+    max-width: none;
+    padding: 4px 3px;
+    font-size: .44rem;
+    line-height: 1.12;
+    white-space: normal !important;
+  }
+  .mobile-video-link { flex: 1.05 1 0; max-width: 88px; }
+  .mobile-insta-link { flex: .95 1 0; max-width: 82px; }
+}
+@media (max-width: 390px) {
+  .mobile-top-links a { font-size: .40rem; letter-spacing: .018em; }
+  .mobile-video-link { max-width: 78px; }
+  .mobile-insta-link { max-width: 72px; }
+}
+
+/* =========================================================
+   v41.2 · uniform two-line mobile social shortcuts
+   ========================================================= */
+@media (max-width: 760px) {
+  .topbar.is-scrolled .mobile-top-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex: 1 1 auto;
+    width: min(190px, 39vw);
+    max-width: 190px;
+    gap: 0;
+    align-items: stretch;
+  }
+  .mobile-top-links a,
+  .mobile-video-link,
+  .mobile-insta-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: none !important;
+    min-width: 0;
+    padding: 3px 5px 5px;
+    color: var(--wine) !important;
+    text-align: center;
+    border-bottom: 1px solid rgba(111,16,37,.22);
+    line-height: 1.05;
+  }
+  .mobile-top-links a + a { border-left: 1px solid rgba(111,16,37,.12); }
+  .mobile-top-links a span {
+    display: block;
+    margin-bottom: 2px;
+    font-size: .38rem;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    opacity: .68;
+  }
+  .mobile-top-links a strong {
+    display: block;
+    font: inherit;
+    font-size: .47rem;
+    font-weight: 600;
+    letter-spacing: .035em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 390px) {
+  .topbar.is-scrolled .mobile-top-links { width: min(166px, 38vw); max-width: 166px; }
+  .mobile-top-links a { padding-inline: 3px; }
+  .mobile-top-links a span { font-size: .34rem; }
+  .mobile-top-links a strong { font-size: .41rem; letter-spacing: .02em; }
+}
+
+
+/* =========================================================
+   v41.2 · mobile sticky-header shortcut layout fix
+   ========================================================= */
+@media (max-width: 760px) {
+  .topbar.is-scrolled {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .topbar.is-scrolled .brand-instagram {
+    flex: 0 0 auto;
+  }
+  .topbar.is-scrolled .topbar__actions {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 6px;
+  }
+  .topbar.is-scrolled .mobile-top-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    gap: 0;
+    overflow: hidden;
+  }
+  .topbar.is-scrolled .mobile-top-links a {
+    min-width: 0;
+    width: 100%;
+    max-width: none !important;
+    overflow: hidden;
+    padding: 4px 3px 5px;
+  }
+  .topbar.is-scrolled .mobile-top-links a span {
+    width: 100%;
+    margin: 0 0 2px;
+    font-size: .34rem;
+    line-height: 1;
+    letter-spacing: .12em;
+    white-space: nowrap;
+  }
+  .topbar.is-scrolled .mobile-top-links a strong {
+    width: 100%;
+    font-size: .41rem;
+    line-height: 1.02;
+    letter-spacing: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+  }
+  .topbar.is-scrolled .language-toggle {
+    flex: 0 0 auto;
+    min-width: 62px;
+  }
+  .topbar.is-scrolled .menu-button {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .topbar.is-scrolled { gap: 5px; }
+  .topbar.is-scrolled .topbar__actions { gap: 4px; }
+  .topbar.is-scrolled .monogram { width: 40px; height: 40px; }
+  .topbar.is-scrolled .mobile-top-links a { padding-inline: 2px; }
+  .topbar.is-scrolled .mobile-top-links a span { font-size: .31rem; }
+  .topbar.is-scrolled .mobile-top-links a strong { font-size: .37rem; }
+  .topbar.is-scrolled .language-toggle { min-width: 58px; padding-inline: 4px; }
+}
+
+/* v41.7 · Vratham temple note — ceremonial, not a public directions block */
+.vratham-temple-note {
+  position: relative;
+  z-index: 1;
+  margin: 18px 0 20px;
+  padding: 16px 0 2px;
+  border-top: 1px solid rgba(200,155,81,.34);
+  text-align: center;
+}
+.vratham-temple-note > span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--gold);
+  font: italic 500 .92rem/1.45 "Cormorant Garamond", "Noto Serif Telugu", serif;
+}
+.vratham-temple-note > strong {
+  display: block;
+  max-width: 34rem;
+  margin: 0 auto;
+  color: var(--wine);
+  font: 600 1.16rem/1.35 "Cormorant Garamond", "Noto Serif Telugu", serif;
+}
+.vratham-temple-note > em {
+  display: block;
+  max-width: 30rem;
+  margin: 10px auto 0;
+  color: var(--muted);
+  font-size: .72rem;
+  line-height: 1.55;
+}
+@media (max-width: 760px) {
+  .vratham-temple-note { margin: 15px 0 17px; padding-top: 14px; }
+  .vratham-temple-note > strong { font-size: 1.05rem; }
+}
+
+
+/* =========================================================
+   v41.7 · tactile 3D celebration timeline navigation
+   ========================================================= */
+.event-progress {
+  perspective: 900px;
+  isolation: isolate;
+}
+.event-progress__track { z-index: 0; }
+.event-progress__steps { z-index: 1; }
+.event-progress__step {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: transparent;
+  transform-style: preserve-3d;
+}
+.event-progress__step i {
+  position: relative;
+  transform: translateZ(14px) translateY(-2px);
+  border-color: rgba(200,155,81,.42);
+  background: linear-gradient(145deg, #fffdf8 0%, #f8eddd 100%);
+  box-shadow:
+    0 11px 20px rgba(65,8,23,.16),
+    0 3px 6px rgba(65,8,23,.11),
+    inset 0 1px 0 rgba(255,255,255,.95),
+    inset 0 -2px 5px rgba(200,155,81,.08);
+  transition: transform .24s cubic-bezier(.2,.8,.2,1), box-shadow .24s ease, background .24s ease, border-color .24s ease;
+}
+.event-progress__step i::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.72);
+  pointer-events: none;
+}
+.event-progress__step:hover i,
+.event-progress__step:focus-visible i {
+  transform: translateZ(24px) translateY(-5px) scale(1.055);
+  border-color: rgba(200,155,81,.7);
+  box-shadow:
+    0 16px 28px rgba(65,8,23,.21),
+    0 5px 10px rgba(65,8,23,.12),
+    inset 0 1px 0 rgba(255,255,255,.95);
+}
+.event-progress__step:focus-visible i {
+  outline: 2px solid rgba(200,155,81,.72);
+  outline-offset: 4px;
+}
+.event-progress__step.is-active i,
+.event-progress__step.is-past i {
+  transform: translateZ(18px) translateY(-3px);
+  border-color: rgba(200,155,81,.72);
+  background: linear-gradient(145deg, #8d1532, #65091f);
+  box-shadow:
+    0 13px 24px rgba(65,8,23,.25),
+    0 4px 8px rgba(65,8,23,.15),
+    0 0 0 5px rgba(200,155,81,.10),
+    inset 0 1px 0 rgba(255,255,255,.14);
+}
+.event-progress__step.is-pressed i {
+  animation: timelineDotPress .34s cubic-bezier(.22,.8,.3,1);
+}
+@keyframes timelineDotPress {
+  0%   { transform: translateZ(18px) translateY(-3px) scale(1); }
+  42%  { transform: translateZ(2px) translateY(1px) scale(.90); box-shadow: 0 3px 6px rgba(65,8,23,.13); }
+  100% { transform: translateZ(22px) translateY(-4px) scale(1.03); }
+}
+
+.event-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.event-card.timeline-focus {
+  z-index: 8;
+  animation: timelineCardLift 1.15s cubic-bezier(.18,.78,.22,1) both;
+}
+@keyframes timelineCardLift {
+  0%   { transform: perspective(1100px) translateZ(0) scale(1); box-shadow: 0 0 0 rgba(65,8,23,0); }
+  28%  { transform: perspective(1100px) translateZ(34px) translateY(-7px) scale(1.018) rotateX(.45deg); box-shadow: 0 28px 54px rgba(65,8,23,.18), 0 0 0 1px rgba(200,155,81,.44); }
+  72%  { transform: perspective(1100px) translateZ(18px) translateY(-3px) scale(1.009); box-shadow: 0 20px 38px rgba(65,8,23,.13), 0 0 0 1px rgba(200,155,81,.28); }
+  100% { transform: perspective(1100px) translateZ(0) translateY(0) scale(1); box-shadow: 0 0 0 rgba(65,8,23,0); }
+}
+.event-card--dark.timeline-focus {
+  animation-name: timelineCardLiftDark;
+}
+@keyframes timelineCardLiftDark {
+  0%   { transform: perspective(1100px) translateZ(0) scale(1); box-shadow: 0 0 0 rgba(65,8,23,0); }
+  28%  { transform: perspective(1100px) translateZ(34px) translateY(-7px) scale(1.018) rotateX(.45deg); box-shadow: 0 30px 58px rgba(65,8,23,.32), 0 0 0 1px rgba(242,205,134,.62); }
+  72%  { transform: perspective(1100px) translateZ(18px) translateY(-3px) scale(1.009); box-shadow: 0 22px 40px rgba(65,8,23,.24), 0 0 0 1px rgba(242,205,134,.38); }
+  100% { transform: perspective(1100px) translateZ(0) translateY(0) scale(1); box-shadow: 0 0 0 rgba(65,8,23,0); }
+}
+
+@media (max-width: 760px) {
+  .event-progress__step i {
+    transform: translateZ(10px) translateY(-1px);
+    box-shadow: 0 8px 15px rgba(65,8,23,.15), 0 2px 5px rgba(65,8,23,.10), inset 0 1px 0 rgba(255,255,255,.94);
+  }
+  .event-progress__step:hover i,
+  .event-progress__step:focus-visible i { transform: translateZ(17px) translateY(-3px) scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .event-progress__step.is-pressed i,
+  .event-card.timeline-focus,
+  .event-card--dark.timeline-focus { animation: none !important; }
+}
+
+
+/* =========================================================
+   v41.8 · sticky vertical celebration rail
+   ========================================================= */
+.event-navigation-layout {
+  --rail-width: 66px;
+  display: grid;
+  grid-template-columns: var(--rail-width) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+/* The timeline is now a persistent navigation dock while the cards scroll. */
+.event-progress {
+  position: sticky;
+  top: var(--event-rail-top, 100px);
+  width: var(--rail-width);
+  margin: 0;
+  padding: 10px 0;
+  perspective: 900px;
+  z-index: 20;
+  align-self: start;
+}
+.event-progress__track {
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: 50%;
+  right: auto;
+  width: 1px;
+  height: auto;
+  transform: translateX(-50%);
+  overflow: hidden;
+  background: rgba(111,16,37,.16);
+}
+.event-progress__fill {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(180deg, var(--gold), var(--wine));
+  transition: height .38s cubic-bezier(.2,.8,.2,1);
+}
+.event-progress__steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 13px;
+  z-index: 1;
+}
+.event-progress__step {
+  width: 100%;
+  min-height: 43px;
+  display: grid;
+  place-items: center;
+  gap: 0;
+}
+.event-progress__step > span { display: none !important; }
+.event-progress__step i {
+  width: 38px;
+  height: 38px;
+  transform: translateZ(12px);
+  font-size: .76rem;
+}
+.event-progress__step.is-active i {
+  transform: translateZ(25px) scale(1.10);
+  box-shadow:
+    0 17px 30px rgba(65,8,23,.27),
+    0 5px 10px rgba(65,8,23,.16),
+    0 0 0 6px rgba(200,155,81,.15),
+    inset 0 1px 0 rgba(255,255,255,.18);
+}
+.event-progress__step.is-past:not(.is-active) i {
+  transform: translateZ(15px) scale(.98);
+}
+
+/* One editorial card per row makes the vertical rail genuinely correspond
+   to the sequence rather than competing with a 3-column grid. */
+.event-navigation-layout .event-grid {
+  grid-template-columns: 1fr;
+  gap: 22px;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+}
+.event-navigation-layout .event-card {
+  min-height: 390px;
+  padding: clamp(28px, 4vw, 44px);
+  scroll-margin-top: calc(var(--event-rail-top, 100px) + 12px);
+}
+.event-navigation-layout .wedding-card { min-height: 450px; }
+.event-navigation-layout .event-card__description { max-width: 760px; }
+
+@media (max-width: 760px) {
+  .festivities.section-pad { padding-left: 12px; padding-right: 12px; }
+  .event-navigation-layout {
+    --rail-width: 46px;
+    grid-template-columns: var(--rail-width) minmax(0, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+  .event-progress {
+    padding: 8px 0;
+    top: var(--event-rail-top, 92px);
+  }
+  .event-progress__steps { gap: 9px; }
+  .event-progress__step { min-height: 38px; }
+  .event-progress__step i {
+    width: 34px;
+    height: 34px;
+    font-size: .69rem;
+  }
+  .event-progress__step.is-active i {
+    transform: translateZ(18px) scale(1.08);
+    box-shadow: 0 12px 22px rgba(65,8,23,.25), 0 0 0 4px rgba(200,155,81,.13), inset 0 1px 0 rgba(255,255,255,.18);
+  }
+  .event-navigation-layout .event-card {
+    min-height: 0;
+    padding: 26px 21px;
+  }
+  .event-navigation-layout .wedding-card { min-height: 0; }
+}
+
+@media (max-width: 390px) {
+  .event-navigation-layout { --rail-width: 42px; gap: 6px; }
+  .event-progress__step i { width: 32px; height: 32px; font-size: .64rem; }
+  .event-navigation-layout .event-card { padding: 24px 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .event-progress__fill { transition: none; }
+}
+
+/* =========================================================
+   v41.9 · compact, consistent cards with sticky event rail
+   ========================================================= */
+.event-navigation-layout {
+  --rail-width: 58px;
+  grid-template-columns: var(--rail-width) minmax(0, 1fr);
+  gap: 18px;
+  width: min(860px, 100%);
+}
+.event-navigation-layout .event-grid {
+  width: 100%;
+  max-width: 784px;
+  gap: 18px;
+}
+.event-navigation-layout .event-card,
+.event-navigation-layout .wedding-card {
+  width: 100%;
+  min-height: 420px;
+  padding: 30px 32px;
+}
+.event-navigation-layout .event-card__description {
+  max-width: 100%;
+}
+
+@media (min-width: 1100px) {
+  .event-navigation-layout {
+    width: min(900px, 100%);
+  }
+  .event-navigation-layout .event-grid {
+    max-width: 820px;
+  }
+  .event-navigation-layout .event-card,
+  .event-navigation-layout .wedding-card {
+    min-height: 430px;
+    padding: 32px 36px;
+  }
+}
+
+@media (max-width: 900px) {
+  .event-navigation-layout {
+    --rail-width: 52px;
+    gap: 12px;
+    width: 100%;
+  }
+  .event-navigation-layout .event-card,
+  .event-navigation-layout .wedding-card {
+    min-height: 400px;
+    padding: 28px 26px;
+  }
+}
+
+@media (max-width: 760px) {
+  .event-navigation-layout {
+    --rail-width: 42px;
+    gap: 7px;
+  }
+  .event-progress__step i {
+    width: 32px;
+    height: 32px;
+  }
+  .event-navigation-layout .event-grid {
+    gap: 14px;
+  }
+  .event-navigation-layout .event-card,
+  .event-navigation-layout .wedding-card {
+    min-height: 0;
+    padding: 23px 18px;
+  }
+  .event-navigation-layout .event-card__day {
+    margin-top: 14px;
+    margin-bottom: 11px;
+  }
+  .event-navigation-layout .event-card__date {
+    margin: 14px 0;
+  }
+  .event-navigation-layout .event-card__locations,
+  .event-navigation-layout .event-card__venue {
+    margin-top: 14px;
+    margin-bottom: 14px;
+    padding-top: 11px;
+  }
+}
+
+@media (max-width: 390px) {
+  .event-navigation-layout {
+    --rail-width: 38px;
+    gap: 6px;
+  }
+  .event-progress__step i {
+    width: 30px;
+    height: 30px;
+    font-size: .61rem;
+  }
+  .event-navigation-layout .event-card,
+  .event-navigation-layout .wedding-card {
+    padding: 21px 16px;
+  }
+}
+
+
+/* =========================================================
+   v42.2 · thumb-friendly mobile event rail + icon shortcuts
+   ========================================================= */
+
+/* A little breathing room below the fixed header when navigating by number. */
+.event-navigation-layout .event-card {
+  scroll-margin-top: calc(var(--event-rail-top, 100px) + 38px);
+}
+
+/* Mobile: put the persistent event rail on the thumb-friendly right side.
+   It stays inset by the festivities section padding, avoiding the browser edge. */
+@media (max-width: 760px) {
+  .event-navigation-layout {
+    grid-template-columns: minmax(0, 1fr) var(--rail-width);
+  }
+  .event-navigation-layout .event-grid {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .event-navigation-layout .event-progress {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .event-progress__step {
+    min-height: 42px;
+    touch-action: manipulation;
+  }
+  .event-navigation-layout .event-card {
+    scroll-margin-top: calc(var(--event-rail-top, 92px) + 46px);
+  }
+}
+
+/* The sticky social shortcuts become recognizable, compact icon buttons.
+   Desktop navigation keeps its text labels; this applies to the mobile sticky bar. */
+@media (max-width: 760px) {
+  .topbar.is-scrolled .topbar__actions {
+    grid-template-columns: auto auto auto;
+    justify-content: end;
+  }
+  .topbar.is-scrolled .mobile-top-links {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0;
+    gap: 6px !important;
+    overflow: visible !important;
+    align-items: center;
+  }
+  .topbar.is-scrolled .mobile-top-links a.mobile-social-icon,
+  .mobile-top-links a.mobile-social-icon {
+    display: grid !important;
+    place-items: center;
+    flex: 0 0 38px !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    color: var(--wine) !important;
+    background: rgba(255,250,241,.68);
+    border: 1px solid rgba(111,16,37,.15) !important;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(65,8,23,.05);
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  }
+  .mobile-top-links a.mobile-social-icon + a.mobile-social-icon {
+    border-left: 1px solid rgba(111,16,37,.15) !important;
+  }
+  .mobile-top-links .mobile-social-icon svg {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+  }
+  .mobile-top-links .mobile-video-link svg path {
+    fill: currentColor;
+    stroke: none;
+  }
+  .mobile-top-links .mobile-insta-link .icon-dot {
+    fill: currentColor;
+    stroke: none;
+  }
+  .mobile-top-links a.mobile-social-icon:active {
+    transform: translateY(1px) scale(.94);
+    background: rgba(200,155,81,.10);
+    border-color: rgba(200,155,81,.42) !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .topbar.is-scrolled .mobile-top-links { gap: 4px !important; }
+  .topbar.is-scrolled .mobile-top-links a.mobile-social-icon,
+  .mobile-top-links a.mobile-social-icon {
+    flex-basis: 35px !important;
+    width: 35px !important;
+    height: 35px !important;
+    min-width: 35px !important;
+    max-width: 35px !important;
+  }
+  .mobile-top-links .mobile-social-icon svg { width: 19px; height: 19px; }
+}
+
+
+/* =========================================================
+   v42.2 · recognizable brand social marks in mobile header
+   ========================================================= */
+@media (max-width: 760px) {
+  .topbar.is-scrolled .mobile-top-links {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 14px !important;
+    overflow: visible !important;
+  }
+  .topbar.is-scrolled .mobile-top-links a.mobile-social-icon,
+  .mobile-top-links a.mobile-social-icon {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    max-width: none !important;
+    padding: 5px 4px !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 9px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: transform .16s ease, filter .16s ease, opacity .16s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mobile-top-links a.mobile-social-icon + a.mobile-social-icon {
+    border-left: 0 !important;
+  }
+  .mobile-top-links .brand-social-logo {
+    display: block;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 4px rgba(65,8,23,.10));
+  }
+  .mobile-top-links .brand-social-logo--youtube {
+    width: 35px !important;
+    height: auto !important;
+  }
+  .mobile-top-links .brand-social-logo--instagram {
+    width: 31px !important;
+    height: 31px !important;
+  }
+  .mobile-top-links .youtube-brand-bg {
+    fill: #ff0000 !important;
+    stroke: none !important;
+  }
+  .mobile-top-links .youtube-brand-play {
+    fill: #fff !important;
+    stroke: none !important;
+  }
+  .mobile-top-links a.mobile-social-icon:active {
+    transform: translateY(2px) scale(.88) !important;
+    filter: saturate(.92) brightness(.96);
+    background: transparent !important;
+    border-color: transparent !important;
+  }
+}
+@media (max-width: 390px) {
+  .topbar.is-scrolled .mobile-top-links { gap: 10px !important; }
+  .mobile-top-links .brand-social-logo--youtube { width: 32px !important; }
+  .mobile-top-links .brand-social-logo--instagram { width: 29px !important; height: 29px !important; }
+}
+
+
+/* =========================================================
+   v42.2 · centered sticky event rail + even social spacing
+   ========================================================= */
+
+/* The rail begins naturally beside the first card. Once its normal
+   position reaches the middle zone, it remains there rather than
+   climbing up underneath the fixed header. */
+.event-progress {
+  top: clamp(145px, calc(50vh - 158px), 285px);
+}
+
+@media (max-width: 760px) {
+  .event-progress {
+    top: clamp(185px, calc(50vh - 142px), 310px);
+  }
+
+  /* Keep the three visual intervals equal:
+     YouTube ↔ Instagram ↔ language selector. */
+  .topbar.is-scrolled .topbar__actions {
+    column-gap: 14px !important;
+  }
+  .topbar.is-scrolled .mobile-top-links {
+    gap: 14px !important;
+  }
+
+  /* No hidden width from the old two-column shortcut treatment. */
+  .topbar.is-scrolled .mobile-top-links {
+    display: flex !important;
+    width: auto !important;
+    max-width: none !important;
+    overflow: visible !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .event-progress {
+    top: clamp(170px, calc(50vh - 136px), 285px);
+  }
+  .topbar.is-scrolled .topbar__actions {
+    column-gap: 11px !important;
+  }
+  .topbar.is-scrolled .mobile-top-links {
+    gap: 11px !important;
+  }
+}
+
+
+/* =========================================================
+   v44.0 · ritual-inspired celebration reveals
+   ========================================================= */
+.reveal-all-events {
+  display: block;
+  margin: -24px auto 34px;
+  padding: 8px 4px 6px;
+  border: 0;
+  border-bottom: 1px solid rgba(111,16,37,.24);
+  color: var(--wine);
+  background: transparent;
+  font: 600 .62rem/1.2 "Montserrat",sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.reveal-all-events:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+.event-card.has-event-reveal { isolation: isolate; }
+.event-reveal {
+  position: absolute;
+  inset: 0;
+  z-index: 16;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .48s ease, visibility .48s step-end;
+}
+.event-reveal.is-completing { opacity: 0; visibility: hidden; }
+.event-reveal__interactive,
+.event-reveal__skip { pointer-events: auto; }
+.event-reveal__chrome {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  top: 28px;
+  left: 28px;
+  right: 28px;
+  text-align: center;
+}
+.event-reveal__chrome span,
+.wedding-reveal__center > span {
+  display: block;
+  color: var(--gold);
+  font: 600 .62rem/1.3 "Montserrat",sans-serif;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.event-reveal__chrome p,
+.wedding-reveal__center p {
+  max-width: 430px;
+  margin: 9px auto 0;
+  color: var(--muted);
+  font-size: .76rem;
+  line-height: 1.55;
+}
+.event-reveal__skip {
+  position: absolute;
+  z-index: 8;
+  right: 20px;
+  bottom: 18px;
+  padding: 7px 4px 5px;
+  border: 0;
+  border-bottom: 1px solid rgba(111,16,37,.24);
+  color: rgba(111,16,37,.68);
+  background: transparent;
+  font: 600 .54rem/1.2 "Montserrat",sans-serif;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.event-reveal__skip:hover { color: var(--wine); border-bottom-color: var(--wine); }
+
+/* Mehendi tracing */
+.event-reveal--mehendi {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(200,155,81,.09), transparent 25%),
+    linear-gradient(145deg, #fffaf1 0%, #f9efdf 100%);
+}
+.mehendi-trace {
+  width: min(78%, 390px);
+  margin-top: 36px;
+  outline: none;
+  touch-action: none;
+  cursor: crosshair;
+}
+.mehendi-trace svg { display: block; width: 100%; height: auto; overflow: visible; }
+.mehendi-guide,
+.mehendi-progress { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.mehendi-guide { stroke: rgba(111,16,37,.35); stroke-width: 4; stroke-dasharray: 1 10; }
+.mehendi-progress { stroke: #6f1025; stroke-width: 5; filter: drop-shadow(0 2px 5px rgba(111,16,37,.16)); }
+.mehendi-start { fill: var(--gold); stroke: #fffaf1; stroke-width: 4; filter: drop-shadow(0 4px 8px rgba(65,8,23,.18)); }
+.mehendi-flower-ornament { fill: rgba(111,16,37,.10); stroke: rgba(111,16,37,.24); stroke-width: 1.15; pointer-events: none; }
+.mehendi-flower-core { fill: rgba(200,155,81,.10); stroke: rgba(111,16,37,.28); stroke-width: 1.4; }
+.mehendi-flower-ring { fill: none; stroke: rgba(111,16,37,.18); stroke-width: 1.3; stroke-dasharray: 2 7; }
+.mehendi-flower-ornament circle:not(.mehendi-flower-core):not(.mehendi-flower-ring) { fill: rgba(111,16,37,.30); stroke: none; }
+.mehendi-trace:focus-visible { border-radius: 18px; outline: 2px solid rgba(200,155,81,.58); outline-offset: 8px; }
+
+/* Haldi rubbing */
+.event-reveal--haldi { background: transparent; }
+.haldi-canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none; }
+.event-reveal--haldi .event-reveal__chrome { z-index: 4; }
+.event-reveal--haldi .event-reveal__chrome span { color: #fff5d6; }
+.event-reveal--haldi .event-reveal__chrome p { color: rgba(72,42,8,.76); }
+.haldi-rub-zone {
+  position: relative;
+  z-index: 4;
+  width: min(68%, 340px);
+  aspect-ratio: 1.7;
+  margin-top: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed rgba(255,250,226,.62);
+  border-radius: 44% 56% 48% 52% / 54% 46% 56% 44%;
+  color: rgba(255,250,226,.9);
+  background: rgba(255,255,255,.045);
+  box-shadow: inset 0 0 50px rgba(108,67,8,.08);
+  touch-action: none;
+  cursor: grab;
+}
+.haldi-rub-zone:active { cursor: grabbing; }
+.haldi-rub-zone span { font-size: 1.7rem; text-shadow: 0 3px 12px rgba(90,55,7,.18); }
+.event-reveal--haldi .event-reveal__skip { color: rgba(82,44,7,.72); border-bottom-color: rgba(82,44,7,.25); }
+
+/* Wedding curtain reveal */
+.event-reveal--wedding { background: transparent; }
+.wedding-curtain {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: 51.5%;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(243,207,136,.10), transparent 26%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.018) 0 18px, rgba(0,0,0,.018) 18px 36px),
+    linear-gradient(145deg,#7d102b,#4b0616);
+  box-shadow: inset 0 0 0 1px rgba(243,207,136,.16);
+  will-change: transform;
+}
+.wedding-curtain--left { left: 0; border-right: 1px solid rgba(243,207,136,.35); }
+.wedding-curtain--right { right: 0; border-left: 1px solid rgba(243,207,136,.35); }
+.wedding-reveal__center {
+  position: relative;
+  z-index: 5;
+  width: min(78%, 440px);
+  text-align: center;
+  transition: opacity .18s ease;
+  pointer-events: none;
+}
+.wedding-reveal__center > span { color: #f0c97c; }
+.wedding-reveal__center > strong {
+  display: block;
+  margin: 18px 0 10px;
+  color: #f6ddb0;
+  font: 400 clamp(2.7rem,7vw,4.5rem)/1 "Cormorant Garamond",serif;
+  text-shadow: 0 8px 28px rgba(0,0,0,.18);
+}
+.wedding-reveal__center p { color: rgba(255,247,235,.78); }
+.wedding-reveal__handle {
+  margin-top: 22px;
+  min-width: 150px;
+  min-height: 44px;
+  padding: 10px 22px;
+  border: 1px solid rgba(243,207,136,.42);
+  border-radius: 999px;
+  color: #f7ddb0;
+  background: rgba(255,255,255,.055);
+  font: 600 .58rem/1.2 "Montserrat",sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: ew-resize;
+  touch-action: none;
+  pointer-events: auto;
+}
+.wedding-reveal__handle::before { content: "←  "; opacity: .68; }
+.wedding-reveal__handle::after { content: "  →"; opacity: .68; }
+.event-reveal--wedding .event-reveal__skip { color: rgba(255,247,235,.68); border-bottom-color: rgba(255,247,235,.24); }
+
+/* The rail quietly records revealed interactive celebrations. */
+.event-progress__step.is-revealed i::before {
+  content: "";
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid #fffaf1;
+  background: var(--gold);
+  box-shadow: 0 2px 6px rgba(65,8,23,.20);
+}
+
+@media (max-width:760px){
+  .reveal-all-events { margin-top: -20px; margin-bottom: 26px; font-size: .56rem; }
+  .event-reveal__chrome { top: 22px; left: 18px; right: 18px; }
+  .event-reveal__chrome p,.wedding-reveal__center p { font-size: .70rem; }
+  .event-reveal__skip { right: 14px; bottom: 12px; }
+  .mehendi-trace { width: 88%; margin-top: 34px; }
+  .haldi-rub-zone { width: 76%; margin-top: 34px; }
+  .wedding-reveal__center { width: 84%; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .event-reveal,.wedding-curtain,.wedding-reveal__center { transition:none !important; }
+}
+
+
+/* =========================================================
+   v44.0 · remaining ritual reveals
+   Pelli blessings · Vratham diya · Reception sparkler
+   ========================================================= */
+.event-reveal--pelli {
+  background:
+    radial-gradient(circle at 50% 47%, rgba(243,207,136,.11), transparent 34%),
+    linear-gradient(145deg,#771027 0%,#4b0616 100%);
+}
+.event-reveal--pelli .event-reveal__chrome span { color:#f0c97c; }
+.event-reveal--pelli .event-reveal__chrome p { color:rgba(255,247,235,.76); }
+.event-reveal--pelli .event-reveal__skip { color:rgba(255,247,235,.68);border-bottom-color:rgba(255,247,235,.24); }
+.pelli-blessing-zone {
+  position:relative;z-index:5;width:min(76%,390px);min-height:220px;margin-top:42px;
+  display:grid;align-content:center;justify-items:center;gap:17px;padding:20px 24px;
+  border:1px solid rgba(243,207,136,.26);border-radius:34px;
+  background:rgba(255,255,255,.035);box-shadow:inset 0 0 45px rgba(255,226,166,.03);
+  touch-action:none;cursor:ns-resize;outline:none;overflow:hidden;
+}
+.pelli-blessing-zone:focus-visible { outline:2px solid rgba(243,207,136,.68);outline-offset:5px; }
+.blessing-pair { display:flex;align-items:center;justify-content:center;gap:18px;width:100%; }
+.blessing-pair>span { display:grid;place-items:center;gap:6px;min-width:92px; }
+.blessing-pair b {
+  display:grid;place-items:center;width:58px;height:58px;border:1px solid rgba(243,207,136,.48);border-radius:50%;
+  color:#f4d49a;background:rgba(255,250,241,.055);font:500 1.45rem/1 "Cormorant Garamond",serif;
+  box-shadow:0 9px 24px rgba(19,2,7,.18),inset 0 1px 0 rgba(255,255,255,.12);
+}
+.blessing-pair small { max-width:120px;color:rgba(255,247,235,.82);font:.66rem/1.15 "Montserrat",sans-serif;text-align:center; }
+.blessing-pair>i { color:#d9ad61;font:italic 1.45rem/1 "Cormorant Garamond",serif; }
+.blessing-progress { display:flex;gap:7px; }
+.blessing-progress i { width:7px;height:7px;border:1px solid rgba(243,207,136,.48);border-radius:50%;background:transparent;transition:.2s ease; }
+.blessing-progress i.is-filled { background:#edc77c;box-shadow:0 0 12px rgba(237,199,124,.46);transform:scale(1.15); }
+.blessing-action { color:#e8c276;font:600 .55rem/1.2 "Montserrat",sans-serif;letter-spacing:.12em;text-transform:uppercase; }
+.blessing-particle { position:absolute;z-index:8;color:#efc979;font-style:normal;font-size:.82rem;pointer-events:none;animation:blessing-fall .92s cubic-bezier(.2,.75,.25,1) forwards; }
+@keyframes blessing-fall { 0%{opacity:0;transform:translate(0,-8px) rotate(0)}18%{opacity:1}100%{opacity:0;transform:translate(var(--fall-x),var(--fall-y)) rotate(145deg)} }
+
+.event-reveal--vratham {
+  background:
+    radial-gradient(circle at 50% 58%, rgba(211,160,74,.14), transparent 28%),
+    linear-gradient(145deg,#fffaf1 0%,#f7ead4 100%);
+}
+.vratham-diya-zone {
+  --diya-progress:0;--diya-angle:0deg;--halo-alpha:.08;--halo-scale:.82;--flame-scale:.18;--flame-opacity:.08;position:relative;z-index:5;width:min(70%,330px);min-height:230px;margin-top:38px;
+  display:grid;place-items:center;align-content:center;gap:20px;outline:none;cursor:pointer;touch-action:none;
+}
+.vratham-diya-zone:focus-visible { border-radius:28px;outline:2px solid rgba(200,155,81,.62);outline-offset:6px; }
+.diya-progress-ring {
+  position:relative;width:152px;height:152px;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(var(--gold) var(--diya-angle),rgba(111,16,37,.08) 0);
+  box-shadow:inset 0 0 0 10px #f9efdf,0 10px 35px rgba(111,16,37,.08);
+}
+.diya-progress-ring::after { content:"";position:absolute;inset:11px;border-radius:50%;background:#fbf2e3; }
+.diya-halo { position:absolute;z-index:2;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(236,185,90,var(--halo-alpha)),transparent 68%);transform:scale(var(--halo-scale)); }
+.diya-bowl { position:absolute;z-index:5;top:91px;width:80px;height:32px;border-radius:8% 8% 50% 50% / 10% 10% 85% 85%;background:linear-gradient(180deg,#b9752e,#7f3a19);box-shadow:inset 0 4px 8px rgba(255,217,132,.32),0 6px 12px rgba(90,44,15,.15); }
+.diya-bowl::before { content:"";position:absolute;left:-4px;right:-4px;top:-7px;height:14px;border-radius:50%;background:#d89a46;border:1px solid rgba(111,55,15,.30); }
+.diya-wick { position:absolute;z-index:6;top:72px;width:3px;height:24px;border-radius:3px;background:#5a311a;transform:rotate(2deg); }
+.diya-flame { position:absolute;z-index:7;top:40px;width:24px;height:38px;border-radius:58% 42% 62% 38% / 72% 70% 30% 28%;background:linear-gradient(180deg,#fff2a6 4%,#f7bd47 44%,#d96c24 100%);filter:drop-shadow(0 0 12px rgba(243,165,47,.55));transform:scale(var(--flame-scale)) rotate(5deg);transform-origin:50% 100%;opacity:var(--flame-opacity);transition:filter .2s ease; }
+.vratham-diya-zone.is-lit .diya-flame { animation:diya-flicker .48s ease-in-out infinite alternate;filter:drop-shadow(0 0 18px rgba(243,165,47,.78)); }
+@keyframes diya-flicker { to{transform:scale(1.04,.94) rotate(-3deg)} }
+.vratham-diya-zone>span { color:var(--wine);font:600 .56rem/1.2 "Montserrat",sans-serif;letter-spacing:.11em;text-transform:uppercase;text-align:center; }
+
+.event-reveal--reception {
+  background:
+    radial-gradient(circle at 50% 46%, rgba(244,203,121,.12), transparent 30%),
+    linear-gradient(145deg,#641022 0%,#34040f 100%);
+}
+.event-reveal--reception .event-reveal__chrome span { color:#f0c97c; }
+.event-reveal--reception .event-reveal__chrome p { color:rgba(255,247,235,.76); }
+.event-reveal--reception .event-reveal__skip { color:rgba(255,247,235,.68);border-bottom-color:rgba(255,247,235,.24); }
+.reception-sparkler-zone {
+  --spark-progress:0;--spark-y:0px;--spark-glow:6px;position:relative;z-index:5;width:min(68%,340px);height:250px;margin-top:38px;
+  display:grid;justify-items:center;align-content:end;padding-bottom:18px;outline:none;touch-action:none;cursor:ns-resize;
+}
+.reception-sparkler-zone:focus-visible { border-radius:28px;outline:2px solid rgba(243,207,136,.64);outline-offset:5px; }
+.sparkler-guide { position:absolute;left:50%;top:22px;bottom:74px;width:1px;border-left:1px dashed rgba(243,207,136,.26);transform:translateX(-50%); }
+.sparkler-star { position:absolute;left:50%;top:6px;color:#f5cf82;font-size:1.1rem;transform:translateX(-50%);text-shadow:0 0 15px rgba(245,207,130,.40); }
+.reception-sparkler { position:absolute;left:50%;bottom:51px;width:46px;height:112px;transform:translate(-50%,var(--spark-y));transition:transform .04s linear; }
+.sparkler-stick { position:absolute;left:50%;bottom:0;width:2px;height:84px;background:linear-gradient(#b98b54,#e4d0ae 58%,#8b6945);transform:translateX(-50%); }
+.sparkler-tip { position:absolute;z-index:2;left:50%;top:10px;width:12px;height:12px;border-radius:50%;background:#f6d27d;transform:translateX(-50%);box-shadow:0 0 9px #f7c85c,0 0 var(--spark-glow) rgba(255,217,119,.78); }
+.reception-sparkler-zone>span { color:#edcb8c;font:600 .55rem/1.2 "Montserrat",sans-serif;letter-spacing:.11em;text-transform:uppercase;text-align:center; }
+.reception-spark { position:absolute;z-index:9;width:4px;height:4px;border-radius:50%;background:#ffe5a6;box-shadow:0 0 7px #ffc95e;pointer-events:none;animation:spark-pop .68s ease-out forwards; }
+@keyframes spark-pop { 0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--sx),var(--sy)) scale(.15)} }
+
+@media (max-width:760px){
+  .pelli-blessing-zone { width:84%;min-height:210px;margin-top:38px;padding:18px 14px; }
+  .blessing-pair { gap:12px; }
+  .blessing-pair b { width:52px;height:52px;font-size:1.28rem; }
+  .blessing-pair small { max-width:100px;font-size:.58rem; }
+  .vratham-diya-zone { width:80%;min-height:220px;margin-top:34px; }
+  .diya-progress-ring { width:140px;height:140px; }
+  .reception-sparkler-zone { width:80%;height:230px;margin-top:34px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .blessing-particle,.vratham-diya-zone.is-lit .diya-flame,.reception-spark { animation:none !important; }
+}
+
+
+/* =========================================================
+   v44.0 · cleaner ritual overlays + simpler blessings
+   ========================================================= */
+/* Keep each reveal visually self-explanatory: one short action cue only. */
+.event-reveal__chrome { display:none !important; }
+.ritual-action-label,
+.mehendi-trace > .ritual-action-label {
+  display:block;
+  margin-top:10px;
+  color:rgba(111,16,37,.72);
+  font:600 .55rem/1.25 "Montserrat",sans-serif;
+  letter-spacing:.10em;
+  text-align:center;
+  text-transform:uppercase;
+}
+.mehendi-trace { display:flex; flex-direction:column; align-items:center; }
+.haldi-rub-zone { grid-auto-flow:row; gap:8px; }
+.haldi-rub-zone .ritual-action-label { margin:0; color:rgba(255,250,226,.88); }
+.wedding-reveal__center > strong { margin:0 0 18px; }
+
+/* Simple, unmistakable Pelli interaction: five taps = five blessings. */
+.pelli-blessing-zone {
+  width:min(68%,330px);
+  min-height:230px;
+  margin-top:0;
+  gap:20px;
+  border:0;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,250,241,.065),rgba(255,250,241,.018) 52%,transparent 72%);
+  box-shadow:none;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+.blessing-symbol {
+  display:grid;
+  place-items:center;
+  width:112px;
+  height:112px;
+  border:1px solid rgba(243,207,136,.36);
+  border-radius:50%;
+  color:#f3d396;
+  background:rgba(255,250,241,.035);
+  box-shadow:0 14px 34px rgba(19,2,7,.16), inset 0 1px 0 rgba(255,255,255,.10);
+  font:400 2.8rem/1 "Cormorant Garamond",serif;
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.pelli-blessing-zone.is-tapped .blessing-symbol {
+  transform:scale(.92);
+  box-shadow:0 7px 18px rgba(19,2,7,.13), inset 0 1px 0 rgba(255,255,255,.10);
+}
+.blessing-progress { gap:9px; }
+.blessing-progress i { width:8px;height:8px; }
+.blessing-action { color:rgba(242,205,137,.90); }
+.blessing-pair { display:none !important; }
+
+@media(max-width:760px){
+  .pelli-blessing-zone { width:76%; min-height:220px; margin-top:0; padding:16px; }
+  .blessing-symbol { width:98px;height:98px;font-size:2.45rem; }
+}
+
+
+/* =========================================================
+   v44.0 · instruction-only ritual copy (no action titles)
+   ========================================================= */
+.ritual-instruction {
+  position:absolute;
+  z-index:7;
+  top:24px;
+  left:28px;
+  right:28px;
+  max-width:470px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  color:rgba(111,16,37,.74);
+  font:500 .70rem/1.5 "Montserrat",sans-serif;
+  letter-spacing:.015em;
+  text-align:center;
+  text-transform:none;
+  pointer-events:none;
+}
+.ritual-instruction::before {
+  content:"";
+  width:5px;height:5px;flex:0 0 5px;border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 0 4px rgba(200,155,81,.10);
+  opacity:.82;
+}
+.event-reveal--pelli .ritual-instruction,
+.event-reveal--wedding .ritual-instruction,
+.event-reveal--reception .ritual-instruction { color:rgba(255,247,235,.80); }
+.event-reveal--haldi .ritual-instruction { color:rgba(72,42,8,.80); }
+.ritual-action-label,.blessing-action,.vratham-diya-zone>span,.reception-sparkler-zone>span { display:none!important; }
+.mehendi-trace{margin-top:54px}.pelli-blessing-zone{margin-top:56px}.haldi-rub-zone{margin-top:54px}.wedding-reveal__center{margin-top:30px}.vratham-diya-zone{margin-top:54px}.reception-sparkler-zone{margin-top:54px}
+@media(max-width:760px){
+  .ritual-instruction{top:18px;left:18px;right:18px;gap:7px;font-size:.64rem;line-height:1.45}
+  .ritual-instruction::before{width:4px;height:4px;flex-basis:4px;box-shadow:0 0 0 3px rgba(200,155,81,.09)}
+  .mehendi-trace,.pelli-blessing-zone,.haldi-rub-zone,.vratham-diya-zone,.reception-sparkler-zone{margin-top:50px}
+  .wedding-reveal__center{margin-top:26px}
+}
+
+
+/* =========================================================
+   v44.3 · ritual interaction selection guard
+   Prevent long-press/text-selection artifacts inside the
+   reveal activities without affecting normal site content.
+   ========================================================= */
+.event-reveal,
+.event-reveal * {
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none !important;
+}
+.event-reveal svg,
+.event-reveal canvas,
+.event-reveal img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+.mehendi-trace,
+.haldi-rub-zone,
+.wedding-reveal__handle,
+.pelli-blessing-zone,
+.vratham-diya-zone,
+.reception-sparkler-zone {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+
+/* =========================================================
+   V44.3 · cinematic 3D invitation opening
+   ========================================================= */
+.invitation-cover {
+  perspective: 1500px;
+  perspective-origin: 50% 44%;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255,246,228,.16), transparent 29%),
+    radial-gradient(circle at 24% 18%, rgba(215,167,92,.11), transparent 31%),
+    radial-gradient(circle at 78% 82%, rgba(45,0,13,.28), transparent 38%),
+    linear-gradient(145deg, #851f37 0%, #671125 48%, #3f0816 100%);
+  transition: opacity .58s ease, visibility .58s ease, filter .58s ease;
+  isolation: isolate;
+}
+.invitation-cover::before,
+.invitation-cover::after {
+  transition: transform 1.2s cubic-bezier(.18,.72,.2,1), opacity .8s ease;
+}
+.invitation-cover::before {
+  opacity: .58;
+  box-shadow: 0 0 120px rgba(217,171,96,.08);
+}
+.invitation-cover::after { opacity: .42; }
+.invitation-cover.opened {
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(10px) saturate(.86);
+}
+
+.envelope {
+  --tilt-x: 3.5deg;
+  --tilt-y: -4deg;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  translate: 0 -12px;
+  filter: none;
+  animation: envelopeFloat3d 4.8s ease-in-out infinite;
+  transition: transform .34s cubic-bezier(.22,.72,.2,1), translate .55s cubic-bezier(.22,.72,.2,1);
+  will-change: transform, translate;
+}
+.envelope::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: 8%;
+  right: 8%;
+  bottom: -42px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(17,0,5,.42);
+  filter: blur(18px);
+  transform: translateZ(-85px) rotateX(74deg) scaleX(.94);
+  opacity: .86;
+  pointer-events: none;
+  transition: transform .9s ease, opacity .7s ease, filter .7s ease;
+}
+.envelope::after {
+  content: "";
+  position: absolute;
+  z-index: 7;
+  inset: 0;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: .34;
+  transform: translateZ(58px);
+  background: linear-gradient(112deg, transparent 22%, rgba(255,255,255,.16) 39%, transparent 54%);
+  mix-blend-mode: screen;
+  transition: opacity .6s ease, transform .9s ease;
+}
+@keyframes envelopeFloat3d {
+  0%,100% { translate: 0 -12px; }
+  50% { translate: 0 -19px; }
+}
+
+.envelope__back,
+.envelope__front,
+.envelope__flap,
+.envelope__paper,
+.wax-seal {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.envelope__back {
+  transform: translateZ(0);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.48), inset 0 -12px 24px rgba(69,29,12,.08);
+}
+.envelope__paper {
+  transform: translate3d(0,0,12px);
+  box-shadow: 0 6px 18px rgba(46,0,11,.08), inset 0 1px 0 rgba(255,255,255,.72);
+  transition:
+    transform 1.02s cubic-bezier(.17,.78,.16,1),
+    box-shadow 1.02s ease,
+    opacity .45s ease;
+}
+.envelope__front {
+  transform: translateZ(28px);
+  box-shadow: inset 0 -18px 30px rgba(71,36,11,.08), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.envelope__flap {
+  transform: translateZ(38px) rotateX(0deg);
+  transform-origin: 50% 0%;
+  box-shadow: inset 0 10px 18px rgba(255,255,255,.18), 0 8px 16px rgba(55,13,4,.08);
+  transition: transform .76s cubic-bezier(.18,.78,.2,1), filter .6s ease;
+}
+.wax-seal {
+  transform: translate(-50%,-50%) translateZ(58px);
+  box-shadow:
+    inset 0 0 0 3px rgba(255,255,255,.48),
+    inset 0 -7px 14px rgba(145,101,23,.13),
+    0 13px 24px rgba(36,0,8,.24);
+}
+.envelope:hover .wax-seal {
+  transform: translate(-50%,-50%) translateZ(64px) scale(1.045) rotate(-2deg);
+}
+
+.invitation-cover.is-opening .envelope {
+  animation: none;
+  translate: 0 18px;
+  transform: rotateX(6deg) rotateY(0deg) scale(.985);
+}
+.invitation-cover.is-opening .envelope::before {
+  transform: translateZ(-110px) rotateX(78deg) scaleX(.76);
+  filter: blur(24px);
+  opacity: .55;
+}
+.invitation-cover.is-opening .envelope::after {
+  opacity: .06;
+  transform: translateZ(72px) translateX(12%);
+}
+.invitation-cover.is-opening .wax-seal {
+  animation: waxSealRelease .48s cubic-bezier(.2,.8,.18,1) forwards;
+}
+@keyframes waxSealRelease {
+  0% { opacity: 1; transform: translate(-50%,-50%) translateZ(58px) scale(1) rotate(0); }
+  38% { opacity: 1; transform: translate(-50%,-50%) translateZ(76px) scale(1.12) rotate(-5deg); }
+  100% { opacity: 0; transform: translate(-50%,-50%) translateZ(35px) scale(.54) rotate(12deg); }
+}
+.invitation-cover.is-opening .envelope__flap {
+  z-index: 1;
+  transform: translateZ(14px) rotateX(-178deg);
+  filter: brightness(.94);
+}
+.invitation-cover.is-opening .envelope__paper {
+  transform: translate3d(0,-73%,92px) rotateX(-2.5deg) scale(1.075);
+  box-shadow: 0 34px 55px rgba(35,0,8,.28), 0 2px 0 rgba(255,255,255,.72) inset;
+}
+.invitation-cover.is-opening::before { transform: translate3d(-3vw,2vh,0) scale(1.12); opacity: .24; }
+.invitation-cover.is-opening::after { transform: translate3d(4vw,-2vh,0) scale(1.1); opacity: .18; }
+
+.tap-copy {
+  text-shadow: 0 2px 14px rgba(27,0,6,.28);
+}
+
+@media (max-width: 760px) {
+  .invitation-cover { perspective: 1180px; perspective-origin: 50% 43%; }
+  .envelope {
+    --tilt-x: 2.5deg;
+    --tilt-y: -2.2deg;
+    width: min(88vw, 390px);
+  }
+  .invitation-cover.is-opening .envelope__paper {
+    transform: translate3d(0,-68%,74px) rotateX(-2deg) scale(1.055);
+  }
+  .envelope::before { bottom: -34px; height: 29px; filter: blur(15px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .envelope { animation: none; transform: none; translate: 0 -12px; }
+  .invitation-cover.is-opening .envelope { transform: none; translate: 0 0; }
+  .invitation-cover.is-opening .wax-seal { animation: none; opacity: 0; }
+  .invitation-cover.is-opening .envelope__flap { transform: rotateX(-180deg); }
+  .invitation-cover.is-opening .envelope__paper { transform: translate3d(0,-48%,20px) scale(1.02); }
+}
+
+/* =========================================================
+   V44.3 · cinematic isometric arrival + seal drop + leaning card
+   ========================================================= */
+.invitation-cover {
+  --intro-front-x: 4deg;
+  --intro-front-y: -3deg;
+  perspective: 1650px;
+  perspective-origin: 50% 42%;
+}
+
+/* Start as a closed physical envelope seen from a shallow top/isometric angle,
+   pause for a beat, then settle toward the viewer before interaction. */
+.invitation-cover:not(.is-ready):not(.is-opening) .envelope {
+  animation: envelopeArrival443 1.08s cubic-bezier(.16,.82,.18,1) both;
+  pointer-events: none;
+}
+@keyframes envelopeArrival443 {
+  0%, 14% {
+    transform: rotateX(58deg) rotateY(-10deg) rotateZ(-2.8deg) scale(.82) translate3d(0,34px,-105px);
+    translate: 0 -2px;
+    filter: saturate(.9) brightness(.92) blur(.35px);
+  }
+  62% {
+    transform: rotateX(8deg) rotateY(-3.5deg) rotateZ(.25deg) scale(1.015) translate3d(0,-2px,12px);
+    translate: 0 -13px;
+    filter: saturate(1) brightness(1.02) blur(0);
+  }
+  78% {
+    transform: rotateX(1deg) rotateY(-2.4deg) rotateZ(0) scale(1.008) translate3d(0,0,4px);
+    translate: 0 -15px;
+  }
+  100% {
+    transform: rotateX(var(--intro-front-x)) rotateY(var(--intro-front-y)) rotateZ(0) scale(1) translate3d(0,0,0);
+    translate: 0 -12px;
+    filter: none;
+  }
+}
+
+.invitation-cover.is-ready:not(.is-opening) .envelope {
+  animation: envelopeFloat443 5.2s ease-in-out infinite;
+  transform: rotateX(var(--tilt-x, var(--intro-front-x))) rotateY(var(--tilt-y, var(--intro-front-y)));
+}
+@keyframes envelopeFloat443 {
+  0%,100% { translate: 0 -12px; }
+  50% { translate: 0 -17px; }
+}
+
+/* V44.4 · genuinely closed starting state.
+   The invitation sheet must not peek through the envelope before opening. */
+.invitation-cover:not(.is-opening) .envelope__paper {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Keep the flap visibly closed throughout the arrival. */
+.invitation-cover:not(.is-opening) .envelope__flap {
+  transform: translateZ(42px) rotateX(0deg);
+  z-index: 5;
+}
+.invitation-cover:not(.is-opening) .wax-seal { z-index: 9; }
+
+/* Hide the prompt during the tiny establishing shot, then let it appear. */
+.invitation-cover:not(.is-ready) .tap-copy {
+  opacity: 0;
+  transform: translateY(7px);
+  animation: none;
+}
+.invitation-cover.is-ready .tap-copy {
+  opacity: 1;
+  transform: none;
+  transition: opacity .38s ease, transform .38s ease;
+}
+
+/* On tap: scene settles, the seal physically drops out of frame first. */
+.invitation-cover.is-opening .envelope {
+  animation: none;
+  translate: 0 14px;
+  transform: rotateX(5deg) rotateY(0deg) scale(.985);
+  transition: transform .62s cubic-bezier(.2,.76,.18,1), translate .62s cubic-bezier(.2,.76,.18,1);
+}
+.invitation-cover.is-opening .wax-seal {
+  z-index: 14;
+  opacity: 1;
+  animation: waxSealDrop443 .78s cubic-bezier(.16,.68,.22,1) forwards;
+  will-change: transform, filter, opacity;
+}
+@keyframes waxSealDrop443 {
+  0% {
+    opacity: 1;
+    transform: translate(-50%,-50%) translateZ(62px) scale(1) rotate(0deg);
+    filter: blur(0) drop-shadow(0 12px 16px rgba(28,0,7,.24));
+  }
+  17% {
+    opacity: 1;
+    transform: translate(-50%,-58%) translateZ(105px) scale(1.08) rotate(-4deg);
+    filter: blur(0) drop-shadow(0 16px 22px rgba(28,0,7,.28));
+  }
+  48% {
+    opacity: .96;
+    transform: translate(-47%,24vh) translateZ(82px) scale(.94) rotate(24deg);
+    filter: blur(.7px) drop-shadow(0 24px 18px rgba(28,0,7,.2));
+  }
+  78% {
+    opacity: .78;
+    transform: translate(-42%,72vh) translateZ(38px) scale(.78) rotate(76deg);
+    filter: blur(2.2px) drop-shadow(0 35px 14px rgba(28,0,7,.12));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-36%,124vh) translateZ(4px) scale(.62) rotate(126deg);
+    filter: blur(5px) drop-shadow(0 46px 10px rgba(28,0,7,0));
+  }
+}
+
+/* Flap waits until the seal has visibly released. */
+.invitation-cover.is-opening .envelope__flap {
+  z-index: 1;
+  transform: translateZ(13px) rotateX(-179deg);
+  transition: transform .78s cubic-bezier(.16,.82,.18,1) .34s, filter .55s ease .34s;
+  filter: brightness(.94);
+}
+
+/* The invitation rises out, then settles back as though leaning on the envelope. */
+.invitation-cover.is-opening .envelope__paper {
+  animation: invitationCardLean444 1.18s cubic-bezier(.14,.82,.15,1) .72s both;
+  visibility: visible;
+  transform-origin: 50% 100%;
+  will-change: transform, box-shadow;
+}
+@keyframes invitationCardLean444 {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,0,14px) rotateX(0deg) scale(1);
+    box-shadow: 0 7px 18px rgba(38,0,9,.08);
+  }
+  14% { opacity: 0; }
+  24% { opacity: 1; }
+  58% {
+    opacity: 1;
+    transform: translate3d(0,-79%,132px) rotateX(-2deg) rotateZ(-.35deg) scale(1.085);
+    box-shadow: 0 42px 64px rgba(31,0,8,.32), inset 0 1px 0 rgba(255,255,255,.75);
+  }
+  76% {
+    opacity: 1;
+    transform: translate3d(0,-72%,112px) rotateX(9deg) rotateZ(.25deg) scale(1.07);
+    box-shadow: 0 36px 56px rgba(31,0,8,.27), inset 0 1px 0 rgba(255,255,255,.75);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,-69%,104px) rotateX(11deg) rotateZ(0deg) scale(1.065);
+    box-shadow: 0 31px 50px rgba(31,0,8,.25), inset 0 1px 0 rgba(255,255,255,.75);
+  }
+}
+
+.invitation-cover.is-opening .tap-copy {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .24s ease, transform .24s ease;
+}
+
+/* A soft final cinematic defocus while the site comes forward. */
+.invitation-cover.is-finishing {
+  filter: blur(4px) saturate(.92);
+}
+
+@media (max-width: 760px) {
+  .invitation-cover { perspective: 1280px; perspective-origin: 50% 41%; }
+  @keyframes envelopeArrival443 {
+    0%, 14% {
+      transform: rotateX(54deg) rotateY(-7deg) rotateZ(-2deg) scale(.84) translate3d(0,28px,-78px);
+      translate: 0 -2px;
+      filter: saturate(.9) brightness(.93) blur(.25px);
+    }
+    62% {
+      transform: rotateX(7deg) rotateY(-2.5deg) scale(1.012) translate3d(0,-1px,9px);
+      translate: 0 -12px;
+      filter: none;
+    }
+    78% {
+      transform: rotateX(1deg) rotateY(-1.8deg) scale(1.006);
+      translate: 0 -14px;
+    }
+    100% {
+      transform: rotateX(3deg) rotateY(-2deg) scale(1);
+      translate: 0 -11px;
+      filter: none;
+    }
+  }
+  .invitation-cover.is-opening .envelope__paper {
+    animation-name: invitationCardLean443Mobile;
+  }
+  @keyframes invitationCardLean443Mobile {
+    0% { transform: translate3d(0,0,12px) rotateX(0) scale(1); }
+    58% { transform: translate3d(0,-73%,92px) rotateX(-1deg) scale(1.065); box-shadow: 0 34px 52px rgba(31,0,8,.3); }
+    76% { transform: translate3d(0,-67%,78px) rotateX(8deg) scale(1.052); box-shadow: 0 30px 46px rgba(31,0,8,.25); }
+    100% { transform: translate3d(0,-64%,72px) rotateX(10deg) scale(1.048); box-shadow: 0 27px 42px rgba(31,0,8,.23); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .invitation-cover:not(.is-ready):not(.is-opening) .envelope,
+  .invitation-cover.is-ready:not(.is-opening) .envelope { animation: none; transform: none; translate: 0 -10px; }
+  .invitation-cover:not(.is-ready) .tap-copy { opacity: 1; transform: none; }
+  .invitation-cover.is-opening .wax-seal { animation: none; opacity: 0; }
+  .invitation-cover.is-opening .envelope__flap { transition-delay: 0s; transform: rotateX(-180deg); }
+  .invitation-cover.is-opening .envelope__paper { animation: none; opacity: 1; visibility: visible; transform: translate3d(0,-48%,20px) scale(1.02); }
+}
+
+
+/* =========================================================
+   V44.5 · smoother physical card extraction + direct cross-fade
+   ========================================================= */
+/* The card starts genuinely inside the pocket and travels out in visible
+   stages.  The front fold remains above it, so the motion reads as an
+   extraction rather than an opacity reveal. */
+.invitation-cover.is-opening .envelope__paper {
+  z-index: 2;
+  visibility: visible;
+  opacity: 1;
+  animation: invitationCardExtract445 1.68s cubic-bezier(.18,.76,.12,1) .58s both;
+  transform-origin: 50% 100%;
+  will-change: transform, box-shadow;
+}
+@keyframes invitationCardExtract445 {
+  0%, 10% {
+    opacity: 1;
+    transform: translate3d(0,38%,5px) rotateX(17deg) rotateZ(-.18deg) scale(.84);
+    box-shadow: 0 5px 12px rgba(31,0,8,.05);
+  }
+  30% {
+    transform: translate3d(0,4%,22px) rotateX(13deg) rotateZ(-.12deg) scale(.90);
+    box-shadow: 0 12px 22px rgba(31,0,8,.10);
+  }
+  52% {
+    transform: translate3d(0,-31%,52px) rotateX(9deg) rotateZ(-.06deg) scale(.97);
+    box-shadow: 0 20px 34px rgba(31,0,8,.16);
+  }
+  74% {
+    transform: translate3d(0,-57%,88px) rotateX(5.5deg) rotateZ(0) scale(1.055);
+    box-shadow: 0 30px 48px rgba(31,0,8,.22), inset 0 1px 0 rgba(255,255,255,.74);
+  }
+  88% {
+    transform: translate3d(0,-68%,116px) rotateX(3deg) scale(1.105);
+    box-shadow: 0 37px 58px rgba(31,0,8,.25), inset 0 1px 0 rgba(255,255,255,.76);
+  }
+  100% {
+    transform: translate3d(0,-73%,138px) rotateX(2deg) scale(1.145);
+    box-shadow: 0 43px 66px rgba(31,0,8,.27), inset 0 1px 0 rgba(255,255,255,.78);
+  }
+}
+
+/* No cinematic blur at the end: the physical scene simply dissolves while
+   the actual invitation comes forward beneath it. */
+.invitation-cover.is-finishing {
+  filter: none !important;
+  opacity: 0;
+  transition: opacity .72s cubic-bezier(.4,0,.2,1), visibility .72s linear;
+}
+.invitation-cover.is-finishing .envelope {
+  transform: rotateX(1deg) rotateY(0deg) scale(1.018);
+  transition: transform .72s ease;
+}
+
+@media (max-width: 760px) {
+  .invitation-cover.is-opening .envelope__paper {
+    animation-name: invitationCardExtract445Mobile;
+  }
+  @keyframes invitationCardExtract445Mobile {
+    0%, 10% {
+      opacity: 1;
+      transform: translate3d(0,40%,4px) rotateX(15deg) scale(.84);
+      box-shadow: 0 4px 10px rgba(31,0,8,.05);
+    }
+    30% { transform: translate3d(0,7%,16px) rotateX(12deg) scale(.89); }
+    52% { transform: translate3d(0,-28%,40px) rotateX(8deg) scale(.955); }
+    74% { transform: translate3d(0,-53%,68px) rotateX(5deg) scale(1.025); box-shadow: 0 25px 39px rgba(31,0,8,.20); }
+    88% { transform: translate3d(0,-63%,84px) rotateX(3deg) scale(1.07); box-shadow: 0 30px 46px rgba(31,0,8,.23); }
+    100% { transform: translate3d(0,-68%,98px) rotateX(2deg) scale(1.105); box-shadow: 0 34px 52px rgba(31,0,8,.25); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .invitation-cover.is-opening .envelope__paper {
+    animation: none;
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0,-48%,20px) scale(1.02);
+  }
+  .invitation-cover.is-finishing { filter: none !important; }
+}
+
+/* =========================================================
+   V44.7 · rebuilt modern envelope intro base
+   ========================================================= */
+.intro-v446 {
+  --intro-wine: #6f1025;
+  --intro-wine-deep: #3d0715;
+  --intro-paper: #fffaf0;
+  --intro-envelope: #eadbc5;
+  --intro-envelope-light: #f4e8d6;
+  --intro-gold: #c89b51;
+  perspective: 1500px;
+  perspective-origin: 50% 45%;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255,244,224,.12), transparent 29%),
+    radial-gradient(circle at 50% 120%, rgba(22,0,6,.26), transparent 45%),
+    linear-gradient(145deg, #7d1b33 0%, #541020 48%, #350711 100%);
+  transition: opacity .72s ease, visibility .72s ease;
+}
+.intro-v446::before,
+.intro-v446::after { display: none; }
+.intro-v446__ambient {
+  position: absolute;
+  width: min(62vw, 720px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(244,232,214,.09);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.intro-v446__ambient--one { left: -26vw; top: -29vw; }
+.intro-v446__ambient--two { right: -28vw; bottom: -35vw; opacity: .62; }
+
+.intro-v446__stage {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  position: relative;
+  width: min(86vw, 500px);
+  aspect-ratio: 1.48;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  transform-style: preserve-3d;
+  transform: translate3d(0,-8px,0) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  animation: introArrival446 .9s cubic-bezier(.2,.82,.18,1) both;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+@keyframes introArrival446 {
+  0% { opacity: 0; transform: translate3d(0,36px,-80px) rotateX(14deg) rotateZ(-2.4deg) scale(.92); }
+  58% { opacity: 1; }
+  100% { opacity: 1; transform: translate3d(0,-8px,0) rotateX(0deg) rotateZ(0deg) scale(1); }
+}
+.intro-v446.is-ready:not(.is-opening) .intro-v446__stage {
+  animation: introFloat446 5.5s ease-in-out infinite;
+}
+@keyframes introFloat446 {
+  0%,100% { transform: translate3d(0,-8px,0) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)); }
+  50% { transform: translate3d(0,-13px,8px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)); }
+}
+
+.intro-v446__ground-shadow {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -8%;
+  height: 18%;
+  border-radius: 50%;
+  background: rgba(18,0,5,.38);
+  filter: blur(22px);
+  transform: translateZ(-60px) scaleX(.94);
+  opacity: .72;
+  transition: transform 1.2s ease, opacity 1.2s ease;
+}
+.intro-v446__envelope {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 26px 32px rgba(20,0,5,.28));
+}
+.intro-v446__back {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 13px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.3), transparent 34%),
+    linear-gradient(180deg, var(--intro-envelope-light), var(--intro-envelope));
+  box-shadow:
+    inset 0 0 0 1px rgba(111,16,37,.08),
+    inset 0 -22px 44px rgba(99,55,42,.04);
+}
+.intro-v446__back::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(200,155,81,.2);
+  border-radius: 8px;
+}
+
+/* Card is genuinely absent from view until the opening sequence begins. */
+.intro-v446__card {
+  position: absolute;
+  left: 50%;
+  top: 8%;
+  z-index: 3;
+  width: 78%;
+  height: 86%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: clamp(18px,4vw,30px);
+  border: 1px solid rgba(111,16,37,.1);
+  border-radius: 7px;
+  color: var(--intro-wine);
+  background:
+    radial-gradient(circle at 50% 10%, rgba(200,155,81,.09), transparent 28%),
+    var(--intro-paper);
+  box-shadow: 0 18px 34px rgba(48,14,19,.18);
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: 50% 88%;
+  transform: translate3d(-50%,42%, -18px) scale(.84) rotateX(3deg);
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+.intro-v446__card::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(200,155,81,.46);
+  border-radius: 3px;
+  pointer-events: none;
+}
+.intro-v446__card .tiny-label { margin-bottom: 9px; font-size: .54rem; letter-spacing: .18em; text-transform: uppercase; }
+.intro-v446__card .cover-parentage { display: block; margin: 1px 0 4px; color: rgba(67,26,30,.68); font: 500 .46rem "Montserrat", sans-serif; letter-spacing: .035em; }
+.intro-v446__card strong { font-family: "Italiana", "Noto Serif Telugu", "Times New Roman", serif; font-size: clamp(1.55rem,5vw,2.22rem); font-weight: 400; line-height: 1.04; }
+.intro-v446__card .ampersand { color: var(--intro-gold); font: italic 1.45rem/.9 "Cormorant Garamond", serif; }
+.intro-v446__card .date { margin-top: 10px; font-size: .63rem; letter-spacing: .17em; text-transform: uppercase; }
+
+/* One clean front pocket masks the card as it physically emerges. */
+.intro-v446__pocket {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border-radius: 13px;
+  clip-path: polygon(0 31%, 50% 64%, 100% 31%, 100% 100%, 0 100%);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.28), transparent 43%),
+    linear-gradient(180deg, #f0e1cc, #e4d0b5);
+  box-shadow: inset 0 -1px 0 rgba(111,16,37,.09);
+}
+.intro-v446__pocket::before,
+.intro-v446__pocket::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 52%;
+  height: 69%;
+  opacity: .38;
+}
+.intro-v446__pocket::before { left: 0; background: linear-gradient(35deg, rgba(111,16,37,.08), transparent 54%); }
+.intro-v446__pocket::after { right: 0; background: linear-gradient(-35deg, rgba(111,16,37,.06), transparent 54%); }
+
+.intro-v446__flap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 7;
+  height: 68%;
+  clip-path: polygon(0 0, 100% 0, 50% 92%);
+  border-radius: 13px 13px 0 0;
+  background:
+    linear-gradient(155deg, rgba(255,255,255,.42), transparent 34%),
+    linear-gradient(180deg, #f5e9d8, #e7d3b8);
+  transform-origin: 50% 0%;
+  transform: rotateX(0deg) translateZ(4px);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+.intro-v446__flap::after {
+  content: "";
+  position: absolute;
+  left: 9%;
+  right: 9%;
+  top: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,155,81,.48), transparent);
+}
+.intro-v446__seal {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  z-index: 9;
+  display: grid;
+  place-items: center;
+  width: clamp(64px,15vw,78px);
+  aspect-ratio: 1;
+  padding: 8px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255,255,255,.19), transparent 26%),
+    linear-gradient(145deg, #8c1933, #5e0c20);
+  box-shadow:
+    inset 0 0 0 2px rgba(255,235,211,.22),
+    inset 0 -8px 13px rgba(35,0,8,.22),
+    0 10px 20px rgba(39,0,10,.25);
+  transform: translate3d(-50%,-50%,18px);
+  will-change: transform, opacity, filter;
+}
+.intro-v446__seal .seal-logo { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+
+.intro-v446__tap {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + min(31vw,190px));
+  transform: translateX(-50%);
+  margin: 0;
+  color: rgba(255,248,236,.74);
+  font-size: .62rem;
+  letter-spacing: .21em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity .35s ease, transform .35s ease;
+  pointer-events: none;
+}
+.intro-v446.is-ready:not(.is-opening) .intro-v446__tap { opacity: 1; transform: translate(-50%,-2px); }
+
+/* Smooth single-timeline opening: seal -> flap -> card extraction -> presentation. */
+.intro-v446.is-opening .intro-v446__stage { animation: none; transform: translate3d(0,-8px,0); }
+.intro-v446.is-opening .intro-v446__seal { animation: introSeal446 .64s cubic-bezier(.35,.02,.5,1) both; }
+@keyframes introSeal446 {
+  0% { opacity: 1; filter: blur(0); transform: translate3d(-50%,-50%,18px) scale(1); }
+  18% { transform: translate3d(-50%,-58%,46px) scale(1.06) rotate(-3deg); }
+  55% { opacity: .96; filter: blur(.2px); transform: translate3d(-47%,55px,42px) scale(.94) rotate(9deg); }
+  100% { opacity: 0; filter: blur(4px); transform: translate3d(-37%,78vh,0) scale(.7) rotate(29deg); }
+}
+.intro-v446.is-opening .intro-v446__flap {
+  z-index: 2;
+  transition: transform .82s cubic-bezier(.22,.72,.12,1) .30s;
+  transform: rotateX(-178deg) translateZ(-3px);
+}
+.intro-v446.is-opening .intro-v446__card {
+  visibility: visible;
+  animation: introCard446 1.85s cubic-bezier(.16,.82,.18,1) .72s both;
+}
+@keyframes introCard446 {
+  0%, 7% { opacity: 0; transform: translate3d(-50%,42%,-18px) scale(.84) rotateX(3deg); }
+  18% { opacity: 1; transform: translate3d(-50%,28%,2px) scale(.88) rotateX(2deg); }
+  48% { opacity: 1; transform: translate3d(-50%,-5%,34px) scale(.95) rotateX(-1deg); }
+  76% { opacity: 1; transform: translate3d(-50%,-31%,72px) scale(1.04) rotateX(-2deg); }
+  100% { opacity: 1; transform: translate3d(-50%,-43%,96px) scale(1.10) rotateX(-2.5deg); }
+}
+.intro-v446.is-opening .intro-v446__ground-shadow { transform: translateZ(-60px) scaleX(.82); opacity: .48; }
+.intro-v446.is-opening .intro-v446__tap { opacity: 0; }
+.intro-v446.is-finishing { opacity: 0; visibility: hidden; }
+
+@media (max-width: 520px) {
+  .intro-v446 { perspective: 1200px; perspective-origin: 50% 43%; }
+  .intro-v446__stage { width: min(90vw,430px); }
+  .intro-v446__card { width: 79%; height: 86%; padding: 16px 14px; }
+  .intro-v446__card strong { font-size: clamp(1.34rem,7vw,1.9rem); }
+  .intro-v446__card .cover-parentage { font-size: .42rem; }
+  .intro-v446__tap { top: calc(50% + min(35vw,170px)); }
+  @keyframes introCard446 {
+    0%,7% { opacity: 0; transform: translate3d(-50%,42%,-18px) scale(.82) rotateX(3deg); }
+    18% { opacity: 1; transform: translate3d(-50%,29%,2px) scale(.86) rotateX(2deg); }
+    48% { opacity: 1; transform: translate3d(-50%,-3%,30px) scale(.93) rotateX(-1deg); }
+    76% { opacity: 1; transform: translate3d(-50%,-27%,58px) scale(1.00) rotateX(-2deg); }
+    100% { opacity: 1; transform: translate3d(-50%,-36%,72px) scale(1.05) rotateX(-2deg); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-v446__stage { animation: none !important; transform: none !important; }
+  .intro-v446.is-ready .intro-v446__tap { opacity: 1; }
+  .intro-v446.is-opening .intro-v446__seal { animation: none; opacity: 0; }
+  .intro-v446.is-opening .intro-v446__flap { transition: none; transform: rotateX(-178deg); }
+  .intro-v446.is-opening .intro-v446__card { animation: none; opacity: 1; visibility: visible; transform: translate3d(-50%,-35%,40px) scale(1.03); }
+}
+
+
+/* =========================================================
+   V44.7 · continuous card extraction
+   The card now begins fully inside the physical envelope bounds and
+   follows one uninterrupted transform path. This prevents any lower-edge
+   flash and avoids the stepped / stop-motion appearance of keyframes.
+   ========================================================= */
+.intro-v446__card {
+  top: 10%;
+  height: 80%;
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: 50% 92%;
+  transform: translate3d(-50%, 5%, -12px) scale(.86) rotateX(2deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.intro-v446.is-opening .intro-v446__card {
+  animation: none !important;
+  visibility: visible;
+  opacity: 1;
+  transform: translate3d(-50%, -46%, 96px) scale(1.105) rotateX(-1.8deg);
+  transition:
+    opacity .18s ease .84s,
+    transform 2.02s cubic-bezier(.18,.78,.14,1) .84s,
+    box-shadow 2.02s ease .84s;
+}
+
+/* Keep the card physically behind the front pocket for the entire pull-out.
+   Its lower edge therefore remains occluded exactly like paper in an envelope. */
+.intro-v446__pocket { z-index: 5; }
+.intro-v446__card { z-index: 3; }
+
+@media (max-width: 520px) {
+  .intro-v446__card {
+    top: 10%;
+    height: 80%;
+    transform: translate3d(-50%, 5%, -12px) scale(.84) rotateX(2deg);
+  }
+  .intro-v446.is-opening .intro-v446__card {
+    animation: none !important;
+    transform: translate3d(-50%, -42%, 78px) scale(1.06) rotateX(-1.5deg);
+    transition:
+      opacity .18s ease .84s,
+      transform 2.02s cubic-bezier(.18,.78,.14,1) .84s,
+      box-shadow 2.02s ease .84s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-v446.is-opening .intro-v446__card {
+    transition: none !important;
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(-50%, -35%, 36px) scale(1.02);
+  }
+}
+
+
+/* V44.8 · subtle invitation replay control near the hero */
+.hero-replay-invitation {
+  position: relative;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 0 auto;
+  padding: 5px 2px;
+  border: 0;
+  border-bottom: 1px solid rgba(111,16,37,.14);
+  color: rgba(111,16,37,.58);
+  background: transparent;
+  font: 500 .56rem/1.2 "Montserrat", sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .22s ease, border-color .22s ease, transform .18s ease;
+}
+.hero-replay-invitation > span:first-child {
+  color: rgba(200,155,81,.72);
+  font-size: .82rem;
+  line-height: 1;
+}
+.hero-replay-invitation:hover { color: var(--wine); border-bottom-color: rgba(111,16,37,.34); }
+.hero-replay-invitation:active { transform: scale(.97); }
+@media (max-width: 760px) {
+  .hero-replay-invitation {
+    margin-top: 7px;
+    font-size: .5rem;
+    letter-spacing: .06em;
+    opacity: .82;
+  }
+}
+
+
+/* =========================================================
+   V44.9 · top cue balance + true centered intro tap pulse
+   ========================================================= */
+
+/* Keep the replay invitation cue visually opposite the Instagram whisper. */
+.hero-replay-invitation {
+  display: flex;
+  width: max-content;
+  margin: 10px 4px 0 auto;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* Draw the Instagram pointer in CSS rather than using a Unicode arrow.
+   This prevents iOS from replacing it with an emoji-style glyph. */
+.instagram-logo-hint::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 15px;
+  height: 8px;
+  margin-right: 6px;
+  border-top: 1.15px solid rgba(200,155,81,.70);
+  border-left: 1.15px solid rgba(200,155,81,.70);
+  background: transparent;
+  transform: translateY(1px) rotate(-17deg) !important;
+  transform-origin: center;
+  border-radius: 1px 0 0 0;
+}
+
+/* The intro prompt must never animate its horizontal centering away. */
+.intro-v446__tap {
+  transform: translateX(-50%) scale(1);
+  transform-origin: 50% 50%;
+  animation: introTapCenteredPulse 2.8s ease-in-out infinite !important;
+  will-change: transform, opacity;
+}
+.intro-v446.is-ready:not(.is-opening) .intro-v446__tap {
+  opacity: .78;
+  transform: translateX(-50%) scale(1);
+}
+.intro-v446.is-opening .intro-v446__tap {
+  animation: none !important;
+  opacity: 0;
+  transform: translateX(-50%) scale(.985);
+}
+@keyframes introTapCenteredPulse {
+  0%, 100% { opacity: .66; transform: translateX(-50%) scale(.992); }
+  50%      { opacity: .86; transform: translateX(-50%) scale(1.018); }
+}
+
+@media (max-width: 760px) {
+  .hero-replay-invitation {
+    width: max-content;
+    max-width: 48vw;
+    margin: 8px 4px 0 auto;
+    justify-content: flex-end;
+    text-align: right;
+  }
+  .instagram-logo-hint {
+    left: 28px;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-replay-invitation { max-width: 50vw; margin-right: 2px; }
+  .instagram-logo-hint { left: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-v446__tap,
+  .intro-v446.is-ready:not(.is-opening) .intro-v446__tap {
+    animation: none !important;
+    opacity: .78;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+
+/* =========================================================
+   RADHASUJANA · NEO 2.0
+   Touch-safe interaction architecture + consolidated release
+   ========================================================= */
+
+/* A finished intro must leave the hit-testing tree completely. */
+.invitation-cover.opened {
+  pointer-events: none !important;
+  display: none !important;
+}
+
+/* Structural/decorative rails never own a touch. Only their buttons do. */
+.event-progress,
+.event-progress__track,
+.event-progress__fill,
+.event-progress__steps {
+  pointer-events: none !important;
+}
+.event-progress__step {
+  pointer-events: auto !important;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hidden/fading reveal surfaces must immediately release the underlying card. */
+.event-reveal[hidden],
+.event-reveal.is-completing {
+  pointer-events: none !important;
+}
+.event-reveal__interactive,
+.event-reveal__skip {
+  pointer-events: auto !important;
+}
+
+/* Hidden mobile UI must never leave an invisible hit layer behind. */
+.quick-bar { pointer-events: none; }
+.quick-bar.is-visible { pointer-events: auto; }
+.quick-directions-menu[hidden] { display: none !important; pointer-events: none !important; }
+.quick-directions-menu:not([hidden]) { pointer-events: auto; }
+@media (max-width:760px) {
+  .nav-links:not(.open) { pointer-events: none !important; }
+  .nav-links.open { pointer-events: auto !important; }
+}
+
+/* Explicitly return hit-testing to every user-facing control. */
+.team-card,
+.event-select,
+.rsvp-form .choice-chip,
+.rsvp-form .choice-chip > span,
+.rsvp-form .event-options label,
+.rsvp-form .event-options label > span,
+.rsvp-form button,
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea,
+.footer-utility,
+.text-button,
+.primary-button,
+.language-toggle,
+.menu-button,
+.mobile-social-icon,
+.quick-bar a,
+.quick-bar button {
+  pointer-events: auto !important;
+}
+
+.team-card,
+.event-select,
+.rsvp-form .choice-chip,
+.rsvp-form .event-options label,
+.footer-utility,
+.text-button,
+.primary-button,
+.language-toggle,
+.menu-button,
+.mobile-social-icon,
+.quick-bar a,
+.quick-bar button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Safari is more reliable when ordinary buttons are not promoted into
+   unnecessary 3D compositing layers. Keep 3D only for the short rail/card
+   focus animation, and flatten cards at rest on touch screens. */
+@media (hover:none), (pointer:coarse) {
+  .event-card:not(.timeline-focus) {
+    transform-style: flat !important;
+    backface-visibility: visible !important;
+  }
+  .team-card,
+  .choice-chip,
+  .event-options label,
+  .rsvp-form {
+    transform: none;
+    backface-visibility: visible;
+  }
+}
+
+/* Keep the fixed bars visually elevated without creating giant interactive
+   surfaces. Their blank background areas are intentionally inert. */
+.topbar.is-scrolled { pointer-events: none; }
+.topbar.is-scrolled .brand-instagram,
+.topbar.is-scrolled .topbar__actions,
+.topbar.is-scrolled a,
+.topbar.is-scrolled button { pointer-events: auto; }
+
+/* iOS/Safari: prevent selection/callout only on ritual controls; allow normal
+   page scrolling elsewhere. */
+.event-reveal__interactive,
+.event-reveal__interactive * {
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+/* Neo version watermark. */
+.build-watermark { letter-spacing: .16em; }
