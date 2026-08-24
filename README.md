@@ -1,11 +1,12 @@
-# RadhaSujana.com — Neo 2.0
+# RadhaSujana.com — Neo 2.1
 
 Neo 2.0 is the consolidated wedding-invitation build for Sujana & Radha Krishna.
 It replaces the incremental v34–v44 patch history with one stable release line.
 
 ## Core experience
 
-- Modern 3D envelope intro with SR seal and replay-from-top behavior.
+- Modern 3D envelope intro with SR seal, shown on every fresh page load or return to the website.
+- Intro completion always opens the website from the top; the manual replay controls remain available.
 - English, Telugu, Hindi, Tamil, Chinese and Nepali routes, pre-translated in HTML.
 - Sticky mobile header with direct YouTube and Instagram brand shortcuts.
 - Wedding-week schedule, countdown, event directions and mobile quick bar.
@@ -19,6 +20,15 @@ It replaces the incremental v34–v44 patch history with one stable release line
   - Reception — raise the sparkler.
 - Ritual interactions reset on every visit. Reveal-card and Reveal-all fallbacks remain available.
 - Mobile haptics where supported; no ritual completion sounds.
+
+## Neo 2.1 changes
+
+- Removed the permanent “invitation already opened” bypass.
+- Returning guests must interact with the envelope again on every load or refresh.
+- Back/forward-cache restoration is handled so Safari cannot silently restore an already-open intro.
+- Legacy opened-state data is cleared automatically.
+- Ritual event reveals remain per-visit and unchanged.
+- Service-worker cache namespace updated to `radhasujana-neo-2.1`.
 
 ## Wedding details
 
