@@ -1,4 +1,4 @@
-# RadhaSujana.com — Neo 2.2
+# RadhaSujana.com — Neo 2.3
 
 Neo 2.0 is the consolidated wedding-invitation build for Sujana & Radha Krishna.
 It replaces the incremental v34–v44 patch history with one stable release line.
@@ -20,6 +20,14 @@ It replaces the incremental v34–v44 patch history with one stable release line
   - Reception — raise the sparkler.
 - Ritual interactions reset on every visit. Reveal-card and Reveal-all fallbacks remain available.
 - Mobile haptics where supported; no ritual completion sounds.
+
+## Neo 2.3 changes
+
+- Reworked all six share messages as culturally natural invitations rather than generic translations.
+- Added native invitation headings, blessing and presence language, structured date/time labels, and both venue names.
+- Added culturally appropriate closing lines inviting guests to join the celebration.
+- Preserved the website link, venue directions prompt, RSVP reference and confirmed event details.
+- Service-worker cache namespace updated to `radhasujana-neo-2.3`.
 
 ## Neo 2.2 changes
 
