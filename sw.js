@@ -1,6 +1,6 @@
-const CACHE="radhasujana-neo-2.3";
+const CACHE="radhasujana-neo-2.4";
 const CORE=[
-  "/","/en/","/te/","/hi/","/ta/","/zh/","/ne/",
+  "/","/en/","/te/","/hi/","/ta/","/zh/","/ne/","/ur/",
   "/neo2.css","/neo2.js","/neo2-config.js",
   "/favicon.png","/manifest.webmanifest","/assets/social-preview.jpg"
 ];

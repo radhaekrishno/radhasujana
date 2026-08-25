@@ -4684,3 +4684,116 @@ html { scroll-padding-top: 96px; }
 
 /* Neo version watermark. */
 .build-watermark { letter-spacing: .16em; }
+
+
+/* =========================================================
+   RADHASUJANA · NEO 2.4
+   Urdu RTL typography and layout harmony
+   ========================================================= */
+
+body.lang-ur {
+  direction: rtl;
+  font-family: "Noto Nastaliq Urdu", "Noto Sans Arabic", "Segoe UI", serif;
+  line-height: 1.85;
+  letter-spacing: 0;
+}
+
+.lang-ur :is(
+  .eyebrow,
+  .nav-links,
+  .event-card__day,
+  .event-card__date,
+  .event-select,
+  .countdown span,
+  .text-button,
+  .primary-button,
+  .gallery-details summary small,
+  .footer small,
+  .latest-update__label,
+  .event-progress__step
+) {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.lang-ur :is(
+  .envelope__paper strong,
+  .main-name,
+  .couple-names,
+  .section-heading h2,
+  .event-card h3,
+  .team-card strong,
+  .rsvp__intro h2,
+  .gallery-details summary strong,
+  .film-heading h2,
+  .footer h2,
+  .footer-instagram__lead
+) {
+  font-family: "Noto Nastaliq Urdu", "Noto Sans Arabic", serif;
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+
+.lang-ur .main-name {
+  font-size: clamp(2.7rem, 6.2vw, 5.8rem);
+  line-height: 1.45;
+}
+
+.lang-ur .couple-names .parentage {
+  font-family: "Noto Nastaliq Urdu", "Noto Sans Arabic", serif !important;
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+
+.lang-ur :is(
+  .event-card__content,
+  .rsvp-form,
+  .rsvp__intro,
+  .travel-card,
+  .quick-directions-menu,
+  .wedding-week-card
+) {
+  text-align: right;
+}
+
+.lang-ur :is(input, textarea, select) {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Keep the established physical header layout while its words read RTL. */
+.lang-ur .topbar { direction: ltr; }
+.lang-ur .topbar__actions,
+.lang-ur .nav-links,
+.lang-ur .language-toggle,
+.lang-ur .instagram-logo-hint { direction: rtl; }
+
+.lang-ur .nav-instagram::before {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+.lang-ur .instagram-logo-hint::before {
+  margin-right: 0;
+  margin-left: 8px;
+  transform: translateY(-1px) scaleX(-1);
+}
+
+.lang-ur .footer-instagram__button svg,
+.lang-ur .mobile-social-icon svg {
+  direction: ltr;
+}
+
+@media (max-width: 760px) {
+  .lang-ur .nav-links {
+    right: auto;
+    left: 0;
+    text-align: right;
+  }
+  .lang-ur .hero-replay-invitation {
+    margin-right: auto;
+    margin-left: 4px;
+    justify-content: flex-start;
+    text-align: left;
+  }
+}

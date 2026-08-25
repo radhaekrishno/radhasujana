@@ -1063,6 +1063,200 @@ Object.assign(translations.ta, {"revealAllCelebrations":"அனைத்து �
 Object.assign(translations.zh, {"revealAllCelebrations":"显示全部庆典","revealCard":"直接查看","mehendiRevealPrompt":"沿着圆润的花朵轮廓完整描绘，揭开庆典卡片。","pelliRevealPrompt":"轻触 ॐ 五次，让花瓣与祝福洒向新郎、新娘的婚前祝福礼。","haldiRevealPrompt":"轻轻擦去姜黄，直到庆典卡片完全显现。","weddingRevealPrompt":"向两侧拉开帷幕，揭开婚礼仪式。","weddingRevealHandle":"拉开帷幕","vrathamRevealPrompt":"轻触并按住油灯，直到灯火温柔点亮。","receptionRevealPrompt":"向上提起仙女棒，点亮并揭开婚宴卡片。"});
 Object.assign(translations.ne, {"revealAllCelebrations":"सबै उत्सव देखाउनुहोस्","revealCard":"कार्ड देखाउनुहोस्","mehendiRevealPrompt":"गोलाकार फूलको रूपरेखा पूरा गरेर उत्सव खोल्नुहोस्।","pelliRevealPrompt":"ॐ मा पाँच पटक ट्याप गरेर पेल्लीकोडुकु र पेल्लीकुथुरुमाथि फूल र आशीर्वाद वर्षाउनुहोस्।","haldiRevealPrompt":"कार्ड देखिने गरी हल्दी पुछ्नुहोस्।","weddingRevealPrompt":"पर्दा दुवैतिर तानेर विवाह समारोह प्रकट गर्नुहोस्।","weddingRevealHandle":"पर्दा खोल्नुहोस्","vrathamRevealPrompt":"दियोको ज्वाला बिस्तारै बलुञ्जेल छोएर थिचेर राख्नुहोस्।","receptionRevealPrompt":"स्पार्कलर माथि उठाएर रिसेप्सन उज्यालो पार्दै कार्ड खोल्नुहोस्।"});
 
+translations.ur = {
+  "coverTogether": "اپنے خاندانوں کے ہمراہ",
+  "nameSujana": "سجنا",
+  "sujanaParentage": "ارونا اور گنپتی راؤ کی دختر",
+  "nameRadha": "رادھا کرشنا",
+  "radhaParentage": "سجاتھا اور سوامی ورما کے فرزند",
+  "september2026": "ستمبر 2026",
+  "tapToOpen": "کھولنے کے لیے چھوئیں",
+  "navFestivities": "تقریبات",
+  "navGallery": "تصاویر",
+  "navCountdown": "الٹی گنتی",
+  "navRsvp": "شرکت کی تصدیق",
+  "navInstagram": "ہمارا انسٹاگرام",
+  "navYoutube": "یوٹیوب",
+  "mobileEngagementVideo": "<span>ہماری</span><strong>منگنی کی ویڈیو</strong>",
+  "mobileInsta": "<span>ہمارا</span><strong>انسٹاگرام اکاؤنٹ</strong>",
+  "logoInstagramHint": "سنیے… ہمارا انسٹاگرام یہاں ہے",
+  "menu": "مینو",
+  "warmlyInvited": "آپ کو دل سے دعوت ہے",
+  "heroVerse": "دو دل، دو خاندان، ایک مقدس آغاز۔",
+  "celebrationsLabel": "تقریبات",
+  "september": "ستمبر",
+  "weddingCeremony": "شادی کی تقریب",
+  "weddingSchedule": "شادی کی تقریب کا شیڈول",
+  "dinner": "عشائیہ",
+  "dinnerSummary": "جمعرات، 3 ستمبر، شام 7:00 بجے سے",
+  "muhurtham": "مہورت",
+  "muhurthamSummary": "جمعہ کی علی الصبح 2:58 بجے",
+  "muhurthamAstro": "روہنی نکشتر اور کرک لگن کے مبارک وقت میں۔",
+  "seeCelebrations": "تمام تقریبات دیکھیں",
+  "blessing": "دیوتاؤں، ہمارے اسلاف، بزرگوں کی دعاؤں اور آپ کی محبت بھری موجودگی کے ساتھ",
+  "sixCelebrations": "چھ خوبصورت تقریبات",
+  "festivitiesTitle": "شادی کی تقریبات",
+  "festivitiesIntro": "رسومات کے لیے آئیے، اور ہنسی، کھانوں، رقص اور خاندان کی پیاری سی ہلچل کے لیے رک جائیے۔",
+  "tuesday": "منگل",
+  "mehendi": "مہندی",
+  "mehendiDate": "1 ستمبر 2026",
+  "mehendiDescription": "مہندی، موسیقی، رنگ اور ایک حسین شام—یہیں سے جشن کا آغاز ہوگا۔",
+  "wednesday": "بدھ",
+  "pelliRituals": "دولہے کی قبل از شادی دعائیہ رسم <span class=\"ritual-native\">(پیلّی کوڈوکو)</span><br>& دلہن کی قبل از شادی دعائیہ رسم <span class=\"ritual-native\">(پیلّی کوتھورو)</span>",
+  "pelliRitualsPlain": "پیلّی کوڈوکو / پیلّی کوتھورو",
+  "pelliRitualsDate": "2 ستمبر 2026",
+  "pelliRitualsDescription": "روایتی رسومات، جن میں دولہا اور دلہن کو ان کے اپنے گھروں میں شادی کے لیے تیار کیا جاتا اور دعائیں دی جاتی ہیں۔",
+  "haldiDay": "جمعرات · صبح 9:00 بجے",
+  "haldi": "ہلدی",
+  "haldiDate": "3 ستمبر 2026",
+  "haldiDescription": "دھوپ، ہلدی، شرارتی کزنز اور ذرا سی بے ضرر پیلی نوک جھونک۔",
+  "weddingDay": "جمعرات کی شام → آدھی رات کے بعد",
+  "weddingDateCard": "3 ستمبر 2026",
+  "vrathamDay": "ہفتہ · صبح",
+  "vratham": "ستیہ نارائن سوامی ورتھم",
+  "vrathamDate": "5 ستمبر 2026",
+  "vrathamSacredIntro": "مقدس اور بابرکت احاطے میں",
+  "vrathamTempleName": "شری ویرا وینکٹا ستیہ نارائن سوامی واری دیوستھانم، اناورم",
+  "vrathamPrayer": "شکرگزاری اور عقیدت کی دعاؤں کے ساتھ، ہم اپنی مشترکہ زندگی کے اس نئے سفر کے آغاز پر شری ستیہ نارائن سوامی کا آشیرواد چاہتے ہیں۔",
+  "vrathamClosing": "عقیدت، خاندان، شکرگزاری اور دعاؤں بھری ایک پُرسکون صبح۔",
+  "vrathamDescription": "شکرگزاری اور عقیدت کی دعاؤں کے ساتھ، ہم اپنی مشترکہ زندگی کے اس نئے سفر کے آغاز پر شری ستیہ نارائن سوامی کا آشیرواد چاہتے ہیں۔",
+  "dateTba": "اتوار",
+  "reception": "استقبالیہ",
+  "dateTimeSoon": "6 ستمبر 2026 · شام 6:30 بجے سے",
+  "receptionDescription": "",
+  "addRsvp": "RSVP میں شامل کریں",
+  "addedRsvp": "شامل ہو گیا ✓",
+  "friendlyRivalry": "ذرا سی دوستانہ نوک جھونک",
+  "pickSide": "اپنی ٹیم منتخب کریں",
+  "pickSideIntro": "آپ کا انتخاب آپ کے RSVP کے ساتھ جائے گا۔ کوئی دباؤ نہیں—مگر سوچ سمجھ کر چنیے۔",
+  "teamBride": "دلہن کی ٹیم",
+  "teamGroom": "دولہے کی ٹیم",
+  "versus": "بمقابلہ",
+  "countdownEyebrow": "مہورت تک الٹی گنتی",
+  "countdownDate": "4 ستمبر 2026 · علی الصبح 2:58 بجے",
+  "days": "دن",
+  "hours": "گھنٹے",
+  "minutes": "منٹ",
+  "seconds": "سیکنڈ",
+  "willJoin": "کیا آپ ہمارے ساتھ ہوں گے؟",
+  "presenceWorld": "آپ کی موجودگی ہمارے لیے بہت معنی رکھتی ہے۔",
+  "rsvpIntro": "فارم مکمل کریں؛ آپ کا جواب براہِ راست واٹس ایپ میں کھل جائے گا۔",
+  "marriageVenue": "شادی کی جگہ",
+  "venueName": "پرینیا فنکشن ہال",
+  "venueAddress": "NH-16، راجمندری روڈ،<br />جگم پیٹ۔",
+  "marriageVenueTime": "جمعرات، 3 ستمبر 2026 · شام 7:00 بجے سے",
+  "whatsappUs": "ہمیں واٹس ایپ کریں",
+  "mapTitle": "پرینیا فنکشن ہال کا نقشہ",
+  "addCalendar": "＋ شادی کیلنڈر میں شامل کریں",
+  "directions": "↗ راستہ دیکھیں",
+  "yourName": "آپ کا نام",
+  "namePlaceholder": "اپنا نام درج کریں",
+  "willAttend": "کیا آپ تشریف لائیں گے؟",
+  "joyfullyYes": "جی ہاں، خوشی سے",
+  "regretfullyNo": "معذرت، شریک نہیں ہو سکوں گا/گی",
+  "whichCelebrations": "کن تقریبات میں؟",
+  "weddingRsvp": "شادی کی تقریب",
+  "receptionRsvp": "استقبالیہ",
+  "guestCount": "مہمانوں کی تعداد",
+  "oneGuest": "1 مہمان",
+  "twoGuests": "2 مہمان",
+  "threeGuests": "3 مہمان",
+  "fourGuests": "4 مہمان",
+  "fiveGuests": "5 یا زیادہ مہمان",
+  "noteForUs": "ہمارے لیے پیغام",
+  "optional": "(اختیاری)",
+  "notePlaceholder": "کوئی دعا یا پیغام لکھیے",
+  "sendWhatsapp": "RSVP واٹس ایپ پر بھیجیں",
+  "rsvpNote": "آپ کا RSVP واٹس ایپ کے ذریعے ہمارے خاندان کو بھیجا جائے گا۔",
+  "galleryEyebrow": "ہماری منگنی",
+  "gallerySummary": "ہماری منگنی کی تصاویر دیکھیے",
+  "galleryIntro": "اس دن کی چند جھلکیاں، جب ہمارے ہمیشہ کے سفر پر پہلی باقاعدہ مہر لگی۔",
+  "filmEyebrow": "ہماری منگنی کی فلم",
+  "filmTitle": "ہماری کہانی، چلتی تصویروں میں",
+  "filmIntro": "پلے دبائیے اور ہنسی، رسومات اور دو خاندانوں کے ایک ہونے کے لمحے کو پھر سے جینیے۔",
+  "filmLabel": "سجنا اور رادھا کرشنا · منگنی کی فلم",
+  "watchYoutube": "یوٹیوب پر دیکھیں",
+  "subscribeYoutube": "@RadhaSujana26 کو سبسکرائب کریں",
+  "youtubeNote": "شادی کی مزید فلمیں، براہِ راست لمحات اور یادیں جلد آ رہی ہیں۔",
+  "footerBlessing": "دیوتاؤں، ہمارے اسلاف، بزرگوں کی دعاؤں اور آپ کی محبت بھری موجودگی کے ساتھ",
+  "instagramFooterLead": "ہمیں انسٹاگرام پر فالو کریں",
+  "instagramButton": "@radhasujana26 کو فالو کریں",
+  "instagramFooterText": "تازہ خبروں، نئی تصاویر، پسِ پردہ لمحات اور شادی کے دن تک ہر خاص جھلک کے لیے۔",
+  "madeWithLove": "محبت سے تیار کیا <a href=\"https://www.instagram.com/radhaekrishno/\" target=\"_blank\" rel=\"noopener noreferrer\">رادھا کرشنا</a> اور <a href=\"https://www.instagram.com/dr.sujana_bhumadi/\" target=\"_blank\" rel=\"noopener noreferrer\">سجنا</a> نے · جولائی 2026",
+  "invitationViews": "دعوت نامہ دیکھنے والوں کی تعداد",
+  "eventAdded": "آپ کے RSVP میں شامل ہو گیا",
+  "eventRemoved": "آپ کے RSVP سے ہٹا دیا گیا",
+  "teamSelected": "منتخب ہو گئی",
+  "noSide": "کوئی ٹیم منتخب نہیں",
+  "notSpecified": "درج نہیں",
+  "attendanceYes": "جی ہاں، خوشی سے",
+  "attendanceNo": "معذرت، شرکت ممکن نہیں",
+  "rsvpHeading": "شادی کا RSVP — سجنا اور رادھا کرشنا",
+  "labelName": "نام",
+  "labelAttendance": "شرکت",
+  "labelCelebrations": "تقریبات",
+  "labelGuests": "مہمان",
+  "labelSide": "ٹیم",
+  "labelMessage": "پیغام",
+  "calendarReady": "شادی کا کیلنڈر ڈاؤن لوڈ ہو گیا",
+  "photo": "تصویر",
+  "of": "از",
+  "directMessage": "السلام علیکم، مجھے سجنا اور رادھا کرشنا کی شادی کے بارے میں کچھ معلومات درکار ہیں۔",
+  "haldiVenueName": "پرینیا فنکشن ہال · سامنے کا لان",
+  "pelliKodukuLabel": "دولہے کی رسم",
+  "pelliKuthuruLabel": "دلہن کی رسم",
+  "groomsHouse": "دولہے کا گھر",
+  "bridesHouse": "دلہن کا گھر",
+  "vrathamVenueName": "شری ویرا وینکٹا ستیہ نارائن سوامی واری دیوستھانم، اناورم",
+  "venueLabel": "مقام",
+  "receptionVenueLabel": "استقبالیہ کا مقام",
+  "receptionVenueName": "RAMCOSA FUNCTION HALL",
+  "receptionVenueAddress": "ڈی نمبر 2-817/5، وینکٹ نگر،<br>RMC مینز ہاسٹل کے قریب،<br>کاکیناڈا، آندھرا پردیش، بھارت۔<br>پن: 533002۔",
+  "receptionVenueTime": "اتوار، 6 ستمبر 2026 · شام 6:30 بجے سے",
+  "receptionMapTitle": "RAMCOSA FUNCTION HALL کا نقشہ",
+  "marriageDirections": "↗ شادی کی جگہ کا راستہ",
+  "receptionDirections": "↗ استقبالیہ کی جگہ کا راستہ",
+  "weddingHeroRange": "3 ستمبر کی رات → 4 ستمبر کی علی الصبح",
+  "latestUpdateLabel": "تازہ اطلاع",
+  "weddingWeekEyebrow": "شادی کا ہفتہ · براہِ راست",
+  "todayLabel": "آج",
+  "tonightLabel": "آج رات",
+  "nextLabel": "اگلا",
+  "nowLabel": "ابھی",
+  "shareInvitation": "ہمارا دعوت نامہ شیئر کریں ♡",
+  "shareCopied": "دعوت نامے کا لنک کاپی ہو گیا",
+  "shareText": "✨ رادھا کرشنا اور سجنا کی شادی کا دعوت نامہ ✨\n\nاپنی زندگی کے نئے سفر کا آغاز کرتے ہوئے ہم آپ کو اپنی شادی کی خوشیوں میں شریک ہونے کی دلی دعوت دیتے ہیں۔ آپ کی آمد اور دعائیں ان خوبصورت لمحوں کو ہمارے لیے مزید یادگار بنا دیں گی۔\n\n💍 شادی کی تقریب\nتاریخ: 3 ستمبر 2026\nوقت: شام 7:00 بجے سے\nمقام: پرینیا فنکشن ہال، جگم پیٹ\n\n🎉 استقبالیہ\nتاریخ: 6 ستمبر 2026\nوقت: شام 6:30 بجے سے\nمقام: RAMCOSA فنکشن ہال، کاکیناڈا",
+  "shareDetailsPrompt": "تقریب کے مقامات تک رہنمائی، RSVP اور مکمل تفصیلات کے لیے ہمارا ڈیجیٹل دعوت نامہ کھولیں۔\n\nضرور تشریف لائیے اور ہماری خوشیوں میں شریک ہوئیے!",
+  "quickSchedule": "شیڈول",
+  "quickDirections": "راستے",
+  "quickRsvp": "RSVP",
+  "travelSummary": "شادی کے لیے باہر سے آ رہے ہیں؟",
+  "travelIntro": "دوسرے شہر سے آنے والے مہمانوں کے لیے مختصر رہنمائی۔",
+  "travelWedding": "شادی کی تقریبات · جگم پیٹ",
+  "travelReception": "استقبالیہ · کاکیناڈا",
+  "travelHelp": "سفر یا قیام میں مدد چاہیے؟ ہمارے خاندان کو واٹس ایپ کریں۔",
+  "viewInvitationAgain": "دعوت نامہ دوبارہ دیکھیں",
+  "installApp": "شادی کو ہوم اسکرین پر شامل کریں",
+  "thankYouEyebrow": "دل کی گہرائیوں سے شکرگزار",
+  "thankYouTitle": "ہماری خوشیوں میں شریک ہونے کا شکریہ ♡",
+  "thankYouText": "تقریبات ختم ہو سکتی ہیں، مگر یادوں کا سفر ابھی شروع ہوا ہے۔ ہماری تصاویر، فلمیں اور تازہ خبریں یہاں اور انسٹاگرام پر جاری رہیں گی۔",
+  "filmPlay": "منگنی کی فلم چلائیں",
+  "musicPlay": "موسیقی چلائیں",
+  "musicPause": "موسیقی روکیں",
+  "revealAllCelebrations": "تمام تقریبات ظاہر کریں",
+  "revealCard": "کارڈ ظاہر کریں",
+  "mehendiRevealPrompt": "تقریب ظاہر کرنے کے لیے گول پھول کے خاکے پر انگلی پھیریں۔",
+  "pelliRevealPrompt": "پیلّی کوڈوکو اور پیلّی کوتھورو پر پھولوں اور دعاؤں کی بارش کے لیے ॐ کو پانچ بار چھوئیں۔",
+  "haldiRevealPrompt": "ہلدی کو صاف کرتے جائیں، یہاں تک کہ تقریب کا کارڈ ظاہر ہو جائے۔",
+  "weddingRevealPrompt": "شادی کی تقریب ظاہر کرنے کے لیے پردے دونوں طرف کھینچیں۔",
+  "weddingRevealHandle": "پردے کھولیں",
+  "vrathamRevealPrompt": "دیے کو چھو کر تھامے رکھیں، یہاں تک کہ شعلہ آہستہ سے روشن ہو جائے۔",
+  "receptionRevealPrompt": "استقبالیہ کا کارڈ روشن کر کے ظاہر کرنے کے لیے پھلجھڑی کو اوپر لے جائیں۔",
+  "mehendiRevealAction": "پھول کا خاکہ بنائیں",
+  "haldiRevealAction": "صاف کر کے ظاہر کریں",
+  "pelliRevealAction": "دعاؤں کے لیے چھوئیں"
+};
+
 const eventLabels = {
   "en": {
     "mehendi": "Mehendi — 01 Sep",
@@ -1162,6 +1356,15 @@ Object.assign(eventLabels.ne, {
   pellirituals: "दुलाहाको विवाहपूर्व आशीर्वाद समारोह दुलाहाको घरमा & दुलहीको विवाहपूर्व आशीर्वाद समारोह दुलहीको घरमा — 02 सेप्टेम्बर"
 });
 
+eventLabels.ur = {
+  "mehendi": "مہندی — 1 ستمبر",
+  "pellirituals": "دولہے کی قبل از شادی دعائیہ رسم، دولہے کے گھر اور دلہن کی رسم، دلہن کے گھر — 2 ستمبر",
+  "haldi": "ہلدی — 3 ستمبر، صبح 9:00 بجے",
+  "wedding": "شادی کی تقریب — عشائیہ: 3 ستمبر شام 7:00 بجے سے؛ مہورت: 4 ستمبر علی الصبح 2:58 بجے",
+  "vratham": "ستیہ نارائن سوامی ورتھم — 5 ستمبر صبح · شری ویرا وینکٹا ستیہ نارائن سوامی واری دیوستھانم، اناورم",
+  "reception": "استقبالیہ — 6 ستمبر 2026 · شام 6:30 بجے سے · RAMCOSA FUNCTION HALL"
+};
+
 const rsvpMessageEventLabels = {
   en: {
     mehendi: "Mehendi",
@@ -1209,6 +1412,15 @@ const rsvpMessageEventLabels = {
   }
 };
 
+rsvpMessageEventLabels.ur = {
+  "mehendi": "مہندی",
+  "pellirituals": "پیلّی کوڈوکو / پیلّی کوتھورو",
+  "haldi": "ہلدی",
+  "wedding": "شادی کی تقریب",
+  "vratham": "ستیہ نارائن سوامی ورتھم",
+  "reception": "استقبالیہ"
+};
+
 const teamLabels = {
   "en": {
     "bride": "Team Bride — Sujana",
@@ -1237,14 +1449,20 @@ teamLabels.ne = {
   groom: "दुलाहा पक्ष — राधा कृष्ण"
 };
 
-const SUPPORTED_LANGUAGES = ["en", "te", "hi", "ta", "zh", "ne"];
+teamLabels.ur = {
+  bride: "دلہن کی ٹیم — سجنا",
+  groom: "دولہے کی ٹیم — رادھا کرشنا"
+};
+
+const SUPPORTED_LANGUAGES = ["en", "te", "hi", "ta", "zh", "ne", "ur"];
 const LANGUAGE_META = {
   en: { htmlLang: "en", title: "Sujana & Radha Krishna | Wedding Invitation" },
   te: { htmlLang: "te", title: "సుజన & రాధా కృష్ణ | వివాహ ఆహ్వానం" },
   hi: { htmlLang: "hi", title: "सुजना & राधा कृष्ण | विवाह निमंत्रण" },
   ta: { htmlLang: "ta", title: "சுஜனா & ராதா கிருஷ்ணா | திருமண அழைப்பிதழ்" },
   zh: { htmlLang: "zh-Hans", title: "苏佳娜 & 拉达·奎师那（高兴） | 婚礼邀请函" },
-  ne: { htmlLang: "ne", title: "सुजना & राधा कृष्ण | विवाह निमन्त्रणा" }
+  ne: { htmlLang: "ne", title: "सुजना & राधा कृष्ण | विवाह निमन्त्रणा" },
+  ur: { htmlLang: "ur", title: "سجنا اور رادھا کرشنا | شادی کا دعوت نامہ" }
 };
 const TOGGLE_META = {
   en: { label: "EN", name: "English" },
@@ -1252,7 +1470,8 @@ const TOGGLE_META = {
   hi: { label: "हिन्दी", name: "Hindi" },
   ta: { label: "தமிழ்", name: "Tamil" },
   zh: { label: "中文", name: "Chinese" },
-  ne: { label: "नेपाली", name: "Nepali" }
+  ne: { label: "नेपाली", name: "Nepali" },
+  ur: { label: "اردو", name: "Urdu" }
 };
 const LANGUAGE_PAIR_STORAGE_KEY = "radhasujanaLanguagePair";
 
@@ -1321,7 +1540,8 @@ function applyLanguage(language) {
   currentLanguage = SUPPORTED_LANGUAGES.includes(language) ? language : "en";
   const meta = LANGUAGE_META[currentLanguage];
   document.documentElement.lang = meta.htmlLang;
-  document.body.classList.remove("lang-te", "lang-hi", "lang-ta", "lang-zh", "lang-ne");
+  document.documentElement.dir = currentLanguage === "ur" ? "rtl" : "ltr";
+  document.body.classList.remove("lang-te", "lang-hi", "lang-ta", "lang-zh", "lang-ne", "lang-ur");
   if (currentLanguage !== "en") document.body.classList.add(`lang-${currentLanguage}`);
   document.title = meta.title;
 
@@ -1339,7 +1559,7 @@ function applyLanguage(language) {
   });
 
   // Every local-language page is paired with English.
-  // Opening /hi/, /ta/, /zh/, /ne/ or /te/ sets that page's English-language pair.
+  // Opening /hi/, /ta/, /zh/, /ne/, /ur/ or /te/ sets that page's English-language pair.
   if (currentLanguage !== "en") {
     pairedLanguage = currentLanguage;
     rememberLanguagePair(pairedLanguage);
@@ -1353,8 +1573,12 @@ function applyLanguage(language) {
   `;
   languageToggle.dataset.targetLanguage = toggleTarget;
   languageToggle.dataset.languagePair = pairedLanguage;
-  languageToggle.setAttribute("aria-label", `Switch between English and ${pairMeta.name}. Currently showing ${LANGUAGE_META[currentLanguage].htmlLang === "en" ? "English" : pairMeta.name}.`);
-  languageToggle.title = `English ↔ ${pairMeta.name}`;
+  const toggleShowingEnglish = LANGUAGE_META[currentLanguage].htmlLang === "en";
+  const toggleAria = currentLanguage === "ur"
+    ? "انگریزی اور اردو کے درمیان زبان بدلیں۔ اس وقت اردو دکھائی جا رہی ہے۔"
+    : `Switch between English and ${pairMeta.name}. Currently showing ${toggleShowingEnglish ? "English" : pairMeta.name}.`;
+  languageToggle.setAttribute("aria-label", toggleAria);
+  languageToggle.title = currentLanguage === "ur" ? "انگریزی ↔ اردو" : `English ↔ ${pairMeta.name}`;
   updateEventButtons();
 
   document.getElementById("whatsappDirect").href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(t("directMessage"))}`;
@@ -1856,7 +2080,8 @@ const V34_EVENT_NAMES = {
   hi:{mehendi:"मेहंदी",pelli:"वर-वधू आशीर्वाद समारोह",haldi:"हल्दी",dinner:"रात्रिभोज",muhurtham:"मुहूर्त",vratham:"सत्यनारायण स्वामी व्रतम",reception:"रिसेप्शन"},
   ta:{mehendi:"மெஹந்தி",pelli:"மணமகன் & மணமகள் ஆசீர்வாதச் சடங்குகள்",haldi:"ஹல்தி",dinner:"விருந்து",muhurtham:"முகூர்த்தம்",vratham:"சத்யநாராயண சுவாமி விரதம்",reception:"வரவேற்பு"},
   zh:{mehendi:"指甲花彩绘之夜",pelli:"新郎与新娘婚前祝福礼",haldi:"姜黄礼",dinner:"晚宴",muhurtham:"婚礼吉时",vratham:"萨蒂亚那罗延祈福礼",reception:"婚宴"},
-  ne:{mehendi:"मेहन्दी",pelli:"दुलाहा-दुलही आशीर्वाद समारोह",haldi:"हल्दी",dinner:"रात्रिभोज",muhurtham:"मुहूर्त",vratham:"सत्यनारायण स्वामी व्रतम",reception:"रिसेप्सन"}
+  ne:{mehendi:"मेहन्दी",pelli:"दुलाहा-दुलही आशीर्वाद समारोह",haldi:"हल्दी",dinner:"रात्रिभोज",muhurtham:"मुहूर्त",vratham:"सत्यनारायण स्वामी व्रतम",reception:"रिसेप्सन"},
+  ur:{mehendi:"مہندی",pelli:"دولہا اور دلہن کی دعائیہ رسومات",haldi:"ہلدی",dinner:"عشائیہ",muhurtham:"مہورت",vratham:"ستیہ نارائن سوامی ورتھم",reception:"استقبالیہ"}
 };
 
 function v36Name(key){ return (V34_EVENT_NAMES[currentLanguage] || V34_EVENT_NAMES.en)[key] || key; }

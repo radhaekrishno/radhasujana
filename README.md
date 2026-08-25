@@ -1,4 +1,4 @@
-# RadhaSujana.com — Neo 2.3
+# RadhaSujana.com — Neo 2.4
 
 Neo 2.0 is the consolidated wedding-invitation build for Sujana & Radha Krishna.
 It replaces the incremental v34–v44 patch history with one stable release line.
@@ -7,7 +7,7 @@ It replaces the incremental v34–v44 patch history with one stable release line
 
 - Modern 3D envelope intro with SR seal, shown on every fresh page load or return to the website.
 - Intro completion always opens the website from the top; the manual replay controls remain available.
-- English, Telugu, Hindi, Tamil, Chinese and Nepali routes, pre-translated in HTML.
+- English, Telugu, Hindi, Tamil, Chinese, Nepali and Urdu routes, pre-translated in HTML.
 - Sticky mobile header with direct YouTube and Instagram brand shortcuts.
 - Wedding-week schedule, countdown, event directions and mobile quick bar.
 - Persistent vertical 01–06 event rail; right-side on mobile, left-side on desktop.
@@ -20,6 +20,16 @@ It replaces the incremental v34–v44 patch history with one stable release line
   - Reception — raise the sparkler.
 - Ritual interactions reset on every visit. Reveal-card and Reveal-all fallbacks remain available.
 - Mobile haptics where supported; no ritual completion sounds.
+
+## Neo 2.4 changes
+
+- Added a complete Urdu route at `/ur/`.
+- Added 191 Urdu interface translations plus Urdu event, RSVP and team labels.
+- Pre-translated the Urdu HTML so guests do not see English before the locale script runs.
+- Added right-to-left document behavior, Nastaliq typography and Urdu-specific mobile/layout refinements.
+- Added culturally natural Urdu invitation sharing with wedding and reception details.
+- Added Urdu hreflang metadata to every language page.
+- Added `/ur/` to the offline/service-worker core and updated the cache namespace to `radhasujana-neo-2.4`.
 
 ## Neo 2.3 changes
 
