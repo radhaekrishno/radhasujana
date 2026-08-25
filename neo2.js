@@ -1573,8 +1573,12 @@ function applyLanguage(language) {
   `;
   languageToggle.dataset.targetLanguage = toggleTarget;
   languageToggle.dataset.languagePair = pairedLanguage;
-  languageToggle.setAttribute("aria-label", `Switch between English and ${pairMeta.name}. Currently showing ${LANGUAGE_META[currentLanguage].htmlLang === "en" ? "English" : pairMeta.name}.`);
-  languageToggle.title = `English ↔ ${pairMeta.name}`;
+  const toggleShowingEnglish = LANGUAGE_META[currentLanguage].htmlLang === "en";
+  const toggleAria = currentLanguage === "ur"
+    ? "انگریزی اور اردو کے درمیان زبان بدلیں۔ اس وقت اردو دکھائی جا رہی ہے۔"
+    : `Switch between English and ${pairMeta.name}. Currently showing ${toggleShowingEnglish ? "English" : pairMeta.name}.`;
+  languageToggle.setAttribute("aria-label", toggleAria);
+  languageToggle.title = currentLanguage === "ur" ? "انگریزی ↔ اردو" : `English ↔ ${pairMeta.name}`;
   updateEventButtons();
 
   document.getElementById("whatsappDirect").href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(t("directMessage"))}`;
