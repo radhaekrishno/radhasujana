@@ -1322,7 +1322,7 @@ body.lang-ne { font-family: "Noto Sans Devanagari", "Montserrat", system-ui, san
 
 
 /* Post-wedding thank-you */
-.post-wedding-thanks { width:min(800px,100%); margin:34px auto 0; padding:28px; border:1px solid rgba(200,155,81,.34); background:rgba(255,250,241,.76); text-align:center; box-shadow:0 18px 52px rgba(65,8,23,.07); }
+.post-wedding-thanks { width:min(800px,100%); margin:0 auto 34px; padding:28px; border:1px solid rgba(200,155,81,.34); background:rgba(255,250,241,.76); text-align:center; box-shadow:0 18px 52px rgba(65,8,23,.07); }
 .post-wedding-thanks[hidden] { display:none; }
 .post-wedding-thanks small { color:var(--gold); font-size:.62rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
 .post-wedding-thanks h2 { margin:10px 0 8px; color:var(--wine); font:400 clamp(2.3rem,6vw,4.4rem) "Italiana","Noto Serif Telugu",serif; }
