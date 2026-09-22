@@ -1,8 +1,8 @@
-const CACHE="radhasujana-neo-2.5";
+const CACHE="radhasujana-neo-2.6";
 const CORE=[
   "/","/en/","/te/","/hi/","/ta/","/zh/","/ne/","/ur/",
   "/neo2.css","/neo2.js","/neo2-config.js",
-  "/favicon.png","/manifest.webmanifest","/assets/social-preview.jpg"
+  "/favicon.png","/manifest.webmanifest","/assets/social-preview.jpg","/assets/honeymoon/annapurna-base-camp.webp"
 ];
 
 self.addEventListener("install",event=>{

@@ -1454,6 +1454,15 @@ teamLabels.ur = {
   groom: "دولہے کی ٹیم — رادھا کرشنا"
 };
 
+// Neo 2.6 · post-wedding Annapurna chapter
+Object.assign(translations.en, {"journeyEyebrow":"Our first adventure as husband and wife","journeyTitle":"Together, we made it to Annapurna Base Camp","journeyMeta":"17 September 2026 · Nepal · 4,130 m","journeyText":"During our honeymoon in Nepal, we stood together at Annapurna Base Camp—tired, grateful, and very happy. The wedding celebrations are over, but our story is only beginning.","instagramFooterText":"For wedding memories, our Himalayan honeymoon, new photos, films, and whatever comes next."});
+Object.assign(translations.te, {"journeyEyebrow":"భార్యాభర్తలుగా మా తొలి సాహసం","journeyTitle":"కలిసి అన్నపూర్ణ బేస్ క్యాంప్ చేరుకున్నాం","journeyMeta":"17 సెప్టెంబర్ 2026 · నేపాల్ · 4,130 మీటర్లు","journeyText":"నేపాల్‌లో మా హనీమూన్ సందర్భంగా, అన్నపూర్ణ బేస్ క్యాంప్‌ను కలిసి చేరుకున్నాం—అలసిపోయినా, కృతజ్ఞతతో, అపారమైన ఆనందంతో. పెళ్లి వేడుకలు ముగిశాయి; మా కథ మాత్రం ఇప్పుడే మొదలైంది.","instagramFooterText":"పెళ్లి జ్ఞాపకాలు, మా హిమాలయ హనీమూన్, కొత్త ఫోటోలు, వీడియోలు మరియు మా జీవితంలోని తదుపరి అధ్యాయాల కోసం."});
+Object.assign(translations.hi, {"journeyEyebrow":"पति-पत्नी के रूप में हमारा पहला रोमांच","journeyTitle":"हम साथ-साथ अन्नपूर्णा बेस कैंप पहुँचे","journeyMeta":"17 सितंबर 2026 · नेपाल · 4,130 मीटर","journeyText":"नेपाल में अपने हनीमून के दौरान हम साथ मिलकर अन्नपूर्णा बेस कैंप पहुँचे—थके हुए, कृतज्ञ और बेहद खुश। विवाह समारोह पूरे हो गए हैं, लेकिन हमारी कहानी अभी शुरू हुई है।","instagramFooterText":"विवाह की यादों, हमारे हिमालयी हनीमून, नई तस्वीरों, फ़िल्मों और आगे आने वाली हर खूबसूरत कहानी के लिए।"});
+Object.assign(translations.ta, {"journeyEyebrow":"கணவன் மனைவியாக எங்கள் முதல் சாகசம்","journeyTitle":"இணைந்து அன்னபூர்ணா பேஸ் கேம்பை அடைந்தோம்","journeyMeta":"17 செப்டம்பர் 2026 · நேபாளம் · 4,130 மீட்டர்","journeyText":"நேபாளத்தில் எங்கள் ஹனிமூன் பயணத்தின் போது, அன்னபூர்ணா பேஸ் கேம்பை ஒன்றாக அடைந்தோம்—களைப்புடன், நன்றியுடன், அளவற்ற மகிழ்ச்சியுடன். திருமண விழாக்கள் முடிந்தாலும், எங்கள் கதை இப்போதுதான் தொடங்குகிறது.","instagramFooterText":"திருமண நினைவுகள், எங்கள் இமயமலை ஹனிமூன், புதிய புகைப்படங்கள், படங்கள் மற்றும் அடுத்தடுத்த இனிய தருணங்களுக்கு."});
+Object.assign(translations.zh, {"journeyEyebrow":"成为夫妻后的第一次冒险","journeyTitle":"我们一起抵达了安纳普尔纳大本营","journeyMeta":"2026年9月17日 · 尼泊尔 · 海拔4,130米","journeyText":"在尼泊尔度蜜月期间，我们携手抵达了安纳普尔纳大本营——虽然疲惫，却满怀感恩与喜悦。婚礼庆典已经落幕，而我们的故事才刚刚开始。","instagramFooterText":"在这里继续分享婚礼回忆、喜马拉雅蜜月、新照片、影片，以及我们人生的下一段旅程。"});
+Object.assign(translations.ne, {"journeyEyebrow":"श्रीमान्–श्रीमतीका रूपमा हाम्रो पहिलो साहसिक यात्रा","journeyTitle":"हामी सँगै अन्नपूर्ण आधार शिविर पुग्यौँ","journeyMeta":"१७ सेप्टेम्बर २०२६ · नेपाल · ४,१३० मिटर","journeyText":"नेपालमा हाम्रो हनिमुनका क्रममा हामी सँगै अन्नपूर्ण आधार शिविर पुग्यौँ—थकित, कृतज्ञ र अत्यन्त खुसी। विवाहका उत्सवहरू सकिए, तर हाम्रो कथा भर्खरै सुरु भएको छ।","instagramFooterText":"विवाहका सम्झना, हाम्रो हिमाली हनिमुन, नयाँ तस्बिर, भिडियो र अब आउने सुन्दर अध्यायहरूका लागि।"});
+Object.assign(translations.ur, {"journeyEyebrow":"میاں بیوی کے طور پر ہماری پہلی مہم","journeyTitle":"ہم مل کر اناپورنا بیس کیمپ پہنچے","journeyMeta":"17 ستمبر 2026 · نیپال · 4,130 میٹر","journeyText":"نیپال میں اپنے ہنی مون کے دوران ہم مل کر اناپورنا بیس کیمپ پہنچے—تھکے ہوئے، شکر گزار اور بے حد خوش۔ شادی کی تقریبات ختم ہو چکی ہیں، مگر ہماری کہانی ابھی شروع ہوئی ہے۔","instagramFooterText":"شادی کی یادوں، ہمارے ہمالیائی ہنی مون، نئی تصاویر، فلموں اور زندگی کے اگلے خوبصورت ابواب کے لیے۔"});
+
 const SUPPORTED_LANGUAGES = ["en", "te", "hi", "ta", "zh", "ne", "ur"];
 const LANGUAGE_META = {
   en: { htmlLang: "en", title: "Sujana & Radha Krishna | Wedding Invitation" },
@@ -2142,11 +2151,13 @@ function renderWeddingWeekMode(){
 function applyPrivacySunset(){
   const now=indiaParts();
   const thanks=document.getElementById("postWeddingThanks");
+  const journey=document.getElementById("honeymoonMilestone");
   if (now.date >= V34.privacySunset) {
     document.body.classList.add("post-wedding-mode");
     document.body.classList.remove("locked");
     mainContent.classList.add("visible");
     mainContent.setAttribute("aria-hidden","false");
+    if (journey) journey.hidden=false;
     if (thanks) thanks.hidden=false;
   }
 }

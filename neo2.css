@@ -4797,3 +4797,112 @@ body.lang-ur {
     text-align: left;
   }
 }
+
+
+/* Neo 2.6 · post-wedding Annapurna chapter */
+.honeymoon-milestone {
+  width: min(980px, 100%);
+  margin: 0 auto;
+}
+.honeymoon-milestone[hidden] { display: none !important; }
+.honeymoon-milestone__figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(200,155,81,.4);
+  background: #e9e8e3;
+  box-shadow: 0 24px 70px rgba(65,8,23,.13);
+}
+.honeymoon-milestone__figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 8px rgba(255,250,241,.18);
+}
+.honeymoon-milestone__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.honeymoon-milestone__figure figcaption {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.42);
+  background: rgba(40,30,29,.62);
+  color: #fffaf1;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+.honeymoon-milestone__copy {
+  width: min(780px, 92%);
+  margin: 28px auto 0;
+  text-align: center;
+}
+.honeymoon-milestone__copy .eyebrow { margin-bottom: 12px; }
+.honeymoon-milestone__copy h1 {
+  margin: 0;
+  color: var(--wine);
+  font: 400 clamp(2.7rem, 7vw, 5.4rem)/1.02 "Italiana","Noto Serif Telugu",serif;
+  text-wrap: balance;
+}
+.honeymoon-milestone__copy > p:last-child {
+  max-width: 690px;
+  margin: 20px auto 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.8;
+}
+body.post-wedding-mode .post-wedding-thanks { margin: 36px auto 0; }
+body.post-wedding-mode .hero__content > .eyebrow,
+body.post-wedding-mode .couple-names,
+body.post-wedding-mode .hero__verse,
+body.post-wedding-mode .hero__date-card,
+body.post-wedding-mode .wedding-night-summary,
+body.post-wedding-mode .hero__content > .text-button,
+body.post-wedding-mode .wedding-week-card,
+body.post-wedding-mode .blessing-strip,
+body.post-wedding-mode .indian-divider,
+body.post-wedding-mode .festivities,
+body.post-wedding-mode .nav-links a[href="#festivities"],
+body.post-wedding-mode .nav-links a[href="#countdown"],
+body.post-wedding-mode .nav-links a[href="#rsvp"],
+body.post-wedding-mode #shareInvitationButton {
+  display: none !important;
+}
+body.post-wedding-mode .gallery-section { padding-top: clamp(58px, 8vw, 100px); }
+.lang-ur .honeymoon-milestone__copy,
+.lang-ur .honeymoon-milestone__figure figcaption { direction: rtl; }
+@media (max-width: 680px) {
+  .honeymoon-milestone__figure { margin-inline: -14px; }
+  .honeymoon-milestone__figure figcaption {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    width: max-content;
+    max-width: calc(100% - 20px);
+    margin-inline: auto;
+    padding: 7px 9px;
+    font-size: .58rem;
+    letter-spacing: .07em;
+    text-align: center;
+  }
+  .honeymoon-milestone__copy {
+    width: 100%;
+    margin-top: 24px;
+  }
+  .honeymoon-milestone__copy h1 { font-size: clamp(2.55rem, 12vw, 4rem); }
+  .honeymoon-milestone__copy > p:last-child { line-height: 1.72; }
+  body.post-wedding-mode .post-wedding-thanks {
+    margin-top: 30px;
+    padding: 23px 18px;
+  }
+}
