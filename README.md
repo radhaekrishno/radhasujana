@@ -1,4 +1,4 @@
-# RadhaSujana.com — Neo 2.5
+# RadhaSujana.com — Neo 2.6
 
 Neo 2.0 is the consolidated wedding-invitation build for Sujana & Radha Krishna.
 It replaces the incremental v34–v44 patch history with one stable release line.
@@ -20,6 +20,16 @@ It replaces the incremental v34–v44 patch history with one stable release line
   - Reception — raise the sparkler.
 - Ritual interactions reset on every visit. Reveal-card and Reveal-all fallbacks remain available.
 - Mobile haptics where supported; no ritual completion sounds.
+
+## Neo 2.6 changes
+
+- Reframed the live website as a post-wedding story rather than an expired invitation.
+- Added the couple's Annapurna Base Camp honeymoon milestone from 17 September 2026 at 4,130 m.
+- Added the supplied ABC photograph as the first visible feature after the intro.
+- Hid the old invitation hero, event cards, RSVP, countdown, directions, wedding-week schedule and event navigation in post-wedding mode.
+- Kept the thank-you panel, engagement gallery, engagement film, Instagram and envelope intro.
+- Added culturally natural milestone copy across English, Telugu, Hindi, Tamil, Chinese, Nepali and Urdu.
+- Updated the service-worker cache namespace to `radhasujana-neo-2.6`.
 
 ## Neo 2.5 changes
 
