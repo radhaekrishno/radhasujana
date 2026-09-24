@@ -1,4 +1,30 @@
-# RadhaSujana.com — Neo 2.6
+# RadhaSujana.com — Blog_1.0
+
+Blog_1.0 turns the public site into a bilingual English–Telugu journal while preserving the complete Neo 2.6 wedding invitation as an archive.
+
+## Blog_1.0 changes
+
+- Removed the automatic envelope intro from the public homepage.
+- Rebuilt `/` and `/te/` as a modern editorial blog in the original wine, ivory and gold palette.
+- Added a desktop two-column layout: latest story on the left and the complete blog index on the right; the layout stacks naturally on mobile.
+- Added the first standalone story in English and Telugu: **After the wedding, what remains?**
+- Kept engagement photographs at the bottom of the homepage and added clear spaces for upcoming wedding photographs and films.
+- Preserved the original eight-language invitation at `/invitation/` with its envelope animation, interactions and styling intact.
+- Added **Our wedding invitation** to the blog hamburger menu and a return-to-journal link inside the archived invitation menu.
+- Redirected legacy non-blog language routes to their matching archived invitation.
+- Created a fresh `radhasujana-blog-1.0` service-worker cache.
+
+## Routes
+
+- English journal: `/`
+- Telugu journal: `/te/`
+- English first post: `/blog/after-the-wedding/`
+- Telugu first post: `/te/blog/pelli-tarvata/`
+- Complete invitation archive: `/invitation/` and `/invitation/{language}/`
+
+---
+
+## Archived Neo invitation notes
 
 Neo 2.0 is the consolidated wedding-invitation build for Sujana & Radha Krishna.
 It replaces the incremental v34–v44 patch history with one stable release line.

@@ -1503,12 +1503,14 @@ function rememberLanguagePair(language) {
 }
 
 function languageFromPath() {
-  const firstSegment = window.location.pathname.split("/").filter(Boolean)[0]?.toLowerCase();
-  return SUPPORTED_LANGUAGES.includes(firstSegment) ? firstSegment : "en";
+  const segments = window.location.pathname.split("/").filter(Boolean).map(segment => segment.toLowerCase());
+  const languageSegment = segments[0] === "invitation" ? segments[1] : segments[0];
+  return SUPPORTED_LANGUAGES.includes(languageSegment) ? languageSegment : "en";
 }
 
 function languagePath(language) {
-  return `/${language}/`;
+  const isInvitationArchive = window.location.pathname.split("/").filter(Boolean)[0]?.toLowerCase() === "invitation";
+  return isInvitationArchive ? `/invitation/${language}/` : `/${language}/`;
 }
 
 let currentLanguage = languageFromPath();
@@ -2149,6 +2151,9 @@ function renderWeddingWeekMode(){
 }
 
 function applyPrivacySunset(){
+  // Blog_1.0 keeps the complete invitation as a deliberate archive.
+  // Inside /invitation/ the envelope and every original section remain available.
+  if (window.location.pathname.startsWith("/invitation/")) return;
   const now=indiaParts();
   const thanks=document.getElementById("postWeddingThanks");
   const journey=document.getElementById("honeymoonMilestone");
@@ -2159,6 +2164,17 @@ function applyPrivacySunset(){
     mainContent.setAttribute("aria-hidden","false");
     if (journey) journey.hidden=false;
     if (thanks) thanks.hidden=false;
+  }
+}
+
+if (window.location.pathname.startsWith("/invitation/")) {
+  const archiveMenu = document.getElementById("mobileMenu");
+  if (archiveMenu && !archiveMenu.querySelector("[data-journal-home]")) {
+    const journalHome = document.createElement("a");
+    journalHome.href = currentLanguage === "te" ? "/te/" : "/";
+    journalHome.dataset.journalHome = "true";
+    journalHome.textContent = currentLanguage === "te" ? "మా జర్నల్" : "Our journal";
+    archiveMenu.prepend(journalHome);
   }
 }
 
