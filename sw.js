@@ -1,4 +1,4 @@
-const CACHE="radhasujana-blog-1.1";
+const CACHE="radhasujana-blog-1.2";
 const CORE=[
   "/","/te/","/blog/after-the-wedding/","/te/blog/pelli-tarvata/",
   "/invitation/","/invitation/en/","/invitation/te/","/invitation/hi/","/invitation/ta/","/invitation/zh/","/invitation/ne/","/invitation/ur/",
