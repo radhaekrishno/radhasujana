@@ -1,4 +1,13 @@
-# RadhaSujana.com — Blog_1.0
+# RadhaSujana.com — Blog_1.1
+
+## Blog_1.1 changes
+
+- Replaced the first post's engagement photograph with the supplied wedding-to-Annapurna banner, shown without cropping.
+- Replaced the polished placeholder reflection with Radha's own PDF copy and retained its natural cadence, humour and pauses.
+- Harmonized the Telugu version to the same personal voice rather than translating mechanically.
+- Updated article sharing metadata and the service-worker cache for the new banner.
+
+---
 
 Blog_1.0 turns the public site into a bilingual English–Telugu journal while preserving the complete Neo 2.6 wedding invitation as an archive.
 

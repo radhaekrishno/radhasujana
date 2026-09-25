@@ -1,9 +1,9 @@
-const CACHE="radhasujana-blog-1.0";
+const CACHE="radhasujana-blog-1.1";
 const CORE=[
   "/","/te/","/blog/after-the-wedding/","/te/blog/pelli-tarvata/",
   "/invitation/","/invitation/en/","/invitation/te/","/invitation/hi/","/invitation/ta/","/invitation/zh/","/invitation/ne/","/invitation/ur/",
   "/blog.css","/blog.js","/neo2.css","/neo2.js","/neo2-config.js",
-  "/favicon.png","/manifest.webmanifest","/assets/engagement/08.webp"
+  "/favicon.png","/manifest.webmanifest","/assets/engagement/08.webp","/assets/blog/after-the-wedding-banner.webp"
 ];
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
