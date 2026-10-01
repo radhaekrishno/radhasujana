@@ -25,18 +25,25 @@ body.lang-te{font-family:'Noto Sans Telugu',var(--sans)}body.lang-te h1,body.lan
 .engagement-section .video-details{border-bottom:1px solid var(--line)}
 .engagement-video-content{margin:0 0 16px;padding:12px;border-top:0}
 
-/* No teaser or space is added to the document for the hidden celebration. */
-.logo-celebration{position:fixed;inset:0;z-index:4000;display:grid;place-items:center;overflow:hidden;overscroll-behavior:contain;background:radial-gradient(ellipse at center,#651328 0%,#310810 75%);opacity:0;transition:opacity .35s ease;-webkit-touch-callout:none;user-select:none}
+/* Hidden dimensional gold celebration, using the existing SR artwork. */
+.logo-celebration{position:fixed;inset:0;z-index:4000;display:grid;place-items:center;overflow:hidden;overscroll-behavior:contain;background:radial-gradient(ellipse at 48% 42%,#651328 0%,#310810 75%);opacity:0;transition:opacity .35s ease;-webkit-touch-callout:none;user-select:none;perspective:1100px}
 .logo-celebration[hidden]{display:none!important}
 .logo-celebration.is-visible{opacity:1}
-.logo-celebration__logo{position:relative;width:min(64vmin,340px);aspect-ratio:1;transform:scale(.88);transition:transform .65s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 0 24px rgba(230,187,99,.2))}
-.logo-celebration.is-visible .logo-celebration__logo{transform:scale(1)}
-.logo-celebration__logo img{width:100%;height:auto;pointer-events:none}
-.logo-celebration__logo:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,250,223,.95) 48%,transparent 62%);background-size:300% 100%;background-position:100% 0;-webkit-mask:url('/assets/sr-watermark-gold.png') center/contain no-repeat;mask:url('/assets/sr-watermark-gold.png') center/contain no-repeat}
-.logo-celebration.is-visible .logo-celebration__logo:after{animation:logo-gold-shimmer 6s ease-in-out .25s 2 both}
-.logo-celebration__particles{position:absolute;left:50%;top:50%;pointer-events:none}
-.logo-celebration__particles span{position:absolute;width:4px;height:4px;border-radius:50%;background:#ebc773;box-shadow:0 0 8px #edc77a;opacity:0}
-.logo-celebration.is-visible .logo-celebration__particles span{animation:logo-gold-spark 3s ease-out var(--spark-delay) 4 both}
-@keyframes logo-gold-shimmer{from{background-position:100% 0}to{background-position:0 0}}
-@keyframes logo-gold-spark{0%{transform:translate(-50%,-50%) scale(.3);opacity:0}20%{opacity:.8}100%{transform:translate(var(--spark-x),var(--spark-y)) scale(.3);opacity:0}}
-@media(prefers-reduced-motion:reduce){.logo-celebration,.logo-celebration__logo{transition:none}.logo-celebration__logo:after,.logo-celebration__particles{display:none}}
+.logo-celebration__logo{position:relative;isolation:isolate;width:min(64vmin,340px);aspect-ratio:1;transform:rotateX(0) rotateY(0);transform-style:preserve-3d;filter:drop-shadow(0 7px 10px rgba(0,0,0,.18));will-change:transform}
+.logo-celebration.is-visible .logo-celebration__logo{animation:logo-gold-swivel 12s ease-in-out infinite}
+.logo-celebration__logo img{width:100%;height:auto;pointer-events:none;filter:drop-shadow(0 1px 0 #b68c40) drop-shadow(0 2px 0 rgba(128,85,31,.75))}
+.logo-celebration__logo:before,.logo-celebration__logo:after{content:"";position:absolute;inset:0;pointer-events:none;-webkit-mask:url('/assets/sr-watermark-gold.png') center/contain no-repeat;mask:url('/assets/sr-watermark-gold.png') center/contain no-repeat}
+.logo-celebration__logo:before{background:linear-gradient(135deg,#fff1bd 0%,#d6a947 28%,#f5d988 45%,#a77a2c 68%,#eed08a 100%);background-size:180% 180%;mix-blend-mode:multiply;opacity:.65}
+.logo-celebration__logo:after{background:linear-gradient(110deg,transparent 32%,rgba(255,249,220,.15) 40%,rgba(255,251,231,.88) 49%,rgba(255,246,209,.2) 56%,transparent 64%);background-size:300% 100%;background-position:100% 0}
+.logo-celebration.is-visible .logo-celebration__logo:before{animation:logo-gold-depth 12s ease-in-out infinite}
+.logo-celebration.is-visible .logo-celebration__logo:after{animation:logo-gold-shimmer 6s ease-in-out .25s infinite}
+.logo-celebration__particles{position:absolute;inset:0;z-index:2;pointer-events:none;transform:translateZ(2px)}
+.logo-celebration__particles span{position:absolute;width:var(--spark-size);height:var(--spark-size);background:#fff9df;border-radius:50%;box-shadow:0 0 5px rgba(255,237,179,.7);opacity:0;transform:translate(-50%,-50%)}
+.logo-celebration__particles span:before,.logo-celebration__particles span:after{content:"";position:absolute;left:50%;top:50%;background:linear-gradient(transparent,#fff7d6,transparent);transform:translate(-50%,-50%);width:1px;height:calc(var(--spark-size) * 4)}
+.logo-celebration__particles span:after{transform:translate(-50%,-50%) rotate(90deg)}
+.logo-celebration.is-visible .logo-celebration__particles span{animation:logo-gold-glint 12s ease-in-out var(--spark-delay) infinite}
+@keyframes logo-gold-swivel{0%,100%{transform:rotateX(2deg) rotateY(-7deg) rotateZ(-.5deg);filter:drop-shadow(5px 8px 11px rgba(0,0,0,.17))}50%{transform:rotateX(-3deg) rotateY(7deg) rotateZ(.5deg);filter:drop-shadow(-4px 6px 9px rgba(0,0,0,.15))}}
+@keyframes logo-gold-depth{0%,100%{background-position:0% 25%;opacity:.6}50%{background-position:100% 70%;opacity:.42}}
+@keyframes logo-gold-shimmer{0%,15%{background-position:100% 0;opacity:0}30%{opacity:.9}80%{opacity:.8}100%{background-position:0 0;opacity:0}}
+@keyframes logo-gold-glint{0%,3%,12%,100%{opacity:0;transform:translate(-50%,-50%) scale(.3)}6%{opacity:.9;transform:translate(-50%,-50%) scale(1)}9%{opacity:.35;transform:translate(-50%,-50%) scale(.65)}}
+@media(prefers-reduced-motion:reduce){.logo-celebration{transition:none}.logo-celebration.is-visible .logo-celebration__logo,.logo-celebration.is-visible .logo-celebration__logo:before{animation:none;transform:none}.logo-celebration__logo:after,.logo-celebration__particles{display:none}}
