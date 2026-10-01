@@ -29,10 +29,10 @@ body.lang-te{font-family:'Noto Sans Telugu',var(--sans)}body.lang-te h1,body.lan
 .logo-celebration{position:fixed;inset:0;z-index:4000;display:grid;place-items:center;overflow:hidden;overscroll-behavior:contain;background:radial-gradient(ellipse at 48% 42%,#651328 0%,#310810 75%);opacity:0;transition:opacity .35s ease;-webkit-touch-callout:none;user-select:none;perspective:1100px}
 .logo-celebration[hidden]{display:none!important}
 .logo-celebration.is-visible{opacity:1}
-.logo-celebration__logo{position:relative;isolation:isolate;width:min(82vw,430px,85vmin);aspect-ratio:1378/1141;transform:rotateX(0) rotateY(0);transform-style:preserve-3d;filter:drop-shadow(0 7px 10px rgba(0,0,0,.18));will-change:transform}
+.logo-celebration__logo{position:relative;isolation:isolate;width:min(74vmin,360px);aspect-ratio:1;overflow:hidden;transform:rotateX(0) rotateY(0);transform-style:preserve-3d;filter:drop-shadow(0 7px 10px rgba(0,0,0,.18));will-change:transform}
 .logo-celebration.is-visible .logo-celebration__logo{animation:logo-gold-swivel 12s ease-in-out infinite}
-.logo-celebration__logo img{width:100%;height:auto;pointer-events:none}
-.logo-celebration__logo:before,.logo-celebration__logo:after{content:"";position:absolute;inset:0;pointer-events:none;-webkit-mask:url('/assets/sr-names-raised-gold.webp') center/contain no-repeat;mask:url('/assets/sr-names-raised-gold.webp') center/contain no-repeat}
+.logo-celebration__logo img{position:absolute;width:148.172043%;max-width:none;height:auto;left:-27.956989%;top:-3.225806%;pointer-events:none}
+.logo-celebration__logo:before,.logo-celebration__logo:after{content:"";position:absolute;inset:0;pointer-events:none;-webkit-mask:url('/assets/sr-names-raised-gold.webp') 58.035714% 14.218009%/148.172043% auto no-repeat;mask:url('/assets/sr-names-raised-gold.webp') 58.035714% 14.218009%/148.172043% auto no-repeat}
 .logo-celebration__logo:before{background:linear-gradient(118deg,rgba(87,48,11,.28),transparent 30%,rgba(255,245,196,.2) 45%,transparent 58%,rgba(76,33,5,.22));background-size:210% 160%;mix-blend-mode:soft-light;opacity:.7}
 .logo-celebration__logo:after{background:linear-gradient(110deg,transparent 31%,rgba(255,245,205,.03) 41%,rgba(255,254,242,.34) 47%,rgba(255,255,250,.48) 48%,rgba(255,248,215,.08) 51%,transparent 59%);background-size:300% 100%;background-position:100% 0;mix-blend-mode:screen}
 .logo-celebration.is-visible .logo-celebration__logo:before{animation:logo-gold-depth 12s ease-in-out infinite}
