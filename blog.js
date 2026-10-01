@@ -108,7 +108,16 @@
     });
   }
 
-  document.getElementById('filmPlayButton')?.addEventListener('click', () => {
+  const videoDetails = document.querySelector('.video-details');
+  const filmPoster = document.getElementById('filmLite')?.innerHTML;
+  videoDetails?.addEventListener('toggle', () => {
+    if (!videoDetails.open) {
+      const host = document.getElementById('filmLite');
+      if (host?.querySelector('iframe')) host.innerHTML = filmPoster;
+    }
+  });
+  document.getElementById('filmLite')?.addEventListener('click', event => {
+    if (!event.target.closest('#filmPlayButton')) return;
     const host = document.getElementById('filmLite');
     host.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/2CMnmL-LB4U?autoplay=1&amp;rel=0" title="Sujana and Radha Krishna engagement film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
   });

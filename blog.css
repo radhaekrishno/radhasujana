@@ -18,3 +18,9 @@ body.lang-te{font-family:'Noto Sans Telugu',var(--sans)}body.lang-te h1,body.lan
 @media(max-width:760px){.editorial-grid{grid-template-columns:minmax(0,1fr);gap:18px}.blog-index{position:static}.journal-intro{display:block;padding:20px 0 16px}.journal-intro h1{font-size:2rem;margin:0 0 10px}.journal-intro .intro-copy{font-size:1rem}.journal-footer{justify-content:flex-start}.journal-footer>div{width:100%}.header-actions{gap:10px}.menu-trigger span{display:none}.menu-trigger{grid-template-columns:24px}.journal-brand small{display:none}.film-actions{gap:8px}.film-actions a{min-height:44px}.lightbox{padding:24px 44px}.lightbox__nav--prev{left:0}.lightbox__nav--next{right:0}.article-header h1{font-size:2rem}.article-body p{font-size:1.0625rem}.journal-menu{padding:28px}.journal-menu nav>a{font-size:1.5rem}.film-player-card__topline small{font-size:.75rem}.gallery-details summary strong{font-size:1.35rem}}
 @media(max-width:380px){.journal-brand strong{font-size:1rem}.journal-header{padding-left:12px;padding-right:12px}.film-actions{flex-direction:column}.film-actions a{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* Photos and video share one compact engagement section. */
+.engagement-section>h2{font:500 clamp(1.5rem,3vw,2rem)/1.4 var(--serif);color:var(--wine);margin:0 0 12px}
+.engagement-section .gallery-details{border-bottom:0}
+.engagement-section .video-details{border-bottom:1px solid var(--line)}
+.engagement-video-content{margin:0 0 16px;padding:12px;border-top:0}
