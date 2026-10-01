@@ -186,16 +186,44 @@
     const particles = document.createElement('div');
     particles.className = 'logo-celebration__particles';
     particles.setAttribute('aria-hidden', 'true');
-    for (let i = 0; i < 18; i += 1) {
-      const spark = document.createElement('span');
-      const angle = i * Math.PI * 2 / 18;
-      const distance = 120 + (i % 4) * 35;
-      spark.style.setProperty('--spark-x', Math.cos(angle) * distance + 'px');
-      spark.style.setProperty('--spark-y', Math.sin(angle) * distance + 'px');
-      spark.style.setProperty('--spark-delay', (i % 5) * 55 + 'ms');
-      particles.append(spark);
-    }
-    overlay.append(particles);
+    let goldPoints = [];
+    const positionSparks = () => {
+      particles.querySelectorAll('span').forEach(spark => {
+        const angle = Math.random() * Math.PI * 2;
+        const point = goldPoints.length
+          ? goldPoints[Math.floor(Math.random() * goldPoints.length)]
+          : [50 + Math.cos(angle) * 46, 50 + Math.sin(angle) * 46];
+        spark.style.left = point[0] + '%';
+        spark.style.top = point[1] + '%';
+        spark.style.setProperty('--spark-delay', (Math.random() * 10).toFixed(2) + 's');
+        spark.style.setProperty('--spark-size', (2 + Math.random() * 3).toFixed(1) + 'px');
+      });
+    };
+    const sampleGold = () => {
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = canvas.height = 80;
+        const context = canvas.getContext('2d', { willReadFrequently: true });
+        if (!context) return;
+        context.drawImage(image, 0, 0, 80, 80);
+        const pixels = context.getImageData(0, 0, 80, 80).data;
+        goldPoints = [];
+        for (let y = 1; y < 79; y += 1) {
+          for (let x = 1; x < 79; x += 1) {
+            if (pixels[(y * 80 + x) * 4 + 3] > 210) {
+              goldPoints.push([(x + .5) / 80 * 100, (y + .5) / 80 * 100]);
+            }
+          }
+        }
+        positionSparks();
+      } catch (_) { /* The existing ring remains the fallback for glint positions. */ }
+    };
+    for (let i = 0; i < 10; i += 1) particles.append(document.createElement('span'));
+    logo.append(particles);
+    overlay.positionSparks = positionSparks;
+    image.addEventListener('load', sampleGold, { once: true });
+    if (image.complete && image.naturalWidth) sampleGold();
+    positionSparks();
     overlay.tabIndex = -1;
     let start = null;
     overlay.addEventListener('touchstart', event => {
@@ -230,6 +258,7 @@
     inertElements.forEach(([element]) => { element.inert = true; });
     document.body.style.overflow = 'hidden';
     isOpen = true;
+    celebration.positionSparks();
     celebration.hidden = false;
     celebration.inert = false;
     requestAnimationFrame(() => {
