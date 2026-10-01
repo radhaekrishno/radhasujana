@@ -196,12 +196,7 @@
       particles.append(spark);
     }
     overlay.append(particles);
-    const close = document.createElement('button');
-    close.type = 'button';
-    close.className = 'logo-celebration__close';
-    close.textContent = document.documentElement.lang === 'te' ? 'మూసివేయండి' : 'Close celebration';
-    close.addEventListener('click', closeCelebration);
-    overlay.append(close);
+    overlay.tabIndex = -1;
     let start = null;
     overlay.addEventListener('touchstart', event => {
       start = event.touches.length === 1 ? event.touches[0].clientY : null;
@@ -219,7 +214,7 @@
     overlay.addEventListener('contextmenu', event => event.preventDefault());
     overlay.addEventListener('keydown', event => {
       if (event.key === 'Escape') closeCelebration();
-      if (event.key === 'Tab') { event.preventDefault(); close.focus(); }
+      if (event.key === 'Tab') { event.preventDefault(); overlay.focus(); }
     });
     document.body.append(overlay);
     return overlay;
@@ -240,7 +235,7 @@
     requestAnimationFrame(() => {
       if (isOpen) celebration.classList.add('is-visible');
     });
-    celebration.querySelector('button').focus({ preventScroll: true });
+    celebration.focus({ preventScroll: true });
   };
   document.addEventListener('touchstart', event => {
     gesture = null;
