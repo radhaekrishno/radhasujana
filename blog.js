@@ -135,3 +135,133 @@
   if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
 })();
 
+
+/* Hidden extra pull at the end of the journal. */
+(() => {
+  const threshold = 100;
+  let gesture = null;
+  let celebration = null;
+  let isOpen = false;
+  let dismissing = false;
+  let previousFocus = null;
+  let previousOverflow = '';
+  let inertElements = [];
+  const atEnd = () => window.scrollY + window.innerHeight >=
+    document.documentElement.scrollHeight - 4;
+  const unavailable = () => document.body.classList.contains('menu-open') || isOpen || dismissing;
+  const closeCelebration = () => {
+    if (!isOpen || dismissing) return;
+    isOpen = false;
+    dismissing = true;
+    celebration.classList.remove('is-visible');
+    inertElements.forEach(([element, inert]) => { element.inert = inert; });
+    inertElements = [];
+    document.body.style.overflow = previousOverflow;
+    previousFocus?.focus({ preventScroll: true });
+    window.setTimeout(() => {
+      celebration.hidden = true;
+      celebration.inert = true;
+      dismissing = false;
+    }, 380);
+  };
+  const buildCelebration = () => {
+    const overlay = document.createElement('div');
+    overlay.className = 'logo-celebration';
+    overlay.hidden = true;
+    overlay.inert = true;
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', document.documentElement.lang === 'te'
+      ? 'సుజన రాధా కృష్ణ లోగో' : 'Sujana and Radha Krishna logo');
+    const logo = document.createElement('div');
+    logo.className = 'logo-celebration__logo';
+    const image = document.createElement('img');
+    image.src = '/assets/sr-watermark-gold.png';
+    image.alt = 'SR';
+    image.width = 512;
+    image.height = 512;
+    image.draggable = false;
+    logo.append(image);
+    overlay.append(logo);
+    const particles = document.createElement('div');
+    particles.className = 'logo-celebration__particles';
+    particles.setAttribute('aria-hidden', 'true');
+    for (let i = 0; i < 18; i += 1) {
+      const spark = document.createElement('span');
+      const angle = i * Math.PI * 2 / 18;
+      const distance = 120 + (i % 4) * 35;
+      spark.style.setProperty('--spark-x', Math.cos(angle) * distance + 'px');
+      spark.style.setProperty('--spark-y', Math.sin(angle) * distance + 'px');
+      spark.style.setProperty('--spark-delay', (i % 5) * 55 + 'ms');
+      particles.append(spark);
+    }
+    overlay.append(particles);
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'logo-celebration__close';
+    close.textContent = document.documentElement.lang === 'te' ? 'మూసివేయండి' : 'Close celebration';
+    close.addEventListener('click', closeCelebration);
+    overlay.append(close);
+    let start = null;
+    overlay.addEventListener('touchstart', event => {
+      start = event.touches.length === 1 ? event.touches[0].clientY : null;
+    }, { passive: true });
+    overlay.addEventListener('touchmove', event => {
+      if (start === null || event.touches.length !== 1) return;
+      if (event.cancelable) event.preventDefault();
+      if (event.touches[0].clientY - start > 65) {
+        start = null;
+        closeCelebration();
+      }
+    }, { passive: false });
+    overlay.addEventListener('touchend', () => { start = null; }, { passive: true });
+    overlay.addEventListener('touchcancel', () => { start = null; }, { passive: true });
+    overlay.addEventListener('contextmenu', event => event.preventDefault());
+    overlay.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeCelebration();
+      if (event.key === 'Tab') { event.preventDefault(); close.focus(); }
+    });
+    document.body.append(overlay);
+    return overlay;
+  };
+  const reveal = () => {
+    if (unavailable()) return;
+    celebration ||= buildCelebration();
+    previousFocus = document.activeElement;
+    previousOverflow = document.body.style.overflow;
+    inertElements = [...document.body.children]
+      .filter(element => element !== celebration && !['SCRIPT', 'STYLE', 'LINK'].includes(element.tagName))
+      .map(element => [element, element.inert]);
+    inertElements.forEach(([element]) => { element.inert = true; });
+    document.body.style.overflow = 'hidden';
+    isOpen = true;
+    celebration.hidden = false;
+    celebration.inert = false;
+    requestAnimationFrame(() => {
+      if (isOpen) celebration.classList.add('is-visible');
+    });
+    celebration.querySelector('button').focus({ preventScroll: true });
+  };
+  document.addEventListener('touchstart', event => {
+    gesture = null;
+    if (unavailable() || !atEnd() || event.touches.length !== 1 ||
+        event.target.closest('button,input,textarea,select,iframe,[contenteditable="true"]')) return;
+    const touch = event.touches[0];
+    gesture = { x: touch.clientX, y: touch.clientY, pull: 0 };
+  }, { passive: true });
+  document.addEventListener('touchmove', event => {
+    if (!gesture) return;
+    if (event.touches.length !== 1 || !atEnd() || unavailable()) { gesture = null; return; }
+    const touch = event.touches[0];
+    const pull = gesture.y - touch.clientY;
+    if (Math.abs(touch.clientX - gesture.x) > 45 || pull < -12) { gesture = null; return; }
+    gesture.pull = pull;
+    if (pull > 12 && event.cancelable) event.preventDefault();
+  }, { passive: false });
+  document.addEventListener('touchend', () => {
+    const shouldReveal = gesture && gesture.pull >= threshold && atEnd();
+    gesture = null;
+    if (shouldReveal) reveal();
+  }, { passive: true });
+  document.addEventListener('touchcancel', () => { gesture = null; }, { passive: true });
+})();
