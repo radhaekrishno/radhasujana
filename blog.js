@@ -176,10 +176,10 @@
     const logo = document.createElement('div');
     logo.className = 'logo-celebration__logo';
     const image = document.createElement('img');
-    image.src = '/assets/sr-watermark-gold.png';
-    image.alt = 'SR';
-    image.width = 512;
-    image.height = 512;
+    image.src = '/assets/sr-names-raised-gold.webp';
+    image.alt = 'SR — SUJANA & RADHA';
+    image.width = 1378;
+    image.height = 1141;
     image.draggable = false;
     logo.append(image);
     overlay.append(logo);
@@ -210,7 +210,8 @@
         goldPoints = [];
         for (let y = 1; y < 79; y += 1) {
           for (let x = 1; x < 79; x += 1) {
-            if (pixels[(y * 80 + x) * 4 + 3] > 210) {
+            const pixel = (y * 80 + x) * 4;
+            if (pixels[pixel + 3] > 210 && pixels[pixel] > 140 && pixels[pixel + 1] > 90) {
               goldPoints.push([(x + .5) / 80 * 100, (y + .5) / 80 * 100]);
             }
           }
