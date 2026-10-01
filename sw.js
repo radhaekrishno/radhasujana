@@ -1,9 +1,9 @@
-const CACHE="radhasujana-blog-2.0-chrome-gold-1";
+const CACHE="radhasujana-blog-2.0-raised-monogram-only-1";
 const CORE=[
   "/","/te/","/blog/after-the-wedding/","/te/blog/pelli-tarvata/",
   "/invitation/","/invitation/en/","/invitation/te/","/invitation/hi/","/invitation/ta/","/invitation/zh/","/invitation/ne/","/invitation/ur/",
   "/image-privacy.css","/image-privacy.js","/blog.css","/blog.js","/neo2.css","/neo2.js","/neo2-config.js",
-  "/assets/sr-watermark-gold.png","/favicon.png","/manifest.webmanifest","/assets/engagement/08.webp","/assets/blog/after-the-wedding-banner.webp"
+  "/assets/sr-names-raised-gold.webp","/favicon.png","/manifest.webmanifest","/assets/engagement/08.webp","/assets/blog/after-the-wedding-banner.webp"
 ];
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith("radhasujana-")&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
