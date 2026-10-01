@@ -1,8 +1,8 @@
-const CACHE="radhasujana-blog-2.0-engagement-1";
+const CACHE="radhasujana-blog-2.0-image-privacy-1";
 const CORE=[
   "/","/te/","/blog/after-the-wedding/","/te/blog/pelli-tarvata/",
   "/invitation/","/invitation/en/","/invitation/te/","/invitation/hi/","/invitation/ta/","/invitation/zh/","/invitation/ne/","/invitation/ur/",
-  "/blog.css","/blog.js","/neo2.css","/neo2.js","/neo2-config.js",
+  "/image-privacy.css","/image-privacy.js","/blog.css","/blog.js","/neo2.css","/neo2.js","/neo2-config.js",
   "/favicon.png","/manifest.webmanifest","/assets/engagement/08.webp","/assets/blog/after-the-wedding-banner.webp"
 ];
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()))});
