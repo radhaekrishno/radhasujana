@@ -4,13 +4,16 @@
   const close = document.querySelector('.menu-close');
   const scrim = document.querySelector('.menu-scrim');
   if (!trigger || !menu || !scrim) return;
+  menu.inert = true;
   const setMenu = open => {
+    menu.inert = !open;
     document.body.classList.toggle('menu-open', open);
     menu.classList.toggle('is-open', open);
     menu.setAttribute('aria-hidden', String(!open));
     trigger.setAttribute('aria-expanded', String(open));
     scrim.hidden = !open;
     if (open) close?.focus();
+    else if (menu.contains(document.activeElement)) trigger.focus();
   };
   trigger.addEventListener('click', () => setMenu(true));
   close?.addEventListener('click', () => setMenu(false));
@@ -26,6 +29,8 @@
   const lightboxImage = document.getElementById('lightboxImage');
   const lightboxCaption = document.getElementById('lightboxCaption');
   let currentPhotoIndex = 0;
+  let lastPhotoButton = null;
+  if (lightbox) lightbox.inert = true;
 
   if (galleryGrid && lightbox && lightboxImage && lightboxCaption) {
     const galleryLabel = galleryGrid.dataset.galleryLabel;
@@ -70,12 +75,16 @@
         : `Photo ${currentPhotoIndex + 1} of ${galleryImages.length}`;
     };
     const closeLightbox = () => {
+      lightbox.inert = true;
       lightbox.classList.remove('open');
       lightbox.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('menu-open');
+      lastPhotoButton?.focus();
     };
     galleryGrid.querySelectorAll('.gallery-item').forEach(button => {
       button.addEventListener('click', () => {
+        lastPhotoButton = button;
+        lightbox.inert = false;
         showPhoto(Number(button.dataset.galleryIndex));
         lightbox.classList.add('open');
         lightbox.setAttribute('aria-hidden', 'false');
@@ -104,5 +113,16 @@
     host.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/2CMnmL-LB4U?autoplay=1&amp;rel=0" title="Sujana and Radha Krishna engagement film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
   });
 
-  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Tab') return;
+    const dialog = lightbox?.classList.contains('open') ? lightbox : menu.classList.contains('is-open') ? menu : null;
+    if (!dialog) return;
+    const items = [...dialog.querySelectorAll('a,button')];
+    const first = items[0], last = items[items.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
+
+  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
 })();
+
