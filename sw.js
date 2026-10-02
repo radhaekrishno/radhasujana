@@ -1,4 +1,4 @@
-const CACHE="radhasujana-blog-2.0-landing-intro-1";
+const CACHE="radhasujana-blog-2.0-landing-smooth-refresh-2";
 const CORE=[
   "/","/te/","/blog/after-the-wedding/","/te/blog/pelli-tarvata/",
   "/invitation/","/invitation/en/","/invitation/te/","/invitation/hi/","/invitation/ta/","/invitation/zh/","/invitation/ne/","/invitation/ur/",
