@@ -1,6 +1,8 @@
-/* Replay on every page load; loaded in the head to prevent a page flash. */
+/* One entrance per tab session; loaded in the head to prevent a page flash. */
 (() => {
   const root = document.documentElement;
+  const key = 'sr-landing-v1';
+  try { if (sessionStorage.getItem(key)) return; } catch (_) {}
   root.classList.add('landing-active');
   let overlay, children = [], finished = false;
   const finish = () => {
@@ -68,6 +70,7 @@
     const begin = () => {
       if (begun || finished) return;
       begun = true;
+      try { sessionStorage.setItem(key, '1'); } catch (_) {}
       window.clearTimeout(safetyTimer);
       overlay.classList.add('is-playing');
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
