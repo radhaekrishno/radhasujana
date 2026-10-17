@@ -108,18 +108,23 @@
     });
   }
 
-  const videoDetails = document.querySelector('.video-details');
-  const filmPoster = document.getElementById('filmLite')?.innerHTML;
-  videoDetails?.addEventListener('toggle', () => {
-    if (!videoDetails.open) {
-      const host = document.getElementById('filmLite');
-      if (host?.querySelector('iframe')) host.innerHTML = filmPoster;
-    }
-  });
-  document.getElementById('filmLite')?.addEventListener('click', event => {
-    if (!event.target.closest('#filmPlayButton')) return;
-    const host = document.getElementById('filmLite');
-    host.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/2CMnmL-LB4U?autoplay=1&amp;rel=0" title="Sujana and Radha Krishna engagement film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+  // Each film owns its player: no YouTube requests until the visitor presses play.
+  document.querySelectorAll('.video-details').forEach(details => {
+    const host = details.querySelector('.film-lite[data-video-id]');
+    if (!host || !/^[A-Za-z0-9_-]{11}$/.test(host.dataset.videoId)) return;
+    const poster = host.innerHTML;
+    details.addEventListener('toggle', () => {
+      if (!details.open && host.querySelector('iframe')) host.innerHTML = poster;
+    });
+    host.addEventListener('click', event => {
+      if (!event.target.closest('.film-lite__play') || !details.open || host.querySelector('iframe')) return;
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${host.dataset.videoId}?autoplay=1&rel=0`;
+      iframe.title = host.dataset.videoTitle;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      host.replaceChildren(iframe);
+    });
   });
 
   document.addEventListener('keydown', event => {
