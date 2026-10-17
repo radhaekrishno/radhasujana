@@ -24,3 +24,10 @@ body.lang-te{font-family:'Noto Sans Telugu',var(--sans)}body.lang-te h1,body.lan
 .engagement-section .gallery-details{border-bottom:0}
 .engagement-section .video-details{border-bottom:1px solid var(--line)}
 .engagement-video-content{margin:0 0 16px;padding:12px;border-top:0}
+/* A compact, photograph-free title card for the pre-wedding film. */
+.film-lite--prewedding{align-content:center;gap:16px;background:radial-gradient(ellipse at 50% 35%,#851d37,#4f0717 80%);padding:20px}
+.film-lite--prewedding:has(iframe){display:block;padding:0}
+.film-lite__caption{margin:0;color:#fff2d9;font:400 clamp(1.2rem,4vw,2.4rem)/1.3 var(--display);text-align:center}
+.film-lite__caption small{display:block;margin-top:8px;font:400 .8rem/1.5 var(--sans);color:#f4d9a4}
+.prewedding-section .film-player-card>p{font-size:.9rem}
+@media(max-width:380px){.film-lite--prewedding{gap:8px;padding:12px}.film-lite--prewedding .film-lite__play{width:56px;height:56px}}
