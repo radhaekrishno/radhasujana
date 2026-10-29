@@ -1,4 +1,4 @@
-const CACHE="radhasujana-camp-3.0-1";
+const CACHE="radhasujana-camp-3.0-mobile-fit-2";
 const CORE=[
   "/journal/","/te/journal/","/photos/","/te/photos/","/films/","/te/films/","/trail/","/te/trail/","/camp.css","/camp.js","/assets/abc-camp.webp",
   "/","/te/","/blog/after-the-wedding/","/te/blog/pelli-tarvata/",
