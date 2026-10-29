@@ -127,6 +127,16 @@
     });
   });
 
+  const openLinkedFilm = () => {
+    const id = window.location.hash.slice(1);
+    if (!['film', 'pre-wedding', 'preweddingFilm'].includes(id)) return;
+    const target = document.getElementById(id);
+    const details = target?.matches('details') ? target : target?.querySelector('details');
+    if (details) details.open = true;
+  };
+  window.addEventListener('hashchange', openLinkedFilm);
+  openLinkedFilm();
+
   document.addEventListener('keydown', event => {
     if (event.key !== 'Tab') return;
     const dialog = lightbox?.classList.contains('open') ? lightbox : menu.classList.contains('is-open') ? menu : null;

@@ -1,0 +1,15 @@
+# Our little base camp
+
+Illustrated interactive homepage inspired by the object-navigation approach at https://gkoberger.com/. Original illustration and layout; no source assets copied from that site.
+
+The camera opens photographs, the notebook the journal archive, the camcorder films, the envelope the wedding invitation, the trail sign the journal, and the map the recorded ABC route. The existing journal now lives at /journal/ and /te/journal/. English and Telugu destinations are provided. Existing article and invitation URLs are retained.
+
+Keyboard users can tab through every object. Text navigation duplicates every destination, and the optional Show me around button reveals object labels. Narrow screens retain a pannable scene rather than shrinking the tap targets. Motion respects the reduced-motion preference. The previously approved once-per-tab gold entrance is retained.
+
+## Illustration
+
+Built-in image generation was used for assets/abc-camp.webp (1536 × 1024, optimized WebP). The illustration represents the couple from behind and is a stylized memory, not a likeness-verified portrait or a geographic map.
+
+Final generation prompt:
+
++Use case: illustration-story. Asset type: panoramic interactive personal website landing scene, no interface or text overlays. Create an exceptionally beautiful hand-painted editorial travel illustration of a South Indian newlywed couple at Annapurna Base Camp in Nepal. Warm ivory paper ground #f6f1e7, subtle pencil outlines and gouache washes, beautifully detailed but grown-up illustrated travel journal, restrained maroon jackets, ochre, moss green, slate blue mountains with snow. Landscape 3:2 composition with soft paper white edges. Background top half: immense Annapurna amphitheatre, distant recognizable double fishtail mountain towards upper right, soft blue sky and pale clouds. Midground central: couple wearing backpacks seated on a low stone wall facing the mountain view, seen from behind, man left woman right, small figures around center x50%,y55%, no identifiable facial portrait. A few weathered prayer flags strung across the midground. Carefully compose SIX distinct foreground objects with clear space around each for interactive clickable hotspots: at x22% y55% a large blank wooden base-camp trail sign with two horizontal planks on post (no lettering); at x27% y77% a black and brass retro camera sitting on a flat rock; at x67% y80% an open maroon travel notebook with tiny illegible pencil sketches; at x81% y66% a little retro camcorder on a boulder; at x15% y87% a cream keepsake envelope sealed with maroon wax resting on a rock; at x82% y87% a folded trekking map with a red dotted path. Objects substantial and visually distinct, 8-12% of canvas width each. A maroon rucksack beside the seated couple. Gravel trail and alpine plants in foreground. Composition feels intimate, inviting, peaceful, playful exploration. No UI, no labels, no readable text, no watermark, no branding. Professional commissioned illustration quality, not 3D render, not photorealistic, no crowded clutter.
