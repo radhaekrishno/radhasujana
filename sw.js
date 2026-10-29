@@ -1,5 +1,6 @@
-const CACHE="radhasujana-blog-2.0-prewedding-film-1";
+const CACHE="radhasujana-camp-3.0-1";
 const CORE=[
+  "/journal/","/te/journal/","/photos/","/te/photos/","/films/","/te/films/","/trail/","/te/trail/","/camp.css","/camp.js","/assets/abc-camp.webp",
   "/","/te/","/blog/after-the-wedding/","/te/blog/pelli-tarvata/",
   "/invitation/","/invitation/en/","/invitation/te/","/invitation/hi/","/invitation/ta/","/invitation/zh/","/invitation/ne/","/invitation/ur/",
   "/image-privacy.css","/image-privacy.js","/blog.css","/blog.js","/landing.css","/landing.js","/neo2.css","/neo2.js","/neo2-config.js",
